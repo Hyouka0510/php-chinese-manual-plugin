@@ -1,0 +1,279 @@
+<?php
+
+// Start of mailparse v.
+
+/**
+* <div id="function.mailparse-determine-best-xfer-encoding" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_determine_best_xfer_encoding</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_determine_best_xfer_encoding</span> — <span class="dc-title">Gets the best way of encoding</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-determine-best-xfer-encoding-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_determine_best_xfer_encoding</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$fp</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div>  <p class="para rdfs-comment">   Figures out the best way of encoding the content read from the given file   pointer.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-determine-best-xfer-encoding-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">fp</span></dt>     <dd>      <p class="para">       A valid file pointer, which must be seek-able.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-determine-best-xfer-encoding-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns one of the character encodings supported by the   <a href="https://php.net/manual/zh/ref.mbstring.php" class="link">mbstring</a> module.  </p> </div> <div class="refsect1 examples" id="refsect1-function.mailparse-determine-best-xfer-encoding-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3234">    <p><strong>示例 #1 <span class="function"><strong>mailparse_determine_best_xfer_encoding()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>$fp </span><span style="color: #007700">= </span><span style="color: #9876AA">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'somemail.eml'</span><span style="color: #007700">, </span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br>echo </span><span style="color: #DD0000">'Best encoding: ' </span><span style="color: #007700">. </span><span style="color: #9876AA">mailparse_determine_best_xfer_encoding</span><span style="color: #007700">(</span><span style="color: #9876AA">$fp</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例的输出类似于：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="examplescode"><blockquote style="border:1px gray solid;">Best encoding: 7bit</blockquote></div>    </div>   </div>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Figures out the best way of encoding the content read from the given file pointer.
+ * @link https://php.net/manual/zh/function.mailparse-determine-best-xfer-encoding.php
+ * @param resource $fp <p>
+ * A valid file pointer, which must be seek-able.
+ * </p>
+ * @return string Returns one of the character encodings supported by the
+ * {@link https://php.net/manual/zh/ref.mbstring.php mbstring} module.
+ 
+*/
+function mailparse_determine_best_xfer_encoding($fp) {}
+
+/**
+* <div id="function.mailparse-msg-create" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_create</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_create</span> — <span class="dc-title">Create a mime mail resource</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-create-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_create</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">   Create a <span class="literal">MIME</span> mail resource.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-create-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-create-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a handle that can be used to parse a message.  </p> </div> <div class="refsect1 notes" id="refsect1-function.mailparse-msg-create-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    It is recommended to call <span class="function">{@link mailparse_msg_free()}</span> on the result    of this function, when it is no longer needed, to avoid memory leaks.   </p>  </blockquote> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-create-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_free()} - Frees a MIME resource</span></li>    <li><span class="function">{@link mailparse_msg_parse_file()} - Parses a file</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Create a MIME mail resource.
+ * @link https://php.net/manual/zh/function.mailparse-msg-create.php
+ * @return resource Returns a handle that can be used to parse a message.
+ 
+*/
+function mailparse_msg_create() {}
+
+/**
+* <div id="function.mailparse-msg-extract-part-file" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_extract_part_file</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_extract_part_file</span> — <span class="dc-title">Extracts/decodes a message section</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-extract-part-file-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_extract_part_file</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.callable.php" class="type callable" style="color:#EAB766">callable</a></span> <span class="parameter" style="color:#3A95FF">$callbackfunc</span><span class="initializer"> = ?</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div>  <p class="para rdfs-comment">   Extracts/decodes a message section from the supplied filename.  </p>  <p class="para">   The contents of the section will be decoded according to their transfer   encoding - base64, quoted-printable and uuencoded text are supported.    </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-extract-part-file-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource, created with       <span class="function">{@link mailparse_msg_create()}</span>.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>     <dd>      <p class="para">       Can be a file name or a valid stream resource.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">callbackfunc</span></dt>     <dd>      <p class="para">       If set, this must be either a valid callback that will be passed the       extracted section, or <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> to make this function return the       extracted section.      </p>      <p class="para">       If not specified, the contents will be sent to "stdout".      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-extract-part-file-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   If <span class="parameter" style="color:#3A95FF">callbackfunc</span> is not <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> returns <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong> on   success.  </p>  <p class="para">   If <span class="parameter" style="color:#3A95FF">callbackfunc</span> is set to <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong>, returns the   extracted section as a string.  </p>  <p class="para">   Returns <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error.  </p> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-extract-part-file-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_extract_part()} - Extracts/decodes a message section</span></li>    <li><span class="function">{@link mailparse_msg_extract_whole_part_file()} - Extracts a message section including headers without decoding the transfer encoding</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Extracts/decodes a message section from the supplied filename.
+ * The contents of the section will be decoded according to their transfer encoding - base64, quoted-printable and
+ * uuencoded text are supported.
+ * @link https://php.net/manual/zh/function.mailparse-msg-extract-part-file.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource, created with {@link https://php.net/manual/zh/function.mailparse-msg-create.php mailparse_msg_create()}.
+ * </p>
+ * @param mixed $filename <p>
+ * Can be a file name or a valid stream resource.
+ * </p>
+ * @param callable $callbackfunc [optional] <p>
+ * If set, this must be either a valid callback that will be passed the extracted section, or <b>NULL</b> to make this
+ * function return the extracted section.
+ * </p>
+ * <p>
+ * If not specified, the contents will be sent to "stdout".
+ * </p>
+ * @return string|bool <p>
+ * If callbackfunc is not <b>NULL</b> returns <b>TRUE</b> on success.
+ * </p>
+ * <p>
+ * If callbackfunc is set to <b>NULL</b>, returns the extracted section as a string.
+ * </p>
+ * <p>
+ * Returns FALSE on error.
+ * </p>
+ 
+*/
+function mailparse_msg_extract_part_file($mimemail, $filename, $callbackfunc) {}
+
+/**
+* <div id="function.mailparse-msg-extract-part" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_extract_part</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_extract_part</span> — <span class="dc-title">   Extracts/decodes a message section  </span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-extract-part-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_extract_part</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$msgbody</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.callable.php" class="type callable" style="color:#EAB766">callable</a></span> <span class="parameter" style="color:#3A95FF">$callbackfunc</span><span class="initializer"> = ?</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.void.php" class="type void" style="color:#EAB766">void</a></span></div>  <div class="warning"><strong class="warning">警告</strong><p class="simpara">本函数还未编写文档，仅有参数列表。</p></div> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-extract-part-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">msgbody</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">callbackfunc</span></dt>     <dd>      <p class="para">      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-extract-part-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   没有返回值。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-extract-part-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_extract_part_file()} - Extracts/decodes a message section</span></li>    <li><span class="function">{@link mailparse_msg_extract_whole_part_file()} - Extracts a message section including headers without decoding the transfer encoding</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Extracts/decodes a message section
+ * @link https://php.net/manual/zh/function.mailparse-msg-extract-part.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource.
+ * </p>
+ * @param string $msgbody
+ * @param callable $callbackfunc [optional]
+ * @return void
+ 
+*/
+function mailparse_msg_extract_part($mimemail, $msgbody, $callbackfunc) {}
+
+/**
+* <div id="function.mailparse-msg-extract-whole-part-file" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_extract_whole_part_file</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_extract_whole_part_file</span> — <span class="dc-title">Extracts a message section including headers without decoding the transfer encoding</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-extract-whole-part-file-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_extract_whole_part_file</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.callable.php" class="type callable" style="color:#EAB766">callable</a></span> <span class="parameter" style="color:#3A95FF">$callbackfunc</span><span class="initializer"> = ?</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div>  <div class="warning"><strong class="warning">警告</strong><p class="simpara">本函数还未编写文档，仅有参数列表。</p></div> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-extract-whole-part-file-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">callbackfunc</span></dt>     <dd>      <p class="para">      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-extract-whole-part-file-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">  </p> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-extract-whole-part-file-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_extract_part()} - Extracts/decodes a message section</span></li>    <li><span class="function">{@link mailparse_msg_extract_part_file()} - Extracts/decodes a message section</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Extracts a message section including headers without decoding the transfer encoding
+ * @link https://php.net/manual/zh/function.mailparse-msg-extract-whole-part-file.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource
+ * </p>
+ * @param string $filename
+ * @param callable $callbackfunc [optional]
+ * @return string
+ 
+*/
+function mailparse_msg_extract_whole_part_file($mimemail, $filename, $callbackfunc) {}
+
+/**
+* <div id="function.mailparse-msg-free" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_free</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_free</span> — <span class="dc-title">Frees a MIME resource</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-free-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_free</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   Frees a <span class="literal">MIME</span> resource.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-free-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource allocated by       <span class="function">{@link mailparse_msg_create()}</span> or        <span class="function">{@link mailparse_msg_parse_file()}</span>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-free-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-free-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_create()} - Create a mime mail resource</span></li>    <li><span class="function">{@link mailparse_msg_parse_file()} - Parses a file</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Frees a MIME resource.
+ * @link https://php.net/manual/zh/function.mailparse-msg-free.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource allocated by
+ * {@link https://php.net/manual/zh/function.mailparse-msg-create.php mailparse_msg_create()} or
+ * {@link https://php.net/manual/zh/function.mailparse-msg-parse-file.php mailparse_msg_parse_file()}.
+ * </p>
+ * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
+ 
+*/
+function mailparse_msg_free($mimemail) {}
+
+/**
+* <div id="function.mailparse-msg-get-part-data" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_get_part_data</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_get_part_data</span> — <span class="dc-title">Returns an associative array of info about the message</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-get-part-data-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_get_part_data</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div>  <div class="warning"><strong class="warning">警告</strong><p class="simpara">本函数还未编写文档，仅有参数列表。</p></div> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-get-part-data-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>       </dl>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Returns an associative array of info about the message
+ * @link https://php.net/manual/zh/function.mailparse-msg-get-part-data.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource.
+ * </p>
+ * @return array
+ 
+*/
+function mailparse_msg_get_part_data($mimemail) {}
+
+/**
+* <div id="function.mailparse-msg-get-part" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_get_part</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_get_part</span> — <span class="dc-title">Returns a handle on a given section in a mimemessage</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-get-part-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_get_part</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$mimesection</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <div class="warning"><strong class="warning">警告</strong><p class="simpara">本函数还未编写文档，仅有参数列表。</p></div> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-get-part-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mimesection</span></dt>     <dd>      <p class="para">      </p>     </dd>       </dl>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Returns a handle on a given section in a mimemessage
+ * @link https://php.net/manual/zh/function.mailparse-msg-get-part.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource.
+ * </p>
+ * @param string $mimesection
+ * @return resource|false
+ 
+*/
+function mailparse_msg_get_part($mimemail, $mimesection) {}
+
+/**
+* <div id="function.mailparse-msg-get-structure" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_get_structure</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_get_structure</span> — <span class="dc-title">Returns an array of mime section names in the supplied message</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-get-structure-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_get_structure</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div>  <div class="warning"><strong class="warning">警告</strong><p class="simpara">本函数还未编写文档，仅有参数列表。</p></div> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-get-structure-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>       </dl>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Returns an array of mime section names in the supplied message
+ * @link https://php.net/manual/zh/function.mailparse-msg-get-structure.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource.
+ * </p>
+ * @return array
+ 
+*/
+function mailparse_msg_get_structure($mimemail) {}
+
+/**
+* <div id="function.mailparse-msg-parse-file" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_parse_file</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_parse_file</span> — <span class="dc-title">Parses a file</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-parse-file-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_parse_file</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">   Parses a file.   This is the optimal way of parsing a mail file that you have on disk.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-parse-file-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>     <dd>      <p class="para">       Path to the file holding the message.       The file is opened and streamed through the parser.      </p>      <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:        </p><p class="para">        The message contained in <span class="parameter" style="color:#3A95FF">filename</span> is supposed to end with a newline        (<span class="literal">CRLF</span>); otherwise the last line of the message will not be parsed.       </p>      </blockquote>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-parse-file-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a <span class="literal">MIME</span> resource representing the structure, or   <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error.  </p> </div> <div class="refsect1 notes" id="refsect1-function.mailparse-msg-parse-file-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    It is recommended to call <span class="function">{@link mailparse_msg_free()}</span> on the result    of this function, when it is no longer needed, to avoid memory leaks.   </p>  </blockquote> </div> <div class="refsect1 seealso" id="refsect1-function.mailparse-msg-parse-file-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link mailparse_msg_free()} - Frees a MIME resource</span></li>    <li><span class="function">{@link mailparse_msg_create()} - Create a mime mail resource</span></li>   </ul>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Parses a file. This is the optimal way of parsing a mail file that you have on disk.
+ * @link https://php.net/manual/zh/function.mailparse-msg-parse-file.php
+ * @param string $filename <p>
+ * Path to the file holding the message. The file is opened and streamed through the parser.
+ * </p>
+ * @return resource|false Returns a MIME resource representing the structure, or <b>FALSE</b> on error.
+ 
+*/
+function mailparse_msg_parse_file($filename) {}
+
+/**
+* <div id="function.mailparse-msg-parse" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_msg_parse</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_msg_parse</span> — <span class="dc-title">Incrementally parse data into buffer</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-msg-parse-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_msg_parse</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$mimemail</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$data</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   Incrementally parse data into the supplied mime mail resource.  </p>  <p class="para">   This function allow you to stream portions of a file at a time, rather   than read and parse the whole thing.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-msg-parse-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">mimemail</span></dt>     <dd>      <p class="para">       A valid <span class="literal">MIME</span> resource.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">data</span></dt>     <dd>      <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:        </p><p class="para">        The final chunk of <span class="parameter" style="color:#3A95FF">data</span> is supposed to end with a newline        (<span class="literal">CRLF</span>); otherwise the last line of the message will not be parsed.       </p>      </blockquote>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-msg-parse-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Incrementally parse data into the supplied mime mail resource.
+ * This function allow you to stream portions of a file at a time, rather than read and parse the whole thing.
+ * @link https://php.net/manual/zh/function.mailparse-msg-parse.php
+ * @param resource $mimemail <p>
+ * A valid MIME resource.
+ * </p>
+ * @param string $data
+ * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
+ 
+*/
+function mailparse_msg_parse($mimemail, $data) {}
+
+/**
+* <div id="function.mailparse-rfc822-parse-addresses" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_rfc822_parse_addresses</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_rfc822_parse_addresses</span> — <span class="dc-title">Parse RFC 822 compliant addresses</span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-rfc822-parse-addresses-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_rfc822_parse_addresses</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$addresses</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div>  <p class="para rdfs-comment">   Parses a <a href="https://datatracker.ietf.org/doc/html/rfc822" class="link external">» RFC 822</a> compliant recipient   list, such as that found in the <span class="literal">To:</span> header.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-rfc822-parse-addresses-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">addresses</span></dt>     <dd>      <p class="para">       A string containing addresses, like in:       <span class="literal">Wez Furlong &lt;wez@example.com&gt;, doe@example.com</span>      </p>      <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:        </p><p class="para">        This string must not include the header name.       </p>      </blockquote>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-rfc822-parse-addresses-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns an array of associative arrays with the following keys for each   recipient:   </p><table class="doctable informaltable">         <tbody class="tbody">      <tr>       <td><span class="literal">display</span></td>       <td>        The recipient name, for display purpose. If this part is not set for a        recipient, this key will hold the same value as         <span class="literal">address</span>.       </td>      </tr>      <tr>       <td><span class="literal">address</span></td>       <td>The email address</td>      </tr>      <tr>       <td><span class="literal">is_group</span></td>       <td><strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong> if the recipient is a newsgroup, <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> otherwise.</td>      </tr>     </tbody>       </table>   </div> <div class="refsect1 examples" id="refsect1-function.mailparse-rfc822-parse-addresses-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3235">    <p><strong>示例 #1 <span class="function"><strong>mailparse_rfc822_parse_addresses()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>$to </span><span style="color: #007700">= </span><span style="color: #DD0000">'Wez Furlong &lt;wez@example.com&gt;, doe@example.com'</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">mailparse_rfc822_parse_addresses</span><span style="color: #007700">(</span><span style="color: #9876AA">$to</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="examplescode"><blockquote style="border:1px gray solid;">array(2) {<br>  [0]=&gt;<br>  array(3) {<br>    ["display"]=&gt;<br>    string(11) "Wez Furlong"<br>    ["address"]=&gt;<br>    string(15) "wez@example.com"<br>    ["is_group"]=&gt;<br>    bool(false)<br>  }<br>  [1]=&gt;<br>  array(3) {<br>    ["display"]=&gt;<br>    string(15) "doe@example.com"<br>    ["address"]=&gt;<br>    string(15) "doe@example.com"<br>    ["is_group"]=&gt;<br>    bool(false)<br>  }<br>}</blockquote></div>    </div>   </div>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Parses a {@link http://www.faqs.org/rfcs/rfc822 RFC 822} compliant recipient list, such as that found in the To: header.
+ * @link https://php.net/manual/zh/function.mailparse-rfc822-parse-addresses.php
+ * @param string $addresses <p>
+ * A string containing addresses, like in: <pre>Wez Furlong <wez@example.com>, doe@example.com</pre>
+ * Note: This string must not include the header name.
+ * </p>
+ * @return array <p>
+ * Returns an array of associative arrays with the following keys for each recipient:
+ * </p>
+ * <table>
+ * <tr valign="top">
+ * <td>display</td>
+ * <td>The recipient name, for display purpose. If this part is not set for a recipient, this key will hold the same value as address.</td>
+ * </tr>
+ * <tr valign="top">
+ * <td>address</td>
+ * <td>The email address</td>
+ * </tr>
+ * <tr valign="top">
+ * <td>is_group</td>
+ * <td><b>TRUE</b> if the recipient is a newsgroup, <b>FALSE</b> otherwise.</td>
+ * </tr>
+ * </table>
+ 
+*/
+function mailparse_rfc822_parse_addresses($addresses) {}
+
+/**
+* <div id="function.mailparse-stream-encode" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_stream_encode</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_stream_encode</span> — <span class="dc-title">   Streams data from source file pointer, apply encoding and write to destfp   </span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-stream-encode-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_stream_encode</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$sourcefp</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$destfp</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$encoding</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   Streams data from the source file pointer, apply    <span class="parameter" style="color:#3A95FF">encoding</span> and write to the destination file pointer.   </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-stream-encode-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">sourcefp</span></dt>     <dd>      <p class="para">       A valid file handle. The file is streamed through the parser.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">destfp</span></dt>     <dd>      <p class="para">       The destination file handle in which the encoded data will be written.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">encoding</span></dt>     <dd>      <p class="para">       One of the character encodings supported by the       <a href="https://php.net/manual/zh/ref.mbstring.php" class="link">mbstring</a> module.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-stream-encode-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 examples" id="refsect1-function.mailparse-stream-encode-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3236">    <p><strong>示例 #1 <span class="function"><strong>mailparse_stream_encode()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br></span><span style="color: #FF8000">// email.eml contents: hello, this is some text=hello.<br></span><span style="color: #9876AA">$fp </span><span style="color: #007700">= </span><span style="color: #9876AA">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'email.eml'</span><span style="color: #007700">, </span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">$dest </span><span style="color: #007700">= </span><span style="color: #9876AA">tmpfile</span><span style="color: #007700">();<br><br></span><span style="color: #9876AA">mailparse_stream_encode</span><span style="color: #007700">(</span><span style="color: #9876AA">$fp</span><span style="color: #007700">, </span><span style="color: #9876AA">$dest</span><span style="color: #007700">, </span><span style="color: #DD0000">"quoted-printable"</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">rewind</span><span style="color: #007700">(</span><span style="color: #9876AA">$dest</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// Display new file contents<br></span><span style="color: #9876AA">fpassthru</span><span style="color: #007700">(</span><span style="color: #9876AA">$dest</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="examplescode"><blockquote style="border:1px gray solid;">hello, this is some text=3Dhello.</blockquote></div>    </div>   </div>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Streams data from the source file pointer, apply encoding and write to the destination file pointer.
+ * @link https://php.net/manual/zh/function.mailparse-stream-encode.php
+ * @param resource $sourcefp <p>
+ * A valid file handle. The file is streamed through the parser.
+ * </p>
+ * @param resource $destfp <p>
+ * The destination file handle in which the encoded data will be written.
+ * </p>
+ * @param string $encoding <p>
+ * One of the character encodings supported by the {@link https://php.net/manual/zh/ref.mbstring.php mbstring} module.
+ * </p>
+ * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
+ 
+*/
+function mailparse_stream_encode($sourcefp, $destfp, $encoding) {}
+
+/**
+* <div id="function.mailparse-uudecode-all" class="refentry"> <div class="refnamediv">  <h1 class="refname">mailparse_uudecode_all</h1>  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_uudecode_all</span> — <span class="dc-title">   Scans the data from fp and extract each embedded uuencoded file  </span></p> </div> <div class="refsect1 description" id="refsect1-function.mailparse-uudecode-all-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>mailparse_uudecode_all</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$fp</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div>  <p class="para rdfs-comment">   Scans the data from the given file pointer and extract each embedded   uuencoded file into a temporary file.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.mailparse-uudecode-all-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">fp</span></dt>     <dd>      <p class="para">       A valid file pointer.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.mailparse-uudecode-all-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns an array of associative arrays listing filename information.   </p><table class="doctable informaltable">         <tbody class="tbody">      <tr>       <td><span class="literal">filename</span></td>       <td>Path to the temporary file name created</td>      </tr>      <tr>       <td><span class="literal">origfilename</span></td>       <td>The original filename, for uuencoded parts only</td>      </tr>     </tbody>       </table>   The first filename entry is the message body. The next entries are the   decoded uuencoded files.   </div> <div class="refsect1 examples" id="refsect1-function.mailparse-uudecode-all-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3237">    <p><strong>示例 #1 <span class="function"><strong>mailparse_uudecode_all()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>$text </span><span style="color: #007700">= &lt;&lt;&lt;EOD<br></span><span style="color: #DD0000">To: fred@example.com<br><br>hello, this is some text hello.<br>blah blah blah.<br><br>begin 644 test.txt<br>/=&amp;AI&lt;R!I&lt;R!A('1E&lt;W0*<br>`<br>end<br><br></span><span style="color: #007700">EOD;<br><br></span><span style="color: #9876AA">$fp </span><span style="color: #007700">= </span><span style="color: #9876AA">tmpfile</span><span style="color: #007700">();<br></span><span style="color: #9876AA">fwrite</span><span style="color: #007700">(</span><span style="color: #9876AA">$fp</span><span style="color: #007700">, </span><span style="color: #9876AA">$text</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">$data </span><span style="color: #007700">= </span><span style="color: #9876AA">mailparse_uudecode_all</span><span style="color: #007700">(</span><span style="color: #9876AA">$fp</span><span style="color: #007700">);<br><br>echo </span><span style="color: #DD0000">"BODY\n"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">readfile</span><span style="color: #007700">(</span><span style="color: #9876AA">$data</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">][</span><span style="color: #DD0000">"filename"</span><span style="color: #007700">]);<br>echo </span><span style="color: #DD0000">"UUE (</span><span style="color: #007700">{</span><span style="color: #9876AA">$data</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">][</span><span style="color: #DD0000">'origfilename'</span><span style="color: #007700">]}</span><span style="color: #DD0000">)\n"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">readfile</span><span style="color: #007700">(</span><span style="color: #9876AA">$data</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">][</span><span style="color: #DD0000">"filename"</span><span style="color: #007700">]);<br><br></span><span style="color: #FF8000">// Clean up<br></span><span style="color: #9876AA">unlink</span><span style="color: #007700">(</span><span style="color: #9876AA">$data</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">][</span><span style="color: #DD0000">"filename"</span><span style="color: #007700">]);<br></span><span style="color: #9876AA">unlink</span><span style="color: #007700">(</span><span style="color: #9876AA">$data</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">][</span><span style="color: #DD0000">"filename"</span><span style="color: #007700">]);<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="examplescode"><blockquote style="border:1px gray solid;">BODY<br>To: fred@example.com<br><br>hello, this is some text hello.<br>blah blah blah.<br><br>UUE (test.txt)<br>this is a test</blockquote></div>    </div>   </div>   </div></div>
+*
+ * (PECL mailparse >= 0.9.0)<br/>
+ * Scans the data from the given file pointer and extract each embedded uuencoded file into a temporary file.
+ * @link https://php.net/manual/zh/function.mailparse-uudecode-all.php
+ * @param resource $fp <p>
+ * A valid file pointer.
+ * </p>
+ * @return array <p>
+ * Returns an array of associative arrays listing filename information.
+ * </p>
+ * <table>
+ * <tr valign="top">
+ * <td>filename</td>
+ * <td>Path to the temporary file name created</td>
+ * </tr>
+ * <tr valign="top">
+ * <td>origfilename</td>
+ * <td>The original filename, for uuencoded parts only</td>
+ * </tr>
+ * </table>
+ * <p>
+ * The first filename entry is the message body. The next entries are the decoded uuencoded files.
+ * </p>
+ 
+*/
+function mailparse_uudecode_all($fp) {}
+
+/**
+* <span class="simpara">    </span>
+*/
+define('MAILPARSE_EXTRACT_OUTPUT', 0);
+/**
+* <span class="simpara">    </span>
+*/
+define('MAILPARSE_EXTRACT_STREAM', 1);
+/**
+* <span class="simpara">    </span>
+*/
+define('MAILPARSE_EXTRACT_RETURN', 2);
+
+// End of mailparse v.

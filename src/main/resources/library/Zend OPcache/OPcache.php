@@ -1,0 +1,107 @@
+<?php
+
+use JetBrains\PhpStorm\ArrayShape;
+
+/**
+* <div id="function.opcache-compile-file" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_compile_file</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.5, PHP 7, PHP 8, PECL ZendOpcache &gt; 7.0.2)</p><p class="refpurpose"><span class="refname">opcache_compile_file</span> — <span class="dc-title">无需运行，即可编译并缓存 PHP 脚本</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-compile-file-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_compile_file</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   该函数可以用于在不用运行某个 PHP 脚本的情况下，编译该 PHP 脚本并将其添加到字节码缓存中去。   该函数可用于在 Web 服务器重启之后初始化缓存，以供后续请求调用。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-compile-file-parameters">  <h3 class="title">参数</h3>  <dl>       <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>    <dd>     <p class="para">      被编译的 PHP 脚本的路径。     </p>    </dd>     </dl> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-compile-file-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   如果 <span class="parameter" style="color:#3A95FF">filename</span> 被成功编译，则返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>  或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 errors" id="refsect1-function.opcache-compile-file-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   如果 <span class="parameter" style="color:#3A95FF">filename</span> 不能被载入或者不能被编译，则会生成 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 级别的错误。   可以使用 <a href="https://php.net/manual/zh/language.operators.errorcontrol.php" class="link">@</a> 来抑制该警告。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.opcache-compile-file-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_invalidate()} - 废除脚本缓存</span></li>   </ul>   </div></div>
+*
+ * (PHP 5 &gt;= 5.5.5, PECL ZendOpcache &gt;= 7.0.2 )<br/>
+ * Compiles and caches a PHP script without executing it
+ * @link https://secure.php.net/manual/en/function.opcache-compile-file.php
+ * @param string $filename The path to the PHP script to be compiled.
+ * @return bool
+ * Returns <b>TRUE</b> if the opcode cache for <em>script</em> was
+ * invalidated or if there was nothing to invalidate, or <b>FALSE</b> if the opcode
+ * cache is disabled.
+ * @since 5.5
+ 
+*/
+function opcache_compile_file(string $filename): bool {}
+
+/**
+* <div id="function.opcache-invalidate" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_invalidate</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8, PECL ZendOpcache &gt;= 7.0.0)</p><p class="refpurpose"><span class="refname">opcache_invalidate</span> — <span class="dc-title">废除脚本缓存</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-invalidate-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_invalidate</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span> <span class="parameter" style="color:#3A95FF">$force</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   该函数的作用是使得指定脚本的字节码缓存失效。如果 <span class="parameter" style="color:#3A95FF">force</span> 没有设置或者传入的是   <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>，那么只有当脚本的修改时间比对应字节码的时间更新，脚本的缓存才会失效。此函数仅使内存缓存无效，而不是文件缓存。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-invalidate-parameters">  <h3 class="title">参数</h3>  <dl>       <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>    <dd>     <p class="para">      缓存需要被作废对应的脚本路径     </p>    </dd>          <dt><span class="parameter" style="color:#3A95FF">force</span></dt>    <dd>     <p class="para">      如果该参数设置为<strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>，那么不管是否必要，该脚本的缓存都将被废除。     </p>    </dd>     </dl> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-invalidate-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   如果 <span class="parameter" style="color:#3A95FF">filename</span> 的字节码缓存失效设置成功或者该脚本本来就没有缓存，则返回   <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>；如果字节码缓存被禁用，则返回<strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.opcache-invalidate-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_compile_file()} - 无需运行，即可编译并缓存 PHP 脚本</span></li>    <li><span class="function">{@link opcache_reset()} - 重置字节码缓存的内容</span></li>   </ul>   </div></div>
+*
+ * (PHP 5 &gt;= 5.5.0, PECL ZendOpcache &gt;= 7.0.0 )<br/>
+ * Invalidates a cached script
+ * @link https://secure.php.net/manual/en/function.opcache-invalidate.php
+ * @param string $filename <p>The path to the script being invalidated.</p>
+ * @param bool $force [optional] <p> If set to <b>TRUE</b>, the script will be invalidated regardless of whether invalidation is necessary.</p>
+ * @return bool
+ * Returns <b>TRUE</b> if the opcode cache for <em>script</em> was
+ * invalidated or if there was nothing to invalidate, or <b>FALSE</b> if the opcode
+ * cache is disabled.
+ * @since 5.5
+ 
+*/
+function opcache_invalidate(string $filename, bool $force = false): bool {}
+
+/**
+* <div id="function.opcache-reset" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_reset</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8, PECL ZendOpcache &gt;= 7.0.0)</p><p class="refpurpose"><span class="refname">opcache_reset</span> — <span class="dc-title">重置字节码缓存的内容</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-reset-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_reset</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   该函数将重置整个字节码缓存。在调用 <span class="function"><strong>opcache_reset()</strong></span>   之后，所有的脚本将会重新载入并且在下次命中的时候重新解析。此函数仅重置内存中的缓存，不会重置文件缓存。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-reset-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-reset-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   如果重置字节码缓存成功，则返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>；如果字节码缓存被禁用或等待重启或正在重启（参阅 <span class="function">{@link opcache_get_status()}</span>），则返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.opcache-reset-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_invalidate()} - 废除脚本缓存</span></li>    <li><span class="function">{@link opcache_get_status()} - 获取缓存的状态信息</span></li>   </ul>   </div></div>
+*
+ * (PHP 5 &gt;= 5.5.0, PECL ZendOpcache &gt;= 7.0.0 )<br/>
+ * Resets the contents of the opcode cache
+ * @link https://secure.php.net/manual/en/function.opcache-reset.php
+ * @return bool Returns <b>TRUE</b> if the opcode cache was reset, or <b>FALSE</b> if the opcode cache is disabled.
+ * @since 5.5
+ 
+*/
+function opcache_reset(): bool {}
+
+/**
+ * (PHP 5 &gt;= 5.5.5, PECL ZendOpcache &gt;= 7.0.2 )<br/>
+ * Get status information about the cache
+ * @link https://php.net/manual/en/function.opcache-get-status.php
+ * @param bool $include_scripts <p>Include script specific state information</p>
+ * @return array|false <p>Returns an array of information, optionally containing script specific state information</p>
+ * @since 5.5
+ */
+#[ArrayShape([
+    'opcache_enabled' => 'bool',
+    'file_cache' => 'string',
+    'file_cache_only' => 'bool',
+    'cache_full' => 'bool',
+    'restart_pending' => 'bool',
+    'restart_in_progress' => 'bool',
+    'memory_usage' => 'array',
+    'interned_strings_usage' => 'array',
+    'opcache_statistics' => 'array',
+    'preload_statistics' => 'array',
+    'scripts' => 'array',
+    'jit' => 'array',
+])]
+/**
+* <div id="function.opcache-get-status" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_get_status</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8, PECL ZendOpcache &gt; 7.0.2)</p><p class="refpurpose"><span class="refname">opcache_get_status</span> — <span class="dc-title">获取缓存的状态信息</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-get-status-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_get_status</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span> <span class="parameter" style="color:#3A95FF">$include_scripts</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.singleton.php" class="type false" style="color:#EAB766">false</a></span></span></div>  <p class="para rdfs-comment">   该函数将返回内存中缓存实例的状态信息。不会返回有关文件缓存的任何信息。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-get-status-parameters">  <h3 class="title">参数</h3>  <dl>       <dt><span class="parameter" style="color:#3A95FF">include_scripts</span></dt>    <dd>     <p class="para">      包含脚本的具体声明信息。     </p>    </dd>     </dl> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-get-status-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回可能包含脚本特定状态信息的数组， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 errors" id="refsect1-function.opcache-get-status-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   在启用了 <span class="literal">opcache.restrict_api</span> 的情况下，如果当前路径在禁止规则里，将会出现 E_WARNING ；不会返回任何状态信息。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.opcache-get-status-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>PHP 8.3.0</td>      <td>       <span class="code">opcache_get_status()['scripts'][n]['revalidate']</span> 现在包含 Unix       时间戳，表示下次重新验证脚本时间戳的时间，由       <a href="https://php.net/manual/zh/opcache.configuration.php#ini.opcache.revalidate-freq" class="link"><span class="literal">opcache.revalidate_freq</span></a> INI 指令指定。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.opcache-get-status-examples">  <h3 class="title">示例</h3>  <div class="example" id="example-590">   <p><strong>示例 #1 <span class="function"><strong>opcache_get_status()</strong></span> 示例</strong></p>   <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">opcache_get_status</span><span style="color: #007700">());<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>   </div>   <div class="example-contents"><p>以上示例的输出类似于：</p></div>   <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="examplescode"><blockquote style="border:1px gray solid;">array(9) {<br>  'opcache_enabled' =&gt;<br>  bool(true)<br>  'cache_full' =&gt;<br>  bool(false)<br>  'restart_pending' =&gt;<br>  bool(false)<br>  'restart_in_progress' =&gt;<br>  bool(false)<br>  'memory_usage' =&gt;<br>  array(4) {<br>    'used_memory' =&gt;<br>    int(9167936)<br>    'free_memory' =&gt;<br>    int(125049792)<br>    'wasted_memory' =&gt;<br>    int(0)<br>    'current_wasted_percentage' =&gt;<br>    double(0)<br>  }<br>  'interned_strings_usage' =&gt;<br>  array(4) {<br>    'buffer_size' =&gt;<br>    int(8388608)<br>    'used_memory' =&gt;<br>    int(2593616)<br>    'free_memory' =&gt;<br>    int(5794992)<br>    'number_of_strings' =&gt;<br>    int(10358)<br>  }<br>  'opcache_statistics' =&gt;<br>  array(13) {<br>    'num_cached_scripts' =&gt;<br>    int(0)<br>    'num_cached_keys' =&gt;<br>    int(0)<br>    'max_cached_keys' =&gt;<br>    int(16229)<br>    'hits' =&gt;<br>    int(0)<br>    'start_time' =&gt;<br>    int(1733310010)<br>    'last_restart_time' =&gt;<br>    int(0)<br>    'oom_restarts' =&gt;<br>    int(0)<br>    'hash_restarts' =&gt;<br>    int(0)<br>    'manual_restarts' =&gt;<br>    int(0)<br>    'misses' =&gt;<br>    int(0)<br>    'blacklist_misses' =&gt;<br>    int(0)<br>    'blacklist_miss_ratio' =&gt;<br>    double(0)<br>    'opcache_hit_rate' =&gt;<br>    double(0)<br>  }<br>  'scripts' =&gt;<br>  array(0) {<br>  }<br>  'jit' =&gt;<br>  array(7) {<br>    'enabled' =&gt;<br>    bool(false)<br>    'on' =&gt;<br>    bool(false)<br>    'kind' =&gt;<br>    int(5)<br>    'opt_level' =&gt;<br>    int(4)<br>    'opt_flags' =&gt;<br>    int(6)<br>    'buffer_size' =&gt;<br>    int(0)<br>    'buffer_free' =&gt;<br>    int(0)<br>  }<br>}</blockquote></div>   </div>  </div> </div>  <div class="refsect1 seealso" id="refsect1-function.opcache-get-status-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_get_configuration()} - 获取缓存的配置信息</span></li>   </ul>   </div></div>
+*/
+function opcache_get_status(bool $include_scripts = true): array|false {}
+
+/**
+* <div id="function.opcache-get-configuration" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_get_configuration</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.0, PHP 7, PHP 8, PECL ZendOpcache &gt; 7.0.2)</p><p class="refpurpose"><span class="refname">opcache_get_configuration</span> — <span class="dc-title">获取缓存的配置信息</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-get-configuration-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_get_configuration</strong></span>(): <span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.singleton.php" class="type false" style="color:#EAB766">false</a></span></span></div>  <p class="para rdfs-comment">   该函数将返回缓存实例的配置信息。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-get-configuration-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-get-configuration-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回一个数组，该数组里包含了缓存的初始化信息，黑名单和版本号。  </p> </div> <div class="refsect1 errors" id="refsect1-function.opcache-get-configuration-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   在启用了 <span class="literal">opcache.restrict_api</span> 的情况下，如果当前路径在禁止规则里，将会出现 E_WARNING ；不会返回任何状态信息。  </p> </div>   <div class="refsect1 seealso" id="refsect1-function.opcache-get-configuration-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_get_status()} - 获取缓存的状态信息</span></li>   </ul>   </div></div>
+*
+ * (PHP 5 &gt;= 5.5.5, PECL ZendOpcache &gt;= 7.0.2 )<br/>
+ * Get configuration information about the cache
+ * @link https://php.net/manual/zh/function.opcache-get-configuration.php
+ * @return array|false <p>Returns an array of information, including ini, blacklist and version</p>
+ * @since 5.5
+ 
+#[ArrayShape(["directives" => "array", "version" => "string[]", "blacklist" => "array"])]
+*/
+function opcache_get_configuration(): array|false {}
+
+/**
+* <div id="function.opcache-is-script-cached" class="refentry"> <div class="refnamediv">  <h1 class="refname">opcache_is_script_cached</h1>  <p class="verinfo">(PHP 5 &gt;= 5.5.11, PHP 7, PHP 8, PECL ZendOpcache &gt;= 7.0.4)</p><p class="refpurpose"><span class="refname">opcache_is_script_cached</span> — <span class="dc-title">Tells whether a script is cached in OPCache</span></p> </div> <div class="refsect1 description" id="refsect1-function.opcache-is-script-cached-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>opcache_is_script_cached</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$filename</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   This function checks if a PHP script has been cached in OPCache. This can be   used to more easily detect the "warming" of the cache for a particular script.   This function only checks in-memory cache, not file cache.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.opcache-is-script-cached-parameters">  <h3 class="title">参数</h3>  <dl>       <dt><span class="parameter" style="color:#3A95FF">filename</span></dt>    <dd>     <p class="para">      The path to the PHP script to be checked.     </p>    </dd>     </dl> </div> <div class="refsect1 returnvalues" id="refsect1-function.opcache-is-script-cached-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong> if <span class="parameter" style="color:#3A95FF">filename</span> is cached in OPCache,   <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> otherwise.  </p> </div> <div class="refsect1 seealso" id="refsect1-function.opcache-is-script-cached-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link opcache_compile_file()} - 无需运行，即可编译并缓存 PHP 脚本</span></li>   </ul>   </div></div>
+*
+ * (PHP 5 &gt;= 5.6, PECL ZendOpcache &gt;= 7.0.4 )<br/>
+ * This function checks if a PHP script has been cached in OPCache.
+ * This can be used to more easily detect the "warming" of the cache for a particular script.
+ * @link https://secure.php.net/manual/en/function.opcache-is-script-cached.php
+ * @param string $filename The path to the PHP script to be checked.
+ * @return bool Returns TRUE if file is cached in OPCache, FALSE otherwise.
+ * @since 5.6
+ 
+*/
+function opcache_is_script_cached(string $filename): bool {}
+
+/**
+ * @since 8.4
+ */
+function opcache_jit_blacklist(Closure $closure): void {}
