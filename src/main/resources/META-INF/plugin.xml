@@ -13,11 +13,15 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description><![CDATA[
+    <description>
+        Hi,<![CDATA[
+      <p>A quick reference manual for PHP built-in functions in Chinese, built on the <a href="https://github.com/Hyouka0510/phpstorm-stubs-chinese">phpstorm-stubs-chinese</a> project</p>
+      <p>While coding, press the default shortcut Ctrl+Q to instantly view Chinese annotations.</p>
       <p><a href="https://github.com/Hyouka0510/php-chinese-manual-plugin">GitHub</a></p>
       <p>基于<a href="https://github.com/Hyouka0510/phpstorm-stubs-chinese">phpstorm-stubs-chinese</a>项目构建的PHP基本函数中文速查手册</p>
       <p>代码编写时，使用默认快捷键Ctrl+Q即可快速查阅中文注释。</p>
-  ]]></description>
+        ]]>
+    </description>
     <idea-version since-build="203"/>
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
