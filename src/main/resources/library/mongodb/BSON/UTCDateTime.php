@@ -19,6 +19,7 @@ final class UTCDateTime implements UTCDateTimeInterface, JsonSerializable, Type,
      */
     final public function __construct(int|DateTimeInterface|Int64|null $milliseconds = null) {}
 
+
     public static function __set_state(array $properties): self {}
 
     /**

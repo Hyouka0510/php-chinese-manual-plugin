@@ -5,6 +5,7 @@ namespace RdKafka;
 use RdKafka\Metadata\Collection;
 use RdKafka\Metadata\Topic;
 
+
 class Metadata
 {
     /**

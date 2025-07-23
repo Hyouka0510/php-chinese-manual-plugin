@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace SimpleKafkaClient;
 
+
 class Configuration
 {
+
     public function __construct() {}
 
     /**

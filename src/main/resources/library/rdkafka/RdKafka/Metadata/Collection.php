@@ -2,6 +2,7 @@
 
 namespace RdKafka\Metadata;
 
+
 class Collection implements \Iterator, \Countable
 {
     /**

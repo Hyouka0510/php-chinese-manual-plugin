@@ -310,6 +310,7 @@ function xdebug_dump_superglobals() {}
  */
 function xdebug_get_headers(): array {}
 
+
 function xdebug_get_formatted_function_stack() {}
 
 /**
@@ -358,27 +359,49 @@ function xdebug_get_gc_total_collected_roots(): int {}
  */
 function xdebug_set_filter(int $group, int $listType, array $configuration) {}
 
+
 function xdebug_connect_to_client(): bool {}
+
 
 function xdebug_notify(mixed $data): bool {}
 
+
 define('XDEBUG_STACK_NO_DESC', 1);
+
 define('XDEBUG_TRACE_APPEND', 1);
+
 define('XDEBUG_TRACE_COMPUTERIZED', 2);
+
 define('XDEBUG_TRACE_HTML', 4);
+
 define('XDEBUG_TRACE_NAKED_FILENAME', 8);
+
 define('XDEBUG_CC_UNUSED', 1);
+
 define('XDEBUG_CC_DEAD_CODE', 2);
+
 define('XDEBUG_CC_BRANCH_CHECK', 4);
+
 define('XDEBUG_FILTER_TRACING', 768);
+
 define('XDEBUG_FILTER_STACK', 512);
+
 define('XDEBUG_FILTER_CODE_COVERAGE', 256);
+
 define('XDEBUG_FILTER_NONE', 0);
+
 define('XDEBUG_PATH_WHITELIST', 1);
+
 define('XDEBUG_PATH_BLACKLIST', 2);
+
 define('XDEBUG_NAMESPACE_WHITELIST', 17);
+
 define('XDEBUG_NAMESPACE_BLACKLIST', 18);
+
 define('XDEBUG_NAMESPACE_EXCLUDE', 18);
+
 define('XDEBUG_NAMESPACE_INCLUDE', 17);
+
 define('XDEBUG_PATH_EXCLUDE', 2);
+
 define('XDEBUG_PATH_INCLUDE', 1);

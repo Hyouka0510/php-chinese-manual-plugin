@@ -2,8 +2,10 @@
 
 namespace RdKafka;
 
+
 class Queue
 {
+
     private function __construct() {}
 
     /**

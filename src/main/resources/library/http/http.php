@@ -4,22 +4,36 @@
 
 use JetBrains\PhpStorm\Pure;
 
+
 class HttpException extends Exception
 {
     public $innerException;
 }
+
 class HttpRuntimeException extends HttpException {}
+
 class HttpInvalidParamException extends HttpException {}
+
 class HttpHeaderException extends HttpException {}
+
 class HttpMalformedHeadersException extends HttpException {}
+
 class HttpRequestMethodException extends HttpException {}
+
 class HttpMessageTypeException extends HttpException {}
+
 class HttpEncodingException extends HttpException {}
+
 class HttpRequestException extends HttpException {}
+
 class HttpRequestPoolException extends HttpException {}
+
 class HttpSocketException extends HttpException {}
+
 class HttpResponseException extends HttpException {}
+
 class HttpUrlException extends HttpException {}
+
 class HttpQueryStringException extends HttpException {}
 
 /**
@@ -448,7 +462,9 @@ class HttpMessage implements Countable, Serializable, Iterator
      */
     public function toMessageTypeObject() {}
 
+
     public function count() {}
+
 
     public function serialize() {}
 
@@ -457,13 +473,18 @@ class HttpMessage implements Countable, Serializable, Iterator
      */
     public function unserialize($serialized) {}
 
+
     public function rewind() {}
+
 
     public function valid() {}
 
+
     public function current() {}
 
+
     public function key() {}
+
 
     public function next() {}
 
@@ -1010,6 +1031,7 @@ class HttpRequest
      */
     public function resetCookies($session_only = null) {}
 
+
     public function flushCookies() {}
 
     /**
@@ -1504,6 +1526,7 @@ class HttpRequest
     public static function encodeBody($fields, $files) {}
 }
 
+
 class HttpRequestDataShare implements Countable
 {
     private static $instance;
@@ -1512,7 +1535,9 @@ class HttpRequestDataShare implements Countable
     public $ssl;
     public $connect;
 
+
     public function __destruct() {}
+
 
     public function count() {}
 
@@ -1525,6 +1550,7 @@ class HttpRequestDataShare implements Countable
      * @param HttpRequest $request
      */
     public function detach(HttpRequest $request) {}
+
 
     public function reset() {}
 
@@ -1617,15 +1643,21 @@ class HttpRequestPool implements Countable, Iterator
      */
     protected function socketSelect() {}
 
+
     public function valid() {}
+
 
     public function current() {}
 
+
     public function key() {}
+
 
     public function next() {}
 
+
     public function rewind() {}
+
 
     public function count() {}
 
@@ -2033,6 +2065,7 @@ class HttpResponse
      */
     public static function getRequestBodyStream() {}
 }
+
 
 class HttpUtil
 {
@@ -2855,16 +2888,27 @@ define('HTTP_COOKIE_SECURE', 16);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_COOKIE_HTTPONLY', 32);
+
 define('HTTP_DEFLATE_LEVEL_DEF', 0);
+
 define('HTTP_DEFLATE_LEVEL_MIN', 1);
+
 define('HTTP_DEFLATE_LEVEL_MAX', 9);
+
 define('HTTP_DEFLATE_TYPE_ZLIB', 0);
+
 define('HTTP_DEFLATE_TYPE_GZIP', 16);
+
 define('HTTP_DEFLATE_TYPE_RAW', 32);
+
 define('HTTP_DEFLATE_STRATEGY_DEF', 0);
+
 define('HTTP_DEFLATE_STRATEGY_FILT', 256);
+
 define('HTTP_DEFLATE_STRATEGY_HUFF', 512);
+
 define('HTTP_DEFLATE_STRATEGY_RLE', 768);
+
 define('HTTP_DEFLATE_STRATEGY_FIXED', 1024);
 
 /**
@@ -2914,6 +2958,7 @@ define('HTTP_AUTH_GSSNEG', 4);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_AUTH_ANY', -1);
+
 define('HTTP_VERSION_NONE', 0);
 
 /**
@@ -2993,32 +3038,59 @@ define('HTTP_PROXY_SOCKS5', 5);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_PROXY_HTTP', 0);
+
 define('HTTP_METH_GET', 1);
+
 define('HTTP_METH_HEAD', 2);
+
 define('HTTP_METH_POST', 3);
+
 define('HTTP_METH_PUT', 4);
+
 define('HTTP_METH_DELETE', 5);
+
 define('HTTP_METH_OPTIONS', 6);
+
 define('HTTP_METH_TRACE', 7);
+
 define('HTTP_METH_CONNECT', 8);
+
 define('HTTP_METH_PROPFIND', 9);
+
 define('HTTP_METH_PROPPATCH', 10);
+
 define('HTTP_METH_MKCOL', 11);
+
 define('HTTP_METH_COPY', 12);
+
 define('HTTP_METH_MOVE', 13);
+
 define('HTTP_METH_LOCK', 14);
+
 define('HTTP_METH_UNLOCK', 15);
+
 define('HTTP_METH_VERSION_CONTROL', 16);
+
 define('HTTP_METH_REPORT', 17);
+
 define('HTTP_METH_CHECKOUT', 18);
+
 define('HTTP_METH_CHECKIN', 19);
+
 define('HTTP_METH_UNCHECKOUT', 20);
+
 define('HTTP_METH_MKWORKSPACE', 21);
+
 define('HTTP_METH_UPDATE', 22);
+
 define('HTTP_METH_LABEL', 23);
+
 define('HTTP_METH_MERGE', 24);
+
 define('HTTP_METH_BASELINE_CONTROL', 25);
+
 define('HTTP_METH_MKACTIVITY', 26);
+
 define('HTTP_METH_ACL', 27);
 
 /**
@@ -3093,6 +3165,7 @@ define('HTTP_SUPPORT_ENCODINGS', 8);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_SUPPORT_SSLREQUESTS', 32);
+
 define('HTTP_SUPPORT_EVENTS', 128);
 
 /**
@@ -3184,6 +3257,7 @@ define('HTTP_URL_STRIP_FRAGMENT', 256);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_URL_STRIP_ALL', 492);
+
 define('HTTP_URL_FROM_ENV', 4096);
 
 /**
@@ -3281,9 +3355,15 @@ define('HTTP_MSG_REQUEST', 1);
  * @link https://php.net/manual/en/http.constants.php
  */
 define('HTTP_MSG_RESPONSE', 2);
+
 define('HTTP_QUERYSTRING_TYPE_BOOL', 3);
+
 define('HTTP_QUERYSTRING_TYPE_INT', 1);
+
 define('HTTP_QUERYSTRING_TYPE_FLOAT', 2);
+
 define('HTTP_QUERYSTRING_TYPE_STRING', 6);
+
 define('HTTP_QUERYSTRING_TYPE_ARRAY', 4);
+
 define('HTTP_QUERYSTRING_TYPE_OBJECT', 5);

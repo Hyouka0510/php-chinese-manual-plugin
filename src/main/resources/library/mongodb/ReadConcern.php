@@ -35,6 +35,7 @@ final class ReadConcern implements Serializable
      */
     final public function __construct(?string $level = null) {}
 
+
     public static function __set_state(array $properties) {}
 
     /**

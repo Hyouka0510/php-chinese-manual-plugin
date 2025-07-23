@@ -12,10 +12,13 @@ use StubTests\Model\StubProblemType;
 use StubTests\TestData\Providers\EntitiesFilter;
 use StubTests\TestData\Providers\ReflectionStubsSingleton;
 
+
 class ReflectionConstantsProvider
 {
+
     public static function constantProvider(): ?Generator
     {
+
         $filteredConstants = EntitiesFilter::getFiltered(ReflectionStubsSingleton::getReflectionStubs()->getConstants());
         if (empty($filteredConstants)) {
             yield [null];
@@ -26,8 +29,10 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function constantValuesProvider(): ?Generator
     {
+
         $filteredConstants = self::getFilteredConstants();
         if (empty($filteredConstants)) {
             yield [null];
@@ -38,10 +43,14 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function classConstantProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filteredClasses = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(fn (PHPClass $class) => EntitiesFilter::getFiltered($class->constants), $filteredClasses), fn ($arr) => !empty($arr));
         if (empty($array)) {
             yield [null, null];
@@ -54,10 +63,14 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function interfaceConstantProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filteredClasses = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(fn (PHPInterface $class) => EntitiesFilter::getFiltered($class->constants), $filteredClasses), fn ($arr) => !empty($arr));
         if (empty($array)) {
             yield [null, null];
@@ -70,10 +83,14 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function enumConstantProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filteredClasses = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(fn (PHPEnum $class) => EntitiesFilter::getFiltered($class->constants), $filteredClasses), fn ($arr) => !empty($arr));
         if (empty($array)) {
             yield [null, null];
@@ -86,10 +103,14 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function enumCaseProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filteredClasses = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(fn (PHPEnum $class) => EntitiesFilter::getFiltered($class->enumCases), $filteredClasses), fn ($arr) => !empty($arr));
         if (empty($array)) {
             yield [null, null];
@@ -102,8 +123,10 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function classConstantValuesProvider(): ?Generator
     {
+
         $classesAndInterfaces = ReflectionStubsSingleton::getReflectionStubs()->getClasses() +
             ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
         foreach (EntitiesFilter::getFiltered($classesAndInterfaces) as $class) {
@@ -113,16 +136,20 @@ class ReflectionConstantsProvider
         }
     }
 
+
     public static function getFilteredConstants(PHPInterface|PHPClass|null $class = null): array
     {
         if ($class === null) {
+
             $allConstants = ReflectionStubsSingleton::getReflectionStubs()->getConstants();
         } else {
+
             $allConstants = $class->constants;
         }
         /** @var PHPConstant[] $resultArray */
         $resultArray = [];
         foreach (EntitiesFilter::getFiltered($allConstants, null, StubProblemType::WRONG_CONSTANT_VALUE) as $constant) {
+
             $resultArray[] = $constant;
         }
         return $resultArray;

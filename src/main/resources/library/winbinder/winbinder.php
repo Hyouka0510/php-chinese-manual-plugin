@@ -8,162 +8,314 @@
  * Begin constants.
  */
 define('AppWindow', 1); // A fixed-size application window.
+
 define('ModalDialog', 2); // A modal dialog box (requires to be closed before continuing to other tasks).
+
 define('ModelessDialog', 3); // A modeless dialog box (other tasks can be performed while it is open).
+
 define('NakedWindow', 4); // A fixed-size application window with no border and no title bar.
+
 define('PopupWindow', 5); // A fixed-size application window that cannot be minimized.
+
 define('ResizableWindow', 6); // A normal application window with a resizable border.
+
 define('ToolDialog', 7); // A modeless dialog box with a small caption.
+
 define('Accel', 8);
+
 define('Calendar', 9);
+
 define('CheckBox', 10);
+
 define('ComboBox', 11);
+
 define('EditBox', 12);
+
 define('Frame', 13);
+
 define('Gauge', 14);
+
 define('HTMLControl', 15);
+
 define('HyperLink', 16);
+
 define('ImageButton', 17);
+
 define('InvisibleArea', 18);
+
 define('Label', 19);
+
 define('ListBox', 20);
+
 define('ListView', 21);
+
 define('Menu', 22);
+
 define('PushButton', 23);
+
 define('RTFEditBox', 24);
+
 define('RadioButton', 25);
+
 define('ScrollBar', 26);
+
 define('Slider', 27);
+
 define('Spinner', 28);
+
 define('StatusBar', 29);
+
 define('TabControl', 30);
+
 define('ToolBar', 31);
+
 define('TreeView', 32);
+
 define('Timer', Timer); // Doesnt really exist - Added for IDE help
 //define('PopupMenu', PopupMenu); // Doesnt really exist - Added for IDE help
+
 define('WBC_VERSION', '2010.10.14');
+
 define('WBC_BORDER', 8);
+
 define('WBC_BOTTOM', 8192);
+
 define('WBC_CENTER', 2048);
+
 define('WBC_CHECKBOXES', 65536);
+
 define('WBC_CUSTOMDRAW', 268435456);
+
 define('WBC_DEFAULTPOS', -2147483648);
+
 define('WBC_DISABLED', 2);
+
 define('WBC_ELLIPSIS', 131072);
+
 define('WBC_ENABLED', 0);
+
 define('WBC_GROUP', 524288);
+
 define('WBC_IMAGE', 4);
+
 define('WBC_INVISIBLE', 1);
+
 define('WBC_LEFT', 0);
+
 define('WBC_LINES', 128);
+
 define('WBC_MASKED', 256);
+
 define('WBC_MIDDLE', 0);
+
 define('WBC_MULTILINE', 128);
+
 define('WBC_NOTIFY', 16);
+
 define('WBC_NUMBER', 1024);
+
 define('WBC_READONLY', 64);
+
 define('WBC_RIGHT', 32);
+
 define('WBC_SINGLE', 1048576);
+
 define('WBC_SORT', 262144);
+
 define('WBC_TASKBAR', 512);
+
 define('WBC_AUTOREPEAT', 512);
+
 define('WBC_TOP', 4096);
+
 define('WBC_VISIBLE', 0);
+
 define('WBC_TRANSPARENT', 536870912);
+
 define('WBC_DEFAULT', 8);
+
 define('WBC_MULTISELECT', 1073741824);
+
 define('WBC_NOHEADER', 268435456);
+
 define('WBC_DBLCLICK', 64);
+
 define('WBC_MOUSEMOVE', 128);
+
 define('WBC_MOUSEDOWN', 256);
+
 define('WBC_MOUSEUP', 512);
+
 define('WBC_KEYDOWN', 1024);
+
 define('WBC_KEYUP', 2048);
+
 define('WBC_GETFOCUS', 4096);
+
 define('WBC_RESIZE', 8192);
+
 define('WBC_REDRAW', 16384);
+
 define('WBC_HEADERSEL', 32768);
+
 define('WBC_ALT', 32);
+
 define('WBC_CONTROL', 8);
+
 define('WBC_SHIFT', 4);
+
 define('WBC_LBUTTON', 1);
+
 define('WBC_MBUTTON', 16);
+
 define('WBC_RBUTTON', 2);
+
 define('WBC_BEEP', -1);
+
 define('WBC_INFO', 64);
+
 define('WBC_OK', 0);
+
 define('WBC_OKCANCEL', 33);
+
 define('WBC_QUESTION', 32);
+
 define('WBC_STOP', 16);
+
 define('WBC_WARNING', 48);
+
 define('WBC_YESNO', 36);
+
 define('WBC_YESNOCANCEL', 35);
+
 define('WBC_MAXIMIZED', 2);
+
 define('WBC_MINIMIZED', 1);
+
 define('WBC_NORMAL', 0);
+
 define('WBC_MINSIZE', 2);
+
 define('WBC_MAXSIZE', 3);
+
 define('WBC_TITLE', 1);
+
 
 define('WBC_RTF_TEXT', 1);
 
+
 define('IDABORT', 3);
+
 define('IDCANCEL', 2);
+
 define('IDCLOSE', 8);
+
 define('IDDEFAULT', 0);
+
 define('IDHELP', 9);
+
 define('IDIGNORE', 5);
+
 define('IDNO', 7);
+
 define('IDOK', 1);
+
 define('IDRETRY', 4);
+
 define('IDYES', 6);
+
 define('FTA_BOLD', 1);
+
 define('FTA_ITALIC', 2);
+
 define('FTA_NORMAL', 0);
+
 define('FTA_REGULAR', 0);
+
 define('FTA_STRIKEOUT', 8);
+
 define('FTA_UNDERLINE', 4);
+
 define('BLACK', 0);
+
 define('BLUE', 16711680);
+
 define('CYAN', 16776960);
+
 define('DARKBLUE', 8388608);
+
 define('DARKCYAN', 8421376);
+
 define('DARKGRAY', 8421504);
+
 define('DARKGREEN', 32768);
+
 define('DARKMAGENTA', 8388736);
+
 define('DARKRED', 128);
+
 define('DARKYELLOW', 32896);
+
 define('GREEN', 65280);
+
 define('LIGHTGRAY', 12632256);
+
 define('MAGENTA', 16711935);
+
 define('RED', 255);
+
 define('WHITE', 16777215);
+
 define('YELLOW', 65535);
+
 define('NOCOLOR', -1);
+
 define('bgrBLACK', 0);
+
 define('bgrBLUE', 255);
+
 define('bgrCYAN', 65535);
+
 define('bgrDARKBLUE', 128);
+
 define('bgrDARKCYAN', 32896);
+
 define('bgrDARKGRAY', 8421504);
+
 define('bgrDARKGREEN', 32768);
+
 define('bgrDARKMAGENTA', 8388736);
+
 define('bgrDARKRED', 8388608);
+
 define('bgrDARKYELLOW', 8421376);
+
 define('bgrGREEN', 65280);
+
 define('bgrLIGHTGRAY', 12632256);
+
 define('bgrMAGENTA', 16711935);
+
 define('bgrRED', 16711680);
+
 define('bgrWHITE', 16777215);
+
 define('bgrYELLOW', 16776960);
+
 define('bgrNOCOLOR', -1);
 
 // New @Wagy constants
+
 define('WBC_LV_NONE', 0);
+
 define('WBC_LV_FORE', 1);
+
 define('WBC_LV_BACK', 2);
+
 define('WBC_LV_DEFAULT', 0);
+
 define('WBC_LV_DRAW', 1);
+
 define('WBC_LV_COLUMNS', 2);
 
 /**

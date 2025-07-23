@@ -47,6 +47,7 @@ final class Session
      */
     final private function __construct() {}
 
+
     final public function __wakeup() {}
 
     /**

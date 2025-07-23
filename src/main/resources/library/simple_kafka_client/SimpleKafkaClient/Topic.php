@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace SimpleKafkaClient;
 
+
 abstract class Topic
 {
     /**
@@ -11,13 +12,17 @@ abstract class Topic
     public function getName(): string {}
 }
 
+
 class ConsumerTopic extends Topic
 {
+
     private function __construct() {}
 }
 
+
 class ProducerTopic extends Topic
 {
+
     private function __construct() {}
 
     /**

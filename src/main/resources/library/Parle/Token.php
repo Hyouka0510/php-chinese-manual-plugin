@@ -2,6 +2,7 @@
 
 namespace Parle;
 
+
 class Token
 {
     /* Constants */

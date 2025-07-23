@@ -6,6 +6,7 @@ use RdKafka\Topic;
 use RdKafka\TopicConf;
 use RdKafka\TopicPartition;
 
+
 abstract class RdKafka
 {
     /**
@@ -85,9 +86,12 @@ abstract class RdKafka
      */
     public function flush($timeout_ms) {}
 
+
     public function metadata($all_topics, $only_topic = false, $timeout_ms = 0) {}
 
+
     public function setLogger($logger) {}
+
 
     public function outqLen() {}
 }

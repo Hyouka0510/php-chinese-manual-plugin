@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole;
 
+
 class Lock
 {
     public const FILELOCK = 2;
@@ -12,6 +13,7 @@ class Lock
     public const RWLOCK = 1;
     public const SPINLOCK = 5;
     public $errCode = 0;
+
 
     public function __construct(int $type = self::MUTEX, string $filename = '') {}
 
@@ -44,6 +46,7 @@ class Lock
      * @return bool
      */
     public function unlock() {}
+
 
     public function destroy() {}
 }

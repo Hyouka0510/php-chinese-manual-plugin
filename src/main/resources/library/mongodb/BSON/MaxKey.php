@@ -11,6 +11,7 @@ use MongoDB\Driver\Exception\InvalidArgumentException;
  */
 final class MaxKey implements Type, MaxKeyInterface, JsonSerializable
 {
+
     public static function __set_state(array $properties): self {}
 
     /**

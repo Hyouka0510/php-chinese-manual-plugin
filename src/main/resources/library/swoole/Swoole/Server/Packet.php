@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Server;
 
+
 class Packet
 {
     public $server_socket = 0;

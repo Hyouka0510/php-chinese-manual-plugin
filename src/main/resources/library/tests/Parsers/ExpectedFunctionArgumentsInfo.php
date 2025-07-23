@@ -6,6 +6,7 @@ namespace StubTests\Parsers;
 use JetBrains\PhpStorm\Pure;
 use PhpParser\Node\Expr;
 
+
 class ExpectedFunctionArgumentsInfo
 {
     /**
@@ -16,13 +17,16 @@ class ExpectedFunctionArgumentsInfo
      */
     public function __construct(private ?Expr $functionReference, private array $expectedArguments, private readonly int $index) {}
 
+
     public function getFunctionReference(): ?Expr
     {
         return $this->functionReference;
     }
 
+
     public function setFunctionReference(Expr $functionReference): void
     {
+
         $this->functionReference = $functionReference;
     }
 
@@ -39,8 +43,10 @@ class ExpectedFunctionArgumentsInfo
      */
     public function setExpectedArguments(array $expectedArguments): void
     {
+
         $this->expectedArguments = $expectedArguments;
     }
+
 
     public function getIndex(): int
     {

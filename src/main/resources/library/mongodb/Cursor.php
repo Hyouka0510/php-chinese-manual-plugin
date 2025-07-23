@@ -18,6 +18,7 @@ final class Cursor implements CursorInterface
      */
     final private function __construct() {}
 
+
     final public function __wakeup() {}
 
     /**

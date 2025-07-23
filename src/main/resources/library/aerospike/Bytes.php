@@ -51,6 +51,7 @@ class Bytes implements \Serializable
      * @param string $bin_str a PHP binary-string such as gzdeflate() produces.
      */
     public function __construct($bin_str) {
+
         $this->s = $bin_str;
     }
 

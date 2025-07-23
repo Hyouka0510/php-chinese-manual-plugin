@@ -17,6 +17,7 @@ use Stringable;
 #[Deprecated]
 final class DBPointer implements Type, JsonSerializable, Stringable
 {
+
     final private function __construct() {}
 
     /**

@@ -109,13 +109,16 @@ namespace PHPSTORM_META {
   override(\simplexml_load_string(1), map(["" => "$1"]));
   override(\simplexml_import_dom(1), map(["" => "$1"]));
 
+
     function expectedArguments($functionReference, $argumentIndex, ...$values) {
         return "expectedArguments " . $functionReference . "at " . $argumentIndex . ": " . $values;
     }
 
+
     function registerArgumentsSet($setName, ...$values) {
         return "registerArgumentsSet " . $setName . ": "  . $values;
     }
+
 
     function argumentsSet($setName) {
         return "argumentsSet " . $setName;
@@ -598,6 +601,7 @@ namespace PHPSTORM_META {
 
     expectedArguments(\SolrClient::setServlet(), 0, \SolrClient::SEARCH_SERVLET_TYPE, \SolrClient::UPDATE_SERVLET_TYPE, \SolrClient::THREADS_SERVLET_TYPE, \SolrClient::PING_SERVLET_TYPE, \SolrClient::TERMS_SERVLET_TYPE);
     expectedArguments(\stream_socket_shutdown(), 1, STREAM_SHUT_RD, STREAM_SHUT_WR, STREAM_SHUT_RDWR);
+
 
     function expectedReturnValues($functionReference, $values) {
         return "expectedReturnValues " . $functionReference . ": " . $values;

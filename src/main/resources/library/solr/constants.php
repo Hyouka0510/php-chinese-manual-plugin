@@ -14,18 +14,18 @@
  */
 
 /**
-* <span class="simpara">     </span>
-*/
+ * <span class="simpara">     </span>
+ */
 define('SOLR_MAJOR_VERSION', 2);
 /**
-* <span class="simpara">     </span>
-*/
+ * <span class="simpara">     </span>
+ */
 define('SOLR_MINOR_VERSION', 4);
 /**
-* <span class="simpara">     </span>
-*/
+ * <span class="simpara">     </span>
+ */
 define('SOLR_PATCH_VERSION', 0);
 /**
-* <span class="simpara">     </span>
-*/
+ * <span class="simpara">     </span>
+ */
 define('SOLR_EXTENSION_VERSION', '2.4.0');

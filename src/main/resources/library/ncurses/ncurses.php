@@ -1579,151 +1579,297 @@ function ncurses_del_panel($panel) {}
  */
 function ncurses_new_panel($window) {}
 
+
 define('NCURSES_COLOR_BLACK', 0);
+
 define('NCURSES_COLOR_RED', 1);
+
 define('NCURSES_COLOR_GREEN', 2);
+
 define('NCURSES_COLOR_YELLOW', 3);
+
 define('NCURSES_COLOR_BLUE', 4);
+
 define('NCURSES_COLOR_MAGENTA', 5);
+
 define('NCURSES_COLOR_CYAN', 6);
+
 define('NCURSES_COLOR_WHITE', 7);
+
 define('NCURSES_KEY_DOWN', 258);
+
 define('NCURSES_KEY_UP', 259);
+
 define('NCURSES_KEY_LEFT', 260);
+
 define('NCURSES_KEY_RIGHT', 261);
+
 define('NCURSES_KEY_HOME', 262);
+
 define('NCURSES_KEY_END', 360);
+
 define('NCURSES_KEY_BACKSPACE', 263);
+
 define('NCURSES_KEY_MOUSE', 409);
+
 define('NCURSES_KEY_F0', 264);
+
 define('NCURSES_KEY_F1', 265);
+
 define('NCURSES_KEY_F2', 266);
+
 define('NCURSES_KEY_F3', 267);
+
 define('NCURSES_KEY_F4', 268);
+
 define('NCURSES_KEY_F5', 269);
+
 define('NCURSES_KEY_F6', 270);
+
 define('NCURSES_KEY_F7', 271);
+
 define('NCURSES_KEY_F8', 272);
+
 define('NCURSES_KEY_F9', 273);
+
 define('NCURSES_KEY_F10', 274);
+
 define('NCURSES_KEY_F11', 275);
+
 define('NCURSES_KEY_F12', 276);
+
 define('NCURSES_KEY_DL', 328);
+
 define('NCURSES_KEY_IL', 329);
+
 define('NCURSES_KEY_DC', 330);
+
 define('NCURSES_KEY_IC', 331);
+
 define('NCURSES_KEY_EIC', 332);
+
 define('NCURSES_KEY_CLEAR', 333);
+
 define('NCURSES_KEY_EOS', 334);
+
 define('NCURSES_KEY_EOL', 335);
+
 define('NCURSES_KEY_SF', 336);
+
 define('NCURSES_KEY_SR', 337);
+
 define('NCURSES_KEY_NPAGE', 338);
+
 define('NCURSES_KEY_PPAGE', 339);
+
 define('NCURSES_KEY_STAB', 340);
+
 define('NCURSES_KEY_CTAB', 341);
+
 define('NCURSES_KEY_CATAB', 342);
+
 define('NCURSES_KEY_ENTER', 343);
+
 define('NCURSES_KEY_SRESET', 344);
+
 define('NCURSES_KEY_RESET', 345);
+
 define('NCURSES_KEY_PRINT', 346);
+
 define('NCURSES_KEY_LL', 347);
+
 define('NCURSES_KEY_A1', 348);
+
 define('NCURSES_KEY_A3', 349);
+
 define('NCURSES_KEY_B2', 350);
+
 define('NCURSES_KEY_C1', 351);
+
 define('NCURSES_KEY_C3', 352);
+
 define('NCURSES_KEY_BTAB', 353);
+
 define('NCURSES_KEY_BEG', 354);
+
 define('NCURSES_KEY_CANCEL', 355);
+
 define('NCURSES_KEY_CLOSE', 356);
+
 define('NCURSES_KEY_COMMAND', 357);
+
 define('NCURSES_KEY_COPY', 358);
+
 define('NCURSES_KEY_CREATE', 359);
+
 define('NCURSES_KEY_EXIT', 361);
+
 define('NCURSES_KEY_FIND', 362);
+
 define('NCURSES_KEY_HELP', 363);
+
 define('NCURSES_KEY_MARK', 364);
+
 define('NCURSES_KEY_MESSAGE', 365);
+
 define('NCURSES_KEY_MOVE', 366);
+
 define('NCURSES_KEY_NEXT', 367);
+
 define('NCURSES_KEY_OPEN', 368);
+
 define('NCURSES_KEY_OPTIONS', 369);
+
 define('NCURSES_KEY_PREVIOUS', 370);
+
 define('NCURSES_KEY_REDO', 371);
+
 define('NCURSES_KEY_REFERENCE', 372);
+
 define('NCURSES_KEY_REFRESH', 373);
+
 define('NCURSES_KEY_REPLACE', 374);
+
 define('NCURSES_KEY_RESTART', 375);
+
 define('NCURSES_KEY_RESUME', 376);
+
 define('NCURSES_KEY_SAVE', 377);
+
 define('NCURSES_KEY_SBEG', 378);
+
 define('NCURSES_KEY_SCANCEL', 379);
+
 define('NCURSES_KEY_SCOMMAND', 380);
+
 define('NCURSES_KEY_SCOPY', 381);
+
 define('NCURSES_KEY_SCREATE', 382);
+
 define('NCURSES_KEY_SDC', 383);
+
 define('NCURSES_KEY_SDL', 384);
+
 define('NCURSES_KEY_SELECT', 385);
+
 define('NCURSES_KEY_SEND', 386);
+
 define('NCURSES_KEY_SEOL', 387);
+
 define('NCURSES_KEY_SEXIT', 388);
+
 define('NCURSES_KEY_SFIND', 389);
+
 define('NCURSES_KEY_SHELP', 390);
+
 define('NCURSES_KEY_SHOME', 391);
+
 define('NCURSES_KEY_SIC', 392);
+
 define('NCURSES_KEY_SLEFT', 393);
+
 define('NCURSES_KEY_SMESSAGE', 394);
+
 define('NCURSES_KEY_SMOVE', 395);
+
 define('NCURSES_KEY_SNEXT', 396);
+
 define('NCURSES_KEY_SOPTIONS', 397);
+
 define('NCURSES_KEY_SPREVIOUS', 398);
+
 define('NCURSES_KEY_SPRINT', 399);
+
 define('NCURSES_KEY_SREDO', 400);
+
 define('NCURSES_KEY_SREPLACE', 401);
+
 define('NCURSES_KEY_SRIGHT', 402);
+
 define('NCURSES_KEY_SRSUME', 403);
+
 define('NCURSES_KEY_SSAVE', 404);
+
 define('NCURSES_KEY_SSUSPEND', 405);
+
 define('NCURSES_KEY_SUNDO', 406);
+
 define('NCURSES_KEY_SUSPEND', 407);
+
 define('NCURSES_KEY_UNDO', 408);
+
 define('NCURSES_KEY_RESIZE', 410);
+
 define('NCURSES_A_NORMAL', 0);
+
 define('NCURSES_A_STANDOUT', 65536);
+
 define('NCURSES_A_UNDERLINE', 131072);
+
 define('NCURSES_A_REVERSE', 262144);
+
 define('NCURSES_A_BLINK', 524288);
+
 define('NCURSES_A_DIM', 1048576);
+
 define('NCURSES_A_BOLD', 2097152);
+
 define('NCURSES_A_PROTECT', 16777216);
+
 define('NCURSES_A_INVIS', 8388608);
+
 define('NCURSES_A_ALTCHARSET', 4194304);
+
 define('NCURSES_A_CHARTEXT', 255);
+
 define('NCURSES_BUTTON1_PRESSED', 2);
+
 define('NCURSES_BUTTON1_RELEASED', 1);
+
 define('NCURSES_BUTTON1_CLICKED', 4);
+
 define('NCURSES_BUTTON1_DOUBLE_CLICKED', 8);
+
 define('NCURSES_BUTTON1_TRIPLE_CLICKED', 16);
+
 define('NCURSES_BUTTON2_PRESSED', 128);
+
 define('NCURSES_BUTTON2_RELEASED', 64);
+
 define('NCURSES_BUTTON2_CLICKED', 256);
+
 define('NCURSES_BUTTON2_DOUBLE_CLICKED', 512);
+
 define('NCURSES_BUTTON2_TRIPLE_CLICKED', 1024);
+
 define('NCURSES_BUTTON3_PRESSED', 8192);
+
 define('NCURSES_BUTTON3_RELEASED', 4096);
+
 define('NCURSES_BUTTON3_CLICKED', 16384);
+
 define('NCURSES_BUTTON3_DOUBLE_CLICKED', 32768);
+
 define('NCURSES_BUTTON3_TRIPLE_CLICKED', 65536);
+
 define('NCURSES_BUTTON4_PRESSED', 524288);
+
 define('NCURSES_BUTTON4_RELEASED', 262144);
+
 define('NCURSES_BUTTON4_CLICKED', 1048576);
+
 define('NCURSES_BUTTON4_DOUBLE_CLICKED', 2097152);
+
 define('NCURSES_BUTTON4_TRIPLE_CLICKED', 4194304);
+
 define('NCURSES_BUTTON_SHIFT', 33554432);
+
 define('NCURSES_BUTTON_CTRL', 16777216);
+
 define('NCURSES_BUTTON_ALT', 67108864);
+
 define('NCURSES_ALL_MOUSE_EVENTS', 134217727);
+
 define('NCURSES_REPORT_MOUSE_POSITION', 134217728);
 
 // End of ncurses v.

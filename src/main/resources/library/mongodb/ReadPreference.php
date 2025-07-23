@@ -57,6 +57,7 @@ final class ReadPreference implements Serializable
      */
     final public function __construct(string $mode, ?array $tagSets = null, ?array $options = null) {}
 
+
     public static function __set_state(array $properties) {}
 
     /**
@@ -88,6 +89,7 @@ final class ReadPreference implements Serializable
      * @throws InvalidArgumentException
      */
     final public function bsonSerialize(): stdClass {}
+
 
     final public function getMaxStalenessSeconds() {}
 }

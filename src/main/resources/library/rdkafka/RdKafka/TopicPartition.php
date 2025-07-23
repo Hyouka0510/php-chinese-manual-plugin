@@ -2,6 +2,7 @@
 
 namespace RdKafka;
 
+
 class TopicPartition
 {
     /**

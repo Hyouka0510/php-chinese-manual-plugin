@@ -2,8 +2,10 @@
 
 namespace RdKafka;
 
+
 class ProducerTopic extends Topic
 {
+
     private function __construct() {}
 
     /**

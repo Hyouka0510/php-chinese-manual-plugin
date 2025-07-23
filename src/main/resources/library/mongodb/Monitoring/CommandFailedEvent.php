@@ -12,7 +12,9 @@ use MongoDB\Driver\Server;
  */
 class CommandFailedEvent
 {
+
     final private function __construct() {}
+
 
     final public function __wakeup() {}
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole;
 
+
 class Table implements \Iterator, \ArrayAccess, \Countable
 {
     public const TYPE_INT = 1;
@@ -19,6 +20,7 @@ class Table implements \Iterator, \ArrayAccess, \Countable
      * @var int
      */
     public $memorySize;
+
 
     public function __construct(int $table_size, float $conflict_proportion = 0.2) {}
 

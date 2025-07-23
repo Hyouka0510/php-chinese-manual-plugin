@@ -13,5 +13,6 @@ enum QosClass implements \UnitEnum
     case UserInitiated;
     case UserInteractive;
 
+
     public static function cases(): array {}
 }

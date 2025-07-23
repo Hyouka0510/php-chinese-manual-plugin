@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Redis;
 
+
 class Server extends \Swoole\Server
 {
     /**

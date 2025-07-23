@@ -12,11 +12,15 @@ use StubTests\Model\StubProblemType;
 use StubTests\TestData\Providers\EntitiesFilter;
 use StubTests\TestData\Providers\ReflectionStubsSingleton;
 
+
 class ReflectionParametersProvider
 {
+
     public static function functionParametersProvider(): ?Generator
     {
+
         $filteredFunctions = EntitiesFilter::getFilteredReflectionFunctions();
+
         $array = array_map(function (PHPFunction $function) {
             return EntitiesFilter::getFilteredParameters($function);
         }, $filteredFunctions);
@@ -24,6 +28,7 @@ class ReflectionParametersProvider
             yield [null, null];
         } else {
             foreach ($filteredFunctions as $function) {
+
                 $PHPParameters = EntitiesFilter::getFilteredParameters($function);
                 foreach ($PHPParameters as $parameter) {
                     yield "$function->id($parameter->name)" => [$function->id, $parameter->name];
@@ -32,11 +37,15 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function functionParametersWithTypeProvider(): ?Generator
     {
+
         $filteredFunctions = EntitiesFilter::getFilteredReflectionFunctions();
+
         $array = array_map(function (PHPFunction $function) {
             return EntitiesFilter::getFilteredParameters(
+
                 $function,
                 null,
                 StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -47,6 +56,7 @@ class ReflectionParametersProvider
         } else {
             foreach ($filteredFunctions as $function) {
                 foreach (EntitiesFilter::getFilteredParameters(
+
                     $function,
                     null,
                     StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -57,14 +67,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function functionOptionalParametersProvider(): ?Generator
     {
+
         $filteredFunctions = EntitiesFilter::getFiltered(
             EntitiesFilter::getFilteredReflectionFunctions(),
             problemTypes: StubProblemType::FUNCTION_PARAMETER_MISMATCH
         );
+
         $array = array_map(function (PHPFunction $function) {
             return EntitiesFilter::getFilteredParameters(
+
                 $function,
                 fn (PHPParameter $parameter) => !$parameter->isOptional,
                 StubProblemType::PARAMETER_TYPE_MISMATCH,
@@ -76,6 +90,7 @@ class ReflectionParametersProvider
         } else {
             foreach ($filteredFunctions as $function) {
                 foreach (EntitiesFilter::getFilteredParameters(
+
                     $function,
                     fn (PHPParameter $parameter) => !$parameter->isOptional,
                     StubProblemType::PARAMETER_TYPE_MISMATCH,
@@ -87,11 +102,15 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function functionOptionalParametersWithDefaultValueProvider(): ?Generator
     {
+
         $filteredFunctions = EntitiesFilter::getFilteredReflectionFunctions();
+
         $array = array_map(function (PHPFunction $function) {
             return EntitiesFilter::getFilteredParameters(
+
                 $function,
                 fn (PHPParameter $parameter) => !$parameter->isOptional,
                 StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -102,6 +121,7 @@ class ReflectionParametersProvider
         } else {
             foreach ($filteredFunctions as $function) {
                 foreach (EntitiesFilter::getFilteredParameters(
+
                     $function,
                     fn (PHPParameter $parameter) => !$parameter->isOptional,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -112,11 +132,15 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function functionOptionalParametersWithoutDefaultValueProvider(): ?Generator
     {
+
         $filteredFunctions = EntitiesFilter::getFilteredReflectionFunctions();
+
         $array = array_map(function (PHPFunction $function) {
             return EntitiesFilter::getFilteredParameters(
+
                 $function,
                 fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                 StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -127,6 +151,7 @@ class ReflectionParametersProvider
         } else {
             foreach ($filteredFunctions as $function) {
                 foreach (EntitiesFilter::getFilteredParameters(
+
                     $function,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -137,10 +162,14 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function classMethodsParametersProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filtered = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters($method);
@@ -162,10 +191,14 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function interfaceMethodsParametersProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filtered = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters($method);
@@ -183,11 +216,15 @@ class ReflectionParametersProvider
             }
         }
     }
+
 
     public static function enumMethodsParametersProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filtered = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters($method);
@@ -206,13 +243,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function classMethodParametersWithTypeHintProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filtered = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -227,6 +269,7 @@ class ReflectionParametersProvider
                 if (strncmp($class->name, 'PHP', 3) !== 0) {
                     foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                         foreach (EntitiesFilter::getFilteredParameters(
+
                             $method,
                             null,
                             StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -239,13 +282,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function interfaceMethodParametersWithTypeHintProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filtered = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -258,6 +306,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         null,
                         StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -268,14 +317,19 @@ class ReflectionParametersProvider
             }
         }
     }
+
 
     public static function enumMethodParametersWithTypeHintProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filtered = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -288,6 +342,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         null,
                         StubProblemType::PARAMETER_TYPE_MISMATCH
@@ -299,13 +354,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function classMethodOptionalParametersProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filtered = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::WRONG_OPTIONALLITY
@@ -320,6 +380,7 @@ class ReflectionParametersProvider
                 if (strncmp($class->name, 'PHP', 3) !== 0) {
                     foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                         foreach (EntitiesFilter::getFilteredParameters(
+
                             $method,
                             null,
                             StubProblemType::WRONG_OPTIONALLITY
@@ -332,13 +393,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function interfaceMethodOptionalParametersProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filtered = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::WRONG_OPTIONALLITY
@@ -351,6 +417,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $interface) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($interface) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         null,
                         StubProblemType::WRONG_OPTIONALLITY
@@ -362,13 +429,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function enumMethodOptionalParametersProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filtered = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(function (PHPEnum $enum) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     null,
                     StubProblemType::WRONG_OPTIONALLITY
@@ -382,6 +454,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $enum) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($enum) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         null,
                         StubProblemType::WRONG_OPTIONALLITY
@@ -393,13 +466,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function classMethodOptionalParametersWithDefaultValueProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filtered = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(function ($enum) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -415,6 +493,7 @@ class ReflectionParametersProvider
                 if (strncmp($class->name, 'PHP', 3) !== 0) {
                     foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                         foreach (EntitiesFilter::getFilteredParameters(
+
                             $method,
                             fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                             StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -427,13 +506,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function interfaceMethodOptionalParametersWithDefaultValueProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filtered = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -446,6 +530,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                         StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -456,14 +541,19 @@ class ReflectionParametersProvider
             }
         }
     }
+
 
     public static function enumMethodOptionalParametersWithDefaultValueProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filtered = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -476,6 +566,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         fn (PHPParameter $parameter) => !$parameter->isOptional || !$parameter->isDefaultValueAvailable,
                         StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -487,13 +578,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function classMethodOptionalParametersWithoutDefaultValueProvider(): ?Generator
     {
+
         $classes = ReflectionStubsSingleton::getReflectionStubs()->getClasses();
+
         $filtered = EntitiesFilter::getFiltered($classes);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -508,6 +604,7 @@ class ReflectionParametersProvider
                 if (strncmp($class->name, 'PHP', 3) !== 0) {
                     foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                         foreach (EntitiesFilter::getFilteredParameters(
+
                             $method,
                             fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                             StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -520,13 +617,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function interfaceMethodOptionalParametersWithoutDefaultValueProvider(): ?Generator
     {
+
         $interfaces = ReflectionStubsSingleton::getReflectionStubs()->getInterfaces();
+
         $filtered = EntitiesFilter::getFiltered($interfaces);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -539,6 +641,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                         StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -550,13 +653,18 @@ class ReflectionParametersProvider
         }
     }
 
+
     public static function enumMethodOptionalParametersWithoutDefaultValueProvider(): ?Generator
     {
+
         $enums = ReflectionStubsSingleton::getReflectionStubs()->getEnums();
+
         $filtered = EntitiesFilter::getFiltered($enums);
+
         $array = array_filter(array_map(function ($class) {
             return array_filter(array_map(function (PHPMethod $method) {
                 return EntitiesFilter::getFilteredParameters(
+
                     $method,
                     fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                     StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE
@@ -569,6 +677,7 @@ class ReflectionParametersProvider
             foreach ($filtered as $class) {
                 foreach (EntitiesFilter::getFilteredReflectionMethods($class) as $method) {
                     foreach (EntitiesFilter::getFilteredParameters(
+
                         $method,
                         fn (PHPParameter $parameter) => !$parameter->isOptional || $parameter->isDefaultValueAvailable || $parameter->is_vararg,
                         StubProblemType::WRONG_PARAMETER_DEFAULT_VALUE

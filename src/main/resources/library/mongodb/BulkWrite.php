@@ -24,6 +24,7 @@ final class BulkWrite implements \Countable
      */
     final public function __construct(?array $options = null) {}
 
+
     final public function __wakeup() {}
 
     /**

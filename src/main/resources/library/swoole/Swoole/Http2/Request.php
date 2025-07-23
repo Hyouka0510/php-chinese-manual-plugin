@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Http2;
 
+
 class Request
 {
     public $path = '/';

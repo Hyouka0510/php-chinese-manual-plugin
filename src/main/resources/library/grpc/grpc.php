@@ -422,8 +422,11 @@ namespace Grpc;
          * @throws \InvalidArgumentException
          */
         public static function createSsl(
+
             $pem_root_certs,
+
             $pem_private_key,
+
             $pem_cert_chain
         ) {}
     }
@@ -560,8 +563,10 @@ namespace Grpc;
          */
         public function __construct(
             Channel $channel,
+
             $method,
             Timeval $absolute_deadline,
+
             $host_override = null
         ) {}
 

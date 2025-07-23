@@ -52,6 +52,7 @@ final class Binary implements Type, BinaryInterface, JsonSerializable, Stringabl
      */
     final public function getType(): int {}
 
+
     public static function __set_state(array $properties): self {}
 
     /**

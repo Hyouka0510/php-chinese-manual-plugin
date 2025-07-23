@@ -10,6 +10,7 @@ use MongoDB\Driver\ServerDescription;
  */
 final class ServerChangedEvent
 {
+
     final private function __construct() {}
 
     /**
@@ -41,6 +42,7 @@ final class ServerChangedEvent
      * @link https://www.php.net/manual/en/mongodb-driver-monitoring-serverchangedevent.gettopologyid.php
      */
     final public function getTopologyId(): ObjectId {}
+
 
     final public function __wakeup(): void {}
 }

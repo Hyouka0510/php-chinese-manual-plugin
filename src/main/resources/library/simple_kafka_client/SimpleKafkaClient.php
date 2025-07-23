@@ -6,6 +6,7 @@ use SimpleKafkaClient\Metadata;
 use SimpleKafkaClient\Topic;
 use SimpleKafkaClient\TopicPartition;
 
+
 abstract class SimpleKafkaClient
 {
     /**

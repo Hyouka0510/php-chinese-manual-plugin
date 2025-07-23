@@ -628,6 +628,7 @@ define('SQLFLT4', 59);
  * @link https://php.net/manual/en/mssql.constants.php
  */
 define('SQLFLT8', 62);
+
 define('SQLFLTN', 109);
 
 // End of mssql v.

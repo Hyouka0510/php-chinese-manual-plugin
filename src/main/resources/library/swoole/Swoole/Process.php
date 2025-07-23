@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole;
 
+
 class Process
 {
     public const IPC_NOWAIT = 256;
@@ -34,7 +35,9 @@ class Process
     public $id;
     private $callback;
 
+
     public function __construct(callable $callback, $redirect_stdin_and_stdout = null, $pipe_type = null, $enable_coroutine = null) {}
+
 
     public function __destruct() {}
 

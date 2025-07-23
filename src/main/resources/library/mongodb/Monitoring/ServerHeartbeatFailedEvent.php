@@ -7,6 +7,7 @@ namespace MongoDB\Driver\Monitoring;
  */
 final class ServerHeartbeatFailedEvent
 {
+
     final private function __construct() {}
 
     /**
@@ -38,6 +39,7 @@ final class ServerHeartbeatFailedEvent
      * @link https://www.php.net/manual/en/mongodb-driver-monitoring-serverheartbeatfailedevent.isstreaming.php
      */
     final public function isAwaited(): bool {}
+
 
     final public function __wakeup(): void {}
 }

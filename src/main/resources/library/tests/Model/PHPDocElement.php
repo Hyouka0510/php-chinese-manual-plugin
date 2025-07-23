@@ -82,32 +82,52 @@ trait PHPDocElement
      */
     public $templateTypes = [];
 
+
     protected function collectTags(Node $node)
     {
         if ($node->getDocComment() !== null) {
             try {
+
                 $text = $node->getDocComment()->getText();
+
                 $text = preg_replace("/int\<\w+,\s*\w+\>/", "int", $text);
+
                 $text = preg_replace("/callable\(\w+(,\s*\w+)*\)(:\s*\w*)?/", "callable", $text);
+
                 $this->phpdoc = $text;
+
                 $phpDoc = DocFactoryProvider::getDocFactory()->create($text);
+
                 $tags = $phpDoc->getTags();
                 foreach ($tags as $tag) {
+
                     $this->tagNames[] = $tag->getName();
                 }
+
                 $this->paramTags = $phpDoc->getTagsByName('param');
+
                 $this->returnTags = $phpDoc->getTagsByName('return');
+
                 $this->varTags = $phpDoc->getTagsByName('var');
+
                 $this->links = $phpDoc->getTagsByName('link');
+
                 $this->see = $phpDoc->getTagsByName('see');
+
                 $this->sinceTags = $phpDoc->getTagsByName('since');
+
                 $this->deprecatedTags = $phpDoc->getTagsByName('deprecated');
+
                 $this->removedTags = $phpDoc->getTagsByName('removed');
+
                 $this->hasInternalMetaTag = $phpDoc->hasTag('meta');
+
                 $this->hasInheritDocTag = $phpDoc->hasTag('inheritdoc') || $phpDoc->hasTag('inheritDoc') ||
                     stripos($phpDoc->getSummary(), 'inheritdoc') > 0;
+
                 $this->templateTypes += $phpDoc->getTagsByName('template');
             } catch (Exception $e) {
+
                 $this->parseError = $e;
             }
         }

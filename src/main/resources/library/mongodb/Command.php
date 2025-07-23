@@ -22,5 +22,6 @@ final class Command
      */
     final public function __construct(array|object $document, ?array $commandOptions = null) {}
 
+
     final public function __wakeup() {}
 }

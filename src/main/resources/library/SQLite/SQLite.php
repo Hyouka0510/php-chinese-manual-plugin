@@ -499,6 +499,7 @@ final class SQLiteUnbuffered
      */
     public function column($index_or_name, $decode_binary) {}
 
+
     public function numFields() {}
 
     /**
@@ -512,10 +513,13 @@ final class SQLiteUnbuffered
      */
     public function current($result_type, $decode_binary) {}
 
+
     public function next() {}
+
 
     public function valid() {}
 }
+
 
 final class SQLiteException extends RuntimeException
 {

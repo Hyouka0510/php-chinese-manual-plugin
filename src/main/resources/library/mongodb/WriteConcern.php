@@ -26,6 +26,7 @@ final class WriteConcern implements Serializable
      */
     final public function __construct(string|int $w, ?int $wtimeout = null, ?bool $journal = null) {}
 
+
     public static function __set_state(array $properties) {}
 
     /**
@@ -54,6 +55,7 @@ final class WriteConcern implements Serializable
      * @throws InvalidArgumentException
      */
     final public function bsonSerialize(): stdClass {}
+
 
     final public function isDefault(): bool {}
 }

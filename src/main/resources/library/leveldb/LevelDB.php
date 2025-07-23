@@ -4,6 +4,7 @@ define("LEVELDB_NO_COMPRESSION", 0);
 
 define("LEVELDB_SNAPPY_COMPRESSION", 1);
 
+
 class LevelDB
 {
     /**
@@ -83,9 +84,12 @@ class LevelDB
      */
     public function getProperty($name) {}
 
+
     public function getApproximateSizes($start, $limit) {}
 
+
     public function compactRange($start, $limit) {}
+
 
     public function close() {}
 
@@ -101,54 +105,78 @@ class LevelDB
      */
     public function getSnapshot() {}
 
+
     public static function destroy($name, array $options = []) {}
+
 
     public static function repair($name, array $options = []) {}
 }
 
+
 class LevelDBIterator implements Iterator
 {
+
     public function __construct(LevelDB $db, array $read_options = []) {}
+
 
     public function valid() {}
 
+
     public function rewind() {}
+
 
     public function last() {}
 
+
     public function seek($key) {}
+
 
     public function next() {}
 
+
     public function prev() {}
+
 
     public function key() {}
 
+
     public function current() {}
 
+
     public function getError() {}
+
 
     public function destroy() {}
 }
 
+
 class LevelDBWriteBatch
 {
+
     public function __construct() {}
+
 
     public function set($key, $value, array $write_options = []) {}
 
+
     public function put($key, $value, array $write_options = []) {}
 
+
     public function delete($key, array $write_options = []) {}
+
 
     public function clear() {}
 }
 
+
 class LevelDBSnapshot
 {
+
     public function __construct(LevelDB $db) {}
+
 
     public function release() {}
 }
+
 
 class LevelDBException extends Exception {}

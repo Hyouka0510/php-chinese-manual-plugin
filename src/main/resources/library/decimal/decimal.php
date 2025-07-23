@@ -2,6 +2,7 @@
 
 namespace Decimal;
 
+
 final class Decimal implements \JsonSerializable
 {
     /**

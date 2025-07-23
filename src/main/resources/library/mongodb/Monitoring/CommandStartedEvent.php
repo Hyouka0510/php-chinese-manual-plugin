@@ -12,7 +12,9 @@ use MongoDB\Driver\Server;
  */
 class CommandStartedEvent
 {
+
     final private function __construct() {}
+
 
     final public function __wakeup() {}
 

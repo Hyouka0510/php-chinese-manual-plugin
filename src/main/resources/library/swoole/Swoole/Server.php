@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole;
 
+
 class Server
 {
     public $setting;
@@ -97,7 +98,9 @@ class Server
      */
     private $onPipeMessage;
 
+
     public function __construct($host, $port = null, $mode = null, $sock_type = null) {}
+
 
     public function __destruct() {}
 

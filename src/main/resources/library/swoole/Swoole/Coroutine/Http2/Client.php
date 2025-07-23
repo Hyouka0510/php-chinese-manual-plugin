@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Coroutine\Http2;
 
+
 class Client
 {
     public $errCode = 0;
@@ -16,7 +17,9 @@ class Client
     public $port = 0;
     public $ssl = false;
 
+
     public function __construct($host, $port = null, $open_ssl = null) {}
+
 
     public function __destruct() {}
 

@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Swoole\Atomic;
 
+
 class Long
 {
+
     public function __construct(int $value = 0) {}
 
     /**
@@ -22,6 +24,7 @@ class Long
      * @return int
      */
     public function get() {}
+
 
     public function set(int $value) {}
 

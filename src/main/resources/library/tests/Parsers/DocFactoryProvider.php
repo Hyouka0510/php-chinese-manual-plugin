@@ -6,9 +6,11 @@ namespace StubTests\Parsers;
 use phpDocumentor\Reflection\DocBlockFactory;
 use StubTests\Model\Tags\RemovedTag;
 
+
 class DocFactoryProvider
 {
     private static ?DocBlockFactory $docFactory = null;
+
 
     public static function getDocFactory(): DocBlockFactory
     {

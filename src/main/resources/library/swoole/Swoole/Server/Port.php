@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Server;
 
+
 class Port
 {
     public $host;
@@ -24,7 +25,9 @@ class Port
     private $onMessage;
     private $onDisconnect;
 
+
     private function __construct() {}
+
 
     public function __destruct() {}
 

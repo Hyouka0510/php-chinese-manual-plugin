@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Coroutine\Http;
 
+
 class Client
 {
     public $errCode = 0;
@@ -25,7 +26,9 @@ class Client
     public $cookies;
     public $body = '';
 
+
     public function __construct($host, $port = null, $ssl = null) {}
+
 
     public function __destruct() {}
 

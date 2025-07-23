@@ -18,6 +18,7 @@ final class Javascript implements Type, JavascriptInterface, JsonSerializable, S
      */
     final public function __construct(string $javascript, array|object|null $scope = null) {}
 
+
     public static function __set_state(array $properties): self {}
 
     /**

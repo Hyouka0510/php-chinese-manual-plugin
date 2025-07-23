@@ -3,9 +3,13 @@
 /** @link https://github.com/krakjoe/pcov/blob/develop/README.md */
 
 namespace {
+
     define('pcov\all', 0);
+
     define('pcov\inclusive', 1);
+
     define('pcov\exclusive', 2);
+
     define('pcov\version', '1.0.6');
 }
 
