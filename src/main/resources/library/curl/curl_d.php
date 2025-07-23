@@ -21,53 +21,48 @@ define('CURLOPT_SSH_AUTH_TYPES', 151);
 define('CURLOPT_CONNECT_ONLY', 141);
 
 /**
-* <span class="simpara">    禁用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项：在上一次事务中找到的重定向 URL，接下来应手动请求。启用    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项：此为空。此情况下的重定向 URL 可在    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-effective-url">CURLINFO_EFFECTIVE_URL</a></code></strong> 中找到。   </span>
-*
+ * <span class="simpara">    禁用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项：在上一次事务中找到的重定向 URL，接下来应手动请求。启用    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项：此为空。此情况下的重定向 URL 可在    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-effective-url">CURLINFO_EFFECTIVE_URL</a></code></strong> 中找到。   </span>
+ * 
  * With the <b>CURLOPT_FOLLOWLOCATION</b> option disabled:
  *   redirect URL found in the last transaction, that should be requested manually next.
  * With the <b>CURLOPT_FOLLOWLOCATION</b> option enabled:
  *   this is empty. The redirect URL in this case is available in <b>CURLINFO_EFFECTIVE_URL</b>
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.3.7
- 
-*/
+ */
 define('CURLINFO_REDIRECT_URL', 1048607);
 
 /**
-* <span class="simpara">    最近连接的目标 IP 地址   </span>
-*
+ * <span class="simpara">    最近连接的目标 IP 地址   </span>
+ * 
  * IP address of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.4.7
- 
-*/
+ */
 define('CURLINFO_PRIMARY_IP', 1048608);
 /**
-* <span class="simpara">    最近连接的目标端口   </span>
-*
+ * <span class="simpara">    最近连接的目标端口   </span>
+ * 
  * Destination port of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.4.7
- 
-*/
+ */
 define('CURLINFO_PRIMARY_PORT', 2097192);
 /**
-* <span class="simpara">    最近连接的本地 (源) IP 地址   </span>
-*
+ * <span class="simpara">    最近连接的本地 (源) IP 地址   </span>
+ * 
  * Local (source) IP address of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.4.7
- 
-*/
+ */
 define('CURLINFO_LOCAL_IP', 1048617);
 /**
-* <span class="simpara">    最近连接的本地 (源) 端口   </span>
-*
+ * <span class="simpara">    最近连接的本地 (源) 端口   </span>
+ * 
  * Local (source) port of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.4.7
- 
-*/
+ */
 define('CURLINFO_LOCAL_PORT', 2097194);
 /**
  * A result of {@see curl_share_init()}. Makes the cURL handle to use the data from the shared handle.
@@ -83,34 +78,31 @@ define('CURLOPT_SHARE', 10100);
  */
 define('CURLOPT_IPRESOLVE', 113);
 /**
-* <span class="simpara">     使用系统允许的所有 IP 版本的地址。自 cURL 7.10.8 起可用。    </span>
-*
+ * <span class="simpara">     使用系统允许的所有 IP 版本的地址。自 cURL 7.10.8 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_IPRESOLVE</b> option.
  * Default, resolves addresses to all IP versions that your system allows.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_IPRESOLVE.html
- 
-*/
+ */
 define('CURL_IPRESOLVE_WHATEVER', 0);
 /**
-* <span class="simpara">     建立连接或从连接池中选一个时仅使用 IPv4 地址。自 cURL 7.10.8 起可用。    </span>
-*
+ * <span class="simpara">     建立连接或从连接池中选一个时仅使用 IPv4 地址。自 cURL 7.10.8 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_IPRESOLVE</b> option.
  * Resolve to IPv4 addresses.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_IPRESOLVE.html
- 
-*/
+ */
 define('CURL_IPRESOLVE_V4', 1);
 /**
-* <span class="simpara">     建立连接或从连接池中选一个时仅使用 IPv6 地址。自 cURL 7.10.8 起可用。    </span>
-*
+ * <span class="simpara">     建立连接或从连接池中选一个时仅使用 IPv6 地址。自 cURL 7.10.8 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_IPRESOLVE</b> option.
  * Resolve to IPv6 addresses.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_IPRESOLVE.html
- 
-*/
+ */
 define('CURL_IPRESOLVE_V6', 2);
 /**
  * <b>TRUE</b> to use a global DNS cache. This option is not thread-safe.
@@ -187,8 +179,8 @@ define('CURLOPT_HTTPHEADER', 10023);
 define('CURLOPT_NOPROGRESS', 43);
 
 /**
-* <span class="simpara">         The cURL handle.        </span>
-*
+ * <span class="simpara">         The cURL handle.        </span>
+ * 
  * A callback accepting five parameters.
  * The first is the cURL resource,
  * the second is the total number of bytes expected to be downloaded in this transfer,
@@ -199,8 +191,7 @@ define('CURLOPT_NOPROGRESS', 43);
  * Return a non-zero value to abort the transfer. In which case, the transfer will set a <b>CURLE_ABORTED_BY_CALLBACK</b> error.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 5.3
- 
-*/
+ */
 define('CURLOPT_PROGRESSFUNCTION', 20056);
 /**
  * <b>TRUE</b> to exclude the body from the output. Request method is then set to HEAD. Changing this to <b>FALSE</b> does not change it to GET.
@@ -305,14 +296,13 @@ define('CURLOPT_MAX_RECV_SPEED_LARGE', 30146);
  */
 define('CURLOPT_MAX_SEND_SPEED_LARGE', 30145);
 /**
-* <span class="simpara">         The cURL handle.        </span>
-*
+ * <span class="simpara">         The cURL handle.        </span>
+ * 
  * A callback accepting three parameters.
  * The first is the cURL resource, the second is a string containing a password prompt, and the third is the maximum password length.
  * Return the string containing the password.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_PASSWDFUNCTION', -1);
 
 /**
@@ -482,8 +472,8 @@ define('CURLOPT_SSL_VERIFYHOST', 81);
  */
 define('CURLOPT_COOKIEFILE', 10031);
 /**
-* <p class="simpara">       最好不要设置此选项并使用默认值。因为考虑到 SSLv2 和 SSLv3 中已知的漏洞，将其设置为       <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-sslv2">CURL_SSLVERSION_SSLv2</a></code></strong> 或 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-sslv3">CURL_SSLVERSION_SSLv3</a></code></strong> 非常危险。      </p>
-*
+ * <p class="simpara">       最好不要设置此选项并使用默认值。因为考虑到 SSLv2 和 SSLv3 中已知的漏洞，将其设置为       <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-sslv2">CURL_SSLVERSION_SSLv2</a></code></strong> 或 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-sslv3">CURL_SSLVERSION_SSLv3</a></code></strong> 非常危险。      </p>
+ * 
  * One of <b>CURL_SSLVERSION_DEFAULT</b> (0), <b>CURL_SSLVERSION_TLSv1</b> (1), <b>CURL_SSLVERSION_SSLv2</b> (2), <b>CURL_SSLVERSION_SSLv3</b> (3),
  * <b>CURL_SSLVERSION_TLSv1_0</b> (4), <b>CURL_SSLVERSION_TLSv1_1</b> (5) or <b>CURL_SSLVERSION_TLSv1_2</b> (6).
  * The maximum TLS version can be set by using one of the <b>CURL_SSLVERSION_MAX_*</b> constants.
@@ -491,73 +481,65 @@ define('CURLOPT_COOKIEFILE', 10031);
  * <b>CURL_SSLVERSION_MAX_DEFAULT</b> (the maximum version supported by the library), <b>CURL_SSLVERSION_MAX_TLSv1_0</b>, <b>CURL_SSLVERSION_MAX_TLSv1_1</b>,
  * <b>CURL_SSLVERSION_MAX_TLSv1_2</b>, or <b>CURL_SSLVERSION_MAX_TLSv1_3</b>.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_SSLVERSION', 32);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURL_SSLVERSION_DEFAULT', 0);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURL_SSLVERSION_TLSv1', 1);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURL_SSLVERSION_SSLv2', 2);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURL_SSLVERSION_SSLv3', 3);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.6.3
  * @since 5.5.19
- 
-*/
+ */
 define('CURL_SSLVERSION_TLSv1_0', 4);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.6.3
  * @since 5.5.19
- 
-*/
+ */
 define('CURL_SSLVERSION_TLSv1_1', 5);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 5.6.3
  * @since 5.5.19
- 
-*/
+ */
 define('CURL_SSLVERSION_TLSv1_2', 6);
 /**
  * How <b>CURLOPT_TIMEVALUE</b> is treated.
@@ -634,17 +616,16 @@ define('CURLOPT_HTTPPROXYTUNNEL', 61);
  */
 define('CURLOPT_FILETIME', 69);
 /**
-* <span class="simpara">         cURL 句柄。        </span>
-*
+ * <span class="simpara">         cURL 句柄。        </span>
+ * 
  * A callback accepting two parameters. The first is the cURL resource, and the second is a string with the data to be written.
  * The data must be saved by this callback. It must return the exact number of bytes written or the transfer will be aborted with an error.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_WRITEFUNCTION', 20011);
 /**
-* <span class="simpara">         The cURL handle.        </span>
-*
+ * <span class="simpara">         The cURL handle.        </span>
+ * 
  * A callback accepting three parameters.
  * The first is the cURL resource,
  * the second is a stream resource provided to cURL through the option <b>CURLOPT_INFILE</b>,
@@ -652,17 +633,15 @@ define('CURLOPT_WRITEFUNCTION', 20011);
  * The callback must return a string with a length equal or smaller than the amount of data requested, typically by reading it from the passed stream resource.
  * It should return an empty string to signal EOF.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_READFUNCTION', 20012);
 /**
-* <span class="simpara">         The cURL handle.        </span>
-*
+ * <span class="simpara">         The cURL handle.        </span>
+ * 
  * A callback accepting two parameters. The first is the cURL resource, the second is a string with the header data to be written.
  * The header data must be written by this callback. Return the number of bytes written.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_HEADERFUNCTION', 20079);
 /**
  * The maximum amount of HTTP redirections to follow. Use this option alongside <b>CURLOPT_FOLLOWLOCATION</b>.
@@ -735,12 +714,11 @@ define('CURLOPT_CAINFO', 10065);
  */
 define('CURLOPT_CAPATH', 10097);
 /**
-* <p class="simpara">       自 PHP 8.0.0 起，<span class="function">{@link curl_close()}</span> 为空操作（什么都不做），<em>不会</em>销毁句柄。如果需要在句柄自动销毁之前写入       cookie，在句柄上调用 <span class="function">{@link unset()}</span>。      </p>
-*
+ * <p class="simpara">       自 PHP 8.0.0 起，<span class="function">{@link curl_close()}</span> 为空操作（什么都不做），<em>不会</em>销毁句柄。如果需要在句柄自动销毁之前写入       cookie，在句柄上调用 <span class="function">{@link unset()}</span>。      </p>
+ * 
  * The name of a file to save all internal cookies to when the handle is closed, e.g. after a call to curl_close.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLOPT_COOKIEJAR', 10082);
 /**
  * A list of ciphers to use for SSL. For example, RC4-SHA and TLSv1 are valid cipher lists.
@@ -856,32 +834,29 @@ define('CURLOPT_TCP_NODELAY', 121);
  */
 define('CURLOPT_HTTP200ALIASES', 10104);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_TIMECONDITION</b> option.
  * Return the page only if it has been modified since the time specified in <b>CURLOPT_TIMEVALUE</b>.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TIMECONDITION.html
- 
-*/
+ */
 define('CURL_TIMECOND_IFMODSINCE', 1);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_TIMECONDITION</b> option.
  * Return the page if it hasn't been modified since the time specified in <b>CURLOPT_TIMEVALUE</b>.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TIMECONDITION.html
- 
-*/
+ */
 define('CURL_TIMECOND_IFUNMODSINCE', 2);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_TIMECONDITION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURL_TIMECOND_LASTMOD', 3);
 /**
  * The HTTP authentication method(s) to use.
@@ -894,60 +869,54 @@ define('CURL_TIMECOND_LASTMOD', 3);
  */
 define('CURLOPT_HTTPAUTH', 107);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Allows username/password authentication.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_BASIC', 1);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_DIGEST', 2);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_GSSNEGOTIATE', 4);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_NTLM', 8);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Is an alias for <b>CURLAUTH_BASIC</b> | <b>CURLAUTH_DIGEST</b> | <b>CURLAUTH_GSSNEGOTIATE</b> | <b>CURLAUTH_NTLM</b>.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_ANY', -17);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Is an alias for <b>CURLAUTH_DIGEST</b> | <b>CURLAUTH_GSSNEGOTIATE</b> | <b>CURLAUTH_NTLM</b>.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
- 
-*/
+ */
 define('CURLAUTH_ANYSAFE', -18);
 /**
  * The HTTP authentication method(s) to use for the proxy connection.
@@ -972,148 +941,132 @@ define('CURLOPT_FTP_CREATE_MISSING_DIRS', 110);
 define('CURLOPT_PRIVATE', 10103);
 
 /**
-* <span class="simpara">    最后一个响应代码。自 cURL 7.10.8 起可用   </span>
-*
+ * <span class="simpara">    最后一个响应代码。自 cURL 7.10.8 起可用   </span>
+ * 
  * The last response code
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_RESPONSE_CODE', 2097154);
 /**
-* <span class="simpara">    CONNECT 响应码   </span>
-*
+ * <span class="simpara">    CONNECT 响应码   </span>
+ * 
  * The CONNECT response code
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_HTTP_CONNECTCODE', 2097174);
 /**
-* <span class="simpara">    之前的响应中，用位掩码表示对应可用的身份验证方法   </span>
-*
+ * <span class="simpara">    之前的响应中，用位掩码表示对应可用的身份验证方法   </span>
+ * 
  * Bitmask indicating the authentication method(s) available according to the previous response
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_HTTPAUTH_AVAIL', 2097175);
 /**
-* <span class="simpara">    之前的响应中，用位掩码表示对应可用的代理身份验证方法   </span>
-*
+ * <span class="simpara">    之前的响应中，用位掩码表示对应可用的代理身份验证方法   </span>
+ * 
  * Bitmask indicating the proxy authentication method(s) available according to the previous response
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_PROXYAUTH_AVAIL', 2097176);
 /**
-* <span class="simpara">    连接失败的错误码 (Errno)。该数字与操作系统和系统相关。   </span>
-*
+ * <span class="simpara">    连接失败的错误码 (Errno)。该数字与操作系统和系统相关。   </span>
+ * 
  * Errno from a connect failure. The number is OS and system specific.
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_OS_ERRNO', 2097177);
 /**
-* <span class="simpara">    为完成上次传输，cURL 创建的连接数   </span>
-*
+ * <span class="simpara">    为完成上次传输，cURL 创建的连接数   </span>
+ * 
  * Number of connections curl had to create to achieve the previous transfer
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_NUM_CONNECTS', 2097178);
 /**
-* <span class="simpara">    支持 OpenSSL 加密引擎   </span>
-*
+ * <span class="simpara">    支持 OpenSSL 加密引擎   </span>
+ * 
  * OpenSSL crypto-engines supported
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_SSL_ENGINES', 4194331);
 /**
-* <span class="simpara">    所以已知的 cookie   </span>
-*
+ * <span class="simpara">    所以已知的 cookie   </span>
+ * 
  * All known cookies
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_COOKIELIST', 4194332);
 /**
-* <span class="simpara">    FTP 服务器中的条目路径   </span>
-*
+ * <span class="simpara">    FTP 服务器中的条目路径   </span>
+ * 
  * Entry path in FTP server
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_FTP_ENTRY_PATH', 1048606);
 /**
-* <span class="simpara">    从建立 SSL/SSH 连接/握手起，到与远程主机完成连接所花费的秒数   </span>
-*
+ * <span class="simpara">    从建立 SSL/SSH 连接/握手起，到与远程主机完成连接所花费的秒数   </span>
+ * 
  * Time in seconds it took from the start until the SSL/SSH connect/handshake to the remote host was completed
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_APPCONNECT_TIME', 3145761);
 /**
-* <span class="simpara">    TLS 证书链   </span>
-*
+ * <span class="simpara">    TLS 证书链   </span>
+ * 
  * TLS certificate chain
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_CERTINFO', 4194338);
 /**
-* <span class="simpara">    不满足时间条件的信息   </span>
-*
+ * <span class="simpara">    不满足时间条件的信息   </span>
+ * 
  * Info on unmet time conditional
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_CONDITION_UNMET', 2097187);
 /**
-* <span class="simpara">    下一个 RTSP 客户端 CSeq   </span>
-*
+ * <span class="simpara">    下一个 RTSP 客户端 CSeq   </span>
+ * 
  * Next RTSP client CSeq
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_RTSP_CLIENT_CSEQ', 2097189);
 /**
-* <span class="simpara">    最近检索的 CSeq   </span>
-*
+ * <span class="simpara">    最近检索的 CSeq   </span>
+ * 
  * Recently received CSeq
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_RTSP_CSEQ_RECV', 2097191);
 /**
-* <span class="simpara">    下一个 RTSP 服务器 CSeq   </span>
-*
+ * <span class="simpara">    下一个 RTSP 服务器 CSeq   </span>
+ * 
  * Next RTSP server CSeq
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_RTSP_SERVER_CSEQ', 2097190);
 /**
-* <span class="simpara">    RTSP session ID   </span>
-*
+ * <span class="simpara">    RTSP session ID   </span>
+ * 
  * RTSP session ID
  * @link https://php.net/manual/zh/function.curl-getinfo.php
  * @since 5.5
- 
-*/
+ */
 define('CURLINFO_RTSP_SESSION_ID', 1048612);
 /**
  * Value for the <b>CURLOPT_CLOSEPOLICY</b> option.
@@ -1146,284 +1099,250 @@ define('CURLCLOSEPOLICY_CALLBACK', 5);
  */
 define('CURLCLOSEPOLICY_OLDEST', 1);
 /**
-* <span class="simpara">     最后有效的 URL   </span>
-*
+ * <span class="simpara">     最后有效的 URL   </span>
+ * 
  * Last effective URL
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_EFFECTIVE_URL', 1048577);
 /**
-* <span class="simpara">    最后的响应码。自 cURL 7.10.8 起，这是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-response-code">CURLINFO_RESPONSE_CODE</a></code></strong> 的遗留别名。   </span>
-*
+ * <span class="simpara">    最后的响应码。自 cURL 7.10.8 起，这是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-response-code">CURLINFO_RESPONSE_CODE</a></code></strong> 的遗留别名。   </span>
+ * 
  * As of PHP 5.5.0 and cURL 7.10.8, this is a legacy alias of <b>CURLINFO_RESPONSE_CODE</b>.
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_HTTP_CODE', 2097154);
 /**
-* <span class="simpara">    所有检索到的 header 总大小   </span>
-*
+ * <span class="simpara">    所有检索到的 header 总大小   </span>
+ * 
  * Total size of all headers received
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_HEADER_SIZE', 2097163);
 /**
-* <span class="simpara">    发出的请求总大小，目前仅适用于 HTTP 请求   </span>
-*
+ * <span class="simpara">    发出的请求总大小，目前仅适用于 HTTP 请求   </span>
+ * 
  * Total size of issued requests, currently only for HTTP requests
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_REQUEST_SIZE', 2097164);
 /**
-* <span class="simpara">    上次传输的总事务时间（秒）   </span>
-*
+ * <span class="simpara">    上次传输的总事务时间（秒）   </span>
+ * 
  * Total transaction time in seconds for last transfer
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_TOTAL_TIME', 3145731);
 /**
-* <span class="simpara">    域名解析完成所需秒数   </span>
-*
+ * <span class="simpara">    域名解析完成所需秒数   </span>
+ * 
  * Time in seconds until name resolving was complete
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_NAMELOOKUP_TIME', 3145732);
 /**
-* <span class="simpara">    建立连接所花费的秒数   </span>
-*
+ * <span class="simpara">    建立连接所花费的秒数   </span>
+ * 
  * Time in seconds it took to establish the connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_CONNECT_TIME', 3145733);
 /**
-* <span class="simpara">    从开始到文件传输开始之前的秒数   </span>
-*
+ * <span class="simpara">    从开始到文件传输开始之前的秒数   </span>
+ * 
  * Time in seconds from start until just before file transfer begins
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_PRETRANSFER_TIME', 3145734);
 /**
-* <span class="simpara">    上传的总字节数   </span>
-*
+ * <span class="simpara">    上传的总字节数   </span>
+ * 
  * Total number of bytes uploaded
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_SIZE_UPLOAD', 3145735);
 /**
-* <span class="simpara">    下载的总字节数   </span>
-*
+ * <span class="simpara">    下载的总字节数   </span>
+ * 
  * Total number of bytes downloaded
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_SIZE_DOWNLOAD', 3145736);
 /**
-* <span class="simpara">    平均下载速度   </span>
-*
+ * <span class="simpara">    平均下载速度   </span>
+ * 
  * Average download speed
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_SPEED_DOWNLOAD', 3145737);
 /**
-* <span class="simpara">    平均上传速度   </span>
-*
+ * <span class="simpara">    平均上传速度   </span>
+ * 
  * Average upload speed
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_SPEED_UPLOAD', 3145738);
 /**
-* <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-filetime">CURLOPT_FILETIME</a></code></strong> 时，检索文档的远程时间；如果返回 -1，则表示文档的时间未知。   </span>
-*
+ * <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-filetime">CURLOPT_FILETIME</a></code></strong> 时，检索文档的远程时间；如果返回 -1，则表示文档的时间未知。   </span>
+ * 
  * Remote time of the retrieved document, with the <b>CURLOPT_FILETIME</b> enabled;
  * if -1 is returned the time of the document is unknown
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_FILETIME', 2097166);
 /**
-* <span class="simpara">    通过设置 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-ssl-verifypeer">CURLOPT_SSL_VERIFYPEER</a></code></strong> 请求 SSL 认证验证的结果   </span>
-*
+ * <span class="simpara">    通过设置 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-ssl-verifypeer">CURLOPT_SSL_VERIFYPEER</a></code></strong> 请求 SSL 认证验证的结果   </span>
+ * 
  * Result of SSL certification verification requested by setting <b>CURLOPT_SSL_VERIFYPEER</b>
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_SSL_VERIFYRESULT', 2097165);
 /**
-* <span class="simpara">    从 "Content-Length:" 字段读取的下载内容长度 (单位：字节)   </span>
-*
+ * <span class="simpara">    从 "Content-Length:" 字段读取的下载内容长度 (单位：字节)   </span>
+ * 
  * Content length of download, read from <em>Content-Length: field</em>
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_CONTENT_LENGTH_DOWNLOAD', 3145743);
 /**
-* <span class="simpara">    指定上传大小   </span>
-*
+ * <span class="simpara">    指定上传大小   </span>
+ * 
  * Specified size of upload
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_CONTENT_LENGTH_UPLOAD', 3145744);
 /**
-* <span class="simpara">    第一个字节即将被传输的时间（以秒为单位）   </span>
-*
+ * <span class="simpara">    第一个字节即将被传输的时间（以秒为单位）   </span>
+ * 
  * Time in seconds until the first byte is about to be transferred
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_STARTTRANSFER_TIME', 3145745);
 /**
-* <span class="simpara">    已请求的文档的 <code class="literal">Content-Type</code>。NULL 表示服务器未发送有效的 <code class="literal">Content-Type</code> header。   </span>
-*
+ * <span class="simpara">    已请求的文档的 <code class="literal">Content-Type</code>。NULL 表示服务器未发送有效的 <code class="literal">Content-Type</code> header。   </span>
+ * 
  * Content-Type: of the requested document. <b>NULL</b> indicates server did not send valid Content-Type: header
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_CONTENT_TYPE', 1048594);
 /**
-* <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项后，最终事务开始前所有重定向步骤花费的秒数。   </span>
-*
+ * <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 选项后，最终事务开始前所有重定向步骤花费的秒数。   </span>
+ * 
  * Time in seconds of all redirection steps before final transaction was started,
  * with the <b>CURLOPT_FOLLOWLOCATION</b> option enabled
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_REDIRECT_TIME', 3145747);
 /**
-* <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 时的重定向次数。   </span>
-*
+ * <span class="simpara">    启用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-followlocation">CURLOPT_FOLLOWLOCATION</a></code></strong> 时的重定向次数。   </span>
+ * 
  * Number of redirects, with the <b>CURLOPT_FOLLOWLOCATION</b> option enabled
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- 
-*/
+ */
 define('CURLINFO_REDIRECT_COUNT', 2097172);
 
 /**
-* <span class="simpara">    已发送的请求字符串。如果要生效，需要调用 <span class="function">{@link curl_setopt()}</span> 函数将 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-header-out">CURLINFO_HEADER_OUT</a></code></strong> 选项添加到句柄中   </span>
-*
+ * <span class="simpara">    已发送的请求字符串。如果要生效，需要调用 <span class="function">{@link curl_setopt()}</span> 函数将 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-header-out">CURLINFO_HEADER_OUT</a></code></strong> 选项添加到句柄中   </span>
+ * 
  * <b>TRUE</b> to track the handle's request string
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.1.3
- 
-*/
+ */
 define('CURLINFO_HEADER_OUT', 2);
 
 /**
-* <span class="simpara">    与 CURL 句柄相关的私有数据，先前使用 <span class="function">{@link curl_setopt()}</span> 的    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-private">CURLOPT_PRIVATE</a></code></strong> 选项设置   </span>
-*
+ * <span class="simpara">    与 CURL 句柄相关的私有数据，先前使用 <span class="function">{@link curl_setopt()}</span> 的    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-private">CURLOPT_PRIVATE</a></code></strong> 选项设置   </span>
+ * 
  * Private data associated with this cURL handle, previously set with the <b>CURLOPT_PRIVATE</b> option of {@see curl_getinfo()}
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 5.2.4
- 
-*/
+ */
 define('CURLINFO_PRIVATE', 1048597);
 
 /**
-* <span class="simpara">    默认内置 CA 证书路径。自 PHP 8.3.0 和 cURL 7.84.0 起可用   </span>
-*
+ * <span class="simpara">    默认内置 CA 证书路径。自 PHP 8.3.0 和 cURL 7.84.0 起可用   </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLINFO_CAPATH', 1048638);
 
 /**
-* <span class="simpara">    默认内置 CA 证书位置。自 PHP 8.3.0 和 cURL 7.84.0 起可用   </span>
-*
+ * <span class="simpara">    默认内置 CA 证书位置。自 PHP 8.3.0 和 cURL 7.84.0 起可用   </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLINFO_CAINFO', 1048637);
 
 /**
-* <span class="simpara">     启用 IPv6。    </span>
-*
+ * <span class="simpara">     启用 IPv6。    </span>
+ * 
  * Supports IPv6
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_VERSION_IPV6', 1);
 /**
-* <span class="simpara">     Kerberos V4 身份验证支持。    </span>
-*
+ * <span class="simpara">     Kerberos V4 身份验证支持。    </span>
+ * 
  * Supports Kerberos V4 (when using FTP)
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_VERSION_KERBEROS4', 2);
 /**
-* <span class="simpara">     存在 SSL 选项。    </span>
-*
+ * <span class="simpara">     存在 SSL 选项。    </span>
+ * 
  * Supports SSL (HTTPS/FTPS)
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_VERSION_SSL', 4);
 /**
-* <span class="simpara">     存在 libz 功能。    </span>
-*
+ * <span class="simpara">     存在 libz 功能。    </span>
+ * 
  * Supports HTTP deflate using libz
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_VERSION_LIBZ', 8);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Will be the most recent age value for the libcurl.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLVERSION_NOW', 10);
 /**
-* <span class="simpara">    一切顺利。一切照常进行。   </span>
-*
+ * <span class="simpara">    一切顺利。一切照常进行。   </span>
+ * 
  * All fine. Proceed as usual.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_OK', 0);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLKHMATCH_OK', 0);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLKHMATCH_MISMATCH', 1);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLKHMATCH_MISSING', 2);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.19.6 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLKHMATCH_LAST', 3);
 
 /**
@@ -1432,760 +1351,678 @@ define('CURLKHMATCH_LAST', 3);
 define('CURLOPT_MIME_OPTIONS', 315);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.81.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.81.0 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLMIMEOPT_FORMESCAPE', 1);
 
 /**
-* <span class="simpara">    传递给 libcurl 的 URL 使用了 libcurl 不支持的协议。问题可能是未使用的编译时选项、拼写错误的协议字符串或 libcurl 没有编码的协议。   </span>
-*
+ * <span class="simpara">    传递给 libcurl 的 URL 使用了 libcurl 不支持的协议。问题可能是未使用的编译时选项、拼写错误的协议字符串或 libcurl 没有编码的协议。   </span>
+ * 
  * The URL you passed to libcurl used a protocol that this libcurl does not support.
  * The support might be a compile-time option that you didn't use,
  * it can be a misspelled protocol string or just a protocol libcurl has no code for.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_UNSUPPORTED_PROTOCOL', 1);
 /**
-* <span class="simpara">    初始化代码失败。这可能是内部错误或程序，或者是资源问题，导致在初始化时无法完成一些基本操作。   </span>
-*
+ * <span class="simpara">    初始化代码失败。这可能是内部错误或程序，或者是资源问题，导致在初始化时无法完成一些基本操作。   </span>
+ * 
  * Very early initialization code failed.
  * This is likely to be an internal error or problem,
  * or a resource problem where something fundamental couldn't get done at init time.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FAILED_INIT', 2);
 /**
-* <span class="simpara">    URL 格式不正确。   </span>
-*
+ * <span class="simpara">    URL 格式不正确。   </span>
+ * 
  * The URL was not properly formatted.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_URL_MALFORMAT', 3);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * A requested feature, protocol or option was not found built-in in this libcurl due to a build-time decision.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_URL_MALFORMAT_USER', 4);
 /**
-* <span class="simpara">    无法解析代理。无法解析给定的代理主机。   </span>
-*
+ * <span class="simpara">    无法解析代理。无法解析给定的代理主机。   </span>
+ * 
  * Couldn't resolve proxy. The given proxy host could not be resolved.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_COULDNT_RESOLVE_PROXY', 5);
 /**
-* <span class="simpara">    无法解析主机。指定的远程主机无法解析。   </span>
-*
+ * <span class="simpara">    无法解析主机。指定的远程主机无法解析。   </span>
+ * 
  * Couldn't resolve host. The given remote host was not resolved.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_COULDNT_RESOLVE_HOST', 6);
 /**
-* <span class="simpara">    无法连接到主机或代理。   </span>
-*
+ * <span class="simpara">    无法连接到主机或代理。   </span>
+ * 
  * Failed to connect to host or proxy.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_COULDNT_CONNECT', 7);
 /**
-* <span class="simpara">    服务器发送了 libcurl 无法解析的数据。自 cURL 7.51.0 起，此错误代码为 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-weird-server-reply">CURLE_WEIRD_SERVER_REPLY</a></code></strong>。   </span>
-*
+ * <span class="simpara">    服务器发送了 libcurl 无法解析的数据。自 cURL 7.51.0 起，此错误代码为 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-weird-server-reply">CURLE_WEIRD_SERVER_REPLY</a></code></strong>。   </span>
+ * 
  * The server sent data libcurl couldn't parse.
  * This error code was known as as <b>CURLE_FTP_WEIRD_SERVER_REPLY</b> before 7.51.0.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_WEIRD_SERVER_REPLY', 8);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * We were denied access to the resource given in the URL.
  * For FTP, this occurs while trying to change to the remote directory.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_ACCESS_DENIED', 9);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * While waiting for the server to connect back when an active FTP session is used,
  * an error code was sent over the control connection or similar.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_USER_PASSWORD_INCORRECT', 10);
 /**
-* <span class="simpara">    将 FTP 密码发送到服务器后，libcurl 需要收到正确的回复。此错误代码表示返回了意外代码。   </span>
-*
+ * <span class="simpara">    将 FTP 密码发送到服务器后，libcurl 需要收到正确的回复。此错误代码表示返回了意外代码。   </span>
+ * 
  * After having sent the FTP password to the server, libcurl expects a proper reply.
  * This error code indicates that an unexpected code was returned.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_WEIRD_PASS_REPLY', 11);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * During an active FTP session while waiting for the server to connect,
  * the <b>CURLOPT_ACCEPTTIMEOUT_MS</b> (or the internal default) timeout expired.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_WEIRD_USER_REPLY', 12);
 /**
-* <span class="simpara">    libcurl 无法从服务器获取合理的结果作为对 PASV 或 EPSV 命令的响应。服务器存在缺陷。   </span>
-*
+ * <span class="simpara">    libcurl 无法从服务器获取合理的结果作为对 PASV 或 EPSV 命令的响应。服务器存在缺陷。   </span>
+ * 
  * Libcurl failed to get a sensible result back from the server as a response to either a PASV or a EPSV command.
  * The server is flawed.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_WEIRD_PASV_REPLY', 13);
 /**
-* <span class="simpara">    FTP 服务器返回 227-line 作为对 PASV 命令的响应。如果 libcurl 无法解析该行，则会传回此返回代码。   </span>
-*
+ * <span class="simpara">    FTP 服务器返回 227-line 作为对 PASV 命令的响应。如果 libcurl 无法解析该行，则会传回此返回代码。   </span>
+ * 
  * FTP servers return a 227-line as a response to a PASV command.
  * If libcurl fails to parse that line, this return code is passed back.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_WEIRD_227_FORMAT', 14);
 /**
-* <span class="simpara">    用于查找新连接的主机发生内部故障。   </span>
-*
+ * <span class="simpara">    用于查找新连接的主机发生内部故障。   </span>
+ * 
  * An internal failure to lookup the host used for the new connection.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_CANT_GET_HOST', 15);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * A problem was detected in the HTTP2 framing layer.
  * This is somewhat generic and can be one out of several problems, see the error buffer for details.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_CANT_RECONNECT', 16);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Received an error when trying to set the transfer mode to binary or ASCII.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_SET_BINARY', 17);
 /**
-* <span class="simpara">    文件传输的大小跟预期的不一致。当服务器首先报告预期的传输大小，然后提供与先前指定的大小不匹配的数据时，就会发生这种情况。   </span>
-*
+ * <span class="simpara">    文件传输的大小跟预期的不一致。当服务器首先报告预期的传输大小，然后提供与先前指定的大小不匹配的数据时，就会发生这种情况。   </span>
+ * 
  * A file transfer was shorter or larger than expected.
  * This happens when the server first reports an expected transfer size, and then delivers data
  * that doesn't match the previously given size.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_PARTIAL_FILE', 18);
 /**
-* <span class="simpara">    这要么是对“RETR”命令的意外回复，要么是零字节传输完成。   </span>
-*
+ * <span class="simpara">    这要么是对“RETR”命令的意外回复，要么是零字节传输完成。   </span>
+ * 
  * This was either a weird reply to a 'RETR' command or a zero byte transfer complete.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_RETR_FILE', 19);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * After a completed file transfer, the FTP server did not respond a proper
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_FTP_WRITE_ERROR', 20);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * When sending custom "QUOTE" commands to the remote server,
  * one of the commands returned an error code that was 400 or higher (for FTP) or otherwise indicated unsuccessful completion of the command.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_QUOTE_ERROR', 21);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * This is returned if <b>CURLOPT_FAILONERROR</b> is set <b>TRUE</b> and the HTTP server returns an error code that is >= 400.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_HTTP_NOT_FOUND', 22);
 /**
-* <span class="simpara">    将接收的数据写入本地文件时发生错误，或者从写入回调向 libcurl 返回错误。   </span>
-*
+ * <span class="simpara">    将接收的数据写入本地文件时发生错误，或者从写入回调向 libcurl 返回错误。   </span>
+ * 
  * An error occurred when writing received data to a local file, or an error was returned to libcurl from a write callback.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_WRITE_ERROR', 23);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_MALFORMAT_USER', 24);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Failed starting the upload. For FTP, the server typically denied the STOR command.
  * The error buffer usually contains the server's explanation for this.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_STOR_FILE', 25);
 /**
-* <span class="simpara">    读取本地文件时出现问题，或者读取回调返回错误。   </span>
-*
+ * <span class="simpara">    读取本地文件时出现问题，或者读取回调返回错误。   </span>
+ * 
  * There was a problem reading a local file or an error returned by the read callback.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_READ_ERROR', 26);
 /**
-* <span class="simpara">    内存分配请求失败。   </span>
-*
+ * <span class="simpara">    内存分配请求失败。   </span>
+ * 
  * A memory allocation request failed. This is serious badness and things are severely screwed up if this ever occurs.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_OUT_OF_MEMORY', 27);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Operation timeout. The specified time-out period was reached according to the conditions.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_OPERATION_TIMEOUTED', 28);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * libcurl failed to set ASCII transfer type (TYPE A).
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_SET_ASCII', 29);
 /**
-* <span class="simpara">    FTP PORT 命令返回错误。这种情况大多发生在为 libcurl 指定的地址没有足够好。参阅 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-ftpport">CURLOPT_FTPPORT</a></code></strong>。   </span>
-*
+ * <span class="simpara">    FTP PORT 命令返回错误。这种情况大多发生在为 libcurl 指定的地址没有足够好。参阅 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-ftpport">CURLOPT_FTPPORT</a></code></strong>。   </span>
+ * 
  * The FTP PORT command returned error.
  * This mostly happens when you haven't specified a good enough address for libcurl to use. See <b>CURLOPT_FTPPORT</b>.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_PORT_FAILED', 30);
 /**
-* <span class="simpara">    FTP REST 命令返回错误。如果服务器正常，这种情况绝不会发生。   </span>
-*
+ * <span class="simpara">    FTP REST 命令返回错误。如果服务器正常，这种情况绝不会发生。   </span>
+ * 
  * The FTP REST command returned error. This should never happen if the server is sane.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_USE_REST', 31);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The FTP SIZE command returned error. SIZE is not a kosher FTP command,
  * it is an extension and not all servers support it.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_FTP_COULDNT_GET_SIZE', 32);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The server does not support or accept range requests.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_HTTP_RANGE_ERROR', 33);
 /**
-* <span class="simpara">    这是一个奇怪的错误，主要由于内部混乱而发生。   </span>
-*
+ * <span class="simpara">    这是一个奇怪的错误，主要由于内部混乱而发生。   </span>
+ * 
  * This is an odd error that mainly occurs due to internal confusion.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_HTTP_POST_ERROR', 34);
 /**
-* <span class="simpara">    SSL/TLS 握手中某处出现问题。读取错误缓冲区中的消息可提供有关该问题的更多详细信息。可能是证书（文件格式、路径、权限）、密码等。   </span>
-*
+ * <span class="simpara">    SSL/TLS 握手中某处出现问题。读取错误缓冲区中的消息可提供有关该问题的更多详细信息。可能是证书（文件格式、路径、权限）、密码等。   </span>
+ * 
  * A problem occurred somewhere in the SSL/TLS handshake.
  * You really want the error buffer and read the message there as it pinpoints the problem slightly more.
  * Could be certificates (file formats, paths, permissions), passwords, and others.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_CONNECT_ERROR', 35);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The download could not be resumed because the specified offset was out of the file boundary.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_BAD_DOWNLOAD_RESUME', 36);
 /**
-* <span class="simpara">    无法打开 FILE:// 指定的文件。很可能是因为文件路径未识别现有文件或由于缺乏适当的文件权限。   </span>
-*
+ * <span class="simpara">    无法打开 FILE:// 指定的文件。很可能是因为文件路径未识别现有文件或由于缺乏适当的文件权限。   </span>
+ * 
  * A file given with <em>FILE://</em> couldn't be opened.
  * Most likely because the file path doesn't identify an existing file. Did you check file permissions?
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FILE_COULDNT_READ_FILE', 37);
 /**
-* <span class="simpara">    LDAP 无法绑定。LDAP 绑定操作失败。   </span>
-*
+ * <span class="simpara">    LDAP 无法绑定。LDAP 绑定操作失败。   </span>
+ * 
  * LDAP cannot bind. LDAP bind operation failed.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_LDAP_CANNOT_BIND', 38);
 /**
-* <span class="simpara">    LDAP 搜索失败。   </span>
-*
+ * <span class="simpara">    LDAP 搜索失败。   </span>
+ * 
  * LDAP search failed.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_LDAP_SEARCH_FAILED', 39);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Library not found. The LDAP library was not found.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_LIBRARY_NOT_FOUND', 40);
 /**
-* <span class="simpara">    未找到函数。未找到所需的 zlib 函数。   </span>
-*
+ * <span class="simpara">    未找到函数。未找到所需的 zlib 函数。   </span>
+ * 
  * Function not found. A required zlib function was not found.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FUNCTION_NOT_FOUND', 41);
 /**
-* <span class="simpara">    回调已中止。回调向 libcurl 返回“abort”。   </span>
-*
+ * <span class="simpara">    回调已中止。回调向 libcurl 返回“abort”。   </span>
+ * 
  * Aborted by callback. A callback returned "abort" to libcurl.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_ABORTED_BY_CALLBACK', 42);
 /**
-* <span class="simpara">    调用的函数带有错误的参数。   </span>
-*
+ * <span class="simpara">    调用的函数带有错误的参数。   </span>
+ * 
  * A function was called with a bad parameter.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_BAD_FUNCTION_ARGUMENT', 43);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * This is never returned
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_BAD_CALLING_ORDER', 44);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Interface error. A specified outgoing interface could not be used.
  * Set which interface to use for outgoing connections' source IP address with <b>CURLOPT_INTERFACE</b>.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_HTTP_PORT_FAILED', 45);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * This is never returned
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_BAD_PASSWORD_ENTERED', 46);
 /**
-* <span class="simpara">    重定向次数过多。在进行重定向时，libcurl 达到最大数量。可以使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-maxredirs">CURLOPT_MAXREDIRS</a></code></strong> 设置最大值。   </span>
-*
+ * <span class="simpara">    重定向次数过多。在进行重定向时，libcurl 达到最大数量。可以使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-maxredirs">CURLOPT_MAXREDIRS</a></code></strong> 设置最大值。   </span>
+ * 
  * Too many redirects. When following redirects, libcurl hit the maximum amount.
  * Set your limit with <b>CURLOPT_MAXREDIRS</b>.
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_TOO_MANY_REDIRECTS', 47);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * An option passed to libcurl is not recognized/known. Refer to the appropriate documentation.
  * This is most likely a problem in the program that uses libcurl.
  * The error buffer might contain more specific information about which exact option it concerns.
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_UNKNOWN_TELNET_OPTION', 48);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * A telnet option string was Illegally formatted.
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_TELNET_OPTION_SYNTAX', 49);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Currently unused.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLE_OBSOLETE', 50);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The remote server's SSL certificate or SSH md5 fingerprint was deemed not OK.
  * This error code has been unified with <b>CURLE_SSL_CACERT</b> since 7.62.0. Its previous value was 51.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_PEER_CERTIFICATE', 60);
 /**
-* <span class="simpara">    服务器没有返回任何内容，在这种情况下，没有得到任何内容视为错误。   </span>
-*
+ * <span class="simpara">    服务器没有返回任何内容，在这种情况下，没有得到任何内容视为错误。   </span>
+ * 
  * Nothing was returned from the server, and under the circumstances, getting nothing is considered an error.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_GOT_NOTHING', 52);
 /**
-* <span class="simpara">    未找到指定的加密引擎。   </span>
-*
+ * <span class="simpara">    未找到指定的加密引擎。   </span>
+ * 
  * The specified crypto engine wasn't found.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_ENGINE_NOTFOUND', 53);
 /**
-* <span class="simpara">    无法将选定的 SSL 加密引擎设置为默认值。   </span>
-*
+ * <span class="simpara">    无法将选定的 SSL 加密引擎设置为默认值。   </span>
+ * 
  * Failed setting the selected SSL crypto engine as default!
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_ENGINE_SETFAILED', 54);
 /**
-* <span class="simpara">    发送网络数据失败。   </span>
-*
+ * <span class="simpara">    发送网络数据失败。   </span>
+ * 
  * Failed sending network data.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SEND_ERROR', 55);
 /**
-* <span class="simpara">    接收网络数据失败。   </span>
-*
+ * <span class="simpara">    接收网络数据失败。   </span>
+ * 
  * Failure with receiving network data.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_RECV_ERROR', 56);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The share object is currently in use.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SHARE_IN_USE', 57);
 /**
-* <span class="simpara">    本地客户端证书有问题。   </span>
-*
+ * <span class="simpara">    本地客户端证书有问题。   </span>
+ * 
  * Problem with the local client certificate.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_CERTPROBLEM', 58);
 /**
-* <span class="simpara">    无法使用指定的密码。   </span>
-*
+ * <span class="simpara">    无法使用指定的密码。   </span>
+ * 
  * Couldn't use specified cipher.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_CIPHER', 59);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * The remote server's SSL certificate or SSH md5 fingerprint was deemed not OK.
  * This error code has been unified with <b>CURLE_SSL_PEER_CERTIFICATE</b> since 7.62.0.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_SSL_CACERT', 60);
 /**
-* <span class="simpara">    无法识别传输编码。   </span>
-*
+ * <span class="simpara">    无法识别传输编码。   </span>
+ * 
  * Unrecognized transfer encoding.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_BAD_CONTENT_ENCODING', 61);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Invalid LDAP URL.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_LDAP_INVALID_URL', 62);
 /**
-* <span class="simpara">    超出最大文件大小。   </span>
-*
+ * <span class="simpara">    超出最大文件大小。   </span>
+ * 
  * Maximum file size exceeded.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FILESIZE_EXCEEDED', 63);
 /**
-* <span class="simpara">   </span>
-*
+ * <span class="simpara">   </span>
+ * 
  * Requested FTP SSL level failed.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLE_FTP_SSL_FAILED', 64);
 /**
-* <span class="simpara">     自 cURL 7.10 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.10 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLPROXY_HTTP', 0);
 /**
-* <span class="simpara">     自 cURL 7.10 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.10 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLPROXY_SOCKS4', 4);
 /**
-* <span class="simpara">     自 cURL 7.10 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.10 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLPROXY_SOCKS5', 5);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_NETRC</b> option.
  * The use of the ~/.netrc file is optional, and information in the URL is to be preferred.
  * The file will be scanned for the host and user name (to find the password only) or for the host only,
  * to find the first user name and password after that machine, which ever information is not specified.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_NETRC.html
- 
-*/
+ */
 define('CURL_NETRC_OPTIONAL', 1);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_NETRC</b> option.
  * The library will ignore the ~/.netrc file. This is the default.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_NETRC.html
- 
-*/
+ */
 define('CURL_NETRC_IGNORED', 0);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_NETRC</b> option.
  * The use of the ~/.netrc file is required, and information in the URL is to be ignored.
  * The file will be scanned for the host and user name (to find the password only) or for the host only,
  * to find the first user name and password after that machine, which ever information is not specified.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_NETRC.html
- 
-*/
+ */
 define('CURL_NETRC_REQUIRED', 2);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Let's CURL decide which version to use.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_HTTP_VERSION_NONE', 0);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Forces HTTP/1.0.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_HTTP_VERSION_1_0', 1);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Forces HTTP/1.1.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_HTTP_VERSION_1_1', 2);
 /**
-* <span class="simpara">     自 cURL 7.33.0 起可用    </span>
-*
+ * <span class="simpara">     自 cURL 7.33.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Attempts HTTP 2.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURL_HTTP_VERSION_2_0', 3);
 /**
-* <span class="simpara">    从 cURL 7.20.0 起，不再使用此常量。在 cURL 7.20.0 之前，如果在返回任何其他常量之前调用    <span class="function">{@link curl_multi_select()}</span> 或类似函数时，<span class="function">{@link curl_multi_exec()}</span>    可能会返回此状态。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    从 cURL 7.20.0 起，不再使用此常量。在 cURL 7.20.0 之前，如果在返回任何其他常量之前调用    <span class="function">{@link curl_multi_select()}</span> 或类似函数时，<span class="function">{@link curl_multi_exec()}</span>    可能会返回此状态。自 cURL 7.9.6 起可用。   </span>
+ * 
  * This is not really an error. It means you should call {@see curl_multi_exec()} again without doing select() or similar in between.
  * Before version 7.20.0 this could be returned by {@see curl_multi_exec()}, but in later versions this return code is never used.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_CALL_MULTI_PERFORM', -1);
 /**
-* <span class="simpara">    没有错误。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    没有错误。自 cURL 7.9.6 起可用。   </span>
+ * 
  * Things are fine.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_OK', 0);
 /**
-* <span class="simpara">    传入的句柄不是有效的多句柄。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    传入的句柄不是有效的多句柄。自 cURL 7.9.6 起可用。   </span>
+ * 
  * The passed-in handle is not a valid CURLM handle.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_BAD_HANDLE', 1);
 /**
-* <span class="simpara">    句柄无效或者不正确。这可能意味着这不是句柄或者该句柄已经被自身或者其他多句柄使用了。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    句柄无效或者不正确。这可能意味着这不是句柄或者该句柄已经被自身或者其他多句柄使用了。自 cURL 7.9.6 起可用。   </span>
+ * 
  * An easy handle was not good/valid. It could mean that it isn't an easy handle at all,
  * or possibly that the handle already is in use by this or another multi handle.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_BAD_EASY_HANDLE', 2);
 /**
-* <span class="simpara">    处理多句柄时内存不足。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    处理多句柄时内存不足。自 cURL 7.9.6 起可用。   </span>
+ * 
  * Out of memory error.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_OUT_OF_MEMORY', 3);
 /**
-* <span class="simpara">    内部 <code class="literal">libcurl</code> 错误。自 cURL 7.9.6 起可用。   </span>
-*
+ * <span class="simpara">    内部 <code class="literal">libcurl</code> 错误。自 cURL 7.9.6 起可用。   </span>
+ * 
  * libcurl' internal error.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
- 
-*/
+ */
 define('CURLM_INTERNAL_ERROR', 4);
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * The message identifies a transfer that is done, and then result contains the return code for the easy handle that just completed.
  * Other return values are currently not available.
  * @link https://www.php.net/manual/en/function.curl-multi-info-read.php
  * @link https://curl.haxx.se/libcurl/c/curl_multi_info_read.html
- 
-*/
+ */
 define('CURLMSG_DONE', 1);
 
 /**
@@ -2196,33 +2033,30 @@ define('CURLMSG_DONE', 1);
 define('CURLOPT_FTPSSLAUTH', 129);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTPSSLAUTH</b> option.
  * Let cURL decide FTP authentication method.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPAUTH_DEFAULT', 0);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTPSSLAUTH</b> option.
  * Try SSL first as FTP authentication method.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPAUTH_SSL', 1);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTPSSLAUTH</b> option.
  * Try TLS first as FTP authentication method.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPAUTH_TLS', 2);
 
 /**
@@ -2232,43 +2066,39 @@ define('CURLFTPAUTH_TLS', 2);
 define('CURLOPT_FTP_SSL', 119);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL</b> option.
  * Don't attempt to use SSL.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPSSL_NONE', 0);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL</b> option.
  * Try using SSL, proceed as normal otherwise.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPSSL_TRY', 1);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL</b> option.
  * Require SSL for the control connection or fail.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPSSL_CONTROL', 2);
 
 /**
-* <span class="simpara">    </span>
-*
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL</b> option.
  * Require SSL for all communication or fail.
  * @link https://php.net/manual/zh/curl.constants.php
- 
-*/
+ */
 define('CURLFTPSSL_ALL', 3);
 /**
  * Tell curl which method to use to reach a file on a FTP(S) server.
@@ -2291,144 +2121,128 @@ define('CURLOPT_FTP_SKIP_PASV_IP', 137);
  */
 define('CURLOPT_SAFE_UPLOAD', -1);
 /**
-* <span class="simpara">     对指定 URL 中的每个路径部分执行一次 <code class="literal">CWD</code> 操作。自 cURL 7.15.3 起可用。    </span>
-*
+ * <span class="simpara">     对指定 URL 中的每个路径部分执行一次 <code class="literal">CWD</code> 操作。自 cURL 7.15.3 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_FILEMETHOD</b> option.
  * libcurl does a single CWD operation for each path part in the given URL.
  * For deep hierarchies this means many commands. This is how RFC 1738 says it should be done. This is the default but the slowest behavior.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURLFTPMETHOD_MULTICWD', 1);
 /**
-* <span class="simpara">     libcurl 完全不执行 <code class="literal">CWD</code> 操作。libcurl     执行 <code class="literal">SIZE</code>、<code class="literal">RETR</code>、<code class="literal">STOR</code> 等命令，并为这些命令向服务器提供完整路径。自     cURL 7.15.3 起可用。    </span>
-*
+ * <span class="simpara">     libcurl 完全不执行 <code class="literal">CWD</code> 操作。libcurl     执行 <code class="literal">SIZE</code>、<code class="literal">RETR</code>、<code class="literal">STOR</code> 等命令，并为这些命令向服务器提供完整路径。自     cURL 7.15.3 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_FILEMETHOD</b> option.
  * libcurl does no CWD at all.
  * libcurl will do SIZE, RETR, STOR etc and give a full path to the server for all these commands. This is the fastest behavior.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURLFTPMETHOD_NOCWD', 2);
 /**
-* <span class="simpara">     libcurl 使用完整的目标目录执行一次 <code class="literal">CWD</code>     操作，然后像在多次 CWD 情况下对文件进行操作。自 cURL 7.15.3 起可用。    </span>
-*
+ * <span class="simpara">     libcurl 使用完整的目标目录执行一次 <code class="literal">CWD</code>     操作，然后像在多次 CWD 情况下对文件进行操作。自 cURL 7.15.3 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_FILEMETHOD</b> option.
  * libcurl does one CWD with the full target directory and then operates on the file "normally" (like in the multicwd case).
  * This is somewhat more standards compliant than 'nocwd' but without the full penalty of 'multicwd'.
  * @link https://www.php.net/manual/en/curl.constants.php
- 
-*/
+ */
 define('CURLFTPMETHOD_SINGLECWD', 3);
 
-/**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
- *
+ /**
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
   * Value for the <b>CURLOPT_PROTOCOLS</b> option.
   * @link https://www.php.net/manual/en/function.curl-setopt.php
-  
-*/
+  */
  define('CURLPROTO_HTTP', 1);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_HTTPS', 2);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_FTP', 4);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_FTPS', 8);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_SCP', 16);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_SFTP', 32);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_TELNET', 64);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_LDAP', 128);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_LDAPS', 256);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_DICT', 512);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_FILE', 1024);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_TFTP', 2048);
 /**
-* <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
-*
+ * <span class="simpara">    自 cURL 7.19.4 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- 
-*/
+ */
 define('CURLPROTO_ALL', -1);
 
 /**
-* <span class="simpara">     传递 1 启用或传递 0 禁用。在多句柄上启用管道将使其尝试对使用此句柄的传输尽可能执行 HTTP     管道操作。这意味着如果添加的第二个请求可以使用已有连接，则第二个请求将在同一连接上使用“管道”。自     cURL 7.43.0 起，该值是位掩码，传递 2 将尝试在现有的 HTTP/2 连接上多路复用新传输。传递     3 指示 cURL 请求彼此独立的管道和多路复用。自 cURL 7.62.0 起，设置管道 bit 没有效果。除了整数文字，还可以使用     CURLPIPE_* 常量。自 cURL 7.16.0 起可用。    </span>
-*
+ * <span class="simpara">     传递 1 启用或传递 0 禁用。在多句柄上启用管道将使其尝试对使用此句柄的传输尽可能执行 HTTP     管道操作。这意味着如果添加的第二个请求可以使用已有连接，则第二个请求将在同一连接上使用“管道”。自     cURL 7.43.0 起，该值是位掩码，传递 2 将尝试在现有的 HTTP/2 连接上多路复用新传输。传递     3 指示 cURL 请求彼此独立的管道和多路复用。自 cURL 7.62.0 起，设置管道 bit 没有效果。除了整数文字，还可以使用     CURLPIPE_* 常量。自 cURL 7.16.0 起可用。    </span>
+ * 
  * As of cURL 7.43.0, the value is a bitmask.
  * Pass 1 to enable or 0 to disable.
  * Enabling pipelining on a multi handle will make it attempt to perform HTTP Pipelining as far as possible for transfers
@@ -2440,65 +2254,58 @@ define('CURLPROTO_ALL', -1);
  * Instead of integer literals, you can also use the <b>CURLPIPE_*</b> constants if available.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 5.5
- 
-*/
+ */
 define('CURLMOPT_PIPELINING', 3);
 
 /**
-* <span class="simpara">     指定 libcurl 可以缓存的最大同时打开的连接数。默认情况下，这个大小会自动扩展到通过 <span class="function">{@link curl_multi_add_handle()}</span>     添加的句柄数的四倍。当缓存已满时，cURL 会关闭缓存中最旧的一个连接，以防止打开的连接数继续增加。自 cURL 7.16.3 起可用    </span>
-*
+ * <span class="simpara">     指定 libcurl 可以缓存的最大同时打开的连接数。默认情况下，这个大小会自动扩展到通过 <span class="function">{@link curl_multi_add_handle()}</span>     添加的句柄数的四倍。当缓存已满时，cURL 会关闭缓存中最旧的一个连接，以防止打开的连接数继续增加。自 cURL 7.16.3 起可用    </span>
+ * 
  * Pass a number that will be used as the maximum amount of simultaneously open connections that libcurl may cache.
  * By default the size will be enlarged to fit four times the number of handles added via {@see curl_multi_add_handle()}.
  * When the cache is full, curl closes the oldest one in the cache to prevent the number of open connections from increasing.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 5.5
- 
-*/
+ */
 define('CURLMOPT_MAXCONNECTS', 6);
 /**
-* <span class="simpara">    指定应共享的数据类型。自 cURL 7.10.3 起可用。   </span>
-*
+ * <span class="simpara">    指定应共享的数据类型。自 cURL 7.10.3 起可用。   </span>
+ * 
  * Specifies a type of data that should be shared.
  * @link https://www.php.net/manual/en/function.curl-share-setopt.php
- 
-*/
+ */
 define('CURLSHOPT_SHARE', 1);
 /**
-* <span class="simpara">    指定不应共享的数据类型。自 cURL 7.10.3 起可用。   </span>
-*
+ * <span class="simpara">    指定不应共享的数据类型。自 cURL 7.10.3 起可用。   </span>
+ * 
  * Specifies a type of data that will be no longer shared.
  * @link https://www.php.net/manual/en/function.curl-share-setopt.php
- 
-*/
+ */
 define('CURLSHOPT_UNSHARE', 2);
 /**
-* <span class="simpara">    共享/取消共享 cookie 数据。自 cURL 7.10.3 起可用。   </span>
-*
+ * <span class="simpara">    共享/取消共享 cookie 数据。自 cURL 7.10.3 起可用。   </span>
+ * 
  * Value for the <b>CURLSHOPT_SHARE</b> option.
  * Shares cookie data.
  * @link https://www.php.net/manual/en/function.curl-share-setopt.php
- 
-*/
+ */
 define('CURL_LOCK_DATA_COOKIE', 2);
 /**
-* <span class="simpara">    共享/取消共享 DNS 缓存。注意，当使用 cURL 多句柄时，默认情况下添加到同一个多句柄的所有句柄将共享 DNS 缓存。自 cURL 7.10.3 起可用。   </span>
-*
+ * <span class="simpara">    共享/取消共享 DNS 缓存。注意，当使用 cURL 多句柄时，默认情况下添加到同一个多句柄的所有句柄将共享 DNS 缓存。自 cURL 7.10.3 起可用。   </span>
+ * 
  * Value for the <b>CURLSHOPT_SHARE</b> option.
  * Shares DNS cache. Note that when you use cURL multi handles,
  * all handles added to the same multi handle will share DNS cache by default.
  * @link https://www.php.net/manual/en/function.curl-share-setopt.php
- 
-*/
+ */
 define('CURL_LOCK_DATA_DNS', 3);
 /**
-* <span class="simpara">    共享/取消共享 SSL 的 session ID，从而在重新连接到同一服务器时减少 SSL 握手所需的时间。请注意，默认情况下在同一句柄内会重用    SSL 会话 ID。自 cURL 7.10.3 起可用。   </span>
-*
+ * <span class="simpara">    共享/取消共享 SSL 的 session ID，从而在重新连接到同一服务器时减少 SSL 握手所需的时间。请注意，默认情况下在同一句柄内会重用    SSL 会话 ID。自 cURL 7.10.3 起可用。   </span>
+ * 
  * Value for the <b>CURLSHOPT_SHARE</b> option.
  * Shares SSL session IDs, reducing the time spent on the SSL handshake when reconnecting to the same server.
  * Note that SSL session IDs are reused within the same handle by default.
  * @link https://www.php.net/manual/en/function.curl-share-setopt.php
- 
-*/
+ */
 define('CURL_LOCK_DATA_SSL_SESSION', 4);
 /**
  * The password required to use the <b>CURLOPT_SSLKEY</b> or <b>CURLOPT_SSH_PRIVATE_KEYFILE</b> private key.
@@ -2507,74 +2314,68 @@ define('CURL_LOCK_DATA_SSL_SESSION', 4);
 define('CURLOPT_KEYPASSWD', 10026);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_CREATE_MISSING_DIRS</b> option.
  * libcurl will attempt to create any remote directory that it fails to "move" into.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
  * @since 7.0.7
- 
-*/
+ */
 define('CURLFTP_CREATE_DIR', 1);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_CREATE_MISSING_DIRS</b> option.
  * libcurl will not attempt to create any remote directory that it fails to "move" into.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
  * @since 7.0.7
- 
-*/
+ */
 define('CURLFTP_CREATE_DIR_NONE', 0);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.22.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.22.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * NTLM delegating to winbind helper.
  * Authentication is performed by a separate binary application that is executed when needed.
  * The name of the application is specified at compile time but is typically <em>/usr/bin/ntlm_auth</em>.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLAUTH_NTLM_WB', 32);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.43.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.43.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Alias of <b>CURL_HTTP_VERSION_2_0</b>
  * Attempts HTTP 2
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_HTTP_VERSION_2', 3);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.47.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.47.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Attempts HTTP 2 over TLS (HTTPS) only
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_HTTP_VERSION_2TLS', 4);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.49.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.49.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Issues non-TLS HTTP requests using HTTP/2 without HTTP/1.1 Upgrade
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE', 5);
 
 /**
@@ -2701,11 +2502,10 @@ define('CURLOPT_PROXY_SERVICE_NAME', 10235);
 define('CURLOPT_SERVICE_NAME', 10236);
 
 /**
-* <span class="simpara">         The cURL handle.        </span>
-*
+ * <span class="simpara">         The cURL handle.        </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLOPT_SSH_HOSTKEYFUNCTION', 20316);
 
 /**
@@ -2724,11 +2524,10 @@ define('CURLOPT_REDIR_PROTOCOLS_STR', 10319);
 define('CURLOPT_WS_OPTIONS', 320);
 
 /**
-* <span class="simpara">     自 PHP 8.3.0 和 cURL 7.86.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.3.0 和 cURL 7.86.0 起可用    </span>
+ * 
  * @since 8.3
- 
-*/
+ */
 define('CURLWS_RAW_MODE', 1);
 
 /**
@@ -2742,95 +2541,87 @@ define('CURLOPT_CA_CACHE_TIMEOUT', 321);
 define('CURLOPT_QUICK_EXIT', 322);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.28.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.28.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * libcurl attempts to connect to ssh-agent or pageant and let the agent attempt the authentication.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLSSH_AUTH_AGENT', 16);
 
 /**
-* <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
+ * 
  * Value for the <b>CURLMOPT_PIPELINING</b> option.
  * Default, which means doing no attempts at pipelining or multiplexing.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPIPE_NOTHING', 0);
 
 /**
-* <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
+ * 
  * Value for the <b>CURLMOPT_PIPELINING</b> option.
  * If this bit is set, libcurl will try to pipeline HTTP/1.1 requests on connections that are already established and in use to hosts.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
  * @deprecated 7.4
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPIPE_HTTP1', 1);
 
 /**
-* <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
-*
+ * <span class="simpara">     自 cURL 7.43.0 起可用。    </span>
+ * 
  * Value for the <b>CURLMOPT_PIPELINING</b> option.
  * If this bit is set, libcurl will try to multiplex the new transfer over an existing connection if possible. This requires HTTP/2.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPIPE_MULTIPLEX', 2);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.37.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.37.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HEADEROPT</b> option.
  * Makes <b>CURLOPT_HTTPHEADER</b> headers only get sent to a server and not to a proxy.
  * Proxy headers must be set with <b>CURLOPT_PROXYHEADER</b> to get used.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLHEADER_SEPARATE', 1);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.37.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.37.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HEADEROPT</b> option.
  * The headers specified in <b>CURLOPT_HTTPHEADER</b> will be used in requests both to servers and proxies.
  * With this option enabled, <b>CURLOPT_PROXYHEADER</b> will not have any effect.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLHEADER_UNIFIED', 0);
 
 /**
-* <span class="simpara">    自 PHP 7.0.7 和 cURL 7.40.0 起可用。   </span>
-*
+ * <span class="simpara">    自 PHP 7.0.7 和 cURL 7.40.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPROTO_SMB', 67108864);
 
 /**
-* <span class="simpara">    自 PHP 7.0.7 和 cURL 7.40.0 起可用。   </span>
-*
+ * <span class="simpara">    自 PHP 7.0.7 和 cURL 7.40.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPROTO_SMBS', 134217728);
 
 /**
@@ -2856,131 +2647,119 @@ define('CURLOPT_HEADEROPT', 229);
 define('CURLOPT_PROXYHEADER', 10228);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_REDIR_POST_301', 1);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_REDIR_POST_302', 2);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.25.1 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.25.1 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_REDIR_POST_303', 4);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLPROXY_HTTP_1_0', 1);
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.18.2 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_REDIR_POST_ALL', 7);
 
 /**
-* <span class="simpara">     指定用于管道处理的块长度阈值（以字节为单位）。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
-*
+ * <span class="simpara">     指定用于管道处理的块长度阈值（以字节为单位）。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
+ * 
  * Pass a number that specifies the chunk length threshold for pipelining in bytes.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE', 30010);
 
 /**
-* <span class="simpara">     指定用于管道惩罚（pipelining penalty）的长度阈值（以字节为单位）。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
-*
+ * <span class="simpara">     指定用于管道惩罚（pipelining penalty）的长度阈值（以字节为单位）。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
+ * 
  * Pass a number that specifies the size threshold for pipelining penalty in bytes.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE', 30009);
 
 /**
-* <span class="simpara">     指定单个主机的最大连接数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
-*
+ * <span class="simpara">     指定单个主机的最大连接数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
+ * 
  * Pass a number that specifies the maximum number of connections to a single host.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLMOPT_MAX_HOST_CONNECTIONS', 7);
 
 /**
-* <span class="simpara">     指定管道中的最大请求数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
-*
+ * <span class="simpara">     指定管道中的最大请求数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
+ * 
  * Pass a number that specifies the maximum number of requests in a pipeline.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLMOPT_MAX_PIPELINE_LENGTH', 8);
 
 /**
-* <span class="simpara">     指定同时打开的最大连接数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
-*
+ * <span class="simpara">     指定同时打开的最大连接数。自 PHP 7.0.7 和 cURL 7.30.0 起可用    </span>
+ * 
  * Pass a number that specifies the maximum number of simultaneously open connections.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLMOPT_MAX_TOTAL_CONNECTIONS', 13);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.19.3 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_CREATE_MISSING_DIRS</b> option.
  * libcurl will not attempt to create any remote directory that it fails to "move" into.
  * Tells libcurl to retry the CWD command again if the subsequent MKD command fails.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
  * @since 7.0.7
- 
-*/
+ */
 define('CURLFTP_CREATE_DIR_RETRY', 2);
 
 /**
-* <span class="simpara">     自 PHP 7.0.7 和 cURL 7.38.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.38.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * HTTP Negotiate (SPNEGO) authentication
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURLAUTH_NEGOTIATE', 4);
 
 /**
-* <span class="simpara">         父级 cURL 句柄（客户端发出的请求）。        </span>
-*
+ * <span class="simpara">         父级 cURL 句柄（客户端发出的请求）。        </span>
+ * 
  * Pass a <em>callable</em> that will be registered to handle server pushes and should have the following signature:
  *  <b>parent_ch</b>
  *   The parent cURL handle (the request the client made).
@@ -2992,38 +2771,34 @@ define('CURLAUTH_NEGOTIATE', 4);
  *   or <b>CURL_PUSH_DENY</b> to reject it.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.1
- 
-*/
+ */
 define('CURLMOPT_PUSHFUNCTION', 20014);
 
 /**
-* <span class="simpara">     自 PHP 7.1.0 和 cURL 7.44.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.1.0 和 cURL 7.44.0 起可用    </span>
+ * 
  * Returned value from the push function - can handle the push.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.1
- 
-*/
+ */
 define('CURL_PUSH_OK', 0);
 
 /**
-* <span class="simpara">     自 PHP 7.1.0 和 cURL 7.44.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.1.0 和 cURL 7.44.0 起可用    </span>
+ * 
  * Returned value from the push function - can't handle the push.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
  * @since 7.1
- 
-*/
+ */
 define('CURL_PUSH_DENY', 1);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.53.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.53.0 起可用    </span>
+ * 
  * The default buffer size for <b>CURLOPT_BUFFERSIZE</b>
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_MAX_READ_SIZE', 10485760);
 
 /**
@@ -3036,63 +2811,57 @@ define('CURL_MAX_READ_SIZE', 10485760);
 define('CURLOPT_ABSTRACT_UNIX_SOCKET', 10264);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_DEFAULT', 65536);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_NONE', 0);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_TLSv1_0', 262144);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_TLSv1_1', 327680);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_TLSv1_2', 393216);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_MAX_TLSv1_3', 458752);
 
 /**
@@ -3105,75 +2874,68 @@ define('CURL_SSLVERSION_MAX_TLSv1_3', 458752);
 define('CURLOPT_SUPPRESS_CONNECT_HEADERS', 265);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.1 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.54.1 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Allows GSS-API authentication.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURLAUTH_GSSAPI', 4);
 
 /**
-* <span class="simpara">    下载的 content-length。该值从 "Content-Length:" 字段读取。如果无法得知大小，则为 -1。自 PHP 7.3.0 和 cURL 7.55.0 起可用   </span>
-*
+ * <span class="simpara">    下载的 content-length。该值从 "Content-Length:" 字段读取。如果无法得知大小，则为 -1。自 PHP 7.3.0 和 cURL 7.55.0 起可用   </span>
+ * 
  * The content-length of the download. This is the value read from the Content-Type: field. -1 if the size isn't known
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_CONTENT_LENGTH_DOWNLOAD_T', 6291471);
 
 /**
-* <span class="simpara">    指定上传大小。如果大小未知，则为 -1。自 PHP 7.3.0 和 cURL 7.55.0 起可用   </span>
-*
+ * <span class="simpara">    指定上传大小。如果大小未知，则为 -1。自 PHP 7.3.0 和 cURL 7.55.0 起可用   </span>
+ * 
  * The specified size of the upload. -1 if the size isn't known
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_CONTENT_LENGTH_UPLOAD_T', 6291472);
 
 /**
-* <span class="simpara">    已下载的总字节数。该数字仅适用于最近一次传输，每次新传输都会重新设置。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
-*
+ * <span class="simpara">    已下载的总字节数。该数字仅适用于最近一次传输，每次新传输都会重新设置。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
+ * 
  * Total number of bytes that were downloaded.
  * The number is only for the latest transfer and will be reset again for each new transfer
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_SIZE_DOWNLOAD_T', 6291464);
 
 /**
-* <span class="simpara">    上传的总字节数。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
-*
+ * <span class="simpara">    上传的总字节数。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
+ * 
  * Total number of bytes that were uploaded
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_SIZE_UPLOAD_T', 6291463);
 
 /**
-* <span class="simpara">    curl 测量的完整下载的平均下载速度（以字节/秒为单位）。自 PHP 7.3.0 和 cURL 7.50.0 开始可用   </span>
-*
+ * <span class="simpara">    curl 测量的完整下载的平均下载速度（以字节/秒为单位）。自 PHP 7.3.0 和 cURL 7.50.0 开始可用   </span>
+ * 
  * The average download speed in bytes/second that curl measured for the complete download
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_SPEED_DOWNLOAD_T', 6291465);
 
 /**
-* <span class="simpara">    curl 测量的完整上传过程的平均上传速度（以字节/秒为单位）。自 PHP 7.3.0 和 cURL 7.50.0 开始可用   </span>
-*
+ * <span class="simpara">    curl 测量的完整上传过程的平均上传速度（以字节/秒为单位）。自 PHP 7.3.0 和 cURL 7.50.0 开始可用   </span>
+ * 
  * The average upload speed in bytes/second that curl measured for the complete upload
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_SPEED_UPLOAD_T', 6291466);
 
 /**
@@ -3206,28 +2968,26 @@ define('CURLOPT_SOCKS5_AUTH', 267);
 define('CURLOPT_SSH_COMPRESSION', 268);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.56.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.56.0 起可用    </span>
+ * 
  * libcurl was build with multiple ssh backends.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_MULTI_SSL', 4194304);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.57.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.57.0 起可用    </span>
+ * 
  * Supports HTTP Brotli content encoding using libbrotlidec
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_BROTLI', 8388608);
 
 /**
-* <span class="simpara">    共享/取消共享连接缓存。自 PHP 7.3.0 和 cURL 7.10.0 起可用。   </span>
-*
+ * <span class="simpara">    共享/取消共享连接缓存。自 PHP 7.3.0 和 cURL 7.10.0 起可用。   </span>
+ * 
  * Value for the <b>CURLSHOPT_SHARE</b> option.
  * Put the connection cache in the share object and make all easy handles using this share object share the connection cache.
  * Using this, you can for example do multi-threaded libcurl use with one handle in each thread, and yet
@@ -3239,30 +2999,27 @@ define('CURL_VERSION_BROTLI', 8388608);
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/curl_share_setopt.html
  * @since 7.3
- 
-*/
+ */
 define('CURL_LOCK_DATA_CONNECT', 5);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.58.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.58.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURLSSH_AUTH_GSSAPI', 32);
 
 /**
-* <span class="simpara">    检索文档的远程时间 (Unix 时间戳)，它是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-filetime">CURLINFO_FILETIME</a></code></strong> 的替代方案，允许    32 位长整型的系统提取超出 32 位时间戳范围的日期。自 PHP 7.3.0 和 cURL 7.59.0 起可用   </span>
-*
+ * <span class="simpara">    检索文档的远程时间 (Unix 时间戳)，它是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-filetime">CURLINFO_FILETIME</a></code></strong> 的替代方案，允许    32 位长整型的系统提取超出 32 位时间戳范围的日期。自 PHP 7.3.0 和 cURL 7.59.0 起可用   </span>
+ * 
  * Remote time of the retrieved document (as Unix timestamp),
  * an alternative to <b>CURLINFO_FILETIME</b> to allow systems with 32 bit long variables to extract dates
  * outside of the 32bit timestamp range
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_FILETIME_T', 6291470);
 
 /**
@@ -3303,99 +3060,90 @@ define('CURLOPT_DNS_SHUFFLE_ADDRESSES', 275);
 define('CURLOPT_HAPROXYPROTOCOL', 274);
 
 /**
-* <span class="simpara">    共享/取消共享公共后缀列表。自 PHP 7.3.0 和 cURL 7.61.0 起可用。   </span>
-*
+ * <span class="simpara">    共享/取消共享公共后缀列表。自 PHP 7.3.0 和 cURL 7.61.0 起可用。   </span>
+ * 
  * Value for the <b>CURLSHOPT_SHARE</b> option.
  * The Public Suffix List stored in the share object is made available to all easy handle bound to the later.
  * Since the Public Suffix List is periodically refreshed, this avoids updates in too many different contexts.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/curl_share_setopt.html
  * @since 7.3
- 
-*/
+ */
 define('CURL_LOCK_DATA_PSL', 6);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.61.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.61.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * HTTP Bearer token authentication, used primarily in OAuth 2.0 protocol.
  * @link https://php.net/manual/zh/curl.constants.php
  * https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
  * @since 7.3
- 
-*/
+ */
 define('CURLAUTH_BEARER', 64);
 
 /**
-* <span class="simpara">    从建立 SSL/SSH 连接/握手起，到与远程主机完成连接所花费的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
-*
+ * <span class="simpara">    从建立 SSL/SSH 连接/握手起，到与远程主机完成连接所花费的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
+ * 
  * Time, in microseconds, it took from the start until the SSL/SSH connect/handshake to the remote host was completed
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_APPCONNECT_TIME_T', 6291512);
 
 /**
-* <span class="simpara">    从开始到完成连接远程主机（或代理）所花费的总微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
-*
+ * <span class="simpara">    从开始到完成连接远程主机（或代理）所花费的总微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
+ * 
  * Total time taken, in microseconds, from the start until the connection to the remote host (or proxy) was completed
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_CONNECT_TIME_T', 6291508);
 
 /**
-* <span class="simpara">    域名解析完成所需的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
-*
+ * <span class="simpara">    域名解析完成所需的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
+ * 
  * Time in microseconds from the start until the name resolving was completed
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_NAMELOOKUP_TIME_T', 6291507);
 
 /**
-* <span class="simpara">    从开始到文件传输即将开始为止所花费的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
-*
+ * <span class="simpara">    从开始到文件传输即将开始为止所花费的微秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
+ * 
  * Time taken from the start until the file transfer is just about to begin, in microseconds
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_PRETRANSFER_TIME_T', 6291509);
 
 /**
-* <span class="simpara">    最终事务开始前所有重定向步骤（包含域名解析、连接、传输前预处理、传输）花费的秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
-*
+ * <span class="simpara">    最终事务开始前所有重定向步骤（包含域名解析、连接、传输前预处理、传输）花费的秒数。自 PHP 7.3.0 和 cURL 7.61.0 起可用   </span>
+ * 
  * Total time, in microseconds,
  * it took for all redirection steps include name lookup, connect, pretransfer and transfer before final transaction was started
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_REDIRECT_TIME_T', 6291511);
 
 /**
-* <span class="simpara">    从开始到接收到第一个字节时所花费的时间（以微秒为单位）。自 PHP 7.3.0 和 cURL 7.61.0 开始可用   </span>
-*
+ * <span class="simpara">    从开始到接收到第一个字节时所花费的时间（以微秒为单位）。自 PHP 7.3.0 和 cURL 7.61.0 开始可用   </span>
+ * 
  * Time, in microseconds, it took from the start until the first byte is received
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_STARTTRANSFER_TIME_T', 6291510);
 
 /**
-* <span class="simpara">    上次传输的总时间（以微秒为单位），包括名称解析、TCP 连接等。自 PHP 7.3.0 和 cURL 7.61.0 开始可用   </span>
-*
+ * <span class="simpara">    上次传输的总时间（以微秒为单位），包括名称解析、TCP 连接等。自 PHP 7.3.0 和 cURL 7.61.0 开始可用   </span>
+ * 
  * Total time in microseconds for the previous transfer, including name resolving, TCP connect etc.
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_TOTAL_TIME_T', 6291506);
 
 /**
@@ -4308,13 +4056,12 @@ define("CURLOPT_CONNECT_TO", 10243);
 define("CURLOPT_TCP_FASTOPEN", 244);
 
 /**
-* <span class="simpara">    服务器发送的数据 libcurl 无法解析。在 cURL 7.51.0 之前，此错误代码称为    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-ftp-weird-server-reply">CURLE_FTP_WEIRD_SERVER_REPLY</a></code></strong>。自 PHP 7.3.0 和 cURL 7.51.0 起可用   </span>
-*
+ * <span class="simpara">    服务器发送的数据 libcurl 无法解析。在 cURL 7.51.0 之前，此错误代码称为    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-ftp-weird-server-reply">CURLE_FTP_WEIRD_SERVER_REPLY</a></code></strong>。自 PHP 7.3.0 和 cURL 7.51.0 起可用   </span>
+ * 
  * The server sent data libcurl couldn't parse.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURLE_WEIRD_SERVER_REPLY', 8);
 /**
  * <b>TRUE</b> to keep sending the request body if the HTTP code returned is equal to or larger than 300.
@@ -4325,183 +4072,165 @@ define('CURLE_WEIRD_SERVER_REPLY', 8);
  */
 define('CURLOPT_KEEP_SENDING_ON_ERROR', 245);
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_SSLVERSION_TLSv1_3', 7);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
+ * 
  * Supports HTTPS proxy.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_HTTPS_PROXY', 2097152);
 
 /**
-* <span class="simpara">    上次 HTTP 连接使用的协议。返回值将是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlproto-all">CURLPROTO_<span class="replaceable">*</span></a></code></strong>    值之一。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
-*
+ * <span class="simpara">    上次 HTTP 连接使用的协议。返回值将是 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlproto-all">CURLPROTO_<span class="replaceable">*</span></a></code></strong>    值之一。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
+ * 
  * The protocol used in the last HTTP connection. The returned value will be exactly one of the <b>CURLPROTO_*</b> values
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_PROTOCOL', 2097200);
 
 /**
-* <span class="simpara">     异步 DNS 解析。自 PHP 7.3.0 和 cURL 7.10.7 起可用    </span>
-*
+ * <span class="simpara">     异步 DNS 解析。自 PHP 7.3.0 和 cURL 7.10.7 起可用    </span>
+ * 
  * Supports asynchronous name lookups.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_ASYNCHDNS', 128);
 
 /**
-* <span class="simpara">     调试内存跟踪支持。自 PHP 7.3.6 和 cURL 7.19.6 起可用    </span>
-*
+ * <span class="simpara">     调试内存跟踪支持。自 PHP 7.3.6 和 cURL 7.19.6 起可用    </span>
+ * 
  * Supports memory tracking debug capabilities.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3.6
- 
-*/
+ */
 define('CURL_VERSION_CURLDEBUG', 8192);
 
 /**
-* <span class="simpara">     字符转换支持。自 PHP 7.3.0 和 cURL 7.15.4 起可用    </span>
-*
+ * <span class="simpara">     字符转换支持。自 PHP 7.3.0 和 cURL 7.15.4 起可用    </span>
+ * 
  * Supports character conversions.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_CONV', 4096);
 
 /**
-* <span class="simpara">     内置调试功能。自 PHP 7.3.0 和 cURL 7.10.6 起可用    </span>
-*
+ * <span class="simpara">     内置调试功能。自 PHP 7.3.0 和 cURL 7.10.6 起可用    </span>
+ * 
  * libcurl was built with debug capabilities
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_DEBUG', 64);
 
 /**
-* <span class="simpara">     支持协商（Negotiate）身份验证。自 PHP 7.3.0 和 cURL 7.10.6 起可用（自 cURL 7.38.0 起弃用）    </span>
-*
+ * <span class="simpara">     支持协商（Negotiate）身份验证。自 PHP 7.3.0 和 cURL 7.10.6 起可用（自 cURL 7.38.0 起弃用）    </span>
+ * 
  * Supports HTTP GSS-Negotiate.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_GSSNEGOTIATE', 32);
 
 /**
-* <span class="simpara">     国际化域名支持。自 PHP 7.3.0 和 cURL 7.12.0 起可用    </span>
-*
+ * <span class="simpara">     国际化域名支持。自 PHP 7.3.0 和 cURL 7.12.0 起可用    </span>
+ * 
  * Supports the IDNA.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_IDN', 1024);
 
 /**
-* <span class="simpara">     支持大于 2GB 的文件。自 cURL 7.33.0 起可用    </span>
-*
+ * <span class="simpara">     支持大于 2GB 的文件。自 cURL 7.33.0 起可用    </span>
+ * 
  * Supports large files.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_LARGEFILE', 512);
 
 /**
-* <span class="simpara">     NTLM 身份验证支持。自 PHP 7.3.0 和 cURL 7.10.6 起可用    </span>
-*
+ * <span class="simpara">     NTLM 身份验证支持。自 PHP 7.3.0 和 cURL 7.10.6 起可用    </span>
+ * 
  * Supports HTTP NTLM.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_NTLM', 16);
 
 /**
-* <span class="simpara">     Mozilla 的公共后缀列表，用于 cookie 域验证。自 PHP 7.3.6 和 cURL 7.47.0 起可用    </span>
-*
+ * <span class="simpara">     Mozilla 的公共后缀列表，用于 cookie 域验证。自 PHP 7.3.6 和 cURL 7.47.0 起可用    </span>
+ * 
  * Supports the Mozilla's Public Suffix List.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_VERSION_PSL', 1048576);
 
 /**
-* <span class="simpara">     SPNEGO 身份验证支持。自 PHP 7.3.0 和 cURL 7.10.8 起可用    </span>
-*
+ * <span class="simpara">     SPNEGO 身份验证支持。自 PHP 7.3.0 和 cURL 7.10.8 起可用    </span>
+ * 
  * Supports for SPNEGO authentication (RFC 2478).
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_SPNEGO', 256);
 
 /**
-* <span class="simpara">     基于 Windows SSPI 编译。     自 PHP 7.3.0 和 cURL 7.13.2 起可用    </span>
-*
+ * <span class="simpara">     基于 Windows SSPI 编译。     自 PHP 7.3.0 和 cURL 7.13.2 起可用    </span>
+ * 
  * Supports SSPI. Windows-specific.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_SSPI', 2048);
 
 /**
-* <span class="simpara">     TLS-SRP 身份验证支持。自 PHP 7.3.0 和 cURL 7.21.4 起可用    </span>
-*
+ * <span class="simpara">     TLS-SRP 身份验证支持。自 PHP 7.3.0 和 cURL 7.21.4 起可用    </span>
+ * 
  * Supports the TLS-SRP.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_TLSAUTH_SRP', 16384);
 
 /**
-* <span class="simpara">     支持 NTLM 委派给 winbind 助手。自 PHP 7.3.0 和 cURL 7.22.0 起可用    </span>
-*
+ * <span class="simpara">     支持 NTLM 委派给 winbind 助手。自 PHP 7.3.0 和 cURL 7.22.0 起可用    </span>
+ * 
  * Supports the NTLM delegation to a winbind helper.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_NTLM_WB', 32768);
 
 /**
-* <span class="simpara">     基于 GSS-API 库编译。自 PHP 7.3.0 和 cURL 7.38.0 起可用    </span>
-*
+ * <span class="simpara">     基于 GSS-API 库编译。自 PHP 7.3.0 和 cURL 7.38.0 起可用    </span>
+ * 
  * Supports the GSSAPI. This makes libcurl use provided functions for Kerberos and SPNEGO authentication.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_GSSAPI', 131072);
 
 /**
-* <span class="simpara">     Kerberos V5 身份验证支持。自 PHP 7.0.7 和 cURL 7.40.0 起可用    </span>
-*
+ * <span class="simpara">     Kerberos V5 身份验证支持。自 PHP 7.0.7 和 cURL 7.40.0 起可用    </span>
+ * 
  * Supports Kerberos V5 authentication for FTP, IMAP, POP3, SMTP and SOCKSv5 proxy.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURL_VERSION_KERBEROS5', 262144);
 
 /**
@@ -4555,16 +4284,15 @@ define('CURLOPT_PROXY_SSLCERTTYPE', 10255);
 define('CURLOPT_PROXY_SSLKEYTYPE', 10257);
 
 /**
-* <p class="simpara">       最好不要设置此选项并使用默认的 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-default">CURL_SSLVERSION_DEFAULT</a></code></strong>，这将尝试找出远程 SSL 协议版本。      </p>
-*
+ * <p class="simpara">       最好不要设置此选项并使用默认的 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-sslversion-default">CURL_SSLVERSION_DEFAULT</a></code></strong>，这将尝试找出远程 SSL 协议版本。      </p>
+ * 
  * One of <b>CURL_SSLVERSION_DEFAULT</b>, <b>CURL_SSLVERSION_TLSv1</b>, <b>CURL_SSLVERSION_TLSv1_0</b>, <b>CURL_SSLVERSION_TLSv1_1</b>, <b>CURL_SSLVERSION_TLSv1_2</b>,
  * <b>CURL_SSLVERSION_TLSv1_3</b>, <b>CURL_SSLVERSION_MAX_DEFAULT</b>, <b>CURL_SSLVERSION_MAX_TLSv1_0</b>, <b>CURL_SSLVERSION_MAX_TLSv1_1</b>,
  * <b>CURL_SSLVERSION_MAX_TLSv1_2</b>, <b>CURL_SSLVERSION_MAX_TLSv1_3</b> or <b>CURL_SSLVERSION_SSLv3</b>.
  * See also <b>CURLOPT_SSLVERSION</b>.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  * @since 7.3
- 
-*/
+ */
 define('CURLOPT_PROXY_SSLVERSION', 250);
 
 /**
@@ -4592,14 +4320,13 @@ define('CURLOPT_PROXY_TLSAUTH_PASSWORD', 10252);
 define('CURLOPT_PROXY_TLSAUTH_TYPE', 10253);
 
 /**
-* <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.0 和 cURL 7.52.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * Use HTTPS Proxy.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3
- 
-*/
+ */
 define('CURLPROXY_HTTPS', 2);
 
 /**
@@ -4671,33 +4398,30 @@ define('CURLOPT_PROXY_SSL_VERIFYPEER', 248);
 define('CURLOPT_PROXY_SSLCERT', 10254);
 
 /**
-* <span class="simpara">    用于最近连接的 URL scheme。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
-*
+ * <span class="simpara">    用于最近连接的 URL scheme。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
+ * 
  * The URL scheme used for the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_SCHEME', 1048625);
 
 /**
-* <span class="simpara">     Unix 域套接字支持。自 PHP 7.0.7 和 cURL 7.40.0 起可用    </span>
-*
+ * <span class="simpara">     Unix 域套接字支持。自 PHP 7.0.7 和 cURL 7.40.0 起可用    </span>
+ * 
  * Supports UNIX sockets.
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.0.7
- 
-*/
+ */
 define('CURL_VERSION_UNIX_SOCKETS', 524288);
 
 /**
-* <span class="simpara">    上次 HTTP 连接中使用的版本。返回值将是定义的 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-http-version-1-0">CURL_HTTP_VERSION_<span class="replaceable">*</span></a></code></strong>    常量中的一个，或者如果无法确定版本，则返回 0。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
-*
+ * <span class="simpara">    上次 HTTP 连接中使用的版本。返回值将是定义的 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-http-version-1-0">CURL_HTTP_VERSION_<span class="replaceable">*</span></a></code></strong>    常量中的一个，或者如果无法确定版本，则返回 0。自 PHP 7.3.0 和 cURL 7.50.0 起可用   </span>
+ * 
  * The version used in the last HTTP connection. The return value will be one of the defined
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_HTTP_VERSION', 2097198);
 /**
  * Set a string holding the host name or dotted numerical IP address to be used as the preproxy that curl connects to before
@@ -4712,14 +4436,13 @@ define('CURLINFO_HTTP_VERSION', 2097198);
  */
 define('CURLOPT_PRE_PROXY', 10262);
 /**
-* <span class="simpara">    请求（使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-proxy-ssl-verifypeer">CURLOPT_PROXY_SSL_VERIFYPEER</a></code></strong> 选项）时，证书的验证结果。仅 HTTPS 代理有效。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
-*
+ * <span class="simpara">    请求（使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-proxy-ssl-verifypeer">CURLOPT_PROXY_SSL_VERIFYPEER</a></code></strong> 选项）时，证书的验证结果。仅 HTTPS 代理有效。自 PHP 7.3.0 和 cURL 7.52.0 起可用   </span>
+ * 
  * The result of the certificate verification that was requested (using the <b>CURLOPT_PROXY_SSL_VERIFYPEER</b> option).
  * Only used for HTTPS proxies
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
  * @since 7.3
- 
-*/
+ */
 define('CURLINFO_PROXY_SSL_VERIFYRESULT', 2097199);
 /**
  * Whether to allow HTTP/0.9 responses.
@@ -4730,12 +4453,11 @@ define('CURLINFO_PROXY_SSL_VERIFYRESULT', 2097199);
 define('CURLOPT_HTTP09_ALLOWED', 285);
 
 /**
-* <span class="simpara">     自 PHP 7.3.6 和 cURL 7.64.1 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 7.3.6 和 cURL 7.64.1 起可用    </span>
+ * 
  * @link https://www.php.net/manual/en/curl.constants.php
  * @since 7.3.6
- 
-*/
+ */
 define('CURL_VERSION_ALTSVC', 16777216);
 
 /**
@@ -4779,19 +4501,17 @@ define('CURLOPT_SSLCERT_BLOB', 40291);
 define('CURLOPT_SSLKEY_BLOB', 40292);
 
 /**
-* <span class="simpara">         cURL 句柄。        </span>
-*
+ * <span class="simpara">         cURL 句柄。        </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLOPT_XFERINFOFUNCTION', 20219);
 
 /**
-* <span class="simpara">    获取最后使用的 HTTP 方法。   </span>
-*
+ * <span class="simpara">    获取最后使用的 HTTP 方法。   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLINFO_EFFECTIVE_METHOD', 1048634);
 
 /**
@@ -4800,11 +4520,10 @@ define('CURLINFO_EFFECTIVE_METHOD', 1048634);
 define('CURLOPT_MAXFILESIZE_LARGE', 30117);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.15.3 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.15.3 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLFTPMETHOD_DEFAULT', 0);
 
 /**
@@ -4818,35 +4537,31 @@ define('CURLOPT_UPKEEP_INTERVAL_MS', 281);
 define('CURLOPT_UPLOAD_BUFFERSIZE', 280);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLALTSVC_H1', 8);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLALTSVC_H2', 16);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLALTSVC_H3', 32);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.64.1 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLALTSVC_READONLYFILE', 4);
 
 /**
@@ -4870,35 +4585,31 @@ define('CURLOPT_MAXAGE_CONN', 288);
 define('CURLOPT_SASL_AUTHZID', 10289);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.66.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.66.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURL_VERSION_HTTP3', 33554432);
 
 /**
-* <span class="simpara">    <code class="literal">Retry-After</code> header 中的信息，如果没有有效的 header 则为零。自 PHP 8.2.0 和 cURL 7.66.0 起可用   </span>
-*
+ * <span class="simpara">    <code class="literal">Retry-After</code> header 中的信息，如果没有有效的 header 则为零。自 PHP 8.2.0 和 cURL 7.66.0 起可用   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLINFO_RETRY_AFTER', 6291513);
 
 /**
-* <span class="simpara">     指定 cURL 在使用 HTTP/2 连接中应支持的最大并发流数量。有效值范围是从 <code class="literal">1</code> 到     <code class="literal">2147483647</code>（<code class="literal">2^31 - 1</code>）。这里设置的值将根据其他系统资源属性来确定是否执行。默认值是     <code class="literal">100</code>。自 PHP 8.2.0 和 cURL 7.67.0 起可用。    </span>
-*
+ * <span class="simpara">     指定 cURL 在使用 HTTP/2 连接中应支持的最大并发流数量。有效值范围是从 <code class="literal">1</code> 到     <code class="literal">2147483647</code>（<code class="literal">2^31 - 1</code>）。这里设置的值将根据其他系统资源属性来确定是否执行。默认值是     <code class="literal">100</code>。自 PHP 8.2.0 和 cURL 7.67.0 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLMOPT_MAX_CONCURRENT_STREAMS', 16);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.68.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.68.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLSSLOPT_NO_PARTIALCHAIN', 4);
 
 /**
@@ -4907,59 +4618,52 @@ define('CURLSSLOPT_NO_PARTIALCHAIN', 4);
 define('CURLOPT_MAIL_RCPT_ALLLOWFAILS', 290);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.70.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.70.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLSSLOPT_REVOKE_BEST_EFFORT', 8);
 
 /**
-* <span class="simpara">    自 PHP 8.2.0 和 cURL 7.71.0 起可用。   </span>
-*
+ * <span class="simpara">    自 PHP 8.2.0 和 cURL 7.71.0 起可用。   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPROTO_MQTT', 268435456);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.71.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.71.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLSSLOPT_NATIVE_CA', 16);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.72.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.72.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURL_VERSION_UNICODE', 134217728);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.72.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.72.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURL_VERSION_ZSTD', 67108864);
 
 /**
-* <span class="simpara">    代理握手错误。<strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-proxy-error">CURLINFO_PROXY_ERROR</a></code></strong> 提供有关特定问题的额外详细信息。自 PHP 8.2.0 和 cURL 7.73.0 起可用   </span>
-*
+ * <span class="simpara">    代理握手错误。<strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlinfo-proxy-error">CURLINFO_PROXY_ERROR</a></code></strong> 提供有关特定问题的额外详细信息。自 PHP 8.2.0 和 cURL 7.73.0 起可用   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLE_PROXY', 97);
 
 /**
-* <span class="simpara">    详细的 (SOCKS) 代理错误代码。当最近传输返回 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-proxy">CURLE_PROXY</a></code></strong> 错误时，该代码会提供更多信息。返回值将是    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlpx-bad-address-type">CURLPX_<span class="replaceable">*</span></a></code></strong> 值之一。如果没有可用的响应代码，则错误代码将是    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlpx-ok">CURLPX_OK</a></code></strong>。自 PHP 8.2.0 和 cURL 7.73.0 起可用   </span>
-*
+ * <span class="simpara">    详细的 (SOCKS) 代理错误代码。当最近传输返回 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curle-proxy">CURLE_PROXY</a></code></strong> 错误时，该代码会提供更多信息。返回值将是    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlpx-bad-address-type">CURLPX_<span class="replaceable">*</span></a></code></strong> 值之一。如果没有可用的响应代码，则错误代码将是    <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlpx-ok">CURLPX_OK</a></code></strong>。自 PHP 8.2.0 和 cURL 7.73.0 起可用   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLINFO_PROXY_ERROR', 2097211);
 
 /**
@@ -4968,291 +4672,255 @@ define('CURLINFO_PROXY_ERROR', 2097211);
 define('CURLOPT_SSL_EC_CURVES', 10298);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_BAD_ADDRESS_TYPE', 1);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_BAD_VERSION', 2);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_CLOSED', 3);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_GSSAPI', 4);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_GSSAPI_PERMSG', 5);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_GSSAPI_PROTECTION', 6);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_IDENTD', 7);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_IDENTD_DIFFER', 8);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_LONG_HOSTNAME', 9);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_LONG_PASSWD', 10);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_LONG_USER', 11);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_NO_AUTH', 12);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_OK', 0);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_RECV_ADDRESS', 13);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_RECV_AUTH', 14);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_RECV_CONNECT', 15);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_RECV_REQACK', 16);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_ADDRESS_TYPE_NOT_SUPPORTED', 17);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_COMMAND_NOT_SUPPORTED', 18);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_CONNECTION_REFUSED', 19);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_GENERAL_SERVER_FAILURE', 20);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_HOST_UNREACHABLE', 21);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_NETWORK_UNREACHABLE', 22);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_NOT_ALLOWED', 23);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_TTL_EXPIRED', 24);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REPLY_UNASSIGNED', 25);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_REQUEST_FAILED', 26);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_RESOLVE_HOST', 27);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_SEND_CONNECT', 29);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_SEND_AUTH', 28);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_SEND_REQUEST', 30);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_UNKNOWN_FAIL', 31);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_UNKNOWN_MODE', 32);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.73.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLPX_USER_REJECTED', 33);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLHSTS_ENABLE', 1);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLHSTS_READONLYFILE', 2);
 
 /**
@@ -5266,19 +4934,17 @@ define('CURLOPT_HSTS', 10300);
 define('CURLOPT_HSTS_CTRL', 299);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.74.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURL_VERSION_HSTS', 268435456);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.75.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.75.0 起可用。    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLAUTH_AWS_SIGV4', 128);
 
 /**
@@ -5287,11 +4953,10 @@ define('CURLAUTH_AWS_SIGV4', 128);
 define('CURLOPT_AWS_SIGV4', 10305);
 
 /**
-* <span class="simpara">    <code class="literal">Referer</code> header。自 PHP 8.2.0 和 cURL 7.76.0 起可用   </span>
-*
+ * <span class="simpara">    <code class="literal">Referer</code> header。自 PHP 8.2.0 和 cURL 7.76.0 起可用   </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLINFO_REFERER', 1048636);
 
 /**
@@ -5310,11 +4975,10 @@ define('CURLOPT_DOH_SSL_VERIFYPEER', 306);
 define('CURLOPT_DOH_SSL_VERIFYSTATUS', 308);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.76.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.76.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURL_VERSION_GSASL', 536870912);
 
 /**
@@ -5328,11 +4992,10 @@ define('CURLOPT_CAINFO_BLOB', 40309);
 define('CURLOPT_PROXY_CAINFO_BLOB', 40310);
 
 /**
-* <span class="simpara">     自 PHP 8.2.0 和 cURL 7.77.0 起可用    </span>
-*
+ * <span class="simpara">     自 PHP 8.2.0 和 cURL 7.77.0 起可用    </span>
+ * 
  * @since 8.2
- 
-*/
+ */
 define('CURLSSLOPT_AUTO_CLIENT_CERT', 32);
 
 /**
@@ -5346,43 +5009,38 @@ define('CURLOPT_MAXLIFETIME_CONN', 314);
 define('CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256', 10311);
 
 /**
-* <span class="simpara">     自 PHP 8.4.0 和 cURL 7.66.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.4.0 和 cURL 7.66.0 起可用。    </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURL_HTTP_VERSION_3', 30);
 
 /**
-* <span class="simpara">     自 PHP 8.4.0 和 cURL 7.88.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.4.0 和 cURL 7.88.0 起可用。    </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURL_HTTP_VERSION_3ONLY', 31);
 
 /**
-* <span class="simpara">         cURL 句柄。        </span>
-*
+ * <span class="simpara">         cURL 句柄。        </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLOPT_PREREQFUNCTION', 20312);
 
 /**
-* <span class="simpara">     自 PHP 8.4.0 和 cURL 7.80.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.4.0 和 cURL 7.80.0 起可用。    </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURL_PREREQFUNC_OK', 0);
 
 /**
-* <span class="simpara">     自 PHP 8.4.0 和 cURL 7.80.0 起可用。    </span>
-*
+ * <span class="simpara">     自 PHP 8.4.0 和 cURL 7.80.0 起可用。    </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURL_PREREQFUNC_ABORT', 1);
 
 /**
@@ -5396,27 +5054,24 @@ define('CURLOPT_TCP_KEEPCNT', 326);
 define('CURLOPT_SERVER_RESPONSE_TIMEOUT', 112);
 
 /**
-* <span class="simpara">         cURL 句柄。        </span>
-*
+ * <span class="simpara">         cURL 句柄。        </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLOPT_DEBUGFUNCTION', 1);
 
 /**
-* <span class="simpara">            信息文本。           </span>
-*
+ * <span class="simpara">            信息文本。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_TEXT', 0);
 
 /**
-* <span class="simpara">            从对等方接受的 header（或者类似 header）值。           </span>
-*
+ * <span class="simpara">            从对等方接受的 header（或者类似 header）值。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_HEADER_IN', 1);
 
 /*
@@ -5427,41 +5082,36 @@ define('CURLINFO_HEADER_IN', 1);
  */
 
 /**
-* <span class="simpara">            从对等方接收到的未处理协议数据。即使数据已编码或压缩，也不会向此回调提供解码或解压缩后的数据。           </span>
-*
+ * <span class="simpara">            从对等方接收到的未处理协议数据。即使数据已编码或压缩，也不会向此回调提供解码或解压缩后的数据。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_DATA_IN', 3);
 
 /**
-* <span class="simpara">            发送给对等方的协议数据。           </span>
-*
+ * <span class="simpara">            发送给对等方的协议数据。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_DATA_OUT', 4);
 
 /**
-* <span class="simpara">            发送给对等方的 <abbr title="Secure Sockets Layer">SSL</abbr>/<abbr title="Transport Layer Security">TLS</abbr>（二进制）数据。           </span>
-*
+ * <span class="simpara">            发送给对等方的 <abbr title="Secure Sockets Layer">SSL</abbr>/<abbr title="Transport Layer Security">TLS</abbr>（二进制）数据。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_SSL_DATA_OUT', 5);
 
 /**
-* <span class="simpara">            从对等方接收的 <abbr title="Secure Sockets Layer">SSL</abbr>/<abbr title="Transport Layer Security">TLS</abbr>（二进制）数据。           </span>
-*
+ * <span class="simpara">            从对等方接收的 <abbr title="Secure Sockets Layer">SSL</abbr>/<abbr title="Transport Layer Security">TLS</abbr>（二进制）数据。           </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_SSL_DATA_IN', 6);
 
 /**
-* <span class="simpara">    从开始到发送最后一个字节所花费的微秒数。自 PHP 8.4.0 和 cURL 8.10.0 起可用   </span>
-*
+ * <span class="simpara">    从开始到发送最后一个字节所花费的微秒数。自 PHP 8.4.0 和 cURL 8.10.0 起可用   </span>
+ * 
  * @since 8.4
- 
-*/
+ */
 define('CURLINFO_POSTTRANSFER_TIME_T', 6291523);

@@ -649,6 +649,7 @@ final class colorObj
     final public function setHex($hex) {}
 }
 
+
 final class errorObj
 {
     /**
@@ -875,6 +876,7 @@ final class imageObj
     final public function saveWebImage() {}
 }
 
+
 final class labelcacheMemberObj
 {
     /**
@@ -940,6 +942,7 @@ final class labelcacheMemberObj
      */
     public $tileindex;
 }
+
 
 final class labelcacheObj
 {
@@ -1134,6 +1137,7 @@ final class labelObj
      * @var int
      */
     public $wrap;
+
 
     final public function __construct() {}
 
@@ -2157,6 +2161,7 @@ final class legendObj
     final public function updateFromString($snippet) {}
 }
 
+
 final class lineObj
 {
     /**
@@ -2165,6 +2170,7 @@ final class lineObj
      * @var int
      */
     public $numpoints;
+
 
     final public function __construct() {}
 
@@ -2228,6 +2234,7 @@ final class lineObj
      */
     final public function project(projectionObj $in, projectionObj $out) {}
 }
+
 
 final class mapObj
 {
@@ -3291,6 +3298,7 @@ final class outputformatObj
     final public function validate() {}
 }
 
+
 final class OwsrequestObj
 {
     /**
@@ -3374,6 +3382,7 @@ final class OwsrequestObj
     final public function setParameter($name, $value) {}
 }
 
+
 final class pointObj
 {
     /**
@@ -3399,6 +3408,7 @@ final class pointObj
      * @var float
      */
     public $m;
+
 
     final public function __construct() {}
 
@@ -3487,6 +3497,7 @@ final class pointObj
      */
     final public function setXYZ($x, $y, $z, $m) {}
 }
+
 
 final class projectionObj
 {
@@ -3781,6 +3792,7 @@ final class referenceMapObj
     final public function updateFromString($snippet) {}
 }
 
+
 final class resultObj
 {
     /**
@@ -3944,6 +3956,7 @@ final class scalebarObj
     final public function updateFromString($snippet) {}
 }
 
+
 final class shapefileObj
 {
     /**
@@ -4059,6 +4072,7 @@ final class shapefileObj
      */
     final public function getTransformed(mapObj $map, $i) {}
 }
+
 
 final class shapeObj
 {
@@ -4633,6 +4647,7 @@ final class styleObj
      */
     final public function updateFromString($snippet) {}
 }
+
 
 final class symbolObj
 {

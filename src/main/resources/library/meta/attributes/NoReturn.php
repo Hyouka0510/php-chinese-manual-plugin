@@ -20,5 +20,6 @@ class NoReturn
      */
     public const ANY_ARGUMENT = 1;
 
+
     public function __construct(...$arguments) {}
 }

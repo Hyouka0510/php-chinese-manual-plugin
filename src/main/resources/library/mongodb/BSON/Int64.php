@@ -17,6 +17,7 @@ final class Int64 implements Type, JsonSerializable, Stringable
     /** @since 1.16.0 */
     final public function __construct(string|int $value) {}
 
+
     public static function __set_state(array $properties): self {}
 
     /**

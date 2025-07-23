@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\WebSocket;
 
+
 class Server extends \Swoole\Http\Server
 {
     /**

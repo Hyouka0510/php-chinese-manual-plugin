@@ -1,5 +1,6 @@
 <?php
 
+
 abstract class UV
 {
     public const RUN_DEFAULT = 0;
@@ -202,31 +203,55 @@ abstract class UV
     public const EFTYPE = -4028;
 }
 
+
 abstract class UVStream extends UV {}
 
+
 class UVTcp extends UVStream {}
+
 class UVUdp extends UV {}
+
 class UVPipe extends UVStream {}
+
 class UVIdle extends UV {}
+
 class UVTimer extends UV {}
+
 class UVAsync extends UV {}
+
 class UVAddrinfo extends UV {}
+
 class UVProcess extends UV {}
+
 class UVPrepare extends UV {}
+
 class UVCheck extends UV {}
+
 class UVWork extends UV {}
+
 class UVFs extends UV {}
+
 class UVFsEvent extends UV {}
+
 class UVTty extends UVStream {}
+
 class UVFsPoll extends UV {}
+
 class UVPoll extends UV {}
+
 class UVSignal extends UV {}
+
 
 class UVLoop {}
 
+
 abstract class UVSockAddr {}
+
 class UVSockAddrIPv4 extends UVSockAddr {}
+
 class UVSockAddrIPv6 extends UVSockAddr {}
 
+
 class UVLock {}
+
 class UVStdio {}

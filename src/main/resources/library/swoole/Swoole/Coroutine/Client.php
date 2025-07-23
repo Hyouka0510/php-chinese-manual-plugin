@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Coroutine;
 
+
 class Client
 {
     public const MSG_OOB = 1;
@@ -18,7 +19,9 @@ class Client
     public $connected = false;
     private $socket;
 
+
     public function __construct($type) {}
+
 
     public function __destruct() {}
 

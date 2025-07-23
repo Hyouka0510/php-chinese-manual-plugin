@@ -103,6 +103,7 @@ class Redis
      */
     public function __construct(?array $options = null) {}
 
+
     public function __destruct() {}
 
     /**
@@ -166,6 +167,7 @@ class Redis
      */
     public function _unpack(string $value): mixed {}
 
+
     public function acl(string $subcmd, string ...$args): mixed {}
 
     /**
@@ -218,6 +220,7 @@ class Redis
      * @return Redis|int|false The number of bits set in the requested range.
      */
     public function bitcount(string $key, int $start = 0, int $end = -1, bool $bybit = false): Redis|int|false {}
+
 
     public function bitop(string $operation, string $deskey, string $srckey, string ...$other_keys): Redis|int|false {}
 
@@ -365,9 +368,12 @@ class Redis
      */
     public function clearLastError(): bool {}
 
+
     public function client(string $opt, mixed ...$args): mixed {}
 
+
     public function close(): bool {}
+
 
     public function command(?string $opt = null, mixed ...$args): mixed {}
 
@@ -387,6 +393,7 @@ class Redis
      * $redis->config('SET', ['timeout' => 30, 'loglevel' => 'warning']);
      */
     public function config(string $operation, array|string|null $key_or_settings = null, ?string $value = null): mixed {}
+
 
     public function connect(
         string $host,
@@ -440,6 +447,7 @@ class Redis
      * var_dump($redis->dbsize());
      */
     public function dbSize(): Redis|int|false {}
+
 
     public function debug(string $key): Redis|string {}
 
@@ -636,6 +644,7 @@ class Redis
      * @see Redis::expire()
      */
     public function expireAt(string $key, int $timestamp, ?string $mode = null): Redis|bool {}
+
 
     public function failover(?array $to = null, bool $abort = false, int $timeout = 0): Redis|bool {}
 
@@ -1060,6 +1069,7 @@ class Redis
      */
     public function hExists(string $key, string $field): Redis|bool {}
 
+
     public function hGet(string $key, string $member): mixed {}
 
     /**
@@ -1149,6 +1159,7 @@ class Redis
      * @example $redis->hrandfield('settings', ['count' => 2, 'withvalues' => true]);
      */
     public function hRandField(string $key, ?array $options = null): Redis|string|array {}
+
 
     public function hSet(string $key, string $member, mixed $value): Redis|int|false {}
 
@@ -1273,6 +1284,7 @@ class Redis
 
     /** @return Redis|array|false */
     public function keys(string $pattern) {}
+
 
     public function lInsert(string $key, string $pos, mixed $pivot, mixed $value) {}
 
@@ -1454,6 +1466,7 @@ class Redis
      */
     public function mget(array $keys): Redis|array {}
 
+
     public function migrate(
         string $host,
         int $port,
@@ -1504,12 +1517,14 @@ class Redis
      */
     public function multi(int $value = Redis::MULTI): bool|Redis {}
 
+
     public function object(string $subcommand, string $key): Redis|int|string|false {}
 
     /**
      * @deprecated
      */
     public function open(string $host, int $port = 6379, float $timeout = 0, ?string $persistent_id = null, int $retry_interval = 0, float $read_timeout = 0, ?array $context = null): bool {}
+
 
     public function pconnect(string $host, int $port = 6379, float $timeout = 0, ?string $persistent_id = null, int $retry_interval = 0, float $read_timeout = 0, ?array $context = null): bool {}
 
@@ -1645,6 +1660,7 @@ class Redis
      * @return Redis|int|false The number of subscribed clients to the given channel.
      */
     public function publish(string $channel, string $message): Redis|int|false {}
+
 
     public function pubsub(string $command, mixed $arg = null): mixed {}
 
@@ -3381,5 +3397,6 @@ class Redis
      */
     public function zunionstore(string $dst, array $keys, ?array $weights = null, ?string $aggregate = null): Redis|int|false {}
 }
+
 
 class RedisException extends RuntimeException {}

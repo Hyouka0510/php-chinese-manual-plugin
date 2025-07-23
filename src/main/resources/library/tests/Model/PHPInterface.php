@@ -7,6 +7,7 @@ use PhpParser\Node\Stmt\Interface_;
 use ReflectionClass;
 use stdClass;
 
+
 class PHPInterface extends BasePHPClass
 {
     public $parentInterfaces = [];
@@ -17,17 +18,22 @@ class PHPInterface extends BasePHPClass
      */
     public function readObjectFromReflection($reflectionObject)
     {
+
         $this->name = $reflectionObject->getShortName();
         if (!empty($reflectionObject->getNamespaceName())) {
+
             $this->namespace = "\\" . $reflectionObject->getNamespaceName();
         }
+
         $this->id = "$this->namespace\\$this->name";
         foreach ($reflectionObject->getMethods() as $method) {
             if ($method->getDeclaringClass()->getShortName() !== $this->name) {
                 continue;
             }
+
             $this->methods[$method->name] = (new PHPMethod())->readObjectFromReflection($method);
         }
+
         $this->parentInterfaces = array_map(function ($interface) {
             return "\\" . $interface;
         }, $reflectionObject->getInterfaceNames());
@@ -36,6 +42,7 @@ class PHPInterface extends BasePHPClass
                 if ($constant->getDeclaringClass()->getShortName() !== $this->name) {
                     continue;
                 }
+
                 $this->constants[$constant->name] = (new PHPClassConstant())->readObjectFromReflection($constant);
             }
         }
@@ -48,17 +55,25 @@ class PHPInterface extends BasePHPClass
      */
     public function readObjectFromStubNode($node)
     {
+
         $this->id = self::getFQN($node);
+
         $this->name = self::getShortName($node);
+
         $this->namespace = rtrim(str_replace((string)$node->name, "", "\\" . $node->namespacedName), '\\');
+
         $this->collectTags($node);
+
         $this->checkDeprecationTag($node);
+
         $this->availableVersionsRangeFromAttribute = self::findAvailableVersionsRangeFromAttribute($node->attrGroups);
         if (!empty($node->extends)) {
             foreach ($node->extends as $extend) {
+
                 $this->parentInterfaces[] = $extend->toCodeString();
             }
         }
+
         $this->stubObjectHash = spl_object_hash($this);
         return $this;
     }
@@ -75,9 +90,11 @@ class PHPInterface extends BasePHPClass
                     foreach ($interface->problems as $problem) {
                         switch ($problem->description) {
                             case 'wrong parent':
+
                                 $this->mutedProblems[StubProblemType::WRONG_PARENT] = $problem->versions;
                                 break;
                             case 'missing interface':
+
                                 $this->mutedProblems[StubProblemType::STUB_IS_MISSED] = $problem->versions;
                                 break;
                             default:
@@ -87,11 +104,13 @@ class PHPInterface extends BasePHPClass
                 }
                 if (!empty($interface->methods)) {
                     foreach ($this->methods as $method) {
+
                         $method->readMutedProblems($interface->methods);
                     }
                 }
                 if (!empty($interface->constants)) {
                     foreach ($this->constants as $constant) {
+
                         $constant->readMutedProblems($interface->constants);
                     }
                 }

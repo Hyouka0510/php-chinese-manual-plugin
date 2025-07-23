@@ -7,8 +7,8 @@ namespace Swoole\Coroutine;
 use Swoole\Client;
 
 /**
-* <div id="class.socket" class="reference"> <h1 class="title">Socket 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="socket.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">Socket</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="socket.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">Socket</strong></strong>     {</div>   }</div>  </div> </div> </div>
-*/
+ * <div id="class.socket" class="reference"> <h1 class="title">Socket 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="socket.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">Socket</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="socket.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">Socket</strong></strong>     {</div>   }</div>  </div> </div> </div>
+ */
 class Socket
 {
     public $fd = -1;
@@ -17,6 +17,7 @@ class Socket
     public $protocol = 0;
     public $errCode = 0;
     public $errMsg = '';
+
 
     public function __construct($domain, $type, $protocol = null) {}
 
@@ -177,6 +178,7 @@ class Socket
      */
     public function setOption($level, $opt_name, $opt_value) {}
 
+
     public function sslHandshake(): bool {}
 
     /**
@@ -188,6 +190,7 @@ class Socket
      * @param int $event Must be constant SWOOLE_EVENT_READ or SWOOLE_EVENT_WRITE.
      */
     public function cancel(int $event = SWOOLE_EVENT_READ): bool {}
+
 
     public function close(): bool {}
 

@@ -173,6 +173,7 @@ const AMQP_EXTENSION_VERSION_ID = '10112';
  */
 class AMQPBasicProperties
 {
+
     public function __construct(
         ?string $contentType = null,
         ?string $contentEncoding = null,
@@ -1006,7 +1007,9 @@ class AMQPConnection
      */
     public function getSaslMethod() {}
 
+
     public function setConnectionName(?string $connectionName): void {}
+
 
     public function getConnectionName(): ?string {}
 }
@@ -1021,6 +1024,7 @@ class AMQPConnectionException extends AMQPException {}
  */
 interface AMQPValue
 {
+
     public function toAmqpValue(): float|array|AMQPDecimal|bool|int|AMQPValue|string|AMQPTimestamp|null;
 }
 
@@ -1047,6 +1051,7 @@ final /* readonly */ class AMQPDecimal implements AMQPValue
 
     /** @return int */
     public function getSignificand() {}
+
 
     public function toAmqpValue(): float|array|AMQPDecimal|bool|int|AMQPValue|string|AMQPTimestamp|null {}
 }
@@ -1127,6 +1132,7 @@ class AMQPEnvelope extends AMQPBasicProperties
  */
 class AMQPEnvelopeException extends AMQPException
 {
+
     public function getEnvelope(): AMQPEnvelope {}
 }
 
@@ -1301,8 +1307,11 @@ class AMQPExchange
      * @return void
      */
     public function publish(
+
         $message,
+
         $routingKey = null,
+
         $flags = null,
         array $headers = []
     ) {}
@@ -1495,7 +1504,9 @@ class AMQPQueue
      */
     public function consume(
         callable $callback = null,
+
         $flags = null,
+
         $consumerTag = null
     ) {}
 
@@ -1763,6 +1774,7 @@ class AMQPQueue
  */
 class AMQPQueueException extends AMQPException {}
 
+
 class AMQPValueException extends AMQPException {}
 
 /**
@@ -1778,9 +1790,12 @@ final /* readonly */ class AMQPTimestamp implements AMQPValue
      */
     public function __construct(float $timestamp) {}
 
+
     public function __toString(): string {}
 
+
     public function getTimestamp(): float {}
+
 
     public function toAmqpValue(): float|array|AMQPDecimal|bool|int|AMQPValue|string|AMQPTimestamp|null {}
 }

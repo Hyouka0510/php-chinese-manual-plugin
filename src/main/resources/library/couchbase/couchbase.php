@@ -432,12 +432,11 @@ interface TermFacetResult
      */
     public function term(): string;
 
-/**
-* <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 12<br>int(0)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal error: Uncaught TypeError: count(): Argument #1 ($var) must be of type Countable .. on line 12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
-    *
+    /**
+ * <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">\$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;12<br>int(0)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal&nbsp;error:&nbsp;Uncaught&nbsp;TypeError:&nbsp;count():&nbsp;Argument&nbsp;#1&nbsp;(\$var)&nbsp;must&nbsp;be&nbsp;of&nbsp;type&nbsp;Countable&nbsp;..&nbsp;on&nbsp;line&nbsp;12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">\$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">\$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
+ * 
      * @return int
-     
-*/
+     */
     public function count(): int;
 }
 
@@ -452,28 +451,25 @@ interface NumericRangeFacetResult
      */
     public function name(): string;
 
-/**
-* <div id="function.min" class="refentry"> <div class="refnamediv">  <h1 class="refname">min</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">min</span> — <span class="dc-title">找出最小值</span></p> </div> <div class="refsect1 description" id="refsect1-function.min-description">  <h3 class="title">说明</h3>   <div class="methodsynopsis dc-description">    <span class="methodname" style="color:#CC7832"><strong>min</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">...$values</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>   <p class="simpara">替代签名（不支持命名参数）：</p>   <div class="methodsynopsis dc-description"><span class="methodname" style="color:#CC7832"><strong>min</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter" style="color:#3A95FF">$value_array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="para rdfs-comment">   如果仅有一个参数且为数组，<span class="function"><strong>min()</strong></span>   返回该数组中最小的值。如果给出了两个或更多参数,   <span class="function"><strong>min()</strong></span> 会返回这些值中最小的一个。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    不同类型的值将使用<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">标准比较规则</a>进行比较。例如，一个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 与 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> 比较时就当做是 <span class="literal">0</span>，但多个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 值将会按照字母数字比较。返回的实际值是未应用任何转换的原始类型。   </p>  </blockquote>  <div class="caution"><strong class="caution">警告</strong>   <p class="simpara">    传递不同类型的参数时要小心，因为 <span class="function"><strong>min()</strong></span> 会产生不可预测的结果。   </p>  </div> </div>  <div class="refsect1 parameters" id="refsect1-function.min-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">values</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">value_array</span></dt>     <dd>      <p class="para">       包含值的数组。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.min-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   <span class="function"><strong>min()</strong></span> 根据标准比较返回认为是“最小”的参数值。如果不同类型的多个值认为相等（比如   <span class="literal">0</span> 与 <span class="literal">'abc'</span>），则将会返回提供给函数的第一个值。  </p> </div> <div class="refsect1 errors" id="refsect1-function.min-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   如果传递空数组，<span class="function"><strong>min()</strong></span> 抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.min-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       <span class="function"><strong>min()</strong></span> 现在失败时会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>；之前会返回        <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> 并发出 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误。      </td>     </tr>     <tr>      <td>8.0.0</td>      <td>       由于 <a href="https://php.net/manual/zh/migration80.incompatible.php#migration80.incompatible.core.string-number-comparision" class="link">字符串到数字的比较</a>       已经改变，<span class="function"><strong>min()</strong></span> 在这些情况下不再根据参数的顺序返回不同的值。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.min-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3357">    <p><strong>示例 #1 <span class="function"><strong>min()</strong></span> 用法的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">6</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;  </span><span style="color: #FF8000">// 1<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">)), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">; </span><span style="color: #FF8000">// 2<br><br>// Here we are comparing -1 &lt; 0, so -1 is the lowest value<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">, -</span><span style="color: #9876AA">1</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;    </span><span style="color: #FF8000">// -1<br><br>// With multiple arrays of different lengths, min returns the shortest<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">), array(</span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 2, 2)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// Multiple arrays of the same length are compared from left to right<br>// so in our example: 2 == 2, but 4 &lt; 5<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">8</span><span style="color: #007700">), array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 4, 8)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 如果同时给出数组和非数组，则绝对不会返回数组<br>// 因为比较认为数组大于任何值<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'string'</span><span style="color: #007700">, array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">42</span><span style="color: #007700">);   </span><span style="color: #FF8000">// string<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// If one argument is NULL or a boolean, it will be compared against<br>// other values using the rules FALSE &lt; TRUE and NULL == FALSE regardless of the <br>// other types involved<br>// In the below examples, both -10 and 10 are treated as TRUE in the comparison<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">FALSE</span><span style="color: #007700">, </span><span style="color: #9876AA">10</span><span style="color: #007700">); </span><span style="color: #FF8000">// FALSE<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">NULL</span><span style="color: #007700">, </span><span style="color: #9876AA">10</span><span style="color: #007700">);  </span><span style="color: #FF8000">// NULL<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 0, on the other hand, is treated as FALSE, so is "lower than" TRUE<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #9876AA">0</span><span style="color: #007700">, </span><span style="color: #9876AA">TRUE</span><span style="color: #007700">); </span><span style="color: #FF8000">// 0<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div>  <div class="refsect1 seealso" id="refsect1-function.min-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link max()} - 找出最大值</span></li>    <li><span class="function">{@link count()} - 统计数组、Countable 对象中所有元素的数量</span></li>   </ul>   </div></div>
-    *
+    /**
+ * <div id="function.min" class="refentry"> <div class="refnamediv">  <h1 class="refname">min</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">min</span> — <span class="dc-title">找出最小值</span></p> </div> <div class="refsect1 description" id="refsect1-function.min-description">  <h3 class="title">说明</h3>   <div class="methodsynopsis dc-description">    <span class="methodname" style="color:#CC7832"><strong>min</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">\$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">...\$values</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>   <p class="simpara">替代签名（不支持命名参数）：</p>   <div class="methodsynopsis dc-description"><span class="methodname" style="color:#CC7832"><strong>min</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter" style="color:#3A95FF">\$value_array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="para rdfs-comment">   如果仅有一个参数且为数组，<span class="function"><strong>min()</strong></span>   返回该数组中最小的值。如果给出了两个或更多参数,   <span class="function"><strong>min()</strong></span> 会返回这些值中最小的一个。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    不同类型的值将使用<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">标准比较规则</a>进行比较。例如，一个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 与 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> 比较时就当做是 <span class="literal">0</span>，但多个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 值将会按照字母数字比较。返回的实际值是未应用任何转换的原始类型。   </p>  </blockquote>  <div class="caution"><strong class="caution">警告</strong>   <p class="simpara">    传递不同类型的参数时要小心，因为 <span class="function"><strong>min()</strong></span> 会产生不可预测的结果。   </p>  </div> </div>  <div class="refsect1 parameters" id="refsect1-function.min-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">values</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">value_array</span></dt>     <dd>      <p class="para">       包含值的数组。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.min-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   <span class="function"><strong>min()</strong></span> 根据标准比较返回认为是“最小”的参数值。如果不同类型的多个值认为相等（比如   <span class="literal">0</span> 与 <span class="literal">'abc'</span>），则将会返回提供给函数的第一个值。  </p> </div> <div class="refsect1 errors" id="refsect1-function.min-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   如果传递空数组，<span class="function"><strong>min()</strong></span> 抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.min-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       <span class="function"><strong>min()</strong></span> 现在失败时会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>；之前会返回        <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> 并发出 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误。      </td>     </tr>     <tr>      <td>8.0.0</td>      <td>       由于 <a href="https://php.net/manual/zh/migration80.incompatible.php#migration80.incompatible.core.string-number-comparision" class="link">字符串到数字的比较</a>       已经改变，<span class="function"><strong>min()</strong></span> 在这些情况下不再根据参数的顺序返回不同的值。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.min-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3357">    <p><strong>示例 #1 <span class="function"><strong>min()</strong></span> 用法的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">6</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;  </span><span style="color: #FF8000">// 1<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">)), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">; </span><span style="color: #FF8000">// 2<br><br>// Here we are comparing -1 &lt; 0, so -1 is the lowest value<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">, -</span><span style="color: #9876AA">1</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;    </span><span style="color: #FF8000">// -1<br><br>// With multiple arrays of different lengths, min returns the shortest<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">), array(</span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 2, 2)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// Multiple arrays of the same length are compared from left to right<br>// so in our example: 2 == 2, but 4 &lt; 5<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">8</span><span style="color: #007700">), array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 4, 8)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 如果同时给出数组和非数组，则绝对不会返回数组<br>// 因为比较认为数组大于任何值<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'string'</span><span style="color: #007700">, array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">42</span><span style="color: #007700">);   </span><span style="color: #FF8000">// string<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// If one argument is NULL or a boolean, it will be compared against<br>// other values using the rules FALSE &lt; TRUE and NULL == FALSE regardless of the <br>// other types involved<br>// In the below examples, both -10 and 10 are treated as TRUE in the comparison<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">FALSE</span><span style="color: #007700">, </span><span style="color: #9876AA">10</span><span style="color: #007700">); </span><span style="color: #FF8000">// FALSE<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">NULL</span><span style="color: #007700">, </span><span style="color: #9876AA">10</span><span style="color: #007700">);  </span><span style="color: #FF8000">// NULL<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 0, on the other hand, is treated as FALSE, so is "lower than" TRUE<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">min</span><span style="color: #007700">(</span><span style="color: #9876AA">0</span><span style="color: #007700">, </span><span style="color: #9876AA">TRUE</span><span style="color: #007700">); </span><span style="color: #FF8000">// 0<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div>  <div class="refsect1 seealso" id="refsect1-function.min-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link max()} - 找出最大值</span></li>    <li><span class="function">{@link count()} - 统计数组、Countable 对象中所有元素的数量</span></li>   </ul>   </div></div>
+ * 
      * @return int|float|null
-     
-*/
+     */
     public function min();
 
-/**
-* <div id="function.max" class="refentry"> <div class="refnamediv">  <h1 class="refname">max</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">max</span> — <span class="dc-title">找出最大值</span></p> </div> <div class="refsect1 description" id="refsect1-function.max-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>max</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">...$values</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="simpara">替代签名（不支持命名参数）：</p>  <div class="methodsynopsis dc-description"><span class="methodname" style="color:#CC7832"><strong>max</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter" style="color:#3A95FF">$value_array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="para rdfs-comment">   如果仅有一个参数且为数组，<span class="function"><strong>max()</strong></span>   返回该数组中最大的值。如果第一个参数是整数、字符串或浮点数，则至少需要两个参数而   <span class="function"><strong>max()</strong></span> 会返回这些值中最大的一个。可以比较无限多个值。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    不同类型的值将使用<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">标准比较规则</a>进行比较。例如，一个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 与 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> 比较时就当做是 <span class="literal">0</span>，但多个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 值将会按照字母数字比较。返回的实际值是未应用任何转换的原始类型。   </p>  </blockquote>  <div class="caution"><strong class="caution">警告</strong>   <p class="simpara">    传递不同类型的参数时要小心，因为 <span class="function"><strong>max()</strong></span> 会产生不可预测的结果。   </p>  </div> </div> <div class="refsect1 parameters" id="refsect1-function.max-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">values</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">value_array</span></dt>     <dd>      <p class="para">       包含值的数组。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.max-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   <span class="function"><strong>max()</strong></span> 根据标准比较返回认为是“最大”的参数值。如果不同类型的多个值认为相等（比如   <span class="literal">0</span> 与 <span class="literal">'abc'</span>），则将会返回提供给函数的第一个值。  </p> </div> <div class="refsect1 errors" id="refsect1-function.max-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   如果传递空数组，<span class="function"><strong>max()</strong></span> 抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.max-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       <span class="function"><strong>max()</strong></span> 现在失败时会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>；之前会返回        <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> 并发出 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误。      </td>     </tr>     <tr>      <td>8.0.0</td>      <td>       由于 <a href="https://php.net/manual/zh/migration80.incompatible.php#migration80.incompatible.core.string-number-comparision" class="link">字符串到数字的比较</a>       已经改变，<span class="function"><strong>max()</strong></span> 在这些情况下不再根据参数的顺序返回不同的值。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.max-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3356">    <p><strong>示例 #1 使用 <span class="function"><strong>max()</strong></span> 的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">6</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;  </span><span style="color: #FF8000">// 7<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">)), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">; </span><span style="color: #FF8000">// 5<br><br>// Here we are comparing -1 &lt; 0, so 'hello' is the highest value<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">, -</span><span style="color: #9876AA">1</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;    </span><span style="color: #FF8000">// hello<br><br>// With multiple arrays of different lengths, max returns the longest<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">), array(</span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(1, 1, 1, 1)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// Multiple arrays of the same length are compared from left to right<br>// so in our example: 2 == 2, but 5 &gt; 4<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">8</span><span style="color: #007700">), array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 5, 1)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 如果同时给出数组和非数组，则绝对不会返回数组<br>// 因为比较认为数组大于任何值<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #DD0000">'string'</span><span style="color: #007700">, array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">42</span><span style="color: #007700">);   </span><span style="color: #FF8000">// array(2, 5, 7)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// If one argument is NULL or a boolean, it will be compared against<br>// other values using the rule FALSE &lt; TRUE regardless of the other types involved<br>// In the below example, -10 is treated as TRUE in the comparison<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">FALSE</span><span style="color: #007700">); </span><span style="color: #FF8000">// -10<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 0, on the other hand, is treated as FALSE, so is "lower than" TRUE<br></span><span style="color: #9876AA">$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #9876AA">0</span><span style="color: #007700">, </span><span style="color: #9876AA">TRUE</span><span style="color: #007700">); </span><span style="color: #FF8000">// TRUE<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">$val</span><span style="color: #007700">);<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    </div>    </div> <div class="refsect1 seealso" id="refsect1-function.max-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link min()} - 找出最小值</span></li>    <li><span class="function">{@link count()} - 统计数组、Countable 对象中所有元素的数量</span></li>   </ul>   </div></div>
-    *
+    /**
+ * <div id="function.max" class="refentry"> <div class="refnamediv">  <h1 class="refname">max</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">max</span> — <span class="dc-title">找出最大值</span></p> </div> <div class="refsect1 description" id="refsect1-function.max-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>max</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">\$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span> <span class="parameter" style="color:#3A95FF">...\$values</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="simpara">替代签名（不支持命名参数）：</p>  <div class="methodsynopsis dc-description"><span class="methodname" style="color:#CC7832"><strong>max</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter" style="color:#3A95FF">\$value_array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>  <p class="para rdfs-comment">   如果仅有一个参数且为数组，<span class="function"><strong>max()</strong></span>   返回该数组中最大的值。如果第一个参数是整数、字符串或浮点数，则至少需要两个参数而   <span class="function"><strong>max()</strong></span> 会返回这些值中最大的一个。可以比较无限多个值。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    不同类型的值将使用<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">标准比较规则</a>进行比较。例如，一个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 与 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> 比较时就当做是 <span class="literal">0</span>，但多个非数字    <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> 值将会按照字母数字比较。返回的实际值是未应用任何转换的原始类型。   </p>  </blockquote>  <div class="caution"><strong class="caution">警告</strong>   <p class="simpara">    传递不同类型的参数时要小心，因为 <span class="function"><strong>max()</strong></span> 会产生不可预测的结果。   </p>  </div> </div> <div class="refsect1 parameters" id="refsect1-function.max-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">values</span></dt>     <dd>      <p class="para">       任何<a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">可比较</a>的值。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">value_array</span></dt>     <dd>      <p class="para">       包含值的数组。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.max-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   <span class="function"><strong>max()</strong></span> 根据标准比较返回认为是“最大”的参数值。如果不同类型的多个值认为相等（比如   <span class="literal">0</span> 与 <span class="literal">'abc'</span>），则将会返回提供给函数的第一个值。  </p> </div> <div class="refsect1 errors" id="refsect1-function.max-errors">  <h3 class="title">错误／异常</h3>  <p class="para">   如果传递空数组，<span class="function"><strong>max()</strong></span> 抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.max-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       <span class="function"><strong>max()</strong></span> 现在失败时会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.valueerror.php" class="classname">ValueError</a></span>；之前会返回        <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> 并发出 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误。      </td>     </tr>     <tr>      <td>8.0.0</td>      <td>       由于 <a href="https://php.net/manual/zh/migration80.incompatible.php#migration80.incompatible.core.string-number-comparision" class="link">字符串到数字的比较</a>       已经改变，<span class="function"><strong>max()</strong></span> 在这些情况下不再根据参数的顺序返回不同的值。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.max-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-3356">    <p><strong>示例 #1 使用 <span class="function"><strong>max()</strong></span> 的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">6</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;  </span><span style="color: #FF8000">// 7<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">)), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">; </span><span style="color: #FF8000">// 5<br><br>// Here we are comparing -1 &lt; 0, so 'hello' is the highest value<br></span><span style="color: #007700">echo </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">, -</span><span style="color: #9876AA">1</span><span style="color: #007700">), </span><span style="color: #9876AA">PHP_EOL</span><span style="color: #007700">;    </span><span style="color: #FF8000">// hello<br><br>// With multiple arrays of different lengths, max returns the longest<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">2</span><span style="color: #007700">), array(</span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(1, 1, 1, 1)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// Multiple arrays of the same length are compared from left to right<br>// so in our example: 2 == 2, but 5 &gt; 4<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">4</span><span style="color: #007700">, </span><span style="color: #9876AA">8</span><span style="color: #007700">), array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">1</span><span style="color: #007700">)); </span><span style="color: #FF8000">// array(2, 5, 1)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 如果同时给出数组和非数组，则绝对不会返回数组<br>// 因为比较认为数组大于任何值<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #DD0000">'string'</span><span style="color: #007700">, array(</span><span style="color: #9876AA">2</span><span style="color: #007700">, </span><span style="color: #9876AA">5</span><span style="color: #007700">, </span><span style="color: #9876AA">7</span><span style="color: #007700">), </span><span style="color: #9876AA">42</span><span style="color: #007700">);   </span><span style="color: #FF8000">// array(2, 5, 7)<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// If one argument is NULL or a boolean, it will be compared against<br>// other values using the rule FALSE &lt; TRUE regardless of the other types involved<br>// In the below example, -10 is treated as TRUE in the comparison<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(-</span><span style="color: #9876AA">10</span><span style="color: #007700">, </span><span style="color: #9876AA">FALSE</span><span style="color: #007700">); </span><span style="color: #FF8000">// -10<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br><br></span><span style="color: #FF8000">// 0, on the other hand, is treated as FALSE, so is "lower than" TRUE<br></span><span style="color: #9876AA">\$val </span><span style="color: #007700">= </span><span style="color: #9876AA">max</span><span style="color: #007700">(</span><span style="color: #9876AA">0</span><span style="color: #007700">, </span><span style="color: #9876AA">TRUE</span><span style="color: #007700">); </span><span style="color: #FF8000">// TRUE<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">\$val</span><span style="color: #007700">);<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    </div>    </div> <div class="refsect1 seealso" id="refsect1-function.max-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link min()} - 找出最小值</span></li>    <li><span class="function">{@link count()} - 统计数组、Countable 对象中所有元素的数量</span></li>   </ul>   </div></div>
+ * 
      * @return int|float|null
-     
-*/
+     */
     public function max();
 
-/**
-* <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 12<br>int(0)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal error: Uncaught TypeError: count(): Argument #1 ($var) must be of type Countable .. on line 12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
-    *
+    /**
+ * <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">\$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;12<br>int(0)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal&nbsp;error:&nbsp;Uncaught&nbsp;TypeError:&nbsp;count():&nbsp;Argument&nbsp;#1&nbsp;(\$var)&nbsp;must&nbsp;be&nbsp;of&nbsp;type&nbsp;Countable&nbsp;..&nbsp;on&nbsp;line&nbsp;12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">\$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">\$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
+ * 
      * @return int
-     
-*/
+     */
     public function count(): int;
 }
 
@@ -493,20 +489,18 @@ interface DateRangeFacetResult
      */
     public function start(): ?string;
 
-/**
-* <div id="function.end" class="refentry">   <div class="refnamediv">    <h1 class="refname">end</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">end</span> — <span class="dc-title">     将数组的内部指针指向最后一个单元    </span></p>   </div> <div class="refsect1 description" id="refsect1-function.end-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>end</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span></span> <span class="parameter reference" style="color:#3A95FF">&amp;$array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>    <p class="para rdfs-comment">     <span class="function"><strong>end()</strong></span> 将 <span class="parameter" style="color:#3A95FF">array</span>     的内部指针移动到最后一个单元并返回其值。    </p>   </div>    <div class="refsect1 parameters" id="refsect1-function.end-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">array</span></dt>     <dd>      <p class="para">       这个数组。       该数组是通过引用传递的，因为它会被这个函数修改。       这意味着你必须传入一个真正的变量，而不是函数返回的数组，因为只有真正的变量才能以引用传递。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.end-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回最后一个元素的值，或者如果是空数组则返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.end-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr> <td>8.1.0</td> <td>  弃用在 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span> 上调用此函数。  要么首先使用 <span class="function">{@link get_mangled_object_vars()}</span> 将 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span> 转换为 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>，要么使用实现  <span class="interfacename"><a href="https://php.net/manual/zh/class.iterator.php" class="interfacename">Iterator</a></span> 的类提供的方法，例如 <span class="classname"><a href="https://php.net/manual/zh/class.arrayiterator.php" class="classname">ArrayIterator</a></span>。 </td></tr><tr> <td>7.4.0</td> <td>  <a href="https://php.net/manual/zh/book.spl.php" class="link">SPL</a> 类的实例现在被视为没有属性的空对象，而不是调用与此函数同名的 <span class="interfacename"><a href="https://php.net/manual/zh/class.iterator.php" class="interfacename">Iterator</a></span> 方法。 </td></tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.end-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-5277">    <p><strong>示例 #1 <span class="function"><strong>end()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>$fruits </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'cranberry'</span><span style="color: #007700">);<br>echo </span><span style="color: #9876AA">end</span><span style="color: #007700">(</span><span style="color: #9876AA">$fruits</span><span style="color: #007700">); </span><span style="color: #FF8000">// cranberry<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.end-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link current()} - 返回数组中的当前值</span></li>    <li><span class="function">{@link each()} - 返回数组中当前的键／值对并将数组指针向前移动一步</span></li>    <li><span class="function">{@link prev()} - 将数组的内部指针倒回一位</span></li>    <li><span class="function">{@link reset()} - 将数组的内部指针指向第一个单元</span></li>    <li><span class="function">{@link next()} - 将数组中的内部指针向前移动一位</span></li>    <li><span class="function">{@link array_key_last()} - 获取一个数组的最后一个键值</span></li>   </ul>   </div>  </div>
-    *
+    /**
+ * <div id="function.end" class="refentry">   <div class="refnamediv">    <h1 class="refname">end</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">end</span> — <span class="dc-title">     将数组的内部指针指向最后一个单元    </span></p>   </div> <div class="refsect1 description" id="refsect1-function.end-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>end</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span></span> <span class="parameter reference" style="color:#3A95FF">&amp;\$array</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.mixed.php" class="type mixed" style="color:#EAB766">mixed</a></span></div>    <p class="para rdfs-comment">     <span class="function"><strong>end()</strong></span> 将 <span class="parameter" style="color:#3A95FF">array</span>     的内部指针移动到最后一个单元并返回其值。    </p>   </div>    <div class="refsect1 parameters" id="refsect1-function.end-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">array</span></dt>     <dd>      <p class="para">       这个数组。       该数组是通过引用传递的，因为它会被这个函数修改。       这意味着你必须传入一个真正的变量，而不是函数返回的数组，因为只有真正的变量才能以引用传递。      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.end-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回最后一个元素的值，或者如果是空数组则返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.end-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr> <td>8.1.0</td> <td>  弃用在 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span> 上调用此函数。  要么首先使用 <span class="function">{@link get_mangled_object_vars()}</span> 将 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.object.php" class="type object" style="color:#EAB766">object</a></span> 转换为 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>，要么使用实现  <span class="interfacename"><a href="https://php.net/manual/zh/class.iterator.php" class="interfacename">Iterator</a></span> 的类提供的方法，例如 <span class="classname"><a href="https://php.net/manual/zh/class.arrayiterator.php" class="classname">ArrayIterator</a></span>。 </td></tr><tr> <td>7.4.0</td> <td>  <a href="https://php.net/manual/zh/book.spl.php" class="link">SPL</a> 类的实例现在被视为没有属性的空对象，而不是调用与此函数同名的 <span class="interfacename"><a href="https://php.net/manual/zh/class.iterator.php" class="interfacename">Iterator</a></span> 方法。 </td></tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.end-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-5277">    <p><strong>示例 #1 <span class="function"><strong>end()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>\$fruits </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'cranberry'</span><span style="color: #007700">);<br>echo </span><span style="color: #9876AA">end</span><span style="color: #007700">(</span><span style="color: #9876AA">\$fruits</span><span style="color: #007700">); </span><span style="color: #FF8000">// cranberry<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.end-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link current()} - 返回数组中的当前值</span></li>    <li><span class="function">{@link each()} - 返回数组中当前的键／值对并将数组指针向前移动一步</span></li>    <li><span class="function">{@link prev()} - 将数组的内部指针倒回一位</span></li>    <li><span class="function">{@link reset()} - 将数组的内部指针指向第一个单元</span></li>    <li><span class="function">{@link next()} - 将数组中的内部指针向前移动一位</span></li>    <li><span class="function">{@link array_key_last()} - 获取一个数组的最后一个键值</span></li>   </ul>   </div>  </div>
+ * 
      * @return string|null
-     
-*/
+     */
     public function end(): ?string;
 
-/**
-* <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 12<br>int(0)<br><br>Warning: count(): Parameter must be an array or an object that implements Countable in â¦ on line 14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal error: Uncaught TypeError: count(): Argument #1 ($var) must be of type Countable .. on line 12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
-    *
+    /**
+ * <div id="function.count" class="refentry">   <div class="refnamediv">    <h1 class="refname">count</h1>    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">count</span> — <span class="dc-title">统计数组、<span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象中所有元素的数量</span></p>   </div> <div class="refsect1 description" id="refsect1-function.count-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>count</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.countable.php" class="type Countable" style="color:#EAB766">Countable</a></span>|<span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></span> <span class="parameter" style="color:#3A95FF">\$value</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$mode</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-normal">COUNT_NORMAL</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div>  <p class="para rdfs-comment">   用于数组时，统计数组中元素的数量；用于实现了 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>   接口的对象时，返回 <span class="methodname" style="color:#CC7832">{@link Countable::count()}</span> 方法的返回值。  </p> </div> <div class="refsect1 parameters" id="refsect1-function.count-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">value</span></dt>     <dd>      <p class="para">       数组或者 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span>  对象。      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">mode</span></dt>     <dd>      <p class="para">       如果可选的 <span class="parameter" style="color:#3A95FF">mode</span> 参数设为     <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.count-recursive">COUNT_RECURSIVE</a></span></strong>（或 1），<span class="function"><strong>count()</strong></span>     将递归地对数组计数。对计算多维数组的所有单元尤其有用。      </p>      <div class="caution"><strong class="caution">警告</strong>       <p class="para">        <span class="function"><strong>count()</strong></span> 能检测递归来避免无限循环，但每次出现时会产生 <strong><span><a href="https://php.net/manual/zh/errorfunc.constants.php#constant.e-warning">E_WARNING</a></span></strong> 错误        （如果 array 不止一次包含了自身）并返回大于预期的统计数字。       </p>      </div>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.count-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   返回 <span class="parameter" style="color:#3A95FF">value</span> 中的元素的数量。在 PHP 8.0.0   之前，如果参数既不是数组也不是实现了 <span class="literal">Countable</span> 接口的对象，将返回   <span class="literal">1</span>。当 <span class="parameter" style="color:#3A95FF">value</span> 为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong> 时返回    <span class="literal">0</span>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.count-changelog">  <h3 class="title">更新日志</h3>  <table class="doctable informaltable">       <thead>     <tr>      <th>版本</th>      <th>说明</th>     </tr>    </thead>    <tbody class="tbody">     <tr>      <td>8.0.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会抛出 <span class="classname"><a href="https://php.net/manual/zh/class.typeerror.php" class="classname">TypeError</a></span>。      </td>     </tr>     <tr>      <td>7.2.0</td>      <td>       当 <span class="parameter" style="color:#3A95FF">value</span> 参数传入了无效的 countable 类型，       <span class="function"><strong>count()</strong></span> 现在会产生警告。      </td>     </tr>    </tbody>     </table> </div> <div class="refsect1 examples" id="refsect1-function.count-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="count.example.basic">    <p><strong>示例 #1 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">] = </span><span style="color: #9876AA">1</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">1</span><span style="color: #007700">] = </span><span style="color: #9876AA">3</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$a</span><span style="color: #007700">[</span><span style="color: #9876AA">2</span><span style="color: #007700">] = </span><span style="color: #9876AA">5</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$a</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(3)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.badexample">    <p><strong>示例 #2 <span class="function"><strong>count()</strong></span> 非 Countable|array 的例子 （这是个反例，请勿模仿）</strong></p>    <div class="example-contents">     <div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">0</span><span style="color: #007700">]  = </span><span style="color: #9876AA">7</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">5</span><span style="color: #007700">]  = </span><span style="color: #9876AA">9</span><span style="color: #007700">;<br></span><span style="color: #9876AA">\$b</span><span style="color: #007700">[</span><span style="color: #9876AA">10</span><span style="color: #007700">] = </span><span style="color: #9876AA">11</span><span style="color: #007700">;<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$b</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">null</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">false</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br>int(0)<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>Output of the above example in PHP 7.2:</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;12<br>int(0)<br><br>Warning:&nbsp;count():&nbsp;Parameter&nbsp;must&nbsp;be&nbsp;an&nbsp;array&nbsp;or&nbsp;an&nbsp;object&nbsp;that&nbsp;implements&nbsp;Countable&nbsp;in&nbsp;â¦&nbsp;on&nbsp;line&nbsp;14<br>int(1)</blockquote></div>    </div>    <div class="example-contents"><p>以上示例在 PHP 8 中的输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;">     <div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(3)<br><br>Fatal&nbsp;error:&nbsp;Uncaught&nbsp;TypeError:&nbsp;count():&nbsp;Argument&nbsp;#1&nbsp;(\$var)&nbsp;must&nbsp;be&nbsp;of&nbsp;type&nbsp;Countable&nbsp;..&nbsp;on&nbsp;line&nbsp;12</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.recursive">    <p><strong>示例 #3 递归 <span class="function"><strong>count()</strong></span> 例子</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$food </span><span style="color: #007700">= array(</span><span style="color: #DD0000">'fruits' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">, </span><span style="color: #DD0000">'banana'</span><span style="color: #007700">, </span><span style="color: #DD0000">'apple'</span><span style="color: #007700">),<br>              </span><span style="color: #DD0000">'veggie' </span><span style="color: #007700">=&gt; array(</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">, </span><span style="color: #DD0000">'collard'</span><span style="color: #007700">, </span><span style="color: #DD0000">'pea'</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 递归计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">, </span><span style="color: #9876AA">COUNT_RECURSIVE</span><span style="color: #007700">));<br><br></span><span style="color: #FF8000">// 常规计数<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$food</span><span style="color: #007700">));<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(8)<br>int(2)</blockquote></div>    </div>   </div>    <p class="para">   </p><div class="example" id="count.example.countable">    <p><strong>示例 #4 <span class="interfacename"><a href="https://php.net/manual/zh/class.countable.php" class="interfacename">Countable</a></span> 对象</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">class </span><span style="color: #9876AA">CountOfMethods </span><span style="color: #007700">implements </span><span style="color: #9876AA">Countable<br></span><span style="color: #007700">{<br>    private function </span><span style="color: #9876AA">someMethod</span><span style="color: #007700">()<br>    {<br>    }<br><br>    public function </span><span style="color: #9876AA">count</span><span style="color: #007700">(): </span><span style="color: #9876AA">int<br>    </span><span style="color: #007700">{<br>        return </span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">get_class_methods</span><span style="color: #007700">(</span><span style="color: #9876AA">\$this</span><span style="color: #007700">));<br>    }<br>}<br><br></span><span style="color: #9876AA">\$obj </span><span style="color: #007700">= new </span><span style="color: #9876AA">CountOfMethods</span><span style="color: #007700">();<br></span><span style="color: #9876AA">var_dump</span><span style="color: #007700">(</span><span style="color: #9876AA">count</span><span style="color: #007700">(</span><span style="color: #9876AA">\$obj</span><span style="color: #007700">));<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">int(2)</blockquote></div>    </div>   </div>   </div>   <div class="refsect1 seealso" id="refsect1-function.count-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link is_array()} - 检测变量是否是数组</span></li>    <li><span class="function">{@link isset()} - 检测变量是否已声明并且其值不为 null</span></li>    <li><span class="function">{@link empty()} - 检查变量是否为空</span></li>    <li><span class="function">{@link strlen()} - 获取字符串长度</span></li>    <li><span class="function">{@link is_countable()} - 验证变量内容是否为可数值</span></li>    <li><a href="https://php.net/manual/zh/language.types.array.php" class="link">Array 数组</a></li>   </ul>   </div></div>
+ * 
      * @return int
-     
-*/
+     */
     public function count(): int;
 }
 
@@ -660,9 +654,12 @@ class BaseException extends Exception implements Throwable
     public function context(): ?object {}
 }
 
+
 class RequestCanceledException extends BaseException implements Throwable {}
 
+
 class RateLimitedException extends BaseException implements Throwable {}
+
 
 class QuotaLimitedException extends BaseException implements Throwable {}
 
@@ -671,13 +668,18 @@ class QuotaLimitedException extends BaseException implements Throwable {}
  */
 class HttpException extends BaseException implements Throwable {}
 
+
 class ParsingFailureException extends HttpException implements Throwable {}
+
 
 class IndexNotFoundException extends HttpException implements Throwable {}
 
+
 class PlanningFailureException extends HttpException implements Throwable {}
 
+
 class IndexFailureException extends HttpException implements Throwable {}
+
 
 class KeyspaceNotFoundException extends HttpException implements Throwable {}
 
@@ -691,9 +693,12 @@ class QueryException extends HttpException implements Throwable {}
  */
 class QueryErrorException extends QueryException implements Throwable {}
 
+
 class DmlFailureException extends QueryException implements Throwable {}
 
+
 class PreparedStatementException extends QueryException implements Throwable {}
+
 
 class QueryServiceException extends QueryException implements Throwable {}
 
@@ -712,9 +717,12 @@ class AnalyticsException extends HttpException implements Throwable {}
  */
 class ViewException extends HttpException implements Throwable {}
 
+
 class PartialViewException extends HttpException implements Throwable {}
 
+
 class BindingsException extends BaseException implements Throwable {}
+
 
 class InvalidStateException extends BaseException implements Throwable {}
 
@@ -828,145 +836,207 @@ class DurabilityException extends BaseException implements Throwable {}
  */
 class SubdocumentException extends BaseException implements Throwable {}
 
+
 class QueryIndex
 {
+
     public function name(): string {}
+
 
     public function isPrimary(): bool {}
 
+
     public function type(): string {}
+
 
     public function state(): string {}
 
+
     public function keyspace(): string {}
 
+
     public function indexKey(): array {}
+
 
     public function condition(): ?string {}
 }
 
+
 class CreateQueryIndexOptions
 {
+
     public function condition(string $condition): CreateQueryIndexOptions {}
+
 
     public function ignoreIfExists(bool $shouldIgnore): CreateQueryIndexOptions {}
 
+
     public function numReplicas(int $number): CreateQueryIndexOptions {}
+
 
     public function deferred(bool $isDeferred): CreateQueryIndexOptions {}
 }
 
+
 class CreateQueryPrimaryIndexOptions
 {
+
     public function indexName(string $name): CreateQueryPrimaryIndexOptions {}
+
 
     public function ignoreIfExists(bool $shouldIgnore): CreateQueryPrimaryIndexOptions {}
 
+
     public function numReplicas(int $number): CreateQueryPrimaryIndexOptions {}
+
 
     public function deferred(bool $isDeferred): CreateQueryPrimaryIndexOptions {}
 }
 
+
 class DropQueryIndexOptions
 {
+
     public function ignoreIfNotExists(bool $shouldIgnore): DropQueryIndexOptions {}
 }
 
+
 class DropQueryPrimaryIndexOptions
 {
+
     public function indexName(string $name): DropQueryPrimaryIndexOptions {}
+
 
     public function ignoreIfNotExists(bool $shouldIgnore): DropQueryPrimaryIndexOptions {}
 }
 
+
 class WatchQueryIndexesOptions
 {
+
     public function watchPrimary(bool $shouldWatch): WatchQueryIndexesOptions {}
 }
 
+
 class QueryIndexManager
 {
+
     public function getAllIndexes(string $bucketName): array {}
+
 
     public function createIndex(string $bucketName, string $indexName, array $fields, CreateQueryIndexOptions $options = null) {}
 
+
     public function createPrimaryIndex(string $bucketName, CreateQueryPrimaryIndexOptions $options = null) {}
+
 
     public function dropIndex(string $bucketName, string $indexName, DropQueryIndexOptions $options = null) {}
 
+
     public function dropPrimaryIndex(string $bucketName, DropQueryPrimaryIndexOptions $options = null) {}
 
+
     public function watchIndexes(string $bucketName, array $indexNames, int $timeout, WatchQueryIndexesOptions $options = null) {}
+
 
     public function buildDeferredIndexes(string $bucketName) {}
 }
 
+
 class CreateAnalyticsDataverseOptions
 {
+
     public function ignoreIfExists(bool $shouldIgnore): CreateAnalyticsDataverseOptions {}
 }
 
+
 class DropAnalyticsDataverseOptions
 {
+
     public function ignoreIfNotExists(bool $shouldIgnore): DropAnalyticsDataverseOptions {}
 }
 
+
 class CreateAnalyticsDatasetOptions
 {
+
     public function ignoreIfExists(bool $shouldIgnore): CreateAnalyticsDatasetOptions {}
 
+
     public function condition(string $condition): CreateAnalyticsDatasetOptions {}
+
 
     public function dataverseName(string $dataverseName): CreateAnalyticsDatasetOptions {}
 }
 
+
 class DropAnalyticsDatasetOptions
 {
+
     public function ignoreIfNotExists(bool $shouldIgnore): DropAnalyticsDatasetOptions {}
+
 
     public function dataverseName(string $dataverseName): DropAnalyticsDatasetOptions {}
 }
 
+
 class CreateAnalyticsIndexOptions
 {
+
     public function ignoreIfExists(bool $shouldIgnore): CreateAnalyticsIndexOptions {}
+
 
     public function dataverseName(string $dataverseName): CreateAnalyticsIndexOptions {}
 }
 
+
 class DropAnalyticsIndexOptions
 {
+
     public function ignoreIfNotExists(bool $shouldIgnore): DropAnalyticsIndexOptions {}
+
 
     public function dataverseName(string $dataverseName): DropAnalyticsIndexOptions {}
 }
 
+
 class ConnectAnalyticsLinkOptions
 {
+
     public function linkName(bstring $linkName): ConnectAnalyticsLinkOptions {}
+
 
     public function dataverseName(string $dataverseName): ConnectAnalyticsLinkOptions {}
 }
 
+
 class DisconnectAnalyticsLinkOptions
 {
+
     public function linkName(bstring $linkName): DisconnectAnalyticsLinkOptions {}
+
 
     public function dataverseName(string $dataverseName): DisconnectAnalyticsLinkOptions {}
 }
 
+
 class CreateAnalyticsLinkOptions
 {
+
     public function timeout(int $arg): CreateAnalyticsLinkOptions {}
 }
 
+
 class ReplaceAnalyticsLinkOptions
 {
+
     public function timeout(int $arg): ReplaceAnalyticsLinkOptions {}
 }
 
+
 class DropAnalyticsLinkOptions
 {
+
     public function timeout(int $arg): DropAnalyticsLinkOptions {}
 }
 
@@ -977,8 +1047,10 @@ interface AnalyticsLinkType
     public const AZURE_BLOB = "azureblob";
 }
 
+
 class GetAnalyticsLinksOptions
 {
+
     public function timeout(int $arg): DropAnalyticsLinkOptions {}
 
     /**
@@ -1008,6 +1080,7 @@ interface AnalyticsEncryptionLevel
     public const FULL = "full";
 }
 
+
 class EncryptionSettings
 {
     /**
@@ -1023,14 +1096,18 @@ class EncryptionSettings
      */
     public function level(string $level) {}
 
+
     public function certificate(string $certificate) {}
 
+
     public function clientCertificate(string $certificate) {}
+
 
     public function clientKey(string $key) {}
 }
 
 interface AnalyticsLink {}
+
 
 class CouchbaseRemoteAnalyticsLink implements AnalyticsLink
 {
@@ -1086,6 +1163,7 @@ class CouchbaseRemoteAnalyticsLink implements AnalyticsLink
      */
     public function encryption(EncryptionSettings $settings): CouchbaseRemoteAnalyticsLink {}
 }
+
 
 class AzureBlobExternalAnalyticsLink implements AnalyticsLink
 {
@@ -1156,6 +1234,7 @@ class AzureBlobExternalAnalyticsLink implements AnalyticsLink
     public function endpointSuffix(string $suffix): AzureBlobExternalAnalyticsLink {}
 }
 
+
 class S3ExternalAnalyticsLink implements AnalyticsLink
 {
     /**
@@ -1215,95 +1294,140 @@ class S3ExternalAnalyticsLink implements AnalyticsLink
     public function serviceEndpoint(string $serviceEndpoint): S3ExternalAnalyticsLink {}
 }
 
+
 class AnalyticsIndexManager
 {
+
     public function createDataverse(string $dataverseName, CreateAnalyticsDataverseOptions $options = null) {}
+
 
     public function dropDataverse(string $dataverseName, DropAnalyticsDataverseOptions $options = null) {}
 
+
     public function createDataset(string $datasetName, string $bucketName, CreateAnalyticsDatasetOptions $options = null) {}
+
 
     public function dropDataset(string $datasetName, DropAnalyticsDatasetOptions $options = null) {}
 
+
     public function getAllDatasets() {}
+
 
     public function createIndex(string $datasetName, string $indexName, array $fields, CreateAnalyticsIndexOptions $options = null) {}
 
+
     public function dropIndex(string $datasetName, string $indexName, DropAnalyticsIndexOptions $options = null) {}
+
 
     public function getAllIndexes() {}
 
+
     public function connectLink(ConnectAnalyticsLinkOptions $options = null) {}
+
 
     public function disconnectLink(DisconnectAnalyticsLinkOptions $options = null) {}
 
+
     public function getPendingMutations() {}
+
 
     public function createLink(AnalyticsLink $link, CreateAnalyticsLinkOptions $options = null) {}
 
+
     public function replaceLink(AnalyticsLink $link, ReplaceAnalyticsLinkOptions $options = null) {}
 
+
     public function dropLink(string $linkName, string $dataverseName, DropAnalyticsLinkOptions $options = null) {}
+
 
     public function getLinks(GetAnalyticsLinksOptions $options = null) {}
 }
 
+
 class SearchIndex implements JsonSerializable
 {
+
     public function jsonSerialize() {}
+
 
     public function type(): string {}
 
+
     public function uuid(): string {}
+
 
     public function params(): array {}
 
+
     public function sourceType(): string {}
+
 
     public function sourceUuid(): string {}
 
+
     public function sourceName(): string {}
+
 
     public function sourceParams(): array {}
 
+
     public function setType(string $type): SearchIndex {}
+
 
     public function setUuid(string $uuid): SearchIndex {}
 
+
     public function setParams(string $params): SearchIndex {}
+
 
     public function setSourceType(string $type): SearchIndex {}
 
+
     public function setSourceUuid(string $uuid): SearchIndex {}
 
+
     public function setSourcename(string $params): SearchIndex {}
+
 
     public function setSourceParams(string $params): SearchIndex {}
 }
 
+
 class SearchIndexManager
 {
+
     public function getIndex(string $name): SearchIndex {}
+
 
     public function getAllIndexes(): array {}
 
+
     public function upsertIndex(SearchIndex $indexDefinition) {}
+
 
     public function dropIndex(string $name) {}
 
+
     public function getIndexedDocumentsCount(string $indexName): int {}
+
 
     public function pauseIngest(string $indexName) {}
 
+
     public function resumeIngest(string $indexName) {}
+
 
     public function allowQuerying(string $indexName) {}
 
+
     public function disallowQuerying(string $indexName) {}
+
 
     public function freezePlan(string $indexName) {}
 
+
     public function unfreezePlan(string $indexName) {}
+
 
     public function analyzeDocument(string $indexName, $document) {}
 }
@@ -1314,6 +1438,7 @@ class SearchIndexManager
  */
 class Cluster
 {
+
     public function __construct(string $connstr, ClusterOptions $options) {}
 
     /**
@@ -1433,37 +1558,54 @@ interface StorageBackend
     public const MAGMA = "magma";
 }
 
+
 class BucketSettings
 {
+
     public function name(): string {}
+
 
     public function flushEnabled(): bool {}
 
+
     public function ramQuotaMb(): int {}
+
 
     public function numReplicas(): int {}
 
+
     public function replicaIndexes(): bool {}
+
 
     public function bucketType(): string {}
 
+
     public function evictionPolicy(): string {}
+
 
     public function storageBackend(): string {}
 
+
     public function maxTtl(): int {}
+
 
     public function compressionMode(): string {}
 
+
     public function setName(string $name): BucketSettings {}
+
 
     public function enableFlush(bool $enable): BucketSettings {}
 
+
     public function setRamQuotaMb(int $sizeInMb): BucketSettings {}
+
 
     public function setNumReplicas(int $numReplicas): BucketSettings {}
 
+
     public function enableReplicaIndexes(bool $enable): BucketSettings {}
+
 
     public function setBucketType(string $type): BucketSettings {}
 
@@ -1490,7 +1632,9 @@ class BucketSettings
      */
     public function setStorageBackend(string $policy): BucketSettings {}
 
+
     public function setMaxTtl(int $ttlSeconds): BucketSettings {}
+
 
     public function setCompressionMode(string $mode): BucketSettings {}
 
@@ -1517,149 +1661,216 @@ class BucketSettings
     public function setMinimalDurabilityLevel(int $durabilityLevel): BucketSettings {}
 }
 
+
 class BucketManager
 {
+
     public function createBucket(BucketSettings $settings) {}
+
 
     public function removeBucket(string $name) {}
 
+
     public function getBucket(string $name): BucketSettings {}
 
+
     public function getAllBuckets(): array {}
+
 
     public function flush(string $name) {}
 }
 
+
 class Role
 {
+
     public function name(): string {}
+
 
     public function bucket(): ?string {}
 
+
     public function scope(): ?string {}
+
 
     public function collection(): ?string {}
 
+
     public function setName(string $name): Role {}
+
 
     public function setBucket(string $bucket): Role {}
 
+
     public function setScope(string $bucket): Role {}
+
 
     public function setCollection(string $bucket): Role {}
 }
 
+
 class RoleAndDescription
 {
+
     public function role(): Role {}
 
+
     public function displayName(): string {}
+
 
     public function description(): string {}
 }
 
+
 class Origin
 {
+
     public function type(): string {}
+
 
     public function name(): string {}
 }
 
+
 class RoleAndOrigin
 {
+
     public function role(): Role {}
+
 
     public function origins(): array {}
 }
 
+
 class User
 {
+
     public function username(): string {}
+
 
     public function displayName(): string {}
 
+
     public function groups(): array {}
+
 
     public function roles(): array {}
 
+
     public function setUsername(string $username): User {}
+
 
     public function setPassword(string $password): User {}
 
+
     public function setDisplayName(string $name): User {}
 
+
     public function setGroups(array $groups): User {}
+
 
     public function setRoles(array $roles): User {}
 }
 
+
 class Group
 {
+
     public function name(): string {}
+
 
     public function description(): string {}
 
+
     public function roles(): array {}
+
 
     public function ldapGroupReference(): ?string {}
 
+
     public function setName(string $name): Group {}
 
+
     public function setDescription(string $description): Group {}
+
 
     public function setRoles(array $roles): Group {}
 }
 
+
 class UserAndMetadata
 {
+
     public function domain(): string {}
+
 
     public function user(): User {}
 
+
     public function effectiveRoles(): array {}
 
+
     public function passwordChanged(): string {}
+
 
     public function externalGroups(): array {}
 }
 
+
 class GetAllUsersOptions
 {
+
     public function domainName(string $name): GetAllUsersOptions {}
 }
 
+
 class GetUserOptions
 {
+
     public function domainName(string $name): GetUserOptions {}
 }
 
+
 class DropUserOptions
 {
+
     public function domainName(string $name): DropUserOptions {}
 }
+
 
 class UpsertUserOptions
 {
+
     public function domainName(string $name): DropUserOptions {}
 }
 
+
 class UserManager
 {
+
     public function getUser(string $name, GetUserOptions $options = null): UserAndMetadata {}
+
 
     public function getAllUsers(GetAllUsersOptions $options = null): array {}
 
+
     public function upsertUser(User $user, UpsertUserOptions $options = null) {}
+
 
     public function dropUser(string $name, DropUserOptions $options = null) {}
 
+
     public function getRoles(): array {}
+
 
     public function getGroup(string $name): Group {}
 
+
     public function getAllGroups(): array {}
 
+
     public function upsertGroup(Group $group) {}
+
 
     public function dropGroup(string $name) {}
 }
@@ -1911,6 +2122,7 @@ class Collection
  */
 class Scope
 {
+
     public function __construct(Bucket $bucket, string $name) {}
 
     /**
@@ -1947,37 +2159,53 @@ class Scope
     public function analyticsQuery(string $statement, AnalyticsOptions $options = null): AnalyticsResult {}
 }
 
+
 class ScopeSpec
 {
+
     public function name(): string {}
+
 
     public function collections(): array {}
 }
 
+
 class CollectionSpec
 {
+
     public function name(): string {}
+
 
     public function scopeName(): string {}
 
+
     public function setName(string $name): CollectionSpec {}
 
+
     public function setScopeName(string $name): CollectionSpec {}
+
 
     public function setMaxExpiry(int $ms): CollectionSpec {}
 }
 
+
 class CollectionManager
 {
+
     public function getScope(string $name): ScopeSpec {}
+
 
     public function getAllScopes(): array {}
 
+
     public function createScope(string $name) {}
+
 
     public function dropScope(string $name) {}
 
+
     public function createCollection(CollectionSpec $collection) {}
+
 
     public function dropCollection(CollectionSpec $collection) {}
 }
@@ -2067,39 +2295,56 @@ class Bucket
     public function diagnostics($reportId) {}
 }
 
+
 class View
 {
+
     public function name(): string {}
+
 
     public function map(): string {}
 
+
     public function reduce(): string {}
+
 
     public function setName(string $name): View {}
 
+
     public function setMap(string $mapJsCode): View {}
+
 
     public function setReduce(string $reduceJsCode): View {}
 }
 
+
 class DesignDocument
 {
+
     public function name(): string {}
+
 
     public function views(): array {}
 
+
     public function setName(string $name): DesignDocument {}
+
 
     public function setViews(array $views): DesignDocument {}
 }
 
+
 class ViewIndexManager
 {
+
     public function getAllDesignDocuments(): array {}
+
 
     public function getDesignDocument(string $name): DesignDocument {}
 
+
     public function dropDesignDocument(string $name) {}
+
 
     public function upsertDesignDocument(DesignDocument $document) {}
 }
@@ -2109,6 +2354,7 @@ class ViewIndexManager
  */
 class MutationState
 {
+
     public function __construct() {}
 
     /**
@@ -2120,21 +2366,30 @@ class MutationState
     public function add(MutationResult $source): MutationState {}
 }
 
+
 class AnalyticsOptions
 {
+
     public function timeout(int $arg): AnalyticsOptions {}
+
 
     public function namedParameters(array $pairs): AnalyticsOptions {}
 
+
     public function positionalParameters(array $args): AnalyticsOptions {}
+
 
     public function raw(string $key, $value): AnalyticsOptions {}
 
+
     public function clientContextId(string $value): AnalyticsOptions {}
+
 
     public function priority(bool $urgent): AnalyticsOptions {}
 
+
     public function readonly(bool $arg): AnalyticsOptions {}
+
 
     public function scanConsistency(string $arg): AnalyticsOptions {}
 }
@@ -2149,6 +2404,7 @@ interface LookupInSpec {}
  */
 class LookupGetSpec implements LookupInSpec
 {
+
     public function __construct(string $path, bool $isXattr = false) {}
 }
 
@@ -2157,6 +2413,7 @@ class LookupGetSpec implements LookupInSpec
  */
 class LookupCountSpec implements LookupInSpec
 {
+
     public function __construct(string $path, bool $isXattr = false) {}
 }
 
@@ -2165,6 +2422,7 @@ class LookupCountSpec implements LookupInSpec
  */
 class LookupExistsSpec implements LookupInSpec
 {
+
     public function __construct(string $path, bool $isXattr = false) {}
 }
 
@@ -2173,6 +2431,7 @@ class LookupExistsSpec implements LookupInSpec
  */
 class LookupGetFullSpec implements LookupInSpec
 {
+
     public function __construct() {}
 }
 
@@ -2186,6 +2445,7 @@ interface MutateInSpec {}
  */
 class MutateInsertSpec implements MutateInSpec
 {
+
     public function __construct(string $path, $value, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2194,6 +2454,7 @@ class MutateInsertSpec implements MutateInSpec
  */
 class MutateUpsertSpec implements MutateInSpec
 {
+
     public function __construct(string $path, $value, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2202,6 +2463,7 @@ class MutateUpsertSpec implements MutateInSpec
  */
 class MutateReplaceSpec implements MutateInSpec
 {
+
     public function __construct(string $path, $value, bool $isXattr) {}
 }
 
@@ -2210,6 +2472,7 @@ class MutateReplaceSpec implements MutateInSpec
  */
 class MutateRemoveSpec implements MutateInSpec
 {
+
     public function __construct(string $path, bool $isXattr) {}
 }
 
@@ -2218,6 +2481,7 @@ class MutateRemoveSpec implements MutateInSpec
  */
 class MutateArrayAppendSpec implements MutateInSpec
 {
+
     public function __construct(string $path, array $values, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2226,6 +2490,7 @@ class MutateArrayAppendSpec implements MutateInSpec
  */
 class MutateArrayPrependSpec implements MutateInSpec
 {
+
     public function __construct(string $path, array $values, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2234,6 +2499,7 @@ class MutateArrayPrependSpec implements MutateInSpec
  */
 class MutateArrayInsertSpec implements MutateInSpec
 {
+
     public function __construct(string $path, array $values, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2243,6 +2509,7 @@ class MutateArrayInsertSpec implements MutateInSpec
  */
 class MutateArrayAddUniqueSpec implements MutateInSpec
 {
+
     public function __construct(string $path, $value, bool $isXattr, bool $createPath, bool $expandMacros) {}
 }
 
@@ -2251,11 +2518,14 @@ class MutateArrayAddUniqueSpec implements MutateInSpec
  */
 class MutateCounterSpec implements MutateInSpec
 {
+
     public function __construct(string $path, int $delta, bool $isXattr, bool $createPath) {}
 }
 
+
 class SearchOptions implements JsonSerializable
 {
+
     public function jsonSerialize() {}
 
     /**
@@ -2402,7 +2672,9 @@ interface SearchQuery {}
  */
 class BooleanFieldSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(bool $arg) {}
 
@@ -2424,7 +2696,9 @@ class BooleanFieldSearchQuery implements JsonSerializable, SearchQuery
  */
 class BooleanSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2458,7 +2732,9 @@ class BooleanSearchQuery implements JsonSerializable, SearchQuery
  */
 class ConjunctionSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(array $queries) {}
 
@@ -2481,7 +2757,9 @@ class ConjunctionSearchQuery implements JsonSerializable, SearchQuery
  */
 class DateRangeSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2528,7 +2806,9 @@ class DateRangeSearchQuery implements JsonSerializable, SearchQuery
  */
 class DisjunctionSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(array $queries) {}
 
@@ -2557,7 +2837,9 @@ class DisjunctionSearchQuery implements JsonSerializable, SearchQuery
  */
 class DocIdSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2585,7 +2867,9 @@ class DocIdSearchQuery implements JsonSerializable, SearchQuery
  */
 class GeoBoundingBoxSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(float $top_left_longitude, float $top_left_latitude, float $buttom_right_longitude, float $buttom_right_latitude) {}
 
@@ -2609,7 +2893,9 @@ class GeoBoundingBoxSearchQuery implements JsonSerializable, SearchQuery
  */
 class GeoDistanceSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(float $longitude, float $latitude, string $distance = null) {}
 
@@ -2626,8 +2912,10 @@ class GeoDistanceSearchQuery implements JsonSerializable, SearchQuery
     public function field(string $field): GeoDistanceSearchQuery {}
 }
 
+
 class Coordinate implements JsonSerializable
 {
+
     public function jsonSerialize() {}
 
     /**
@@ -2644,6 +2932,7 @@ class Coordinate implements JsonSerializable
  */
 class GeoPolygonQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
 
     /**
@@ -2671,7 +2960,9 @@ class GeoPolygonQuery implements JsonSerializable, SearchQuery
  */
 class MatchAllSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2687,7 +2978,9 @@ class MatchAllSearchQuery implements JsonSerializable, SearchQuery
  */
 class MatchNoneSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2704,7 +2997,9 @@ class MatchNoneSearchQuery implements JsonSerializable, SearchQuery
  */
 class MatchPhraseSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $value) {}
 
@@ -2733,7 +3028,9 @@ class MatchPhraseSearchQuery implements JsonSerializable, SearchQuery
  */
 class MatchSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $value) {}
 
@@ -2774,7 +3071,9 @@ class MatchSearchQuery implements JsonSerializable, SearchQuery
  */
 class NumericRangeSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2812,7 +3111,9 @@ class NumericRangeSearchQuery implements JsonSerializable, SearchQuery
  */
 class PhraseSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string ...$terms) {}
 
@@ -2834,7 +3135,9 @@ class PhraseSearchQuery implements JsonSerializable, SearchQuery
  */
 class PrefixSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $prefix) {}
 
@@ -2856,7 +3159,9 @@ class PrefixSearchQuery implements JsonSerializable, SearchQuery
  */
 class QueryStringSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $query_string) {}
 
@@ -2872,7 +3177,9 @@ class QueryStringSearchQuery implements JsonSerializable, SearchQuery
  */
 class RegexpSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $regexp) {}
 
@@ -2894,7 +3201,9 @@ class RegexpSearchQuery implements JsonSerializable, SearchQuery
  */
 class TermSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $term) {}
 
@@ -2929,7 +3238,9 @@ class TermSearchQuery implements JsonSerializable, SearchQuery
  */
 class TermRangeSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -2965,7 +3276,9 @@ class TermRangeSearchQuery implements JsonSerializable, SearchQuery
  */
 class WildcardSearchQuery implements JsonSerializable, SearchQuery
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $wildcard) {}
 
@@ -2997,7 +3310,9 @@ interface SearchFacet {}
  */
 class TermSearchFacet implements JsonSerializable, SearchFacet
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $field, int $limit) {}
 }
@@ -3007,7 +3322,9 @@ class TermSearchFacet implements JsonSerializable, SearchFacet
  */
 class NumericRangeSearchFacet implements JsonSerializable, SearchFacet
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $field, int $limit) {}
 
@@ -3025,7 +3342,9 @@ class NumericRangeSearchFacet implements JsonSerializable, SearchFacet
  */
 class DateRangeSearchFacet implements JsonSerializable, SearchFacet
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $field, int $limit) {}
 
@@ -3048,7 +3367,9 @@ interface SearchSort {}
  */
 class SearchSortField implements JsonSerializable, SearchSort
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $field) {}
 
@@ -3120,7 +3441,9 @@ interface SearchSortMissing
  */
 class SearchSortGeoDistance implements JsonSerializable, SearchSort
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct(string $field, float $logitude, float $latitude) {}
 
@@ -3148,7 +3471,9 @@ class SearchSortGeoDistance implements JsonSerializable, SearchSort
  */
 class SearchSortId implements JsonSerializable, SearchSort
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -3167,7 +3492,9 @@ class SearchSortId implements JsonSerializable, SearchSort
  */
 class SearchSortScore implements JsonSerializable, SearchSort
 {
+
     public function jsonSerialize() {}
+
 
     public function __construct() {}
 
@@ -3180,6 +3507,7 @@ class SearchSortScore implements JsonSerializable, SearchSort
      */
     public function descending(bool $descending): SearchSortScore {}
 }
+
 
 class GetOptions
 {
@@ -3226,6 +3554,7 @@ class GetOptions
     public function decoder(callable $arg): GetOptions {}
 }
 
+
 class GetAndTouchOptions
 {
     /**
@@ -3245,6 +3574,7 @@ class GetAndTouchOptions
      */
     public function decoder(callable $arg): GetAndTouchOptions {}
 }
+
 
 class GetAndLockOptions
 {
@@ -3266,6 +3596,7 @@ class GetAndLockOptions
     public function decoder(callable $arg): GetAndLockOptions {}
 }
 
+
 class GetAllReplicasOptions
 {
     /**
@@ -3285,6 +3616,7 @@ class GetAllReplicasOptions
      */
     public function decoder(callable $arg): GetAllReplicasOptions {}
 }
+
 
 class GetAnyReplicaOptions
 {
@@ -3306,6 +3638,7 @@ class GetAnyReplicaOptions
     public function decoder(callable $arg): GetAnyReplicaOptions {}
 }
 
+
 class ExistsOptions
 {
     /**
@@ -3317,6 +3650,7 @@ class ExistsOptions
     public function timeout(int $arg): ExistsOptions {}
 }
 
+
 class UnlockOptions
 {
     /**
@@ -3327,6 +3661,7 @@ class UnlockOptions
      */
     public function timeout(int $arg): UnlockOptions {}
 }
+
 
 class InsertOptions
 {
@@ -3363,6 +3698,7 @@ class InsertOptions
      */
     public function encoder(callable $arg): InsertOptions {}
 }
+
 
 class UpsertOptions
 {
@@ -3407,6 +3743,7 @@ class UpsertOptions
      */
     public function encoder(callable $arg): UpsertOptions {}
 }
+
 
 class ReplaceOptions
 {
@@ -3460,6 +3797,7 @@ class ReplaceOptions
     public function encoder(callable $arg): ReplaceOptions {}
 }
 
+
 class AppendOptions
 {
     /**
@@ -3478,6 +3816,7 @@ class AppendOptions
      */
     public function durabilityLevel(int $arg): AppendOptions {}
 }
+
 
 class PrependOptions
 {
@@ -3529,6 +3868,7 @@ interface DurabilityLevel
     public const PERSIST_TO_MAJORITY = 3;
 }
 
+
 class TouchOptions
 {
     /**
@@ -3539,6 +3879,7 @@ class TouchOptions
      */
     public function timeout(int $arg): TouchOptions {}
 }
+
 
 class IncrementOptions
 {
@@ -3584,6 +3925,7 @@ class IncrementOptions
     public function initial(int $arg): IncrementOptions {}
 }
 
+
 class DecrementOptions
 {
     /**
@@ -3628,6 +3970,7 @@ class DecrementOptions
     public function initial(int $arg): DecrementOptions {}
 }
 
+
 class RemoveOptions
 {
     /**
@@ -3655,6 +3998,7 @@ class RemoveOptions
     public function cas(string $arg): RemoveOptions {}
 }
 
+
 class LookupInOptions
 {
     /**
@@ -3678,6 +4022,7 @@ class LookupInOptions
      */
     public function withExpiry(bool $arg): LookupInOptions {}
 }
+
 
 class MutateInOptions
 {
@@ -3752,33 +4097,48 @@ interface StoreSemantics
     public const INSERT = 2;
 }
 
+
 class ViewOptions
 {
+
     public function timeout(int $arg): ViewOptions {}
+
 
     public function includeDocuments(bool $arg, int $maxConcurrentDocuments = 10): ViewOptions {}
 
+
     public function key($arg): ViewOptions {}
+
 
     public function keys(array $args): ViewOptions {}
 
+
     public function limit(int $arg): ViewOptions {}
+
 
     public function skip(int $arg): ViewOptions {}
 
+
     public function scanConsistency(int $arg): ViewOptions {}
+
 
     public function order(int $arg): ViewOptions {}
 
+
     public function reduce(bool $arg): ViewOptions {}
+
 
     public function group(bool $arg): ViewOptions {}
 
+
     public function groupLevel(int $arg): ViewOptions {}
+
 
     public function range($start, $end, $inclusiveEnd = false): ViewOptions {}
 
+
     public function idRange($start, $end, $inclusiveEnd = false): ViewOptions {}
+
 
     public function raw(string $key, $value): ViewOptions {}
 }
@@ -3795,6 +4155,7 @@ interface ViewOrdering
     public const ASCENDING = 0;
     public const DESCENDING = 1;
 }
+
 
 class QueryOptions
 {
@@ -3988,8 +4349,10 @@ interface QueryProfile
     public const TIMINGS = 3;
 }
 
+
 class ClusterOptions
 {
+
     public function credentials(string $username, string $password): ClusterOptions {}
 }
 
@@ -4030,6 +4393,7 @@ interface Meter
  */
 class NoopMeter implements Meter
 {
+
     public function valueRecorder(string $name, array $tags): ValueRecorder {}
 }
 
@@ -4045,6 +4409,7 @@ class LoggingMeter implements Meter
      * @param int $duration duration in microseconds how often the metrics should be flushed in the log.
      */
     public function flushInterval(int $duration): LoggingMeter {}
+
 
     public function valueRecorder(string $name, array $tags): ValueRecorder {}
 }
@@ -4091,6 +4456,7 @@ interface RequestTracer
  */
 class ThresholdLoggingTracer implements RequestTracer
 {
+
     public function requestSpan(string $name, RequestSpan $parent = null) {}
 
     /**
@@ -4144,6 +4510,10 @@ class ThresholdLoggingTracer implements RequestTracer
  */
 class NoopTracer implements RequestTracer
 {
+
     public function requestSpan(string $name, RequestSpan $parent = null) {}
 }
 
+/**
+ * vim: ts=4 sts=4 sw=4 et
+ */

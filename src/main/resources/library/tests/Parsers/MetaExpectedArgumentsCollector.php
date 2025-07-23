@@ -13,8 +13,11 @@ use PhpParser\NodeVisitorAbstract;
 use RuntimeException;
 use SplFileInfo;
 use UnexpectedValueException;
+
 use function array_slice;
+
 use function count;
+
 
 class MetaExpectedArgumentsCollector extends NodeVisitorAbstract
 {
@@ -39,35 +42,46 @@ class MetaExpectedArgumentsCollector extends NodeVisitorAbstract
     public function __construct()
     {
         StubParser::processStubs(
+
             $this,
             null,
             fn (SplFileInfo $file): bool => $file->getFilename() === '.phpstorm.meta.php'
         );
     }
 
+
     public function enterNode(Node $node): void
     {
         if (property_exists($node, 'expr') && $node->expr instanceof FuncCall) {
+
             $name = (string)$node->expr->name;
             if ($name === self::EXPECTED_ARGUMENTS) {
+
                 $args = $node->expr->args;
                 if (count($args) < 3) {
                     throw new RuntimeException('Expected at least 3 arguments for expectedArguments call');
                 }
+
                 $this->expectedArgumentsInfos[] = self::getExpectedArgumentsInfo($args[0]->value, array_slice($args, 2), $args[1]->value->value);
             } elseif ($name === self::REGISTER_ARGUMENTS_SET_NAME) {
+
                 $args = $node->expr->args;
                 if (count($args) < 2) {
                     throw new RuntimeException('Expected at least 2 arguments for registerArgumentsSet call');
                 }
+
                 $this->expectedArgumentsInfos[] = self::getExpectedArgumentsInfo(null, array_slice($args, 1));
+
                 $name = $args[0]->value->value;
+
                 $this->registeredArgumentsSet[] = $name;
             } elseif ($name === self::EXPECTED_RETURN_VALUES) {
+
                 $args = $node->expr->args;
                 if (count($args) < 2) {
                     throw new RuntimeException('Expected at least 2 arguments for expectedReturnValues call');
                 }
+
                 $this->expectedArgumentsInfos[] = self::getExpectedArgumentsInfo($args[0]->value, array_slice($args, 1));
             }
         }
@@ -95,12 +109,14 @@ class MetaExpectedArgumentsCollector extends NodeVisitorAbstract
      */
     private static function unpackArguments(array $expressions): array
     {
+
         $result = [];
         foreach ($expressions as $expr) {
             if ($expr instanceof BitwiseOr) {
                 /** @noinspection SlowArrayOperationsInLoopInspection */
                 $result = array_merge($result, self::unpackArguments([$expr->left, $expr->right]));
             } else {
+
                 $result[] = $expr;
             }
         }
@@ -115,6 +131,7 @@ class MetaExpectedArgumentsCollector extends NodeVisitorAbstract
      */
     private static function getExpectedArgumentsInfo(?Expr $functionReference, array $args, int $index = -1): ExpectedFunctionArgumentsInfo
     {
+
         $expressions = array_map(fn (Arg $arg): Expr => $arg->value, $args);
         return new ExpectedFunctionArgumentsInfo($functionReference, self::unpackArguments($expressions), $index);
     }

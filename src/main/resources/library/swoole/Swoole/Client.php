@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole;
 
+
 class Client
 {
     public const MSG_OOB = 1;
@@ -21,7 +22,9 @@ class Client
     public $id;
     public $setting;
 
+
     public function __construct($type, $async = null, $id = null) {}
+
 
     public function __destruct() {}
 

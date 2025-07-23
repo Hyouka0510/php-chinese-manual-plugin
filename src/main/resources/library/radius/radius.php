@@ -1,12 +1,11 @@
 <?php
 /**
-* <span class="simpara">     The maximum length of MPPE keys.    </span>
-*
+ * <span class="simpara">     The maximum length of MPPE keys.    </span>
+ * 
  * Radius constants
  * @link https://secure.php.net/manual/en/radius.constants.php
- 
-* The maximum length of MPPE keys. 
-*/
+ */
+/** The maximum length of MPPE keys. */
 define('RADIUS_MPPE_KEY_LEN', 16);
 
 /*
@@ -114,14 +113,23 @@ define('RADIUS_NAS_PORT', 5);
  * - RADIUS_CALLBACK_NAS_PROMPT
  */
 define('RADIUS_SERVICE_TYPE', 6);
+
 define('RADIUS_LOGIN', 1);
+
 define('RADIUS_FRAMED', 2);
+
 define('RADIUS_CALLBACK_LOGIN', 3);
+
 define('RADIUS_CALLBACK_FRAMED', 4);
+
 define('RADIUS_OUTBOUND', 5);
+
 define('RADIUS_ADMINISTRATIVE', 6);
+
 define('RADIUS_NAS_PROMPT', 7);
+
 define('RADIUS_AUTHENTICATE_ONLY', 8);
+
 define('RADIUS_CALLBACK_NAS_PROMPT', 9);
 
 /**
@@ -133,10 +141,15 @@ define('RADIUS_CALLBACK_NAS_PROMPT', 9);
  * - RADIUS_XYLOGICS
  */
 define('RADIUS_FRAMED_PROTOCOL', 7);
+
 define('RADIUS_PPP', 1);
+
 define('RADIUS_SLIP', 2);
+
 define('RADIUS_ARAP', 3);
+
 define('RADIUS_GANDALF', 4);
+
 define('RADIUS_XYLOGICS', 5);
 
 /** The Framed-IP-Address attribute. The attribute value is expected to be the address of the user's network encoded as an integer, which can be set using {@see radius_put_addr()} and retrieved using {@see radius_cvt_addr()}. */
@@ -169,8 +182,11 @@ define('RADIUS_FRAMED_MTU', 12);
  * - <b>RADIUS_COMP_STAC_LZS</b>: Stac-LZS compression (added in PECL radius 1.3.0b2)
  */
 define('RADIUS_FRAMED_COMPRESSION', 13);
+
 define('RADIUS_COMP_NONE', 0);
+
 define('RADIUS_COMP_VJ', 1);
+
 define('RADIUS_COMP_IPXHDR', 2);
 
 /** The Login-IP-Host attribute. The attribute value is expected to the IP address to connect the user to, encoded as an integer, which can be set using {@see radius_put_addr()}. */
@@ -178,162 +194,302 @@ define('RADIUS_LOGIN_IP_HOST', 14);
 
 /** The Login-Service attribute. The attribute value is an integer indicating the service to connect the user to on the login host. The value can be converted to a PHP integer via {@see radius_cvt_int()}.*/
 define('RADIUS_LOGIN_SERVICE', 15);
+
 define('RADIUS_LOGIN_TCP_PORT', 16);
+
 define('RADIUS_REPLY_MESSAGE', 18);
+
 define('RADIUS_CALLBACK_NUMBER', 19);
+
 define('RADIUS_CALLBACK_ID', 20);
+
 define('RADIUS_FRAMED_ROUTE', 22);
+
 define('RADIUS_FRAMED_IPX_NETWORK', 23);
+
 define('RADIUS_STATE', 24);
+
 define('RADIUS_CLASS', 25);
+
 define('RADIUS_VENDOR_SPECIFIC', 26);
+
 define('RADIUS_SESSION_TIMEOUT', 27);
+
 define('RADIUS_IDLE_TIMEOUT', 28);
+
 define('RADIUS_TERMINATION_ACTION', 29);
+
 define('RADIUS_CALLED_STATION_ID', 30);
+
 define('RADIUS_CALLING_STATION_ID', 31);
+
 define('RADIUS_NAS_IDENTIFIER', 32);
+
 define('RADIUS_PROXY_STATE', 33);
+
 define('RADIUS_LOGIN_LAT_SERVICE', 34);
+
 define('RADIUS_LOGIN_LAT_NODE', 35);
+
 define('RADIUS_LOGIN_LAT_GROUP', 36);
+
 define('RADIUS_FRAMED_APPLETALK_LINK', 37);
+
 define('RADIUS_FRAMED_APPLETALK_NETWORK', 38);
+
 define('RADIUS_FRAMED_APPLETALK_ZONE', 39);
+
 define('RADIUS_CHAP_CHALLENGE', 60);
+
 define('RADIUS_NAS_PORT_TYPE', 61);
+
 define('RADIUS_ASYNC', 0);
+
 define('RADIUS_SYNC', 1);
+
 define('RADIUS_ISDN_SYNC', 2);
+
 define('RADIUS_ISDN_ASYNC_V120', 3);
+
 define('RADIUS_ISDN_ASYNC_V110', 4);
+
 define('RADIUS_VIRTUAL', 5);
+
 define('RADIUS_PIAFS', 6);
+
 define('RADIUS_HDLC_CLEAR_CHANNEL', 7);
+
 define('RADIUS_X_25', 8);
+
 define('RADIUS_X_75', 9);
+
 define('RADIUS_G_3_FAX', 10);
+
 define('RADIUS_SDSL', 11);
+
 define('RADIUS_ADSL_CAP', 12);
+
 define('RADIUS_ADSL_DMT', 13);
+
 define('RADIUS_IDSL', 14);
+
 define('RADIUS_ETHERNET', 15);
+
 define('RADIUS_XDSL', 16);
+
 define('RADIUS_CABLE', 17);
+
 define('RADIUS_WIRELESS_OTHER', 18);
+
 define('RADIUS_WIRELESS_IEEE_802_11', 19);
+
 define('RADIUS_PORT_LIMIT', 62);
+
 define('RADIUS_LOGIN_LAT_PORT', 63);
+
 define('RADIUS_CONNECT_INFO', 77);
+
 define('RADIUS_NAS_IPV6_ADDRESS', 95);
+
 define('RADIUS_FRAMED_INTERFACE_ID', 96);
+
 define('RADIUS_FRAMED_IPV6_PREFIX', 97);
+
 define('RADIUS_LOGIN_IPV6_HOST', 98);
+
 define('RADIUS_FRAMED_IPV6_ROUTE', 99);
+
 define('RADIUS_FRAMED_IPV6_POOL', 100);
+
 define('RADIUS_ERROR_CAUSE', 101);
+
 define('RADIUS_ERROR_CAUSE_RESIDUAL_SESSION_CONTEXT_REMOVED', 201);
+
 define('RADIUS_ERROR_CAUSE_INVALID_EAP_PACKET', 202);
+
 define('RADIUS_ERROR_CAUSE_UNSUPPORTED_ATTRIBUTE', 401);
+
 define('RADIUS_ERROR_CAUSE_MISSING_ATTRIBUTE', 402);
+
 define('RADIUS_ERROR_CAUSE_NAS_IDENTIFICATION_MISMATCH', 403);
+
 define('RADIUS_ERROR_CAUSE_INVALID_REQUEST', 404);
+
 define('RADIUS_ERROR_CAUSE_UNSUPPORTED_SERVICE', 405);
+
 define('RADIUS_ERROR_CAUSE_UNSUPPORTED_EXCEPTION', 406);
+
 define('RADIUS_ERROR_CAUSE_ADMINISTRATIVELY_PROHIBITED', 501);
+
 define('RADIUS_ERROR_CAUSE_REQUEST_NOT_ROUTABLE', 502);
+
 define('RADIUS_ERROR_CAUSE_SESSION_CONTEXT_NOT_FOUND', 503);
+
 define('RADIUS_ERROR_CAUSE_SESSION_CONTEXT_NOT_REMOVABLE', 504);
+
 define('RADIUS_ERROR_CAUSE_OTHER_PROXY_PROCESSING_ERROR', 505);
+
 define('RADIUS_ERROR_CAUSE_RESOURCES_UNAVAILABLE', 506);
+
 define('RADIUS_ERROR_CAUSE_REQUEST_INITIATED', 507);
+
 define('RADIUS_ACCT_STATUS_TYPE', 40);
+
 define('RADIUS_START', 1);
+
 define('RADIUS_STOP', 2);
+
 define('RADIUS_ACCOUNTING_ON', 7);
+
 define('RADIUS_ACCOUNTING_OFF', 8);
+
 define('RADIUS_ACCT_DELAY_TIME', 41);
+
 define('RADIUS_ACCT_INPUT_OCTETS', 42);
+
 define('RADIUS_ACCT_OUTPUT_OCTETS', 43);
+
 define('RADIUS_ACCT_SESSION_ID', 44);
+
 define('RADIUS_ACCT_AUTHENTIC', 45);
+
 define('RADIUS_AUTH_RADIUS', 1);
+
 define('RADIUS_AUTH_LOCAL', 2);
+
 define('RADIUS_AUTH_REMOTE', 3);
+
 define('RADIUS_ACCT_SESSION_TIME', 46);
+
 define('RADIUS_ACCT_INPUT_PACKETS', 47);
+
 define('RADIUS_ACCT_OUTPUT_PACKETS', 48);
+
 define('RADIUS_ACCT_TERMINATE_CAUSE', 49);
+
 define('RADIUS_TERM_USER_REQUEST', 1);
+
 define('RADIUS_TERM_LOST_CARRIER', 2);
+
 define('RADIUS_TERM_LOST_SERVICE', 3);
+
 define('RADIUS_TERM_IDLE_TIMEOUT', 4);
+
 define('RADIUS_TERM_SESSION_TIMEOUT', 5);
+
 define('RADIUS_TERM_ADMIN_RESET', 6);
+
 define('RADIUS_TERM_ADMIN_REBOOT', 7);
+
 define('RADIUS_TERM_PORT_ERROR', 8);
+
 define('RADIUS_TERM_NAS_ERROR', 9);
+
 define('RADIUS_TERM_NAS_REQUEST', 10);
+
 define('RADIUS_TERM_NAS_REBOOT', 11);
+
 define('RADIUS_TERM_PORT_UNNEEDED', 12);
+
 define('RADIUS_TERM_PORT_PREEMPTED', 13);
+
 define('RADIUS_TERM_PORT_SUSPENDED', 14);
+
 define('RADIUS_TERM_SERVICE_UNAVAILABLE', 15);
+
 define('RADIUS_TERM_CALLBACK', 16);
+
 define('RADIUS_TERM_USER_ERROR', 17);
+
 define('RADIUS_TERM_HOST_REQUEST', 18);
+
 define('RADIUS_ACCT_MULTI_SESSION_ID', 50);
+
 define('RADIUS_ACCT_LINK_COUNT', 51);
+
 define('RADIUS_VENDOR_MICROSOFT', 311);
+
 define('RADIUS_MICROSOFT_MS_CHAP_RESPONSE', 1);
+
 define('RADIUS_MICROSOFT_MS_CHAP_ERROR', 2);
+
 define('RADIUS_MICROSOFT_MS_CHAP_PW_1', 3);
+
 define('RADIUS_MICROSOFT_MS_CHAP_PW_2', 4);
+
 define('RADIUS_MICROSOFT_MS_CHAP_LM_ENC_PW', 5);
+
 define('RADIUS_MICROSOFT_MS_CHAP_NT_ENC_PW', 6);
+
 define('RADIUS_MICROSOFT_MS_MPPE_ENCRYPTION_POLICY', 7);
+
 define('RADIUS_MICROSOFT_MS_MPPE_ENCRYPTION_TYPES', 8);
+
 define('RADIUS_MICROSOFT_MS_RAS_VENDOR', 9);
+
 define('RADIUS_MICROSOFT_MS_CHAP_DOMAIN', 10);
+
 define('RADIUS_MICROSOFT_MS_CHAP_CHALLENGE', 11);
+
 define('RADIUS_MICROSOFT_MS_CHAP_MPPE_KEYS', 12);
+
 define('RADIUS_MICROSOFT_MS_BAP_USAGE', 13);
+
 define('RADIUS_MICROSOFT_MS_LINK_UTILIZATION_THRESHOLD', 14);
+
 define('RADIUS_MICROSOFT_MS_LINK_DROP_TIME_LIMIT', 15);
+
 define('RADIUS_MICROSOFT_MS_MPPE_SEND_KEY', 16);
+
 define('RADIUS_MICROSOFT_MS_MPPE_RECV_KEY', 17);
+
 define('RADIUS_MICROSOFT_MS_RAS_VERSION', 18);
+
 define('RADIUS_MICROSOFT_MS_OLD_ARAP_PASSWORD', 19);
+
 define('RADIUS_MICROSOFT_MS_NEW_ARAP_PASSWORD', 20);
+
 define('RADIUS_MICROSOFT_MS_ARAP_PASSWORD_CHANGE_REASON', 21);
+
 define('RADIUS_MICROSOFT_MS_FILTER', 22);
+
 define('RADIUS_MICROSOFT_MS_ACCT_AUTH_TYPE', 23);
+
 define('RADIUS_MICROSOFT_MS_ACCT_EAP_TYPE', 24);
+
 define('RADIUS_MICROSOFT_MS_CHAP2_RESPONSE', 25);
+
 define('RADIUS_MICROSOFT_MS_CHAP2_SUCCESS', 26);
+
 define('RADIUS_MICROSOFT_MS_CHAP2_PW', 27);
+
 define('RADIUS_MICROSOFT_MS_PRIMARY_DNS_SERVER', 28);
+
 define('RADIUS_MICROSOFT_MS_SECONDARY_DNS_SERVER', 29);
+
 define('RADIUS_MICROSOFT_MS_PRIMARY_NBNS_SERVER', 30);
+
 define('RADIUS_MICROSOFT_MS_SECONDARY_NBNS_SERVER', 31);
+
 define('RADIUS_MICROSOFT_MS_ARAP_CHALLENGE', 33);
+
 define('RADIUS_OPTION_NONE', RADIUS_OPTION_NONE);
+
 define('RADIUS_OPTION_TAGGED', RADIUS_OPTION_TAGGED);
 
 /**
-* <div id="function.radius-acct-open" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_acct_open</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_acct_open</span> — <span class="dc-title">Creates a Radius handle for accounting</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-acct-open-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_acct_open</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-acct-open-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-acct-open-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a handle on success, <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error. This function only fails if   insufficient memory is available.  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-acct-open-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-744">    <p><strong>示例 #1 <span class="function"><strong>radius_acct_open()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$res </span><span style="color: #007700">= </span><span style="color: #9876AA">radius_acct_open </span><span style="color: #007700">()<br>    or die (</span><span style="color: #DD0000">"Could not create handle"</span><span style="color: #007700">);<br>print </span><span style="color: #DD0000">"Handle successfully created"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div></div>
-*
+ * <div id="function.radius-acct-open" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_acct_open</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_acct_open</span> — <span class="dc-title">Creates a Radius handle for accounting</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-acct-open-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_acct_open</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-acct-open-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-acct-open-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a handle on success, <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error. This function only fails if   insufficient memory is available.  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-acct-open-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-744">    <p><strong>示例 #1 <span class="function"><strong>radius_acct_open()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$res </span><span style="color: #007700">= </span><span style="color: #9876AA">radius_acct_open </span><span style="color: #007700">()<br>    or die (</span><span style="color: #DD0000">"Could not create handle"</span><span style="color: #007700">);<br>print </span><span style="color: #DD0000">"Handle successfully created"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div></div>
+ * 
  * Creates a Radius handle for accounting
  * @link https://secure.php.net/manual/en/function.radius-acct-open.php
  * @return resource|false Returns a handle on success, <b>FALSE</b> on error. This function only fails if insufficient memory is available.
  * @since 1.1.0
- 
-*/
+ */
 function radius_acct_open() {}
 
 /**
-* <div id="function.radius-add-server" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_add_server</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_add_server</span> — <span class="dc-title">Adds a server</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-add-server-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_add_server</strong></span>(<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$radius_handle</span></span>,<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$hostname</span></span>,<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$port</span></span>,<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$secret</span></span>,<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$timeout</span></span>,<br>    <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$max_tries</span></span><br>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   <span class="function"><strong>radius_add_server()</strong></span> may be called multiple times, and it   may be used together with <span class="function">{@link radius_config()}</span>. At most 10   servers may be specified. When multiple servers are given, they are tried   in round-robin fashion until a valid response is received, or until each   server's <span class="parameter" style="color:#3A95FF">max_tries</span> limit has been reached.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-add-server-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">hostname</span></dt>     <dd>      <p class="para">       The <span class="parameter" style="color:#3A95FF">hostname</span> parameter specifies the server host,       either as a fully qualified domain name or as a dotted-quad IP address       in text form.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">port</span></dt>     <dd>      <p class="para">       The <span class="parameter" style="color:#3A95FF">port</span> specifies the UDP port to contact on       the server. If port is given as 0, the library looks up the       <span class="systemitem systemitem">radius/udp</span> or       <span class="systemitem systemitem">radacct/udp</span> service in the       network services database, and uses the port found there.  If no entry       is found, the library uses the standard Radius ports, 1812 for       authentication and 1813 for accounting.       </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">secret</span></dt>     <dd>      <p class="para">       The shared secret for the server host is passed to the       <span class="parameter" style="color:#3A95FF">secret</span> parameter. The Radius protocol ignores       all but the leading 128 bytes of the shared secret.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">timeout</span></dt>     <dd>      <p class="para">       The timeout for receiving replies from the server is passed to the       <span class="parameter" style="color:#3A95FF">timeout</span> parameter, in units of seconds.        </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">max_tries</span></dt>     <dd>      <p class="para">       The maximum number of repeated requests to make before giving up is       passed into the <span class="parameter" style="color:#3A95FF">max_tries</span>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-add-server-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-add-server-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-745">    <p><strong>示例 #1 <span class="function"><strong>radius_add_server()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">if (!</span><span style="color: #9876AA">radius_add_server</span><span style="color: #007700">(</span><span style="color: #9876AA">$res</span><span style="color: #007700">, </span><span style="color: #DD0000">'radius.example.com'</span><span style="color: #007700">, </span><span style="color: #9876AA">1812</span><span style="color: #007700">, </span><span style="color: #DD0000">'testing123'</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">)) {<br>    echo </span><span style="color: #DD0000">'RadiusError:' </span><span style="color: #007700">. </span><span style="color: #9876AA">radius_strerror</span><span style="color: #007700">(</span><span style="color: #9876AA">$res</span><span style="color: #007700">). </span><span style="color: #DD0000">"\n&lt;br&gt;"</span><span style="color: #007700">;<br>    exit;<br>}<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.radius-add-server-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_config()} - Causes the library to read the given configuration file</span></li>   </ul>   </div></div>
-*
+ * <div id="function.radius-add-server" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_add_server</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_add_server</span> — <span class="dc-title">Adds a server</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-add-server-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_add_server</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">\$radius_handle</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">\$hostname</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$port</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">\$secret</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$timeout</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$max_tries</span></span><br>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   <span class="function"><strong>radius_add_server()</strong></span> may be called multiple times, and it   may be used together with <span class="function">{@link radius_config()}</span>. At most 10   servers may be specified. When multiple servers are given, they are tried   in round-robin fashion until a valid response is received, or until each   server's <span class="parameter" style="color:#3A95FF">max_tries</span> limit has been reached.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-add-server-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">hostname</span></dt>     <dd>      <p class="para">       The <span class="parameter" style="color:#3A95FF">hostname</span> parameter specifies the server host,       either as a fully qualified domain name or as a dotted-quad IP address       in text form.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">port</span></dt>     <dd>      <p class="para">       The <span class="parameter" style="color:#3A95FF">port</span> specifies the UDP port to contact on       the server. If port is given as 0, the library looks up the       <span class="systemitem systemitem">radius/udp</span> or       <span class="systemitem systemitem">radacct/udp</span> service in the       network services database, and uses the port found there.  If no entry       is found, the library uses the standard Radius ports, 1812 for       authentication and 1813 for accounting.       </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">secret</span></dt>     <dd>      <p class="para">       The shared secret for the server host is passed to the       <span class="parameter" style="color:#3A95FF">secret</span> parameter. The Radius protocol ignores       all but the leading 128 bytes of the shared secret.      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">timeout</span></dt>     <dd>      <p class="para">       The timeout for receiving replies from the server is passed to the       <span class="parameter" style="color:#3A95FF">timeout</span> parameter, in units of seconds.        </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">max_tries</span></dt>     <dd>      <p class="para">       The maximum number of repeated requests to make before giving up is       passed into the <span class="parameter" style="color:#3A95FF">max_tries</span>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-add-server-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-add-server-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-745">    <p><strong>示例 #1 <span class="function"><strong>radius_add_server()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">if (!</span><span style="color: #9876AA">radius_add_server</span><span style="color: #007700">(</span><span style="color: #9876AA">\$res</span><span style="color: #007700">, </span><span style="color: #DD0000">'radius.example.com'</span><span style="color: #007700">, </span><span style="color: #9876AA">1812</span><span style="color: #007700">, </span><span style="color: #DD0000">'testing123'</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">, </span><span style="color: #9876AA">3</span><span style="color: #007700">)) {<br>    echo </span><span style="color: #DD0000">'RadiusError:' </span><span style="color: #007700">. </span><span style="color: #9876AA">radius_strerror</span><span style="color: #007700">(</span><span style="color: #9876AA">\$res</span><span style="color: #007700">). </span><span style="color: #DD0000">"\n&lt;br&gt;"</span><span style="color: #007700">;<br>    exit;<br>}<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.radius-add-server-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_config()} - Causes the library to read the given configuration file</span></li>   </ul>   </div></div>
+ * 
  * <b>radius_add_server()</b> may be called multiple times, and it may be used together with {@see radius_config()}. At most 10 servers may be specified. When multiple servers are given, they are tried in round-robin fashion until a valid response is received, or until each server's max_tries limit has been reached.
  * @link https://secure.php.net/manual/en/function.radius-add-server.php
  * @param resource $radius_handle
@@ -347,36 +503,33 @@ function radius_acct_open() {}
  * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @see radius_config()
  * @since 1.1.0
- 
-*/
+ */
 function radius_add_server($radius_handle, $hostname, $port, $secret, $timeout, $max_tries) {}
 
 /**
-* <div id="function.radius-auth-open" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_auth_open</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_auth_open</span> — <span class="dc-title">Creates a Radius handle for authentication</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-auth-open-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_auth_open</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-auth-open-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-auth-open-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a handle on success, <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error. This function only fails if   insufficient memory is available.  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-auth-open-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-746">    <p><strong>示例 #1 <span class="function"><strong>radius_auth_open()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>$radh </span><span style="color: #007700">= </span><span style="color: #9876AA">radius_auth_open</span><span style="color: #007700">()<br>    or die (</span><span style="color: #DD0000">"Could not create handle"</span><span style="color: #007700">);<br>echo </span><span style="color: #DD0000">"Handle successfully created"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div></div>
-*
+ * <div id="function.radius-auth-open" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_auth_open</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_auth_open</span> — <span class="dc-title">Creates a Radius handle for authentication</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-auth-open-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_auth_open</strong></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span></div>  <p class="para rdfs-comment">  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-auth-open-parameters">  <h3 class="title">参数</h3>  <p class="para">此函数没有参数。</p> </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-auth-open-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   Returns a handle on success, <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong> on error. This function only fails if   insufficient memory is available.  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-auth-open-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-746">    <p><strong>示例 #1 <span class="function"><strong>radius_auth_open()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br>\$radh </span><span style="color: #007700">= </span><span style="color: #9876AA">radius_auth_open</span><span style="color: #007700">()<br>    or die (</span><span style="color: #DD0000">"Could not create handle"</span><span style="color: #007700">);<br>echo </span><span style="color: #DD0000">"Handle successfully created"</span><span style="color: #007700">;<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div></div>
+ * 
  * Creates a Radius handle for authentication
  * @link https://secure.php.net/manual/en/function.radius-auth-open.php
  * @return resource|false Returns a handle on success, <b>FALSE</b> on error. This function only fails if insufficient memory is available.
  * @since 1.1.0
- 
-*/
+ */
 function radius_auth_open() {}
 
 /**
-* <div id="function.radius-close" class="refentry">   <div class="refnamediv">    <h1 class="refname">radius_close</h1>    <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_close</span> — <span class="dc-title">Frees all ressources</span></p>   </div> <div class="refsect1 description" id="refsect1-function.radius-close-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_close</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$radius_handle</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   It is not needed to call this function because php frees all resources at   the end of each request.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-close-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>    <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt><dd><p class="para">The RADIUS resource.</p></dd>   </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-close-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div></div>
-*
+ * <div id="function.radius-close" class="refentry">   <div class="refnamediv">    <h1 class="refname">radius_close</h1>    <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_close</span> — <span class="dc-title">Frees all ressources</span></p>   </div> <div class="refsect1 description" id="refsect1-function.radius-close-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_close</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">\$radius_handle</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   It is not needed to call this function because php frees all resources at   the end of each request.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-close-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>    <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt><dd><p class="para">The RADIUS resource.</p></dd>   </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-close-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div></div>
+ * 
  * Free all resources. It is not needed to call this function because php frees all resources at the end of each request.
  * @link https://secure.php.net/manual/en/function.radius-close.php
  * @param resource $radius_handle
  * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @since 1.1.0
- 
-*/
+ */
 function radius_close($radius_handle) {}
 
 /**
-* <div id="function.radius-config" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_config</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_config</span> — <span class="dc-title">Causes the library to read the given configuration file</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-config-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_config</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$radius_handle</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$file</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   Before issuing any Radius requests, the library must be made aware of the   servers it can contact. The easiest way to configure the library is to   call <span class="function"><strong>radius_config()</strong></span>. <span class="function"><strong>radius_config()</strong></span>   causes the library to read a configuration file whose format is described   in <a href="http://www.freebsd.org/cgi/man.cgi?query=radius.conf" class="link external">» radius.conf</a>.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-config-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">             </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">file</span></dt>     <dd>      <p class="para">       The pathname of the configuration file is passed as the file argument       to <span class="function"><strong>radius_config()</strong></span>. The library can also be       configured programmatically by calls to       <span class="function">{@link radius_add_server()}</span>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-config-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.radius-config-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_add_server()} - Adds a server</span></li>   </ul>   </div></div>
-*
+ * <div id="function.radius-config" class="refentry"> <div class="refnamediv">  <h1 class="refname">radius_config</h1>  <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_config</span> — <span class="dc-title">Causes the library to read the given configuration file</span></p> </div> <div class="refsect1 description" id="refsect1-function.radius-config-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>radius_config</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">\$radius_handle</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">\$file</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   Before issuing any Radius requests, the library must be made aware of the   servers it can contact. The easiest way to configure the library is to   call <span class="function"><strong>radius_config()</strong></span>. <span class="function"><strong>radius_config()</strong></span>   causes the library to read a configuration file whose format is described   in <a href="http://www.freebsd.org/cgi/man.cgi?query=radius.conf" class="link external">»&nbsp;radius.conf</a>.  </p> </div> <div class="refsect1 parameters" id="refsect1-function.radius-config-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">             </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">file</span></dt>     <dd>      <p class="para">       The pathname of the configuration file is passed as the file argument       to <span class="function"><strong>radius_config()</strong></span>. The library can also be       configured programmatically by calls to       <span class="function">{@link radius_add_server()}</span>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-config-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 seealso" id="refsect1-function.radius-config-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_add_server()} - Adds a server</span></li>   </ul>   </div></div>
+ * 
  * Before issuing any Radius requests, the library must be made aware of the servers it can contact. The easiest way to configure the library is to call <b>radius_config()</b>. <b>radius_config()</b> causes the library to read a configuration file whose format is described in radius.conf.
  * @link https://secure.php.net/manual/en/function.radius-config.php
  * @link https://www.freebsd.org/cgi/man.cgi?query=radius.conf
@@ -385,13 +538,12 @@ function radius_close($radius_handle) {}
  * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @see radius_add_server()
  * @since 1.1.0
- 
-*/
+ */
 function radius_config($radius_handle, $file) {}
 
 /**
-* <div id="function.radius-create-request" class="refentry">   <div class="refnamediv">    <h1 class="refname">radius_create_request</h1>    <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_create_request</span> — <span class="dc-title">Create accounting or authentication request</span></p>   </div> <div class="refsect1 description" id="refsect1-function.radius-create-request-description"> <h3 class="title">说明</h3> <div class="methodsynopsis dc-description">  <span class="methodname" style="color:#CC7832"><strong>radius_create_request</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">$radius_handle</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$type</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   A Radius request consists of a code specifying the kind of request, and   zero or more attributes which provide additional information. To begin   constructing a new request, call <span class="function"><strong>radius_create_request()</strong></span>.  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    <span class="simpara">    Attention: You must call this function, before you can put any attribute!   </span>  </p></blockquote> </div> <div class="refsect1 parameters" id="refsect1-function.radius-create-request-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">type</span></dt>     <dd>      <p class="para">       Type is <strong><span><a href="https://php.net/manual/zh/radius.constants.packets.php#constant.radius-access-request">RADIUS_ACCESS_REQUEST</a></span></strong> or       <strong><span><a href="https://php.net/manual/zh/radius.constants.packets.php#constant.radius-accounting-request">RADIUS_ACCOUNTING_REQUEST</a></span></strong>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-create-request-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-create-request-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-747">    <p><strong>示例 #1 <span class="function"><strong>radius_create_request()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">if (!</span><span style="color: #9876AA">radius_create_request</span><span style="color: #007700">(</span><span style="color: #9876AA">$res</span><span style="color: #007700">, </span><span style="color: #9876AA">RADIUS_ACCESS_REQUEST</span><span style="color: #007700">)) {<br>    echo </span><span style="color: #DD0000">'RadiusError:' </span><span style="color: #007700">. </span><span style="color: #9876AA">radius_strerror</span><span style="color: #007700">(</span><span style="color: #9876AA">$res</span><span style="color: #007700">). </span><span style="color: #DD0000">"\n&lt;br /&gt;"</span><span style="color: #007700">;<br>    exit;<br>}<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.radius-create-request-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_send_request()} - Sends the request and waits for a reply</span></li>   </ul>   </div></div>
-*
+ * <div id="function.radius-create-request" class="refentry">   <div class="refnamediv">    <h1 class="refname">radius_create_request</h1>    <p class="verinfo">(PECL radius &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">radius_create_request</span> — <span class="dc-title">Create accounting or authentication request</span></p>   </div> <div class="refsect1 description" id="refsect1-function.radius-create-request-description"> <h3 class="title">说明</h3> <div class="methodsynopsis dc-description">  <span class="methodname" style="color:#CC7832"><strong>radius_create_request</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.resource.php" class="type resource" style="color:#EAB766">resource</a></span> <span class="parameter" style="color:#3A95FF">\$radius_handle</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$type</span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span></div>  <p class="para rdfs-comment">   A Radius request consists of a code specifying the kind of request, and   zero or more attributes which provide additional information. To begin   constructing a new request, call <span class="function"><strong>radius_create_request()</strong></span>.  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    <span class="simpara">    Attention: You must call this function, before you can put any attribute!   </span>  </p></blockquote> </div> <div class="refsect1 parameters" id="refsect1-function.radius-create-request-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">radius_handle</span></dt>     <dd>      <p class="para">      </p>     </dd>             <dt><span class="parameter" style="color:#3A95FF">type</span></dt>     <dd>      <p class="para">       Type is <strong><span><a href="https://php.net/manual/zh/radius.constants.packets.php#constant.radius-access-request">RADIUS_ACCESS_REQUEST</a></span></strong> or       <strong><span><a href="https://php.net/manual/zh/radius.constants.packets.php#constant.radius-accounting-request">RADIUS_ACCOUNTING_REQUEST</a></span></strong>.      </p>     </dd>       </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.radius-create-request-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   成功时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>， 或者在失败时返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.false">false</a></span></strong>。  </p> </div> <div class="refsect1 examples" id="refsect1-function.radius-create-request-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-747">    <p><strong>示例 #1 <span class="function"><strong>radius_create_request()</strong></span> example</strong></p>    <div class="example-contents"><div class="phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br></span><span style="color: #007700">if (!</span><span style="color: #9876AA">radius_create_request</span><span style="color: #007700">(</span><span style="color: #9876AA">\$res</span><span style="color: #007700">, </span><span style="color: #9876AA">RADIUS_ACCESS_REQUEST</span><span style="color: #007700">)) {<br>    echo </span><span style="color: #DD0000">'RadiusError:' </span><span style="color: #007700">. </span><span style="color: #9876AA">radius_strerror</span><span style="color: #007700">(</span><span style="color: #9876AA">\$res</span><span style="color: #007700">). </span><span style="color: #DD0000">"\n&lt;br /&gt;"</span><span style="color: #007700">;<br>    exit;<br>}<br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>   </div>   </div> <div class="refsect1 seealso" id="refsect1-function.radius-create-request-seealso">  <h3 class="title">参见</h3>  <p class="para">   </p><ul class="simplelist">    <li><span class="function">{@link radius_send_request()} - Sends the request and waits for a reply</span></li>   </ul>   </div></div>
+ * 
  * A Radius request consists of a code specifying the kind of request, and zero or more attributes which provide additional information. To begin constructing a new request, call <b>radius_create_request()</b>.<br />
  * <b>Note:</b> Attention: You must call this function, before you can put any attribute!
  * @link https://secure.php.net/manual/en/function.radius-create-request.php
@@ -400,6 +552,5 @@ function radius_config($radius_handle, $file) {}
  * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
  * @see radius_send_request()
  * @since 1.1.0
- 
-*/
+ */
 function radius_create_request($radius_handle, $type) {}

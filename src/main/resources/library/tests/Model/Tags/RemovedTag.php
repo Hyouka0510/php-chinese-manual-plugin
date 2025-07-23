@@ -7,23 +7,30 @@ use phpDocumentor\Reflection\DocBlock\DescriptionFactory;
 use phpDocumentor\Reflection\DocBlock\Tags\BaseTag;
 use phpDocumentor\Reflection\Types\Context;
 
+
 class RemovedTag extends BaseTag
 {
     const string REGEX_VECTOR = '(?:\d\S*|[^\s\:]+\:\s*\$[^\$]+\$)';
     private ?string $version;
 
+
     public function __construct(?string $version = null, ?Description $description = null)
     {
+
         $this->version = $version;
+
         $this->name = 'removed';
+
         $this->description = $description;
     }
+
 
     public static function create(?string $body, ?DescriptionFactory $descriptionFactory = null, ?Context $context = null): RemovedTag
     {
         if (empty($body)) {
             return new self();
         }
+
 
         $matches = [];
         if ($descriptionFactory !== null) {
@@ -32,17 +39,21 @@ class RemovedTag extends BaseTag
             }
 
             return new self(
+
                 $matches[1],
+
                 $descriptionFactory->create($matches[2] ?? '', $context)
             );
         }
         return new self();
     }
 
+
     public function getVersion(): ?string
     {
         return $this->version;
     }
+
 
     public function __toString(): string
     {

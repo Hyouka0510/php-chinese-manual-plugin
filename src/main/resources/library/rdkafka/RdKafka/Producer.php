@@ -2,6 +2,7 @@
 
 namespace RdKafka;
 
+
 class Producer extends \RdKafka
 {
     /**

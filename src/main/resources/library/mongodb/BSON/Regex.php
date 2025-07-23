@@ -36,6 +36,7 @@ final class Regex implements RegexInterface, JsonSerializable, Type, Stringable
      */
     final public function __toString(): string {}
 
+
     public static function __set_state(array $properties): self {}
 
     /**

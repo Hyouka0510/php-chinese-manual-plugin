@@ -21,9 +21,13 @@ use ReflectionType;
 use ReflectionUnionType;
 use Reflector;
 use stdClass;
+
 use function array_key_exists;
+
 use function count;
+
 use function in_array;
+
 
 abstract class BasePHPElement
 {
@@ -69,12 +73,15 @@ abstract class BasePHPElement
      */
     public static function getFQN(Node $node)
     {
+
         $fqn = '';
         if (!property_exists($node, 'namespacedName') || $node->namespacedName === null) {
             if (property_exists($node, 'name')) {
+
                 $fqn = $node->name;
             } else {
                 foreach ($node->parts as $part) {
+
                     $fqn .= "$part\\";
                 }
             }
@@ -90,7 +97,9 @@ abstract class BasePHPElement
      */
     public static function getShortName(Node $node)
     {
+
         $fqn = self::getFQN($node);
+
         $parts = explode('\\', $fqn);
         return array_pop($parts);
     }
@@ -102,13 +111,16 @@ abstract class BasePHPElement
      */
     protected static function getReflectionTypeAsArray($type)
     {
+
         $reflectionTypes = [];
         if ($type instanceof ReflectionNamedType) {
+
             $type->allowsNull() && $type->getName() !== 'mixed' ?
                 array_push($reflectionTypes, '?' . $type->getName()) : array_push($reflectionTypes, $type->getName());
         }
         if ($type instanceof ReflectionUnionType) {
             foreach ($type->getTypes() as $namedType) {
+
                 $reflectionTypes[] = $namedType->getName();
             }
         }
@@ -123,15 +135,18 @@ abstract class BasePHPElement
      */
     protected static function convertParsedTypeToArray($type)
     {
+
         $types = [];
         if ($type !== null) {
             if ($type instanceof UnionType) {
                 foreach ($type->types as $namedType) {
+
                     $types[] = self::getTypeNameFromNode($namedType);
                 }
             } elseif ($type instanceof Type) {
                 array_push($types, ...explode('|', (string)$type));
             } else {
+
                 $types[] = self::getTypeNameFromNode($type);
             }
         }
@@ -145,17 +160,23 @@ abstract class BasePHPElement
      */
     protected static function getTypeNameFromNode($type)
     {
+
         $nullable = false;
+
         $typeName = '';
         if ($type instanceof NullableType) {
+
             $type = $type->type;
+
             $nullable = true;
         }
         if (empty($type->name)) {
             if (!empty($type->parts)) {
+
                 $typeName = $nullable ? '?' . implode('\\', $type->parts) : implode('\\', $type->parts);
             }
         } else {
+
             $typeName = $nullable ? '?' . $type->name : $type->name;
         }
 
@@ -172,34 +193,44 @@ abstract class BasePHPElement
         foreach ($attrGroups as $attrGroup) {
             foreach ($attrGroup->attrs as $attr) {
                 if ($attr->name->toString() === LanguageLevelTypeAware::class) {
+
                     $types = [];
+
                     $versionTypesMap = $attr->args[0]->value->items;
+
                     $defaultType = explode('|', preg_replace('/\w+\[]/', 'array', $attr->args[1]->value->value));
 
                     // Collecting explicit types from the attribute.
                     foreach ($versionTypesMap as $item) {
+
                         $types[number_format((float)$item->key->value, 1)] =
                             explode('|', preg_replace('/\w+\[]/', 'array', $item->value->value));
                     }
 
                     // Populate the results for all required PHP versions.
+
                     $result = [];
                     foreach (new PhpVersions() as $version) {
+
                         $versionKey = number_format($version, 1);
 
                         // Find the appropriate type for the current version.
                         if (isset($types[$versionKey])) {
+
                             $result[$versionKey] = $types[$versionKey];
                         } else {
                             // Look for the closest lower or equal version.
+
                             $closestType = $defaultType;
                             foreach ($types as $typeVersion => $typeValue) {
                                 if (floatval($versionKey) >= floatval($typeVersion)) {
+
                                     $closestType = $typeValue;
                                 } else {
                                     break;
                                 }
                             }
+
                             $result[$versionKey] = $closestType;
                         }
                     }
@@ -219,22 +250,27 @@ abstract class BasePHPElement
      */
     protected static function findAvailableVersionsRangeFromAttribute(array $attrGroups)
     {
+
         $versionRange = [];
         foreach ($attrGroups as $attrGroup) {
             foreach ($attrGroup->attrs as $attr) {
                 if ($attr->name->toString() === PhpStormStubsElementAvailable::class) {
                     if (count($attr->args) === 2) {
                         foreach ($attr->args as $arg) {
+
                             $versionRange[$arg->name->name] = (float)$arg->value->value;
                         }
                     } else {
+
                         $arg = $attr->args[0]->value;
                         if ($arg instanceof Array_) {
+
                             $value = $arg->items[0]->value;
                             if ($value instanceof String_) {
                                 return ['from' => (float)$value->value];
                             }
                         } else {
+
                             $rangeName = $attr->args[0]->name;
 
                             return $rangeName === null || $rangeName->name === 'from' ?
@@ -284,11 +320,14 @@ abstract class BasePHPElement
         return false;
     }
 
+
     public function checkDeprecationTag($node)
     {
+
         $this->isDeprecated = self::hasDeprecatedAttribute($node) && self::deprecatedVersionSuitsCurrentLanguageLevel($node) ||
             !empty($this->deprecatedTags) && self::deprecatedVersionSuitsCurrentLanguageLevel();
     }
+
 
     private function deprecatedVersionSuitsCurrentLanguageLevel($node = null)
     {

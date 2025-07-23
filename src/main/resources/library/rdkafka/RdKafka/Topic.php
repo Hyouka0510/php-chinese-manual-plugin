@@ -2,6 +2,7 @@
 
 namespace RdKafka;
 
+
 abstract class Topic
 {
     /**

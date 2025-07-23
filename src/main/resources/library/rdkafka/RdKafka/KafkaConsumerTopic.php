@@ -2,8 +2,10 @@
 
 namespace RdKafka;
 
+
 class KafkaConsumerTopic extends Topic
 {
+
     private function __construct() {}
 
     /**

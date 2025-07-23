@@ -3650,155 +3650,231 @@ class RedisCluster
      */
     public function georadiusbymember(string $key, string $member, float $radius, string $unit, array $options = []): mixed {}
 
+
     public function _compress(string $value): string {}
+
 
     public function _uncompress(string $value): string {}
 
+
     public function _pack(mixed $value): string {}
+
 
     public function _unpack(string $value): mixed {}
 
+
     public function _redir(): string|null {}
+
 
     public function acl(string|array $key_or_address, string $subcmd, string ...$args): mixed {}
 
+
     public function waitaof(string|array $key_or_address, int $numlocal, int $numreplicas, int $timeout): RedisCluster|array|false {}
+
 
     public function lMove(string $src, string $dst, string $wherefrom, string $whereto): Redis|string|false {}
 
+
     public function blmove(string $src, string $dst, string $wherefrom, string $whereto, float $timeout): Redis|string|false {}
+
 
     public function bzPopMax(string|array $key, string|int $timeout_or_key, mixed ...$extra_args): array {}
 
+
     public function bzPopMin(string|array $key, string|int $timeout_or_key, mixed ...$extra_args): array {}
+
 
     public function bzmpop(float $timeout, array $keys, string $from, int $count = 1): RedisCluster|array|null|false {}
 
+
     public function zmpop(array $keys, string $from, int $count = 1): RedisCluster|array|null|false {}
+
 
     public function blmpop(float $timeout, array $keys, string $from, int $count = 1): RedisCluster|array|null|false {}
 
+
     public function lmpop(array $keys, string $from, int $count = 1): RedisCluster|array|null|false {}
+
 
     public function copy(string $src, string $dst, ?array $options = null): RedisCluster|bool {}
 
+
     public function decrbyfloat(string $key, float $value): float {}
+
 
     public function eval(string $script, array $args = [], int $num_keys = 0): mixed {}
 
+
     public function eval_ro(string $script, array $args = [], int $num_keys = 0): mixed {}
+
 
     public function evalsha_ro(string $script_sha, array $args = [], int $num_keys = 0): mixed {}
 
+
     public function touch(mixed $key, mixed ...$other_keys): RedisCluster|int|bool {}
+
 
     public function expiretime(string $key): RedisCluster|int|false {}
 
+
     public function pexpiretime(string $key): RedisCluster|int|false {}
+
 
     public function georadius_ro(string $key, float $lng, float $lat, float $radius, string $unit, array $options = []): mixed {}
 
+
     public function georadiusbymember_ro(string $key, string $member, float $radius, string $unit, array $options = []): mixed {}
+
 
     public function geosearch(string $key, array|string $position, array|int|float $shape, string $unit, array $options = []): RedisCluster|array {}
 
+
     public function geosearchstore(string $dst, string $src, array|string $position, array|int|float $shape, string $unit, array $options = []): RedisCluster|array|int|false {}
+
 
     public function getDel(string $key): mixed {}
 
+
     public function getWithMeta(string $key): RedisCluster|array|false {}
+
 
     public function getEx(string $key, array $options = []): RedisCluster|string|false {}
 
+
     public function lcs(string $key1, string $key2, ?array $options = null): RedisCluster|string|array|int|false {}
+
 
     public function getTransferredBytes(): array|false {}
 
+
     public function clearTransferredBytes(): void {}
+
 
     public function expiremember(string $key, string $field, int $ttl, ?string $unit = null): Redis|int|false {}
 
+
     public function expirememberat(string $key, string $field, int $timestamp): Redis|int|false {}
+
 
     public function hRandField(string $key, ?array $options = null): RedisCluster|string|array {}
 
+
     public function hStrLen(string $key, string $field): RedisCluster|int|false {}
+
 
     public function hexpire(string $key, int $ttl, array $fields, ?string $mode = null): RedisCluster|array|false {}
 
+
     public function hpexpire(string $key, int $ttl, array $fields, ?string $mode = null): RedisCluster|array|false {}
+
 
     public function hexpireat(string $key, int $time, array $fields, ?string $mode = null): RedisCluster|array|false {}
 
+
     public function hpexpireat(string $key, int $mstime, array $fields, ?string $mode = null): RedisCluster|array|false {}
+
 
     public function httl(string $key, array $fields): RedisCluster|array|false {}
 
+
     public function hpttl(string $key, array $fields): RedisCluster|array|false {}
+
 
     public function hexpiretime(string $key, array $fields): RedisCluster|array|false {}
 
+
     public function hpexpiretime(string $key, array $fields): RedisCluster|array|false {}
+
 
     public function hpersist(string $key, array $fields): RedisCluster|array|false {}
 
+
     public function lPos(string $key, mixed $value, ?array $options = null): Redis|null|bool|int|array {}
+
 
     public function sintercard(array $keys, int $limit = -1): RedisCluster|int|false {}
 
+
     public function sMisMember(string $key, string $member, string ...$other_members): RedisCluster|array|false {}
+
 
     public function sort_ro(string $key, ?array $options = null): RedisCluster|array|bool|int|string {}
 
+
     public function unlink(array|string $key, string ...$other_keys): RedisCluster|int|false {}
+
 
     public function xack(string $key, string $group, array $ids): RedisCluster|int|false {}
 
+
     public function xadd(string $key, string $id, array $values, int $maxlen = 0, bool $approx = false): RedisCluster|string|false {}
+
 
     public function xclaim(string $key, string $group, string $consumer, int $min_iddle, array $ids, array $options): RedisCluster|string|array|false {}
 
+
     public function xdel(string $key, array $ids): RedisCluster|int|false {}
+
 
     public function xgroup(string $operation, ?string $key = null, ?string $group = null, ?string $id_or_consumer = null, bool $mkstream = false, int $entries_read = -2): mixed {}
 
+
     public function xautoclaim(string $key, string $group, string $consumer, int $min_idle, string $start, int $count = -1, bool $justid = false): RedisCluster|bool|array {}
+
 
     public function xinfo(string $operation, ?string $arg1 = null, ?string $arg2 = null, int $count = -1): mixed {}
 
+
     public function xlen(string $key): RedisCluster|int|false {}
+
 
     public function xpending(string $key, string $group, ?string $start = null, ?string $end = null, int $count = -1, ?string $consumer = null): RedisCluster|array|false {}
 
+
     public function xrange(string $key, string $start, string $end, int $count = -1): RedisCluster|bool|array {}
+
 
     public function xread(array $streams, int $count = -1, int $block = -1): RedisCluster|bool|array {}
 
+
     public function xreadgroup(string $group, string $consumer, array $streams, int $count = 1, int $block = 1): RedisCluster|bool|array {}
+
 
     public function xrevrange(string $key, string $start, string $end, int $count = -1): RedisCluster|bool|array {}
 
+
     public function xtrim(string $key, int $maxlen, bool $approx = false, bool $minid = false, int $limit = -1): RedisCluster|int|false {}
+
 
     public function zintercard(array $keys, int $limit = -1): RedisCluster|int|false {}
 
+
     public function zPopMax(string $key, ?int $value = null): RedisCluster|bool|array {}
+
 
     public function zPopMin(string $key, ?int $value = null): RedisCluster|bool|array {}
 
+
     public function zrangestore(string $dstkey, string $srckey, int $start, int $end, array|bool|null $options = null): RedisCluster|int|false {}
+
 
     public function zRandMember(string $key, ?array $options = null): RedisCluster|string|array {}
 
+
     public function zMscore(string $key, mixed $member, mixed ...$other_members): Redis|array|false {}
+
 
     public function zinter(array $keys, ?array $weights = null, ?array $options = null): RedisCluster|array|false {}
 
+
     public function zdiffstore(string $dst, array $keys): RedisCluster|int|false {}
+
 
     public function zunion(array $keys, ?array $weights = null, ?array $options = null): RedisCluster|array|false {}
 
+
     public function zdiff(array $keys, ?array $options = null): RedisCluster|array|false {}
 }
+
 
 class RedisClusterException extends Exception {}

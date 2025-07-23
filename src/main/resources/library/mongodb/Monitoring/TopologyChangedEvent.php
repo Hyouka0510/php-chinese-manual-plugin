@@ -10,6 +10,7 @@ use MongoDB\Driver\TopologyDescription;
  */
 final class TopologyChangedEvent
 {
+
     final private function __construct() {}
 
     /**
@@ -29,6 +30,7 @@ final class TopologyChangedEvent
      * @link https://www.php.net/manual/en/mongodb-driver-monitoring-topologychangedevent.gettopologyid.php
      */
     final public function getTopologyId(): ObjectId {}
+
 
     final public function __wakeup(): void {}
 }

@@ -13,6 +13,7 @@ use MongoDB\Driver\Exception\LogicException;
  */
 final class BulkWriteCommandResult
 {
+
     final private function __construct() {}
 
     /**

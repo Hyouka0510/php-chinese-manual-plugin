@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace SimpleKafkaClient;
 
+
 class KafkaErrorException extends Exception
 {
     /**
@@ -23,11 +24,15 @@ class KafkaErrorException extends Exception
         bool $transactionRequiresAbort
     ) {}
 
+
     public function getErrorString(): string {}
+
 
     public function isFatal(): bool {}
 
+
     public function isRetriable(): bool {}
+
 
     public function transactionRequiresAbort(): bool {}
 }

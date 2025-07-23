@@ -7,6 +7,7 @@ use PhpParser\Node\Stmt\Property;
 use ReflectionProperty;
 use stdClass;
 
+
 class PHPProperty extends BasePHPElement
 {
     /** @var string[] */
@@ -27,6 +28,7 @@ class PHPProperty extends BasePHPElement
      */
     public function __construct($parentId = null)
     {
+
         $this->parentId = $parentId;
     }
 
@@ -36,21 +38,30 @@ class PHPProperty extends BasePHPElement
      */
     public function readObjectFromReflection($reflectionObject)
     {
+
         $this->name = $reflectionObject->getName();
+
         $this->parentId = "\\{$reflectionObject->class}";
         if ($reflectionObject->isProtected()) {
+
             $access = 'protected';
         } elseif ($reflectionObject->isPrivate()) {
+
             $access = 'private';
         } else {
+
             $access = 'public';
         }
+
         $this->access = $access;
+
         $this->is_static = $reflectionObject->isStatic();
         if (method_exists($reflectionObject, 'getType')) {
+
             $this->typesFromSignature = self::getReflectionTypeAsArray($reflectionObject->getType());
         }
         if (method_exists($reflectionObject, 'isReadonly')) {
+
             $this->isReadonly = $reflectionObject->isReadOnly();
         }
         return $this;
@@ -62,29 +73,44 @@ class PHPProperty extends BasePHPElement
      */
     public function readObjectFromStubNode($node)
     {
+
         $this->name = $node->props[0]->name->name;
+
         $this->collectTags($node);
+
         $this->is_static = $node->isStatic();
         if ($node->isProtected()) {
+
             $access = 'protected';
         } elseif ($node->isPrivate()) {
+
             $access = 'private';
         } else {
+
             $access = 'public';
         }
+
         $this->access = $access;
+
         $this->isReadonly = $node->isReadonly();
+
         $this->typesFromSignature = self::convertParsedTypeToArray($node->type);
+
         $this->typesFromAttribute = self::findTypesFromAttribute($node->attrGroups);
         foreach ($this->varTags as $varTag) {
+
             $this->typesFromPhpDoc = explode('|', (string)$varTag->getType());
         }
 
+
         $parentNode = $node->getAttribute('parent');
         if ($parentNode !== null) {
+
             $this->parentId = self::getFQN($parentNode);
         }
+
         $this->checkDeprecationTag($node);
+
         $this->stubObjectHash = spl_object_hash($this);
         return $this;
     }
@@ -100,9 +126,11 @@ class PHPProperty extends BasePHPElement
                 foreach ($property->problems as $problem) {
                     switch ($problem->description) {
                         case 'missing property':
+
                             $this->mutedProblems[StubProblemType::STUB_IS_MISSED] = $problem->versions;
                             break;
                         case 'wrong readonly':
+
                             $this->mutedProblems[StubProblemType::WRONG_READONLY] = $problem->versions;
                             break;
                         default:

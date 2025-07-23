@@ -11,8 +11,10 @@ use StubTests\TestData\Providers\Reflection\ReflectionParametersProvider;
 use StubTests\TestData\Providers\Reflection\ReflectionPropertiesProvider;
 use StubTests\TestData\Providers\ReflectionStubsSingleton;
 
+
 class StubsPhp81Tests extends AbstractBaseStubsTestCase
 {
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -26,10 +28,14 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$propertyName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionProperty = ReflectionStubsSingleton::getReflectionStubs()->getClass($classId, fromReflection: true)->getProperty($propertyName, fromReflection: true);
+
         $stubProperty = PhpStormStubsSingleton::getPhpStormStubs()->getClass($classId)->getProperty($propertyName);
         static::assertEquals(
+
             $reflectionProperty->isReadonly,
+
             $stubProperty->isReadonly,
             "Property $classId::$propertyName readonly modifier is incorrect"
         );
@@ -41,35 +47,53 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$methodName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionClass = ReflectionStubsSingleton::getReflectionStubs()->getClass($classId, fromReflection: true);
+
         $reflectionMethod = $reflectionClass->getMethod($methodName, fromReflection: true);
+
         $stubClass = PhpStormStubsSingleton::getPhpStormStubs()->getClass($classId);
+
         $stubsMethod = $stubClass->getMethod($methodName);
+
         $unifiedStubsReturnTypes = [];
+
         $unifiedStubsAttributesReturnTypes = [];
+
         $unifiedReflectionReturnTypes = [];
         self::unifyTypes($reflectionMethod->returnTypesFromSignature, $unifiedReflectionReturnTypes, $reflectionClass);
         if (!empty($stubsMethod->returnTypesFromSignature)) {
             self::unifyTypes($stubsMethod->returnTypesFromSignature, $unifiedStubsReturnTypes, $stubClass);
         } else {
             foreach ($stubsMethod->returnTypesFromAttribute as $languageVersion => $listOfTypes) {
+
                 $unifiedStubsAttributesReturnTypes[$languageVersion] = [];
                 self::unifyTypes($listOfTypes, $unifiedStubsAttributesReturnTypes[$languageVersion], $stubClass);
             }
         }
+
         $conditionToCompareWithSignature = AbstractBaseStubsTestCase::isReflectionTypesMatchSignature(
+
             $unifiedReflectionReturnTypes,
+
             $unifiedStubsReturnTypes
         );
+
         $typesFromAttribute = [];
         if (!empty($unifiedStubsAttributesReturnTypes)) {
+
             $typesFromAttribute = !empty($unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')]) ?
+
                 $unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')] :
+
                 $unifiedStubsAttributesReturnTypes['default'];
         }
+
         $conditionToCompareWithAttribute = AbstractBaseStubsTestCase::isReflectionTypesExistInAttributes($unifiedReflectionReturnTypes, $typesFromAttribute);
+
         $testCondition = $conditionToCompareWithSignature || $conditionToCompareWithAttribute;
         self::assertTrue(
+
             $testCondition,
             "Method $classId::$methodName has invalid return type. Reflection method has return type " .
             implode('|', $reflectionMethod->returnTypesFromSignature) .
@@ -86,33 +110,49 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$methodName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionMethod = ReflectionStubsSingleton::getReflectionStubs()->getInterface($classId, fromReflection: true)->getMethod($methodName, fromReflection: true);
+
         $stubsMethod = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($classId)->getMethod($methodName);
+
         $unifiedStubsReturnTypes = [];
+
         $unifiedStubsAttributesReturnTypes = [];
+
         $unifiedReflectionReturnTypes = [];
         self::unifyTypes($reflectionMethod->returnTypesFromSignature, $unifiedReflectionReturnTypes);
         if (!empty($stubsMethod->returnTypesFromSignature)) {
             self::unifyTypes($stubsMethod->returnTypesFromSignature, $unifiedStubsReturnTypes);
         } else {
             foreach ($stubsMethod->returnTypesFromAttribute as $languageVersion => $listOfTypes) {
+
                 $unifiedStubsAttributesReturnTypes[$languageVersion] = [];
                 self::unifyTypes($listOfTypes, $unifiedStubsAttributesReturnTypes[$languageVersion]);
             }
         }
+
         $conditionToCompareWithSignature = AbstractBaseStubsTestCase::isReflectionTypesMatchSignature(
+
             $unifiedReflectionReturnTypes,
+
             $unifiedStubsReturnTypes
         );
+
         $typesFromAttribute = [];
         if (!empty($unifiedStubsAttributesReturnTypes)) {
+
             $typesFromAttribute = !empty($unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')]) ?
+
                 $unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')] :
+
                 $unifiedStubsAttributesReturnTypes['default'];
         }
+
         $conditionToCompareWithAttribute = AbstractBaseStubsTestCase::isReflectionTypesExistInAttributes($unifiedReflectionReturnTypes, $typesFromAttribute);
+
         $testCondition = $conditionToCompareWithSignature || $conditionToCompareWithAttribute;
         self::assertTrue(
+
             $testCondition,
             "Method $classId::$methodName has invalid return type. Reflection method has return type " .
             implode('|', $reflectionMethod->returnTypesFromSignature) .
@@ -129,33 +169,49 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$methodName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionMethod = ReflectionStubsSingleton::getReflectionStubs()->getEnum($classId, fromReflection: true)->getMethod($methodName, fromReflection: true);
+
         $stubsMethod = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId)->getMethod($methodName);
+
         $unifiedStubsReturnTypes = [];
+
         $unifiedStubsAttributesReturnTypes = [];
+
         $unifiedReflectionReturnTypes = [];
         self::unifyTypes($reflectionMethod->returnTypesFromSignature, $unifiedReflectionReturnTypes);
         if (!empty($stubsMethod->returnTypesFromSignature)) {
             self::unifyTypes($stubsMethod->returnTypesFromSignature, $unifiedStubsReturnTypes);
         } else {
             foreach ($stubsMethod->returnTypesFromAttribute as $languageVersion => $listOfTypes) {
+
                 $unifiedStubsAttributesReturnTypes[$languageVersion] = [];
                 self::unifyTypes($listOfTypes, $unifiedStubsAttributesReturnTypes[$languageVersion]);
             }
         }
+
         $conditionToCompareWithSignature = AbstractBaseStubsTestCase::isReflectionTypesMatchSignature(
+
             $unifiedReflectionReturnTypes,
+
             $unifiedStubsReturnTypes
         );
+
         $typesFromAttribute = [];
         if (!empty($unifiedStubsAttributesReturnTypes)) {
+
             $typesFromAttribute = !empty($unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')]) ?
+
                 $unifiedStubsAttributesReturnTypes[getenv('PHP_VERSION')] :
+
                 $unifiedStubsAttributesReturnTypes['default'];
         }
+
         $conditionToCompareWithAttribute = AbstractBaseStubsTestCase::isReflectionTypesExistInAttributes($unifiedReflectionReturnTypes, $typesFromAttribute);
+
         $testCondition = $conditionToCompareWithSignature || $conditionToCompareWithAttribute;
         self::assertTrue(
+
             $testCondition,
             "Method $classId::$methodName has invalid return type. Reflection method has return type " .
             implode('|', $reflectionMethod->returnTypesFromSignature) .
@@ -172,11 +228,16 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$constantName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionConstant = ReflectionStubsSingleton::getReflectionStubs()->getEnum($classId, fromReflection: true)->getConstant($constantName, fromReflection: true);
+
         $constantValue = $reflectionConstant->value;
+
         $stubsEnum = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId);
+
         $stubConstant = $stubsEnum->getConstant($constantName);
         static::assertNotEmpty(
+
             $stubConstant,
             "Missing constant: $classId::$constantName = $constantValue\n"
         );
@@ -188,12 +249,18 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$caseName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionConstant = ReflectionStubsSingleton::getReflectionStubs()->getEnum($classId, fromReflection: true)->getCase($caseName, fromReflection: true);
+
         $enumCaseName = $reflectionConstant->value->name;
+
         $enumCaseValue = $reflectionConstant->value->value;
+
         $stubsEnum = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId);
+
         $stubConstant = $stubsEnum->getCase($caseName);
         static::assertNotEmpty(
+
             $stubConstant,
             "Missing enum case: $classId::$caseName\n"
         );
@@ -205,22 +272,36 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$methodName && !$parameterName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionParameter = ReflectionStubsSingleton::getReflectionStubs()->getEnum($classId, fromReflection: true)->getMethod($methodName, fromReflection: true)->getParameter($parameterName);
+
         $stubClass = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId);
+
         $phpstormFunction = $stubClass->getMethod($methodName);
+
         $stubParameters = array_filter($phpstormFunction->parameters, fn (PHPParameter $stubParameter) => $stubParameter->indexInSignature === $reflectionParameter->indexInSignature);
+
         $stubOptionalParameter = array_pop($stubParameters);
+
         $reflectionValue = AbstractBaseStubsTestCase::getStringRepresentationOfDefaultParameterValue($reflectionParameter->defaultValue);
+
         $stubValue = AbstractBaseStubsTestCase::getStringRepresentationOfDefaultParameterValue($stubOptionalParameter->defaultValue, $stubClass);
         self::assertEquals(
+
             $reflectionValue,
+
             $stubValue,
             sprintf(
                 'Reflection method %s::%s has optional parameter %s with default value %s but stub parameter has value %s',
+
                 $classId,
+
                 $methodName,
+
                 $parameterName,
+
                 $reflectionValue,
+
                 $stubValue
             )
         );
@@ -232,27 +313,40 @@ class StubsPhp81Tests extends AbstractBaseStubsTestCase
         if (!$classId && !$methodName && !$parameterName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $reflectionParameter = ReflectionStubsSingleton::getReflectionStubs()->getInterface($classId, fromReflection: true)->getMethod($methodName, fromReflection: true)->getParameter($parameterName);
+
         $stubClass = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($classId);
+
         $phpstormFunction = $stubClass->getMethod($methodName);
+
         $stubParameters = array_filter($phpstormFunction->parameters, fn (PHPParameter $stubParameter) => $stubParameter->indexInSignature === $reflectionParameter->indexInSignature);
+
         $stubOptionalParameter = array_pop($stubParameters);
 
         self::assertEmpty(
+
             $stubOptionalParameter->defaultValue,
             sprintf(
                 'Stub method %s::%s has a parameter "%s" which expected to have no default value but it has',
+
                 $classId,
+
                 $methodName,
+
                 $stubOptionalParameter->name
             )
         );
         self::assertTrue(
+
             $stubOptionalParameter->markedOptionalInPhpDoc,
             sprintf(
                 'Stub method %s::%s has a parameter "%s" which expected to be marked as [optional] at PHPDoc but it is not',
+
                 $classId,
+
                 $methodName,
+
                 $stubOptionalParameter->name
             )
         );

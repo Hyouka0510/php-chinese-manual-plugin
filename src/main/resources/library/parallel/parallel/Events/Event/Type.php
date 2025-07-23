@@ -2,6 +2,7 @@
 
 namespace parallel\Events\Event;
 
+
 final class Type
 {
     /** Event::$object was read into Event::$value */

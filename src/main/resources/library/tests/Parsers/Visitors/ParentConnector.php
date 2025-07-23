@@ -5,6 +5,7 @@ namespace StubTests\Parsers\Visitors;
 
 use PhpParser\Node;
 use PhpParser\NodeVisitorAbstract;
+
 use function count;
 
 /**
@@ -17,18 +18,24 @@ class ParentConnector extends NodeVisitorAbstract
      */
     private array $stack;
 
+
     public function beforeTraverse(array $nodes): void
     {
+
         $this->stack = [];
     }
+
 
     public function enterNode(Node $node): void
     {
         if (!empty($this->stack)) {
+
             $node->setAttribute('parent', $this->stack[count($this->stack) - 1]);
         }
+
         $this->stack[] = $node;
     }
+
 
     public function leaveNode(Node $node): void
     {

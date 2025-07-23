@@ -17,10 +17,13 @@ use StubTests\TestData\Providers\PhpStormStubsSingleton;
 use StubTests\TestData\Providers\Stubs\StubConstantsProvider;
 use StubTests\TestData\Providers\Stubs\StubMethodsProvider;
 use StubTests\TestData\Providers\Stubs\StubsTestDataProviders;
+
 use function trim;
+
 
 class StubsPhpDocTest extends AbstractBaseStubsTestCase
 {
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -33,7 +36,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         if (!$classHash && !$constantName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getClassByHash($classHash);
+
         $constant = $class->getConstant($constantName, false);
         self::assertNull($constant->parseError, $constant->parseError ?: '');
         self::checkPHPDocCorrectness($constant, "constant $class->id::$constant->name");
@@ -45,7 +50,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         if (!$classId && !$constantName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($classId, shouldSuitCurrentPhpVersion: false);
+
         $constant = $class->getConstant($constantName, false);
         self::assertNull($constant->parseError, $constant->parseError ?: '');
         self::checkPHPDocCorrectness($constant, "constant $classId::$constant->name");
@@ -57,7 +64,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         if (!$classId && !$constantName) {
             self::markTestSkipped($this->emptyDataSetMessage);
         }
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId, shouldSuitCurrentPhpVersion: false);
+
         $constant = $class->getConstant($constantName, false);
         self::assertNull($constant->parseError, $constant->parseError ?: '');
         self::checkPHPDocCorrectness($constant, "constant $classId::$constant->name");
@@ -66,6 +75,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubConstantsProvider::class, 'globalConstantProvider')]
     public static function testConstantsPHPDocs(string $constantId): void
     {
+
         $constant = PhpStormStubsSingleton::getPhpStormStubs()->getConstant($constantId, shouldSuitCurrentPhpVersion: false);
         self::assertNull($constant->parseError, $constant->parseError ?: '');
         self::checkPHPDocCorrectness($constant, "constant $constant->name");
@@ -74,6 +84,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubsTestDataProviders::class, 'allFunctionsProvider')]
     public static function testFunctionPHPDocs(string $functionId): void
     {
+
         $function = PhpStormStubsSingleton::getPhpStormStubs()->getFunction($functionId, shouldSuitCurrentPhpVersion: false);
         self::assertNull($function->parseError, $function->parseError?->getMessage() ?: '');
         self::checkPHPDocCorrectness($function, "function $function->name");
@@ -82,6 +93,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubsTestDataProviders::class, 'allClassesProvider')]
     public static function testClassesPHPDocs(string $classId, string $sourceFilePath): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getClass($classId, sourceFilePath: $sourceFilePath, shouldSuitCurrentPhpVersion: false);
         self::assertNull($class->parseError, $class->parseError?->getMessage() ?: '');
         self::checkPHPDocCorrectness($class, "class $class->name");
@@ -90,6 +102,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubsTestDataProviders::class, 'allInterfacesProvider')]
     public static function testInterfacesPHPDocs(string $classId, string $sourceFilePath): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($classId, sourceFilePath: $sourceFilePath, shouldSuitCurrentPhpVersion: false);
         self::assertNull($class->parseError, $class->parseError?->getMessage() ?: '');
         self::checkPHPDocCorrectness($class, "class $class->name");
@@ -98,6 +111,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubsTestDataProviders::class, 'allEnumsProvider')]
     public static function testEumsPHPDocs(string $classId, string $sourceFilePath): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId, sourceFilePath: $sourceFilePath, shouldSuitCurrentPhpVersion: false);
         self::assertNull($class->parseError, $class->parseError?->getMessage() ?: '');
         self::checkPHPDocCorrectness($class, "class $class->name");
@@ -106,7 +120,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubMethodsProvider::class, 'allClassMethodsProvider')]
     public static function testClassMethodsPHPDocs(string $classHash, string $methodName): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getClassByHash($classHash);
+
         $method = $class->getMethod($methodName, shouldSuitCurrentPhpVersion: false);
         if ($method->name === '__construct') {
             self::assertEmpty($method->returnTypesFromPhpDoc, '@return tag for __construct should be omitted');
@@ -118,7 +134,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubMethodsProvider::class, 'allInterfaceMethodsProvider')]
     public static function testInterfaceMethodsPHPDocs(string $classId, string $methodName): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getInterface($classId, shouldSuitCurrentPhpVersion: false);
+
         $method = $class->getMethod($methodName, shouldSuitCurrentPhpVersion: false);
         if ($method->name === '__construct') {
             self::assertEmpty($method->returnTypesFromPhpDoc, '@return tag for __construct should be omitted');
@@ -130,7 +148,9 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
     #[DataProviderExternal(StubMethodsProvider::class, 'allEnumsMethodsProvider')]
     public static function testEnumMethodsPHPDocs(string $classId, string $methodName): void
     {
+
         $class = PhpStormStubsSingleton::getPhpStormStubs()->getEnum($classId, shouldSuitCurrentPhpVersion: false);
+
         $method = $class->getMethod($methodName, shouldSuitCurrentPhpVersion: false);
         if ($method->name === '__construct') {
             self::assertEmpty($method->returnTypesFromPhpDoc, '@return tag for __construct should be omitted');
@@ -141,11 +161,13 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
 
     //TODO IF: Add test to check that phpdocs contain only resource, object etc typehints or if contains type like Resource then Resource should be declared in stubs
 
+
     private static function checkDeprecatedRemovedSinceVersionsMajor(BasePHPElement $element, string $elementName): void
     {
         /** @var PHPDocElement $element */
         foreach ($element->sinceTags as $sinceTag) {
             if ($sinceTag instanceof Since) {
+
                 $version = $sinceTag->getVersion();
                 if ($version !== null) {
                     self::assertTrue(ParserUtils::tagDoesNotHaveZeroPatchVersion($sinceTag), "$elementName has 
@@ -156,6 +178,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         }
         foreach ($element->deprecatedTags as $deprecatedTag) {
             if ($deprecatedTag instanceof Deprecated) {
+
                 $version = $deprecatedTag->getVersion();
                 if ($version !== null) {
                     self::assertTrue(ParserUtils::tagDoesNotHaveZeroPatchVersion($deprecatedTag), "$elementName has 
@@ -166,6 +189,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         }
         foreach ($element->removedTags as $removedTag) {
             if ($removedTag instanceof RemovedTag) {
+
                 $version = $removedTag->getVersion();
                 if ($version !== null) {
                     self::assertTrue(ParserUtils::tagDoesNotHaveZeroPatchVersion($removedTag), "$elementName has 
@@ -176,10 +200,12 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         }
     }
 
+
     private static function checkHtmlTags(BasePHPElement $element, string $elementName): void
     {
         /** @var PHPDocElement $element */
         $phpdoc = trim($element->phpdoc);
+
 
         $phpdoc = preg_replace(
             [
@@ -201,16 +227,20 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
                 '#(\s[\w]+[-][\w]+<[a-zA-Z,\s]+>[\s|]+)|([\w]+<[a-zA-Z,|\s]+>[\s|\W]+)#'
             ],
             '',
+
             $phpdoc
         );
+
 
         $countTags = substr_count($phpdoc, '>');
         self::assertSame(
             0,
+
             $countTags % 2,
             "In $elementName phpdoc has a html error and the phpdoc maybe not displayed correctly in PhpStorm: " . print_r($phpdoc, true)
         );
     }
+
 
     private static function checkLinks(BasePHPElement $element, string $elementName): void
     {
@@ -219,17 +249,19 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
             if ($link instanceof Link) {
                 self::assertStringStartsWith(
                     'https',
+
                     $link->getLink(),
                     "In $elementName @link doesn't start with https"
                 );
                 if (getenv('CHECK_LINKS') === 'true') {
                     if ($element->stubBelongsToCore) {
 /**
-* <div id="reserved.variables.request" class="refentry"> <div class="refnamediv">  <h1 class="refname">$_REQUEST</h1>  <p class="refpurpose"><span class="refname">$_REQUEST</span> — <span class="dc-title">HTTP Request 变量</span></p> </div> <div class="refsect1 description" id="refsect1-reserved.variables.request-description">  <h3 class="title">说明</h3>  <p class="para">   默认情况下包含了 <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.get.php" class="classname">$_GET</a></var>，<var class="varname"><a href="https://php.net/manual/zh/reserved.variables.post.php" class="classname">$_POST</a></var>  和  <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.cookies.php" class="classname">$_COOKIE</a></var> 的<span class="type" style="color:#EAB766">数组</span>。  </p> </div> <div class="refsect1 notes" id="refsect1-reserved.variables.request-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>: </p><p class="para">“Superglobal”也称为自动化的全局变量。这就表示其在脚本的所有作用域中都是可用的。不需要在函数或方法中用<strong class="command">global $variable;</strong> 来访问它。</p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    以<a href="https://php.net/manual/zh/features.commandline.php" class="link">命令行</a>方式运行时，将<em>不</em>包含 <a href="https://php.net/manual/zh/reserved.variables.argv.php" class="link">argv</a> 和 <a href="https://php.net/manual/zh/reserved.variables.argc.php" class="link">argc</a> 信息；它们将存在于 <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.server.php" class="classname">$_SERVER</a></var> <span class="type" style="color:#EAB766">数组</span>。   </p>  </blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    由于 <var class="varname">$_REQUEST</var> 中的变量通过 GET，POST 和 COOKIE 输入机制传递给脚本文件，因此可以被远程用户篡改而并不可信。这个数组的项目及其顺序依赖于 PHP 的     <a href="https://php.net/manual/zh/ini.core.php#ini.request-order" class="link">request_order</a> 和 <a href="https://php.net/manual/zh/ini.core.php#ini.variables-order" class="link">variables_order</a> 指令的配置。   </p>  </blockquote> </div> <div class="refsect1 seealso" id="refsect1-reserved.variables.request-seealso">  <h3 class="title">参见</h3>  <ul class="simplelist">   <li><a href="https://php.net/manual/zh/language.variables.external.php" class="link">处理外部变量</a></li>   <li><a href="https://php.net/manual/zh/book.filter.php" class="link">过滤器扩展</a></li>  </ul> </div> </div>
-*/
+ * <div id="reserved.variables.request" class="refentry"> <div class="refnamediv">  <h1 class="refname">\$_REQUEST</h1>  <p class="refpurpose"><span class="refname">\$_REQUEST</span> — <span class="dc-title">HTTP Request 变量</span></p> </div> <div class="refsect1 description" id="refsect1-reserved.variables.request-description">  <h3 class="title">说明</h3>  <p class="para">   默认情况下包含了 <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.get.php" class="classname">\$_GET</a></var>，<var class="varname"><a href="https://php.net/manual/zh/reserved.variables.post.php" class="classname">\$_POST</a></var>  和  <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.cookies.php" class="classname">\$_COOKIE</a></var> 的<span class="type" style="color:#EAB766">数组</span>。  </p> </div> <div class="refsect1 notes" id="refsect1-reserved.variables.request-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>: </p><p class="para">“Superglobal”也称为自动化的全局变量。这就表示其在脚本的所有作用域中都是可用的。不需要在函数或方法中用<strong class="command">global \$variable;</strong> 来访问它。</p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    以<a href="https://php.net/manual/zh/features.commandline.php" class="link">命令行</a>方式运行时，将<em>不</em>包含 <a href="https://php.net/manual/zh/reserved.variables.argv.php" class="link">argv</a> 和 <a href="https://php.net/manual/zh/reserved.variables.argc.php" class="link">argc</a> 信息；它们将存在于 <var class="varname"><a href="https://php.net/manual/zh/reserved.variables.server.php" class="classname">\$_SERVER</a></var> <span class="type" style="color:#EAB766">数组</span>。   </p>  </blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    </p><p class="para">    由于 <var class="varname">\$_REQUEST</var> 中的变量通过 GET，POST 和 COOKIE 输入机制传递给脚本文件，因此可以被远程用户篡改而并不可信。这个数组的项目及其顺序依赖于 PHP 的     <a href="https://php.net/manual/zh/ini.core.php#ini.request-order" class="link">request_order</a> 和 <a href="https://php.net/manual/zh/ini.core.php#ini.variables-order" class="link">variables_order</a> 指令的配置。   </p>  </blockquote> </div> <div class="refsect1 seealso" id="refsect1-reserved.variables.request-seealso">  <h3 class="title">参见</h3>  <ul class="simplelist">   <li><a href="https://php.net/manual/zh/language.variables.external.php" class="link">处理外部变量</a></li>   <li><a href="https://php.net/manual/zh/book.filter.php" class="link">过滤器扩展</a></li>  </ul> </div> </div>
+ */
                         $request = curl_init($link->getLink());
                         curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
                         curl_exec($request);
+
                         $response = curl_getinfo($request, CURLINFO_RESPONSE_CODE);
                         curl_close($request);
                         self::assertTrue($response < 400);
@@ -239,14 +271,17 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
         }
         foreach ($element->see as $see) {
             if ($see instanceof See && $see->getReference() instanceof Url) {
+
                 $uri = (string)$see->getReference();
                 self::assertStringStartsWith('https', $uri, "In $elementName @see doesn't start with https");
             }
         }
     }
 
+
     private static function checkContainsOnlyValidTags(BasePHPElement $element, string $elementName): void
     {
+
         $VALID_TAGS = [
             'api',
             'author',
@@ -294,6 +329,7 @@ class StubsPhpDocTest extends AbstractBaseStubsTestCase
             self::assertContains($tagName, $VALID_TAGS, "Element $elementName has invalid tag: @$tagName");
         }
     }
+
 
     private static function checkPHPDocCorrectness(BasePHPElement $element, string $elementName): void
     {

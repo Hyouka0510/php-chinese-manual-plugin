@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Http;
 
+
 class Response
 {
     public $fd = 0;
@@ -11,6 +12,7 @@ class Response
     public $header;
     public $cookie;
     public $trailer;
+
 
     public function __destruct() {}
 

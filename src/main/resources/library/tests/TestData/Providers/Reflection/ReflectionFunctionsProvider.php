@@ -8,10 +8,13 @@ use StubTests\Model\StubProblemType;
 use StubTests\TestData\Providers\EntitiesFilter;
 use StubTests\TestData\Providers\ReflectionStubsSingleton;
 
+
 class ReflectionFunctionsProvider
 {
+
     public static function allFunctionsProvider(): ?Generator
     {
+
         $filtered = EntitiesFilter::getFiltered(ReflectionStubsSingleton::getReflectionStubs()->getFunctions());
         if (empty($filtered)) {
             yield [null];
@@ -22,8 +25,10 @@ class ReflectionFunctionsProvider
         }
     }
 
+
     public static function functionsForReturnTypeHintsTestProvider(): ?Generator
     {
+
         $filtered = EntitiesFilter::getFiltered(
             ReflectionStubsSingleton::getReflectionStubs()->getFunctions(),
             null,
@@ -38,8 +43,10 @@ class ReflectionFunctionsProvider
         }
     }
 
+
     public static function functionsForDeprecationTestsProvider(): ?Generator
     {
+
         $filtered = EntitiesFilter::getFiltered(
             ReflectionStubsSingleton::getReflectionStubs()->getFunctions(),
             null,
@@ -54,8 +61,10 @@ class ReflectionFunctionsProvider
         }
     }
 
+
     public static function functionsForParamsAmountTestsProvider(): ?Generator
     {
+
         $filtered = EntitiesFilter::getFiltered(
             ReflectionStubsSingleton::getReflectionStubs()->getFunctions(),
             null,

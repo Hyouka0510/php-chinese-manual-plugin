@@ -1,4 +1,5 @@
 <?php
+
 class ffmpeg_movie
 {
     /**  Open a video or audio file and return it as an object.
@@ -143,6 +144,7 @@ class ffmpeg_movie
     public function getNextKeyFrame() {}
 }
 
+
 class ffmpeg_frame
 {
     /**
@@ -197,6 +199,7 @@ class ffmpeg_frame
      */
     public function toGDImage() {}
 }
+
 
 class ffmpeg_animated_gif
 {

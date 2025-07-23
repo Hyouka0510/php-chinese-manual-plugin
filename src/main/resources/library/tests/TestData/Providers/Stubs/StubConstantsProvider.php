@@ -7,10 +7,13 @@ use Generator;
 use StubTests\Model\PHPEnum;
 use StubTests\TestData\Providers\PhpStormStubsSingleton;
 
+
 class StubConstantsProvider
 {
+
     public static function classConstantProvider(): ?Generator
     {
+
         $classes = PhpStormStubsSingleton::getPhpStormStubs()->getClasses();
         if (empty($classes)) {
             yield [null, null];
@@ -23,8 +26,10 @@ class StubConstantsProvider
         }
     }
 
+
     public static function interfaceConstantProvider(): ?Generator
     {
+
         $interfaces = PhpStormStubsSingleton::getPhpStormStubs()->getInterfaces();
         if (empty($interfaces)) {
             yield [null, null];
@@ -37,9 +42,12 @@ class StubConstantsProvider
         }
     }
 
+
     public static function enumConstantProvider(): ?Generator
     {
+
         $enums = PhpStormStubsSingleton::getPhpStormStubs()->getEnums();
+
         $constants = array_filter(array_map(fn (PHPEnum $enum) => $enum->constants, $enums), fn ($constants) => !empty($constants));
         if (empty($constants)) {
             yield [null, null];
@@ -51,6 +59,7 @@ class StubConstantsProvider
             }
         }
     }
+
 
     public static function globalConstantProvider(): ?Generator
     {

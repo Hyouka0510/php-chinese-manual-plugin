@@ -14,6 +14,7 @@ class TopologyDescription
     public const TYPE_REPLICA_SET_WITH_PRIMARY = 'ReplicaSetWithPrimary';
     public const TYPE_LOAD_BALANCED = 'LoadBalanced';
 
+
     final private function __construct() {}
 
     /**
@@ -40,6 +41,7 @@ class TopologyDescription
      * @link https://www.php.net/manual/en/mongodb-driver-topologydescription.haswritableserver.php
      */
     final public function hasWritableServer(): bool {}
+
 
     final public function __wakeup(): void {}
 }

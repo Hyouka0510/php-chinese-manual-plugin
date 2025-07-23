@@ -212,11 +212,10 @@ function basicDecoderV1($bytes, $flags, $datatype, $options) {}
 function basicEncoderV1($value, $options) {}
 
 /**
-* <div id="class.exception" class="reference"> <h1 class="title">Exception</h1>  <div class="partintro"><p class="verinfo">(PHP 5, PHP 7, PHP 8)</p>   <div class="section" id="exception.intro">   <h2 class="title">简介</h2>   <p class="para">    <span class="ooclass"><span class="classname"><strong class="classname">Exception</strong></span></span>是所有用户级异常的基类。   </p>  </div>  <div class="section" id="exception.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">class</span> <strong class="classname"><strong class="exceptionname">Exception</strong></strong>             <span class="modifier">implements</span>      <a href="https://php.net/manual/zh/class.throwable.php" class="interfacename">Throwable</a> {</div>    <div class="classsynopsisinfo classsynopsisinfo_comment">// 属性 </div>    <div class="fieldsynopsis">     <span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.message">$<var class="varname">message</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.string">$<var class="varname">string</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.code">$<var class="varname">code</var></a></var>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.file">$<var class="varname">file</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.line">$<var class="varname">line</var></a></var>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.trace">$<var class="varname">trace</var></a></var><span class="initializer"> = []</span>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766">?</span><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span><span class="type" style="color:#EAB766"></span></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.previous">$<var class="varname">previous</var></a></var><span class="initializer"> = null</span>;</div>    <div class="classsynopsisinfo classsynopsisinfo_comment">// 方法 </div>    <div class="constructorsynopsis dc-description">   <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.construct.php" class="methodname" style="color:#CC7832">__construct</a></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">$message</span><span class="initializer"> = ""</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">$code</span><span class="initializer"> = 0</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.null.php" class="type null" style="color:#EAB766">?</a></span><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span></span> <span class="parameter" style="color:#3A95FF">$previous</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong></span></span>)</div>    <div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getmessage.php" class="methodname" style="color:#CC7832">getMessage</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getprevious.php" class="methodname" style="color:#CC7832">getPrevious</a></span>(): <span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.null.php" class="type null" style="color:#EAB766">?</a></span><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getcode.php" class="methodname" style="color:#CC7832">getCode</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getfile.php" class="methodname" style="color:#CC7832">getFile</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getline.php" class="methodname" style="color:#CC7832">getLine</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.gettrace.php" class="methodname" style="color:#CC7832">getTrace</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.gettraceasstring.php" class="methodname" style="color:#CC7832">getTraceAsString</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.tostring.php" class="methodname" style="color:#CC7832">__toString</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">private</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.clone.php" class="methodname" style="color:#CC7832">__clone</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.void.php" class="type void" style="color:#EAB766">void</a></span></div>   }</div>  </div>  <div class="section" id="exception.props">   <h2 class="title">属性</h2>   <dl>         <dt id="exception.props.message"><var class="varname">message</var></dt>     <dd>      <p class="para">异常消息内容</p>     </dd>             <dt id="exception.props.code"><var class="varname">code</var></dt>     <dd>      <p class="para">异常代码</p>     </dd>             <dt id="exception.props.file"><var class="varname">file</var></dt>     <dd>      <p class="para">抛出异常的文件名</p>     </dd>             <dt id="exception.props.line"><var class="varname">line</var></dt>     <dd>      <p class="para">抛出异常在该文件中的行号</p>     </dd>             <dt id="exception.props.previous"><var class="varname">previous</var></dt>     <dd>      <p class="para">之前抛出的异常</p>     </dd>             <dt id="exception.props.string"><var class="varname">string</var></dt>     <dd>      <p class="para">字符串形式的堆栈跟踪</p>     </dd>             <dt id="exception.props.trace"><var class="varname">trace</var></dt>     <dd>      <p class="para">数组形式的堆栈跟踪</p>     </dd>       </dl>  </div>  </div>              <h2>目录</h2><ul class="chunklist chunklist_reference"><li>{@link Exception::__construct} — 异常构造函数</li><li>{@link Exception::getMessage} — 获取异常消息内容</li><li>{@link Exception::getPrevious} — 返回前一个 Throwable</li><li>{@link Exception::getCode} — 获取异常代码</li><li>{@link Exception::getFile} — 创建异常时的程序文件名称</li><li>{@link Exception::getLine} — 获取创建的异常所在文件中的行号</li><li>{@link Exception::getTrace} — 获取异常追踪信息</li><li>{@link Exception::getTraceAsString} — 获取字符串类型的异常追踪信息</li><li>{@link Exception::__toString} — 将异常对象转换为字符串</li><li>{@link Exception::__clone} — 异常克隆</li></ul></div>
-*
+ * <div id="class.exception" class="reference"> <h1 class="title">Exception</h1>  <div class="partintro"><p class="verinfo">(PHP 5, PHP 7, PHP 8)</p>   <div class="section" id="exception.intro">   <h2 class="title">简介</h2>   <p class="para">    <span class="ooclass"><span class="classname"><strong class="classname">Exception</strong></span></span>是所有用户级异常的基类。   </p>  </div>  <div class="section" id="exception.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">class</span> <strong class="classname"><strong class="exceptionname">Exception</strong></strong>             <span class="modifier">implements</span>      <a href="https://php.net/manual/zh/class.throwable.php" class="interfacename">Throwable</a> {</div>    <div class="classsynopsisinfo classsynopsisinfo_comment">// 属性 </div>    <div class="fieldsynopsis">     <span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.message">\$<var class="varname">message</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.string">\$<var class="varname">string</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.code">\$<var class="varname">code</var></a></var>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.file">\$<var class="varname">file</var></a></var><span class="initializer"> = ""</span>;</div>    <div class="fieldsynopsis"><span class="modifier">protected</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.line">\$<var class="varname">line</var></a></var>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.trace">\$<var class="varname">trace</var></a></var><span class="initializer"> = []</span>;</div>    <div class="fieldsynopsis"><span class="modifier">private</span>     <span class="type" style="color:#EAB766">?</span><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span><span class="type" style="color:#EAB766"></span></span>      <var class="varname"><a href="https://php.net/manual/zh/class.exception.php#exception.props.previous">\$<var class="varname">previous</var></a></var><span class="initializer"> = null</span>;</div>    <div class="classsynopsisinfo classsynopsisinfo_comment">// 方法 </div>    <div class="constructorsynopsis dc-description">   <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.construct.php" class="methodname" style="color:#CC7832">__construct</a></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span> <span class="parameter" style="color:#3A95FF">\$message</span><span class="initializer"> = ""</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$code</span><span class="initializer"> = 0</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.null.php" class="type null" style="color:#EAB766">?</a></span><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span></span> <span class="parameter" style="color:#3A95FF">\$previous</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.null">null</a></span></strong></span></span>)</div>    <div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getmessage.php" class="methodname" style="color:#CC7832">getMessage</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getprevious.php" class="methodname" style="color:#CC7832">getPrevious</a></span>(): <span class="type" style="color:#EAB766"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.null.php" class="type null" style="color:#EAB766">?</a></span><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/class.throwable.php" class="type Throwable" style="color:#EAB766">Throwable</a></span></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getcode.php" class="methodname" style="color:#CC7832">getCode</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getfile.php" class="methodname" style="color:#CC7832">getFile</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.getline.php" class="methodname" style="color:#CC7832">getLine</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.gettrace.php" class="methodname" style="color:#CC7832">getTrace</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.gettraceasstring.php" class="methodname" style="color:#CC7832">getTraceAsString</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">public</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.tostring.php" class="methodname" style="color:#CC7832">__toString</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.string.php" class="type string" style="color:#EAB766">string</a></span></div><div class="methodsynopsis dc-description"><span class="modifier">private</span> <span class="methodname" style="color:#CC7832"><a href="https://php.net/manual/zh/exception.clone.php" class="methodname" style="color:#CC7832">__clone</a></span>(): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.void.php" class="type void" style="color:#EAB766">void</a></span></div>   }</div>  </div>  <div class="section" id="exception.props">   <h2 class="title">属性</h2>   <dl>         <dt id="exception.props.message"><var class="varname">message</var></dt>     <dd>      <p class="para">异常消息内容</p>     </dd>             <dt id="exception.props.code"><var class="varname">code</var></dt>     <dd>      <p class="para">异常代码</p>     </dd>             <dt id="exception.props.file"><var class="varname">file</var></dt>     <dd>      <p class="para">抛出异常的文件名</p>     </dd>             <dt id="exception.props.line"><var class="varname">line</var></dt>     <dd>      <p class="para">抛出异常在该文件中的行号</p>     </dd>             <dt id="exception.props.previous"><var class="varname">previous</var></dt>     <dd>      <p class="para">之前抛出的异常</p>     </dd>             <dt id="exception.props.string"><var class="varname">string</var></dt>     <dd>      <p class="para">字符串形式的堆栈跟踪</p>     </dd>             <dt id="exception.props.trace"><var class="varname">trace</var></dt>     <dd>      <p class="para">数组形式的堆栈跟踪</p>     </dd>       </dl>  </div>  </div>              <h2>目录</h2><ul class="chunklist chunklist_reference"><li>{@link Exception::__construct} — 异常构造函数</li><li>{@link Exception::getMessage} — 获取异常消息内容</li><li>{@link Exception::getPrevious} — 返回前一个 Throwable</li><li>{@link Exception::getCode} — 获取异常代码</li><li>{@link Exception::getFile} — 创建异常时的程序文件名称</li><li>{@link Exception::getLine} — 获取创建的异常所在文件中的行号</li><li>{@link Exception::getTrace} — 获取异常追踪信息</li><li>{@link Exception::getTraceAsString} — 获取字符串类型的异常追踪信息</li><li>{@link Exception::__toString} — 将异常对象转换为字符串</li><li>{@link Exception::__clone} — 异常克隆</li></ul></div>
+ * 
  * Exception represeting all errors generated by the extension
- 
-*/
+ */
 class Exception extends \Exception {}
 
 /**
@@ -381,6 +380,7 @@ class ClusterManager
      * The user account managed by external system (e.g. LDAP).
      */
     public const RBAC_DOMAIN_EXTERNAL = 2;
+
 
     final private function __construct() {}
 
@@ -617,6 +617,7 @@ class Bucket
 
     /** Ping full text search (FTS) service. */
     public const PINGSVC_FTS = 0x08;
+
 
     final private function __construct() {}
 
@@ -1335,6 +1336,7 @@ class Bucket
  */
 class BucketManager
 {
+
     final private function __construct() {}
 
     /**
@@ -1513,6 +1515,7 @@ class PasswordAuthenticator implements Authenticator
  */
 class MutationToken
 {
+
     final private function __construct() {}
 
     /**
@@ -1559,6 +1562,7 @@ class MutationToken
  */
 class MutationState
 {
+
     final private function __construct() {}
 
     /**
@@ -1621,6 +1625,7 @@ class ViewQuery implements ViewQueryEncodable
     public const UPDATE_AFTER = 3;
     public const ORDER_ASCENDING = 1;
     public const ORDER_DESCENDING = 2;
+
 
     final private function __construct() {}
 
@@ -1787,6 +1792,7 @@ class ViewQuery implements ViewQueryEncodable
  */
 class SpatialViewQuery implements ViewQueryEncodable
 {
+
     final private function __construct() {}
 
     /**
@@ -1935,6 +1941,7 @@ class N1qlQuery
      * Enables general timing profiling.
      */
     public const PROFILE_TIMINGS = 'timings';
+
 
     final private function __construct() {}
 
@@ -2097,6 +2104,7 @@ class N1qlIndex
     public const GSI = 1;
     public const VIEW = 2;
 
+
     final private function __construct() {}
 
     /**
@@ -2174,6 +2182,7 @@ class N1qlIndex
  */
 class LookupInBuilder
 {
+
     final private function __construct() {}
 
     /**
@@ -2235,6 +2244,7 @@ class MutateInBuilder
     public const FULLDOC_REPLACE = 0;
     public const FULLDOC_UPSERT = 1;
     public const FULLDOC_INSERT = 2;
+
 
     final private function __construct() {}
 
@@ -2775,6 +2785,7 @@ interface SearchQueryPart {}
  */
 class BooleanFieldSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2800,6 +2811,7 @@ class BooleanFieldSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class BooleanSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2837,6 +2849,7 @@ class BooleanSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class ConjunctionSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2863,6 +2876,7 @@ class ConjunctionSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class DisjunctionSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2895,6 +2909,7 @@ class DisjunctionSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class DateRangeSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2945,6 +2960,7 @@ class DateRangeSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class NumericRangeSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -2985,6 +3001,7 @@ class NumericRangeSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class DocIdSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3016,6 +3033,7 @@ class DocIdSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class MatchAllSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3035,6 +3053,7 @@ class MatchAllSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class MatchNoneSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3055,6 +3074,7 @@ class MatchNoneSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class MatchPhraseSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3087,6 +3107,7 @@ class MatchPhraseSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class MatchSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3132,6 +3153,7 @@ class MatchSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class PhraseSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3157,6 +3179,7 @@ class PhraseSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class RegexpSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3182,6 +3205,7 @@ class RegexpSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class WildcardSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3207,6 +3231,7 @@ class WildcardSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class PrefixSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3232,6 +3257,7 @@ class PrefixSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class QueryStringSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3251,6 +3277,7 @@ class QueryStringSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class TermSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3289,6 +3316,7 @@ class TermSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class TermRangeSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3330,6 +3358,7 @@ class TermRangeSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class GeoDistanceSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3355,6 +3384,7 @@ class GeoDistanceSearchQuery implements \JsonSerializable, SearchQueryPart
  */
 class GeoBoundingBoxSearchQuery implements \JsonSerializable, SearchQueryPart
 {
+
     final private function __construct() {}
 
     /**
@@ -3390,6 +3420,7 @@ interface SearchFacet {}
  */
 class TermSearchFacet implements \JsonSerializable, SearchFacet
 {
+
     final private function __construct() {}
 
     /**
@@ -3403,6 +3434,7 @@ class TermSearchFacet implements \JsonSerializable, SearchFacet
  */
 class DateRangeSearchFacet implements \JsonSerializable, SearchFacet
 {
+
     final private function __construct() {}
 
     /**
@@ -3424,6 +3456,7 @@ class DateRangeSearchFacet implements \JsonSerializable, SearchFacet
  */
 class NumericRangeSearchFacet implements \JsonSerializable, SearchFacet
 {
+
     final private function __construct() {}
 
     /**
@@ -3445,6 +3478,7 @@ class NumericRangeSearchFacet implements \JsonSerializable, SearchFacet
  */
 class SearchSort
 {
+
     private function __construct() {}
 
     /**
@@ -3487,6 +3521,7 @@ class SearchSort
  */
 class SearchSortId extends SearchSort implements \JsonSerializable
 {
+
     private function __construct() {}
 
     /**
@@ -3504,6 +3539,7 @@ class SearchSortId extends SearchSort implements \JsonSerializable
  */
 class SearchSortScore extends SearchSort implements \JsonSerializable
 {
+
     private function __construct() {}
 
     /**
@@ -3530,6 +3566,7 @@ class SearchSortField extends SearchSort implements \JsonSerializable
     public const MODE_MAX = "max";
     public const MISSING_FIRST = "first";
     public const MISSING_LAST = "last";
+
 
     private function __construct() {}
 
@@ -3580,6 +3617,7 @@ class SearchSortField extends SearchSort implements \JsonSerializable
  */
 class SearchSortGeoDistance extends SearchSort implements \JsonSerializable
 {
+
     private function __construct() {}
 
     /**
@@ -3609,6 +3647,7 @@ class SearchSortGeoDistance extends SearchSort implements \JsonSerializable
  */
 class AnalyticsQuery
 {
+
     final private function __construct() {}
 
     /**

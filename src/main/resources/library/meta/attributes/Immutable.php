@@ -23,5 +23,6 @@ class Immutable
     public const PRIVATE_WRITE_SCOPE = "private";
     public const PROTECTED_WRITE_SCOPE = "protected";
 
+
     public function __construct(#[ExpectedValues(valuesFromClass: Immutable::class)] $allowedWriteScope = self::CONSTRUCTOR_WRITE_SCOPE) {}
 }

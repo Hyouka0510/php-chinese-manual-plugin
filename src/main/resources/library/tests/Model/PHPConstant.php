@@ -6,6 +6,7 @@ use Exception;
 use PhpParser\Node\Const_;
 use stdClass;
 
+
 class PHPConstant extends PHPNamespacedElement
 {
     /**
@@ -19,12 +20,17 @@ class PHPConstant extends PHPNamespacedElement
      */
     public function readObjectFromReflection($reflectionObject)
     {
+
         $this->name = $reflectionObject->getShortName();
         if (!empty($reflectionObject->getNamespaceName())) {
+
             $this->namespace = "\\" . $reflectionObject->getNamespaceName();
         }
+
         $this->id = "$this->namespace\\$this->name";
+
         $this->value = $reflectionObject->getValue();
+
         $this->isDeprecated = $reflectionObject->isDeprecated();
         return $this;
     }
@@ -46,9 +52,11 @@ class PHPConstant extends PHPNamespacedElement
                 foreach ($constant->problems as $problem) {
                     switch ($problem->description) {
                         case 'wrong value':
+
                             $this->mutedProblems[StubProblemType::WRONG_CONSTANT_VALUE] = $problem->versions;
                             break;
                         case 'missing constant':
+
                             $this->mutedProblems[StubProblemType::STUB_IS_MISSED] = $problem->versions;
                             break;
                         default:

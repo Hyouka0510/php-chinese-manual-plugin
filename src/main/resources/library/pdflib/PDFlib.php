@@ -2,6 +2,7 @@
 
 use JetBrains\PhpStorm\Deprecated;
 
+
 class PDFlib
 {
     /**
@@ -1743,6 +1744,7 @@ class PDFlib
      */
     public function utf8_to_utf16($utf8string, $ordering) {}
 }
+
 
 class PDFlibException extends Exception {}
 

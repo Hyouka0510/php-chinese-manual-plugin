@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Coroutine;
 
+
 class Redis
 {
     public $host = '';
@@ -15,7 +16,9 @@ class Redis
     public $errCode = 0;
     public $errMsg = '';
 
+
     public function __construct($config = null) {}
+
 
     public function __destruct() {}
 

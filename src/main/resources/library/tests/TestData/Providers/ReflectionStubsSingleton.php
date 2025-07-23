@@ -5,6 +5,7 @@ namespace StubTests\TestData\Providers;
 use StubTests\Model\StubsContainer;
 use StubTests\Parsers\PHPReflectionParser;
 
+
 class ReflectionStubsSingleton
 {
     /**

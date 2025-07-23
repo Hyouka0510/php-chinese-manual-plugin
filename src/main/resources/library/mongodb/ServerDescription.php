@@ -18,6 +18,7 @@ final class ServerDescription
     public const TYPE_RS_GHOST = 'RSGhost';
     public const TYPE_LOAD_BALANCER = 'LoadBalancer';
 
+
     final private function __construct() {}
 
     /**
@@ -55,6 +56,7 @@ final class ServerDescription
      * @link https://www.php.net/manual/en/mongodb-driver-serverdescription.gettype.php
      */
     final public function getType(): string {}
+
 
     final public function __wakeup(): void {}
 }

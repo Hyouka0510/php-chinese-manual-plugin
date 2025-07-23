@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Http;
 
+
 class Request
 {
     public $fd = 0;
@@ -15,6 +16,7 @@ class Request
     public $files;
     public $post;
     public $tmpfiles;
+
 
     public function __destruct() {}
 

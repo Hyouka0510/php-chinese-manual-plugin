@@ -9,6 +9,7 @@ use MongoDB\BSON\ObjectId;
  */
 final class ServerOpeningEvent
 {
+
     final private function __construct() {}
 
     /**
@@ -28,6 +29,7 @@ final class ServerOpeningEvent
      * @link https://www.php.net/manual/en/mongodb-driver-monitoring-serveropeningevent.gettopologyid.php
      */
     final public function getTopologyId(): ObjectId {}
+
 
     final public function __wakeup(): void {}
 }

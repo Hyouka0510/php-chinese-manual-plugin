@@ -1612,6 +1612,7 @@ class MongoCursor implements Iterator
     public function maxTimeMS($ms) {}
 }
 
+
 class MongoCommandCursor implements MongoCursorInterface
 {
     /**
@@ -1655,33 +1656,46 @@ class MongoCommandCursor implements MongoCursorInterface
      */
     public function rewind() {}
 
+
     public function batchSize(int $batchSize): MongoCursorInterface {}
+
 
     public function dead(): bool {}
 
+
     public function info(): array {}
+
 
     public function getReadPreference(): array {}
 
+
     public function setReadPreference(string $read_preference, array $tags = null): MongoCursorInterface {}
+
 
     public function timeout(int $ms): MongoCursorInterface {}
 }
 
 interface MongoCursorInterface extends Iterator
 {
+
     public function batchSize(int $batchSize): MongoCursorInterface;
+
 
     public function dead(): bool;
 
+
     public function info(): array;
+
 
     public function getReadPreference(): array;
 
+
     public function setReadPreference(string $read_preference, array $tags = null): MongoCursorInterface;
+
 
     public function timeout(int $ms): MongoCursorInterface;
 }
+
 
 class MongoGridFS extends MongoCollection
 {
@@ -1807,6 +1821,7 @@ class MongoGridFS extends MongoCollection
     public function put($filename, array $extra = []) {}
 }
 
+
 class MongoGridFSFile
 {
     /**
@@ -1867,6 +1882,7 @@ class MongoGridFSFile
      */
     public function getResource() {}
 }
+
 
 class MongoGridFSCursor extends MongoCursor implements Traversable, Iterator
 {
@@ -1997,6 +2013,7 @@ class MongoId
     public static function __set_state(array $props) {}
 }
 
+
 class MongoCode
 {
     /**
@@ -2024,6 +2041,7 @@ class MongoCode
      */
     public function __toString() {}
 }
+
 
 class MongoRegex
 {
@@ -2053,6 +2071,7 @@ class MongoRegex
      */
     public function __toString() {}
 }
+
 
 class MongoDate
 {
@@ -2090,6 +2109,7 @@ class MongoDate
      */
     public function __toString() {}
 }
+
 
 class MongoBinData
 {
@@ -2163,6 +2183,7 @@ class MongoBinData
     public function __toString() {}
 }
 
+
 class MongoDBRef
 {
     /**
@@ -2205,6 +2226,7 @@ class MongoDBRef
      */
     public static function get($db, $ref) {}
 }
+
 
 class MongoWriteBatch
 {
@@ -2302,6 +2324,7 @@ class MongoWriteBatch
     final public function execute(array $write_options) {}
 }
 
+
 class MongoUpdateBatch extends MongoWriteBatch
 {
     /**
@@ -2323,13 +2346,18 @@ class MongoUpdateBatch extends MongoWriteBatch
     public function __construct(MongoCollection $collection, array $write_options) {}
 }
 
+
 class MongoException extends Exception {}
+
 
 class MongoCursorException extends MongoException {}
 
+
 class MongoCursorTimeoutException extends MongoCursorException {}
 
+
 class MongoConnectionException extends MongoException {}
+
 
 class MongoGridFSException extends MongoException {}
 
@@ -2380,6 +2408,7 @@ class MongoResultException extends MongoException
     public $document;
 }
 
+
 class MongoTimestamp
 {
     /**
@@ -2412,6 +2441,7 @@ class MongoTimestamp
     public function __toString() {}
 }
 
+
 class MongoInt32
 {
     /**
@@ -2434,6 +2464,7 @@ class MongoInt32
     public function __toString() {}
 }
 
+
 class MongoInt64
 {
     /**
@@ -2455,6 +2486,7 @@ class MongoInt64
      */
     public function __toString() {}
 }
+
 
 class MongoLog
 {
@@ -2586,6 +2618,7 @@ class MongoLog
     public static function getModule() {}
 }
 
+
 class MongoPool
 {
     /**
@@ -2635,6 +2668,8 @@ class MongoPool
     public static function getSize() {}
 }
 
+
 class MongoMaxKey {}
+
 
 class MongoMinKey {}

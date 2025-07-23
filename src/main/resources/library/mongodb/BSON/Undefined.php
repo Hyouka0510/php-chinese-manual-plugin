@@ -16,6 +16,7 @@ use Stringable;
 #[Deprecated]
 final class Undefined implements JsonSerializable, Type, Stringable
 {
+
     final private function __construct() {}
 
     /**

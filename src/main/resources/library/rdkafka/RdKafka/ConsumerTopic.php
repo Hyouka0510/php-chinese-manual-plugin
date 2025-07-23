@@ -2,8 +2,10 @@
 
 namespace RdKafka;
 
+
 class ConsumerTopic extends Topic
 {
+
     private function __construct() {}
 
     /**
@@ -46,7 +48,9 @@ class ConsumerTopic extends Topic
      */
     public function offsetStore($partition, $offset) {}
 
+
     public function consumeCallback($partition, $timeout_ms, $callback) {}
+
 
     public function consumeBatch($partition, $timeout_ms, $batch_size) {}
 }

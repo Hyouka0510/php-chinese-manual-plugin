@@ -5,6 +5,7 @@ namespace SimpleKafkaClient;
 
 use SimpleKafkaClient;
 
+
 class Consumer extends SimpleKafkaClient
 {
     /**

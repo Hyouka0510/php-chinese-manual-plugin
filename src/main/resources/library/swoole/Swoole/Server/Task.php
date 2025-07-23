@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Server;
 
+
 class Task
 {
     public $data;

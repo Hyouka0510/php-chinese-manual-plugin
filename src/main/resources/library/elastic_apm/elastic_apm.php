@@ -9,6 +9,7 @@ final class ElasticApm
 {
     public const VERSION = '1.3.1';
 
+
     private function __construct() {}
 
     /**
@@ -703,6 +704,7 @@ interface ExecutionSegmentInterface
      */
     public function discard(): void;
 }
+
 
 final class DistributedTracingData
 {

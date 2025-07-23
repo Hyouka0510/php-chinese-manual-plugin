@@ -9,8 +9,10 @@ use StubTests\TestData\Providers\PhpStormStubsSingleton;
 use StubTests\TestData\Providers\Stubs\PhpCoreStubsProvider;
 use StubTests\TestData\Providers\Stubs\StubsTestDataProviders;
 
+
 class StubsStructureTest extends AbstractBaseStubsTestCase
 {
+
     public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
@@ -21,6 +23,7 @@ class StubsStructureTest extends AbstractBaseStubsTestCase
     public function testStubsDirectoryExistInMap($directory)
     {
         self::assertContains(
+
             $directory,
             iterator_to_array(new RecursiveIteratorIterator(
                 new RecursiveArrayIterator(PhpCoreStubsProvider::$StubDirectoryMap)

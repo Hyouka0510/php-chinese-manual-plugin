@@ -7,6 +7,7 @@ namespace RdKafka;
  */
 class TopicConf
 {
+
     public function __construct() {}
 
     /**

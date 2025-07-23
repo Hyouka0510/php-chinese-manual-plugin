@@ -46,6 +46,7 @@ final class ClientEncryption
      */
     final public function __construct(array $options) {}
 
+
     final public function __wakeup() {}
 
     /**

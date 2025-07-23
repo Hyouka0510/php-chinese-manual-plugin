@@ -9,6 +9,7 @@ use MongoDB\BSON\ObjectId;
  */
 final class TopologyClosedEvent
 {
+
     final private function __construct() {}
 
     /**
@@ -16,6 +17,7 @@ final class TopologyClosedEvent
      * @link https://www.php.net/manual/en/mongodb-driver-monitoring-topologyclosedevent.gettopologyid.php
      */
     final public function getTopologyId(): ObjectId {}
+
 
     final public function __wakeup(): void {}
 }

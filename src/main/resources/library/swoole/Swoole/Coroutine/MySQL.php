@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Swoole\Coroutine;
 
+
 class MySQL
 {
     public $serverInfo;
@@ -16,7 +17,9 @@ class MySQL
     public $error = '';
     public $errno = 0;
 
+
     public function __construct() {}
+
 
     public function __destruct() {}
 

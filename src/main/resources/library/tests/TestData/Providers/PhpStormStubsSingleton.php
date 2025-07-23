@@ -6,9 +6,11 @@ namespace StubTests\TestData\Providers;
 use StubTests\Model\StubsContainer;
 use StubTests\Parsers\StubParser;
 
+
 class PhpStormStubsSingleton
 {
     private static ?StubsContainer $phpstormStubs = null;
+
 
     public static function getPhpStormStubs(): StubsContainer
     {

@@ -12,6 +12,7 @@ use Attribute;
 #[Attribute(Attribute::TARGET_PARAMETER)]
 class ReturnTypeContract
 {
+
     public function __construct(
         string $true = "",
         string $false = "",

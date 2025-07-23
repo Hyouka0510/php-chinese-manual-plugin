@@ -2,6 +2,7 @@
 
 // Start of Zend Extensions
 
+
 class ZendAPI_Queue
 {
     public $_jobqueue_url;
@@ -276,6 +277,7 @@ class ZendAPI_Job
      * i.e. In order to save the current GET and COOKIE global variables,
         this property should be JOB_QUEUE_SAVE_GET|JOB_QUEUE_SAVE_COOKIE (or the integer 6)
         In that case (of GET and COOKIE), when the job is added, the current $_GET and
+
         $_COOKIE variables  should be saved, and when the job's script is called,
         those global variables should be populated
      *
@@ -362,21 +364,30 @@ class ZendAPI_Job
     public function setJobPriority($priority) {}
 
     // All properties SET functions
+
     public function setJobName($name) {}
+
 
     public function setScript($script) {}
 
+
     public function setApplicationID($app_id) {}
+
 
     public function setUserVariables($vars) {}
 
+
     public function setGlobalVariables($vars) {}
+
 
     public function setJobDependency($job_id) {}
 
+
     public function setScheduledTime($timestamp) {}
 
+
     public function setRecurrenceData($interval, $end_time = null) {}
+
 
     public function setPreserved($preserved) {}
 
@@ -395,29 +406,42 @@ class ZendAPI_Job
     public function getOutput() {}
 
     // All properties GET functions
+
     public function getID() {}
+
 
     public function getHost() {}
 
+
     public function getScript() {}
+
 
     public function getJobPriority() {}
 
+
     public function getJobName() {}
+
 
     public function getApplicationID() {}
 
+
     public function getUserVariables() {}
+
 
     public function getGlobalVariables() {}
 
+
     public function getJobDependency() {}
+
 
     public function getScheduledTime() {}
 
+
     public function getInterval() {}
 
+
     public function getEndTime() {}
+
 
     public function getPreserved() {}
 
@@ -626,6 +650,7 @@ function zend_send_file($filename, $mime_type, $custom_headers) {}
  */
 function zend_send_buffer($buffer, $mime_type, $custom_headers) {}
 
+
 class java
 {
     /**
@@ -638,6 +663,7 @@ class java
      */
     public function java($classname) {}
 };
+
 
 class JavaException
 {
