@@ -3039,8 +3039,6 @@ define('SOCK_NONBLOCK', 2048);
  */
 define('SO_BINDTOIFINDEX', 62);
 /**
- * <div id="class.socket" class="reference"> <h1 class="title">Socket 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="socket.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">Socket</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="socket.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">Socket</strong></strong>     {</div>   }</div>  </div> </div> </div>
- * 
  * @since 8.0
  */
 final class Socket
@@ -3053,8 +3051,6 @@ final class Socket
 }
 
 /**
- * <div id="class.addressinfo" class="reference"> <h1 class="title">AddressInfo 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="addressinfo.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">AddressInfo</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="addressinfo.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">AddressInfo</strong></strong>     {</div>   }</div>  </div> </div> </div>
- * 
  * @since 8.0
  */
 final class AddressInfo

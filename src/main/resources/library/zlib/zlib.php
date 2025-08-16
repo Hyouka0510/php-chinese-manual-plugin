@@ -586,8 +586,6 @@ function inflate_get_read_len(#[LanguageLevelTypeAware(["8.0" => "InflateContext
 function inflate_get_status(#[LanguageLevelTypeAware(["8.0" => "InflateContext"], default: "resource")] $context): int {}
 
 /**
- * <div id="class.inflatecontext" class="reference"> <h1 class="title">The InflateContext class</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>  <div class="section" id="inflatecontext.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces <span class="literal">zlib.inflate</span> resources as of PHP 8.0.0.   </p>  </div>  <div class="section" id="inflatecontext.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">InflateContext</strong></strong>     {</div>   }</div>  </div> </div> </div>
- * 
  * @since 8.0
  */
 final class InflateContext
@@ -600,8 +598,6 @@ final class InflateContext
 }
 
 /**
- * <div id="class.deflatecontext" class="reference"> <h1 class="title">The DeflateContext class</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>  <div class="section" id="deflatecontext.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces <span class="literal">zlib.deflate</span> resources as of PHP 8.0.0.   </p>  </div>  <div class="section" id="deflatecontext.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">DeflateContext</strong></strong>     {</div>   }</div>  </div> </div> </div>
- * 
  * @since 8.0
  */
 final class DeflateContext

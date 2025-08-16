@@ -22,6 +22,19 @@
       <p>代码编写时，使用默认快捷键Ctrl+Q即可快速查阅中文注释。</p>
         ]]>
     </description>
+    <change-notes>
+        <![CDATA[
+<h3>Version 1.0.1</h3>
+<ul>
+    <li>修复注释不显示"$"符号</li>
+    <li>修复原stubs语法"#[]"失效</li>
+</ul>
+<h3>Version 1.0.2</h3>
+<ul>
+    <li>更新phpstorm-stubs-chinese</li>
+</ul>
+]]>
+    </change-notes>
     <idea-version since-build="203"/>
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->

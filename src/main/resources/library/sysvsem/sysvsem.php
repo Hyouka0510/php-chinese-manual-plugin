@@ -73,8 +73,6 @@ function sem_release(#[LanguageLevelTypeAware(["8.0" => "SysvSemaphore"], defaul
 function sem_remove(#[LanguageLevelTypeAware(["8.0" => "SysvSemaphore"], default: "resource")] $semaphore): bool {}
 
 /**
- * <div id="class.sysvsemaphore" class="reference"> <h1 class="title">The SysvSemaphore class</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="sysvsemaphore.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces a <span class="literal">sysvsem</span> resource as of PHP 8.0.0.   </p>  </div>    <div class="section" id="sysvsemaphore.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">SysvSemaphore</strong></strong>     {</div>   }</div>     </div> </div></div>
- * 
  * @since 8.0
  */
 final class SysvSemaphore

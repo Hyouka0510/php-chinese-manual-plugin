@@ -43,7 +43,7 @@ namespace Ds;
  * 
          * Returns a shallow copy of the collection.
          * @link https://www.php.net/manual/en/ds-collection.copy.php
-         * @return Collection<TKey, TValue>
+         * @return static
          */
         public function copy();
 
@@ -387,10 +387,10 @@ namespace Ds;
         public function slice(int $index, int $length = null);
 
         /**
- * <div id="function.sort" class="refentry"> <div class="refnamediv">  <h1 class="refname">sort</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">sort</span> — <span class="dc-title">对数组升序排序</span></p> </div> <div class="refsect1 description" id="refsect1-function.sort-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>sort</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter reference" style="color:#3A95FF">&amp;\$array</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$flags</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.singleton.php" class="type true" style="color:#EAB766">true</a></span></div>  <p class="para rdfs-comment">   对 <span class="parameter" style="color:#3A95FF">array</span> 本身按照值（value）升序排序。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:  </p><p class="para">  如果两个成员完全相同，那么它们将保持原来的顺序。  在 PHP 8.0.0 之前，它们在排序数组中的相对顺序是未定义的。 </p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>: <span class="simpara">此函数为 <span class="parameter" style="color:#3A95FF">array</span>中的元素赋与新的键名。这将删除原有的键名，而不是仅仅将键名重新排序。</span></p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:  </p><p class="para">    重置数组中的内部指针，指向第一个元素。 </p></blockquote> </div> <div class="refsect1 parameters" id="refsect1-function.sort-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">array</span></dt>     <dd>      <p class="para">       输入的数组。      </p>     </dd>          <dt><span class="parameter" style="color:#3A95FF">flags</span></dt>  <dd>  <p class="para">    可选的第二个参数 <span class="parameter" style="color:#3A95FF">flags</span>     可以用以下值改变排序的行为：  </p>  <p class="para">    排序类型标记：    </p><ul class="itemizedlist">    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong>  - 正常比较单元         详细描述参见 <a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">比较运算符</a> 章节</span>    </li>    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-numeric">SORT_NUMERIC</a></span></strong> - 单元被作为数字来比较</span>    </li>    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-string">SORT_STRING</a></span></strong> - 单元被作为字符串来比较</span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-locale-string">SORT_LOCALE_STRING</a></span></strong> -      根据当前的区域（locale）设置来把单元当作字符串比较，可以用      <span class="function">{@link setlocale()}</span> 来改变。      </span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-natural">SORT_NATURAL</a></span></strong> - 和 <span class="function">{@link natsort()}</span>      类似对每个单元以“自然的顺序”对字符串进行排序。      </span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-flag-case">SORT_FLAG_CASE</a></span></strong> - 能够与      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-string">SORT_STRING</a></span></strong> 或         <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-natural">SORT_NATURAL</a></span></strong>          合并（OR 位运算），不区分大小写排序字符串。      </span>    </li>    </ul>    </dd>   </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.sort-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   总是返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.sort-changelog">  <h3 class="title">更新日志</h3>  <p class="para">   </p><table class="doctable informaltable">         <thead>      <tr>       <th>版本</th>       <th>说明</th>      </tr>     </thead>     <tbody class="tbody">      <tr> <td>8.2.0</td> <td>  现在返回类型为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>；之前是 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span>。 </td></tr>     </tbody>       </table>   </div> <div class="refsect1 examples" id="refsect1-function.sort-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-5300">    <p><strong>示例 #1 <span class="function"><strong>sort()</strong></span> 示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>\$fruits </span><span style="color: #007700">= array(</span><span style="color: #DD0000">"lemon"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange"</span><span style="color: #007700">, </span><span style="color: #DD0000">"banana"</span><span style="color: #007700">, </span><span style="color: #DD0000">"apple"</span><span style="color: #007700">);<br></span><span style="color: #9876AA">sort</span><span style="color: #007700">(</span><span style="color: #9876AA">\$fruits</span><span style="color: #007700">);<br>foreach (</span><span style="color: #9876AA">\$fruits </span><span style="color: #007700">as </span><span style="color: #9876AA">\$key </span><span style="color: #007700">=&gt; </span><span style="color: #9876AA">\$val</span><span style="color: #007700">) {<br>    echo </span><span style="color: #DD0000">"fruits[" </span><span style="color: #007700">. </span><span style="color: #9876AA">\$key </span><span style="color: #007700">. </span><span style="color: #DD0000">"] = " </span><span style="color: #007700">. </span><span style="color: #9876AA">\$val </span><span style="color: #007700">. </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br>}<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">fruits[0]&nbsp;=&nbsp;apple<br>fruits[1]&nbsp;=&nbsp;banana<br>fruits[2]&nbsp;=&nbsp;lemon<br>fruits[3]&nbsp;=&nbsp;orange</blockquote></div>    </div>   </div>    <p class="para">   fruits 被按照字母顺序排序。  </p>  <p class="para">   </p><div class="example" id="example-5301">    <p><strong>示例 #2 使用 <span class="function"><strong>sort()</strong></span> 不区分大小写自然排序的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>\$fruits </span><span style="color: #007700">= array(<br>    </span><span style="color: #DD0000">"Orange1"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange2"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Orange3"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange20"<br></span><span style="color: #007700">);<br></span><span style="color: #9876AA">sort</span><span style="color: #007700">(</span><span style="color: #9876AA">\$fruits</span><span style="color: #007700">, </span><span style="color: #9876AA">SORT_NATURAL </span><span style="color: #007700">| </span><span style="color: #9876AA">SORT_FLAG_CASE</span><span style="color: #007700">);<br>foreach (</span><span style="color: #9876AA">\$fruits </span><span style="color: #007700">as </span><span style="color: #9876AA">\$key </span><span style="color: #007700">=&gt; </span><span style="color: #9876AA">\$val</span><span style="color: #007700">) {<br>    echo </span><span style="color: #DD0000">"fruits[" </span><span style="color: #007700">. </span><span style="color: #9876AA">\$key </span><span style="color: #007700">. </span><span style="color: #DD0000">"] = " </span><span style="color: #007700">. </span><span style="color: #9876AA">\$val </span><span style="color: #007700">. </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br>}<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">fruits[0]&nbsp;=&nbsp;Orange1<br>fruits[1]&nbsp;=&nbsp;orange2<br>fruits[2]&nbsp;=&nbsp;Orange3<br>fruits[3]&nbsp;=&nbsp;orange20</blockquote></div>    </div>   </div>    <p class="para">   fruits 排序得像 <span class="function">{@link natcasesort()}</span> 的结果。  </p> </div> <div class="refsect1 notes" id="refsect1-function.sort-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    <span class="simpara">    和大多数 PHP 排序函数一样，<span class="function"><strong>sort()</strong></span> 使用了 <a href="http://en.wikipedia.org/wiki/Quicksort" class="link external">»&nbsp;快速排序</a> 实现的。    在已排序的数组分片的中间，选择基准值，具有最优时间。但不应该依赖它实现的细节。   </span>  </p></blockquote>  <div class="warning"><strong class="warning">警告</strong>   <p class="simpara">    在对含有混合类型值的数组以 <span class="parameter" style="color:#3A95FF">flags</span> 为 <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong>    排序时要小心，因为 <span class="function"><strong>sort()</strong></span> 可能会产生不可预知的结果。   </p>  </div> </div> <div class="refsect1 seealso" id="refsect1-function.sort-seealso">  <h3 class="title">参见</h3>  <ul class="simplelist">   <li><span class="function">{@link rsort()} - 对数组降序排序</span></li>   <li><a href="https://php.net/manual/zh/array.sorting.php" class="link">数组排序函数对比</a></li>  </ul> </div></div>
+ * <div id="function.sort" class="refentry"> <div class="refnamediv">  <h1 class="refname">sort</h1>  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">sort</span> — <span class="dc-title">对数组升序排序</span></p> </div> <div class="refsect1 description" id="refsect1-function.sort-description">  <h3 class="title">说明</h3>  <div class="methodsynopsis dc-description">   <span class="methodname" style="color:#CC7832"><strong>sort</strong></span>(<span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.array.php" class="type array" style="color:#EAB766">array</a></span> <span class="parameter reference" style="color:#3A95FF">&amp;\$array</span></span>, <span class="methodparam"><span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.integer.php" class="type int" style="color:#EAB766">int</a></span> <span class="parameter" style="color:#3A95FF">\$flags</span><span class="initializer"> = <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong></span></span>): <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.singleton.php" class="type true" style="color:#EAB766">true</a></span></div>  <p class="para rdfs-comment">   对 <span class="parameter" style="color:#3A95FF">array</span> 本身按照值（value）升序排序。  </p>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:  </p><p class="para">  如果两个成员完全相同，那么它们将保持原来的顺序。  在 PHP 8.0.0 之前，它们在排序数组中的相对顺序是未定义的。 </p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>: <span class="simpara">此函数为 <span class="parameter" style="color:#3A95FF">array</span>中的元素赋与新的键名。这将删除原有的键名，而不是仅仅将键名重新排序。</span></p></blockquote>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:  </p><p class="para">    重置数组中的内部指针，指向第一个元素。 </p></blockquote> </div> <div class="refsect1 parameters" id="refsect1-function.sort-parameters">  <h3 class="title">参数</h3>  <p class="para">   </p><dl>         <dt><span class="parameter" style="color:#3A95FF">array</span></dt>     <dd>      <p class="para">       输入的数组。      </p>     </dd>          <dt><span class="parameter" style="color:#3A95FF">flags</span></dt>  <dd>  <p class="para">    可选的第二个参数 <span class="parameter" style="color:#3A95FF">flags</span>     可以用以下值改变排序的行为：  </p>  <p class="para">    排序类型标记：    </p><ul class="itemizedlist">    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong>  - 正常比较单元         详细描述参见 <a href="https://php.net/manual/zh/language.operators.comparison.php" class="link">比较运算符</a> 章节</span>    </li>    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-numeric">SORT_NUMERIC</a></span></strong> - 单元被作为数字来比较</span>    </li>    <li class="listitem">      <span class="simpara"><strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-string">SORT_STRING</a></span></strong> - 单元被作为字符串来比较</span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-locale-string">SORT_LOCALE_STRING</a></span></strong> -      根据当前的区域（locale）设置来把单元当作字符串比较，可以用      <span class="function">{@link setlocale()}</span> 来改变。      </span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-natural">SORT_NATURAL</a></span></strong> - 和 <span class="function">{@link natsort()}</span>      类似对每个单元以“自然的顺序”对字符串进行排序。      </span>    </li>    <li class="listitem">      <span class="simpara">      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-flag-case">SORT_FLAG_CASE</a></span></strong> - 能够与      <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-string">SORT_STRING</a></span></strong> 或         <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-natural">SORT_NATURAL</a></span></strong>          合并（OR 位运算），不区分大小写排序字符串。      </span>    </li>    </ul>    </dd>   </dl>   </div> <div class="refsect1 returnvalues" id="refsect1-function.sort-returnvalues">  <h3 class="title">返回值</h3>  <p class="para">   总是返回 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>。  </p> </div> <div class="refsect1 changelog" id="refsect1-function.sort-changelog">  <h3 class="title">更新日志</h3>  <p class="para">   </p><table class="doctable informaltable">         <thead>      <tr>       <th>版本</th>       <th>说明</th>      </tr>     </thead>     <tbody class="tbody">      <tr> <td>8.2.0</td> <td>  现在返回类型为 <strong><span><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></span></strong>；之前是 <span class="type" style="color:#EAB766"><a href="https://php.net/manual/zh/language.types.boolean.php" class="type bool" style="color:#EAB766">bool</a></span>。 </td></tr>     </tbody>       </table>   </div> <div class="refsect1 examples" id="refsect1-function.sort-examples">  <h3 class="title">示例</h3>  <p class="para">   </p><div class="example" id="example-5301">    <p><strong>示例 #1 <span class="function"><strong>sort()</strong></span> 示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>\$fruits </span><span style="color: #007700">= array(</span><span style="color: #DD0000">"lemon"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange"</span><span style="color: #007700">, </span><span style="color: #DD0000">"banana"</span><span style="color: #007700">, </span><span style="color: #DD0000">"apple"</span><span style="color: #007700">);<br></span><span style="color: #9876AA">sort</span><span style="color: #007700">(</span><span style="color: #9876AA">\$fruits</span><span style="color: #007700">);<br>foreach (</span><span style="color: #9876AA">\$fruits </span><span style="color: #007700">as </span><span style="color: #9876AA">\$key </span><span style="color: #007700">=&gt; </span><span style="color: #9876AA">\$val</span><span style="color: #007700">) {<br>    echo </span><span style="color: #DD0000">"fruits[" </span><span style="color: #007700">. </span><span style="color: #9876AA">\$key </span><span style="color: #007700">. </span><span style="color: #DD0000">"] = " </span><span style="color: #007700">. </span><span style="color: #9876AA">\$val </span><span style="color: #007700">. </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br>}<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">fruits[0]&nbsp;=&nbsp;apple<br>fruits[1]&nbsp;=&nbsp;banana<br>fruits[2]&nbsp;=&nbsp;lemon<br>fruits[3]&nbsp;=&nbsp;orange</blockquote></div>    </div>   </div>    <p class="para">   fruits 被按照字母顺序排序。  </p>  <p class="para">   </p><div class="example" id="example-5302">    <p><strong>示例 #2 使用 <span class="function"><strong>sort()</strong></span> 不区分大小写自然排序的示例</strong></p>    <div class="example-contents"><div class="annotation-interactive phpcode" style="border-color:gray;background:#1E1F22;"><blockquote style="border:1px gray solid;white-space:pre-wrap"><span style="color: #000000"><span style="color: #9876AA">&lt;?php<br><br>\$fruits </span><span style="color: #007700">= array(<br>    </span><span style="color: #DD0000">"Orange1"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange2"</span><span style="color: #007700">, </span><span style="color: #DD0000">"Orange3"</span><span style="color: #007700">, </span><span style="color: #DD0000">"orange20"<br></span><span style="color: #007700">);<br></span><span style="color: #9876AA">sort</span><span style="color: #007700">(</span><span style="color: #9876AA">\$fruits</span><span style="color: #007700">, </span><span style="color: #9876AA">SORT_NATURAL </span><span style="color: #007700">| </span><span style="color: #9876AA">SORT_FLAG_CASE</span><span style="color: #007700">);<br>foreach (</span><span style="color: #9876AA">\$fruits </span><span style="color: #007700">as </span><span style="color: #9876AA">\$key </span><span style="color: #007700">=&gt; </span><span style="color: #9876AA">\$val</span><span style="color: #007700">) {<br>    echo </span><span style="color: #DD0000">"fruits[" </span><span style="color: #007700">. </span><span style="color: #9876AA">\$key </span><span style="color: #007700">. </span><span style="color: #DD0000">"] = " </span><span style="color: #007700">. </span><span style="color: #9876AA">\$val </span><span style="color: #007700">. </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br>}<br><br></span><span style="color: #9876AA">?&gt;</span></span></blockquote></div>    </div>    <div class="example-contents"><p>以上示例会输出：</p></div>    <div class="example-contents screen" style="border-color:gray;background:#1E1F22;"><div class="annotation-interactive examplescode"><blockquote style="border:1px gray solid;">fruits[0]&nbsp;=&nbsp;Orange1<br>fruits[1]&nbsp;=&nbsp;orange2<br>fruits[2]&nbsp;=&nbsp;Orange3<br>fruits[3]&nbsp;=&nbsp;orange20</blockquote></div>    </div>   </div>    <p class="para">   fruits 排序得像 <span class="function">{@link natcasesort()}</span> 的结果。  </p> </div> <div class="refsect1 notes" id="refsect1-function.sort-notes">  <h3 class="title">注释</h3>  <blockquote class="note" style="border:1px gray solid"><p><strong class="note" style="border:1px gray solid">注意</strong>:    <span class="simpara">    和大多数 PHP 排序函数一样，<span class="function"><strong>sort()</strong></span> 使用了 <a href="http://en.wikipedia.org/wiki/Quicksort" class="link external">»&nbsp;快速排序</a> 实现的。    在已排序的数组分片的中间，选择基准值，具有最优时间。但不应该依赖它实现的细节。   </span>  </p></blockquote>  <div class="warning"><strong class="warning">警告</strong>   <p class="simpara">    在对含有混合类型值的数组以 <span class="parameter" style="color:#3A95FF">flags</span> 为 <strong><span><a href="https://php.net/manual/zh/array.constants.php#constant.sort-regular">SORT_REGULAR</a></span></strong>    排序时要小心，因为 <span class="function"><strong>sort()</strong></span> 可能会产生不可预知的结果。   </p>  </div> </div> <div class="refsect1 seealso" id="refsect1-function.sort-seealso">  <h3 class="title">参见</h3>  <ul class="simplelist">   <li><span class="function">{@link rsort()} - 对数组降序排序</span></li>   <li><a href="https://php.net/manual/zh/array.sorting.php" class="link">数组排序函数对比</a></li>  </ul> </div></div>
  * 
          * Sorts the sequence in-place, using an optional comparator function.
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -407,7 +407,7 @@ namespace Ds;
 
         /**
          * Returns a sorted copy, using an optional comparator function.
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -572,7 +572,7 @@ namespace Ds;
         public function get(int $index) {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -590,11 +590,11 @@ namespace Ds;
         /**
          * Joins all values together as a string using an optional separator between each value.
          *
-         * @param string|null $glue An optional string to separate each value.
+         * @param string $glue An optional string to separate each value.
          * @return string All values of the sequence joined together as a string.
          * @link https://www.php.net/manual/en/ds-vector.join.php
          */
-        public function join(?string $glue = null): string {}
+        public function join(string $glue = ''): string {}
 
         /**
          * Returns the last value in the sequence.
@@ -736,7 +736,7 @@ namespace Ds;
         /**
          * Sorts the sequence in-place, using an optional comparator function.
          * @link https://www.php.net/manual/en/ds-vector.sort.php
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return an
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return an
          * integer less than, equal to, or greater
          * than zero if the first argument is considered to be respectively less than, equal to, or greater than the
          * second. Note that before PHP 7.0.0 this integer had to be in the
@@ -753,7 +753,7 @@ namespace Ds;
         /**
          * Returns a sorted copy, using an optional comparator function.
          * @link https://www.php.net/manual/en/ds-vector.sorted.php
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return an integer less than, equal to, or
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return an integer less than, equal to, or
          * greater  than zero if the first argument is considered to be respectively less than, equal to, or greater
          * than the second. Note that before PHP 7.0.0 this integer had to be in the range from -2147483648 to
          * 2147483647.<br>
@@ -770,9 +770,9 @@ namespace Ds;
          * <b>Note:</b> Arrays and objects are considered equal to zero when
          * calculating the sum.
          * @link https://www.php.net/manual/en/ds-vector.sum.php
-         * @return float
+         * @return float|int
          */
-        public function sum(): float {}
+        public function sum(): float|int {}
 
         /**
          * Adds values to the front of the sequence, moving all the current
@@ -782,7 +782,7 @@ namespace Ds;
          * passed.
          * @link https://www.php.net/manual/en/ds-vector.unshift.php
          */
-        public function unshift($values): void {}
+        public function unshift(...$values): void {}
 
         /**
          * Count elements of an object
@@ -835,6 +835,8 @@ namespace Ds;
         /**
          * @param int $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -852,11 +854,11 @@ namespace Ds;
     {
         /**
          * Creates a new instance, using either a traversable object or an array for the initial values.
-         * @param TValue ...$values A traversable object or an array to use for the initial values.
+         * @param iterable<TValue> $values A traversable object or an array to use for the initial values.
          *
          * @link https://www.php.net/manual/en/ds-deque.construct.php
          */
-        public function __construct(...$values) {}
+        public function __construct(iterable $values = []) {}
 
         /**
          * Count elements of an object
@@ -883,7 +885,7 @@ namespace Ds;
         public function copy(): Collection {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -1140,7 +1142,7 @@ namespace Ds;
 
         /**
          * Sorts the deque in-place, using an optional comparator function.
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1157,7 +1159,7 @@ namespace Ds;
 
         /**
          * Returns a sorted copy, using an optional comparator function.
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1215,6 +1217,8 @@ namespace Ds;
         /**
          * @param int $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -1233,11 +1237,11 @@ namespace Ds;
     {
         /**
          * Creates a new instance, using either a traversable object or an array for the initial values.
-         * @param iterable<TKey, TValue> ...$values A traversable object or an array to use for the initial values.
+         * @param iterable<TKey, TValue> $values A traversable object or an array to use for the initial values.
          *
          * @link https://www.php.net/manual/en/ds-map.construct.php
          */
-        public function __construct(...$values) {}
+        public function __construct(iterable $values = []) {}
 
         /**
          * Allocates enough memory for a required capacity.
@@ -1245,6 +1249,8 @@ namespace Ds;
          * @param int $capacity The number of values for which capacity should be allocated.<br>
          * <p><b>Note:</b> Capacity will stay the same if this value is less than or equal to the current capacity.</p>
          * Capacity will always be rounded up to the nearest power of 2.
+         *
+         * @return void
          *
          * @link https://www.php.net/manual/en/ds-map.allocate.php
          */
@@ -1255,6 +1261,8 @@ namespace Ds;
          *
          * @param callable(TKey, TValue): TValue $callback A callable to apply to each value in the map. The callback should return what
          * the value should be replaced by.
+         *
+         * @return void
          *
          * @link https://www.php.net/manual/en/ds-map.apply.php
          */
@@ -1357,7 +1365,7 @@ namespace Ds;
         public function get($key, $default = null) {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<TKey, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -1449,7 +1457,8 @@ namespace Ds;
 
         /**
          * Sorts the map in-place by key, using an optional comparator function.
-         * @param callable(TKey, TKey):int|null $comparator The comparison function must return
+         *
+         * @param (callable(TKey, TKey):int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1460,13 +1469,14 @@ namespace Ds;
          * callback's return value. So values such as 0.99 and 0.1 will both be
          * cast to an  integer value of 0, which will compare such values as
          * equal.</p>
+         * @return void
          * @link https://www.php.net/manual/en/ds-map.ksort.php
          */
         public function ksort(?callable $comparator = null) {}
 
         /**
          * Returns a copy sorted by key, using an optional comparator function.
-         * @param callable(TKey, TKey): int|null $comparator The comparison function must return
+         * @param (callable(TKey, TKey): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1477,14 +1487,14 @@ namespace Ds;
          * callback's return value. So values such as 0.99 and 0.1 will both be
          * cast to an  integer value of 0, which will compare such values as
          * equal.</p>
-         * @return Map<TKeyK, TValueV> Returns a copy of the map, sorted by key.
+         * @return Map<TKey, TValue> Returns a copy of the map, sorted by key.
          * @link https://www.php.net/manual/en/ds-map.ksorted.php
          */
         public function ksorted(?callable $comparator = null): Map {}
 
         /**
          * Returns the last pair of the map.
-         * @return Pair<K,V> The last pair of the map.
+         * @return Pair<TKey,TValue> The last pair of the map.
          * @throws UnderflowException if empty
          * @link https://www.php.net/manual/en/ds-map.last.php
          */
@@ -1527,7 +1537,7 @@ namespace Ds;
         /**
          * Returns a Ds\Sequence containing all the pairs of the map.
          *
-         * @return Sequence<Pair<TKey, TValueV>> Ds\Sequence containing all the pairs of the map.
+         * @return Sequence<Pair<TKey, TValue>> Ds\Sequence containing all the pairs of the map.
          *
          * @link https://www.php.net/manual/en/ds-map.pairs.php
          */
@@ -1552,6 +1562,8 @@ namespace Ds;
          * attempt to access int(1), while $map->get("1") will correctly look up
          * the string key.
          *
+         * @return void
+         *
          * @link https://www.php.net/manual/en/ds-map.put.php
          */
         public function put($key, $value) {}
@@ -1566,6 +1578,8 @@ namespace Ds;
          * considered equal.
          *
          * @param iterable<TKey, TValue> $pairs traversable object or array.
+         *
+         * @return void
          *
          * @link https://www.php.net/manual/en/ds-map.putall.php
          */
@@ -1626,6 +1640,8 @@ namespace Ds;
         /**
          * Reverses the map in-place.
          *
+         * @return void
+         *
          * @link https://www.php.net/manual/en/ds-map.reverse.php
          */
         public function reverse() {}
@@ -1680,7 +1696,7 @@ namespace Ds;
          * Sorts the map in-place by value, using an optional comparator
          * function.
          *
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1694,6 +1710,8 @@ namespace Ds;
          * cast to an integer value of 0, which will compare such values as
          * equal.
          *
+         * @return void
+         *
          * @link https://www.php.net/manual/en/ds-map.sort.php
          */
         public function sort(?callable $comparator = null) {}
@@ -1701,7 +1719,7 @@ namespace Ds;
         /**
          * Returns a copy, sorted by value using an optional comparator function.
          *
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -1796,6 +1814,8 @@ namespace Ds;
         /**
          * @param TKey $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -1835,6 +1855,8 @@ namespace Ds;
 
         /**
          * Removes all values from the pair.
+         *
+         * @return void
          *
          * @link https://php.net/manual/en/ds-pair.clear.php
          */
@@ -1915,6 +1937,8 @@ namespace Ds;
          *
          * @param TValue ...$values Values to add to the set.
          *
+         * @return void
+         *
          * @link https://php.net/manual/en/ds-set.add.php
          */
         public function add(...$values) {}
@@ -1929,6 +1953,8 @@ namespace Ds;
          * equal to the current capacity.
          *
          * <p>Capacity will always be rounded up to the nearest power of 2.
+         *
+         * @return void
          *
          * @link https://php.net/manual/en/ds-set.allocate.php
          */
@@ -2037,7 +2063,7 @@ namespace Ds;
         public function get(int $index) {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -2074,7 +2100,7 @@ namespace Ds;
          *
          * @return string
          */
-        public function join(?string $glue = null): string {}
+        public function join(string $glue = ''): string {}
 
         /**
          * Returns the result of applying a callback function to each value in
@@ -2133,11 +2159,15 @@ namespace Ds;
          * @link https://www.php.net/manual/en/ds-set.remove.php
          *
          * @param TValue ...$values The values to remove.
+         *
+         * @return void
          */
         public function remove(...$values) {}
 
         /**
          * Reverses the set in-place.
+         *
+         * @return void
          *
          * @link https://www.php.net/manual/en/ds-set.reverse.php
          */
@@ -2187,7 +2217,7 @@ namespace Ds;
         /**
          * Sorts the set in-place, using an optional comparator function.
          *
-         * @param callable(TValue, TValue): int|null $comparator The comparison function must return
+         * @param (callable(TValue, TValue): int)|null $comparator The comparison function must return
          * an integer less than, equal to, or greater than zero if the first
          * argument is considered to be respectively less than, equal to, or
          * greater than the second. Note that before PHP 7.0.0 this integer had
@@ -2198,6 +2228,8 @@ namespace Ds;
          * of the callback's return value. So values such as 0.99 and 0.1 will
          * both be cast to an integer value of 0, which will compare such values
          * as equal.</note>
+         *
+         * @return void
          *
          * @link https://www.php.net/manual/en/ds-set.sort.php
          */
@@ -2304,6 +2336,8 @@ namespace Ds;
         /**
          * @param int $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -2346,6 +2380,8 @@ namespace Ds;
          * @param int $capacity The number of values for which capacity should
          * be allocated.
          *
+         * @return void
+         *
          * <p><b>Note:</b> Capacity will stay the same if this value is less than or
          * equal to the current capacity.</p>
          */
@@ -2385,7 +2421,7 @@ namespace Ds;
         public function copy(): Stack {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -2442,6 +2478,8 @@ namespace Ds;
          * @link https://www.php.net/manual/en/ds-queue.push.php
          *
          * @param TValue ...$values The values to push onto the stack.
+         *
+         * @return void
          */
         public function push(...$values) {}
 
@@ -2460,6 +2498,8 @@ namespace Ds;
         /**
          * @param int $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -2502,6 +2542,8 @@ namespace Ds;
          * @param int $capacity The number of values for which capacity should
          * be allocated.
          *
+         * @return void
+         *
          * <p><b>Note:</b> Capacity will stay the same if this value is less than or
          * equal to the current capacity.</p>
          */
@@ -2541,7 +2583,7 @@ namespace Ds;
         public function copy(): Queue {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -2598,6 +2640,8 @@ namespace Ds;
          * @link https://www.php.net/manual/en/ds-queue.push.php
          *
          * @param TValue ...$values The values to push onto the queue.
+         *
+         * @return void
          */
         public function push(...$values) {}
 
@@ -2616,6 +2660,8 @@ namespace Ds;
         /**
          * @param int $offset
          * @param TValue $value
+         *
+         * @return void
          */
         public function offsetSet(mixed $offset, mixed $value) {}
 
@@ -2683,7 +2729,7 @@ namespace Ds;
         public function copy() {}
 
         /**
-         * @return Traversable<TValue>
+         * @return Traversable<int, TValue>
          */
         public function getIterator(): Traversable {}
 
@@ -2717,6 +2763,8 @@ namespace Ds;
          *
          * @param TValue $value
          * @param int $priority
+         *
+         * @return void
          */
         public function push($value, int $priority) {}
 
