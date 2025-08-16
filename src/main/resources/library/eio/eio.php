@@ -125,7 +125,7 @@ function eio_mkdir(string $path, int $mode, int $pri = 0, mixed $callback = null
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_rmdir(string $path, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -138,7 +138,7 @@ function eio_rmdir(string $path, int $pri = 0, mixed $callback = null, mixed $da
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_unlink(string $path, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -153,7 +153,7 @@ function eio_unlink(string $path, int $pri = 0, mixed $callback = null, mixed $d
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_utime(string $path, float $atime, float $mtime, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -168,7 +168,7 @@ function eio_utime(string $path, float $atime, float $mtime, int $pri = 0, mixed
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_mknod(string $path, int $mode, int $dev, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -182,7 +182,7 @@ function eio_mknod(string $path, int $mode, int $dev, int $pri = 0, mixed $callb
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_link(string $path, string $new_path, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -196,7 +196,7 @@ function eio_link(string $path, string $new_path, int $pri = 0, mixed $callback 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_symlink(string $path, string $new_path, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -210,7 +210,7 @@ function eio_symlink(string $path, string $new_path, int $pri = 0, mixed $callba
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_rename(string $path, string $new_path, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -223,7 +223,7 @@ function eio_rename(string $path, string $new_path, int $pri = 0, mixed $callbac
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_close(mixed $fd, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -235,7 +235,7 @@ function eio_close(mixed $fd, int $pri = 0, mixed $callback = null, mixed $data 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_sync(int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -248,7 +248,7 @@ function eio_sync(int $pri = 0, mixed $callback = null, mixed $data = null) {}
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fsync(mixed $fd, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -261,7 +261,7 @@ function eio_fsync(mixed $fd, int $pri = 0, mixed $callback = null, mixed $data 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fdatasync(mixed $fd, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -276,7 +276,7 @@ function eio_fdatasync(mixed $fd, int $pri = 0, mixed $callback = null, mixed $d
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_futime(mixed $fd, float $atime, float $mtime, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -290,7 +290,7 @@ function eio_futime(mixed $fd, float $atime, float $mtime, int $pri = 0, mixed $
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_ftruncate(mixed $fd, int $offset = 0, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -304,7 +304,7 @@ function eio_ftruncate(mixed $fd, int $offset = 0, int $pri = 0, mixed $callback
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_chmod(string $path, int $mode, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -318,7 +318,7 @@ function eio_chmod(string $path, int $mode, int $pri = 0, mixed $callback = null
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fchmod(mixed $fd, int $mode, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -333,7 +333,7 @@ function eio_fchmod(mixed $fd, int $mode, int $pri = 0, mixed $callback = null, 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_chown(string $path, int $uid, int $gid = -1, int $pri = 0, mixed $callback = null, ?mixed $data = null) {}
 
@@ -348,7 +348,7 @@ function eio_chown(string $path, int $uid, int $gid = -1, int $pri = 0, mixed $c
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fchown(mixed $fd, int $uid, int $gid = -1, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -362,7 +362,7 @@ function eio_fchown(mixed $fd, int $uid, int $gid = -1, int $pri = 0, mixed $cal
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_dup2(mixed $fd, mixed $fd2, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -377,7 +377,7 @@ function eio_dup2(mixed $fd, mixed $fd2, int $pri = 0, mixed $callback = null, m
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_read(mixed $fd, int $length, int $offset, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -393,7 +393,7 @@ function eio_read(mixed $fd, int $length, int $offset, int $pri, mixed $callback
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_write(mixed $fd, mixed $str, int $length = 0, int $offset = 0, int $pri = 0, mixed $callback = null, mixed $data = null) {}
 
@@ -406,7 +406,7 @@ function eio_write(mixed $fd, mixed $str, int $length = 0, int $offset = 0, int 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_readlink(string $path, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -419,7 +419,7 @@ function eio_readlink(string $path, int $pri, mixed $callback, mixed $data = nul
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_realpath(string $path, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -432,7 +432,7 @@ function eio_realpath(string $path, int $pri, mixed $callback, mixed $data = nul
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_stat(string $path, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -445,7 +445,7 @@ function eio_stat(string $path, int $pri, mixed $callback, mixed $data = null) {
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_lstat(string $path, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -458,7 +458,7 @@ function eio_lstat(string $path, int $pri, mixed $callback, mixed $data = null) 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fstat(mixed $fd, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -471,7 +471,7 @@ function eio_fstat(mixed $fd, int $pri, mixed $callback, mixed $data = null) {}
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_statvfs(string $path, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -484,7 +484,7 @@ function eio_statvfs(string $path, int $pri, mixed $callback, mixed $data = null
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fstatvfs(mixed $fd, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -498,7 +498,7 @@ function eio_fstatvfs(mixed $fd, int $pri, mixed $callback, mixed $data = null) 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_readdir(string $path, int $flags, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -514,7 +514,7 @@ function eio_readdir(string $path, int $flags, int $pri, mixed $callback, mixed 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_sendfile(mixed $out_fd, mixed $in_fd, int $offset, int $length, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -529,7 +529,7 @@ function eio_sendfile(mixed $out_fd, mixed $in_fd, int $offset, int $length, int
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_readahead(mixed $fd, int $offset, int $length, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -544,7 +544,7 @@ function eio_readahead(mixed $fd, int $offset, int $length, int $pri = EIO_PRI_D
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_seek(mixed $fd, int $offset, int $length, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -557,7 +557,7 @@ function eio_seek(mixed $fd, int $offset, int $length, int $pri = EIO_PRI_DEFAUL
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_syncfs(mixed $fd, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -573,7 +573,7 @@ function eio_syncfs(mixed $fd, int $pri = EIO_PRI_DEFAULT, mixed $callback = nul
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_sync_file_range(mixed $fd, int $offset, int $nbytes, int $flags, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -589,7 +589,7 @@ function eio_sync_file_range(mixed $fd, int $offset, int $nbytes, int $flags, in
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_fallocate(mixed $fd, int $mode, int $offset, int $length, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -602,7 +602,7 @@ function eio_fallocate(mixed $fd, int $mode, int $offset, int $length, int $pri 
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_custom(mixed $execute, int $pri, mixed $callback, mixed $data = null) {}
 
@@ -615,7 +615,7 @@ function eio_custom(mixed $execute, int $pri, mixed $callback, mixed $data = nul
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_busy(int $delay, int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -627,7 +627,7 @@ function eio_busy(int $delay, int $pri = EIO_PRI_DEFAULT, mixed $callback = null
  * @param int $pri The request priority: EIO_PRI_DEFAULT, EIO_PRI_MIN, EIO_PRI_MAX
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource|bool returns request resource on success, or false on failure.
+ * @return resource|false returns request resource on success, or false on failure.
  */
 function eio_nop(int $pri = EIO_PRI_DEFAULT, mixed $callback = null, mixed $data = null) {}
 
@@ -647,7 +647,7 @@ function eio_cancel($req): void {}
  * @link https://www.php.net/manual/en/function.eio-grp.php
  * @param mixed $callback function is called when the request is done
  * @param mixed $data Arbitrary variable passed to callback
- * @return resource returns request group resource on success, or false on failure.
+ * @return resource|false returns request group resource on success, or false on failure.
  */
 function eio_grp(mixed $callback, mixed $data = null) {}
 

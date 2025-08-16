@@ -1685,8 +1685,6 @@ define('OPENSSL_DEFAULT_STREAM_CIPHERS', "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDS
 define('OPENSSL_CMS_OLDMIMETYPE', 1024);
 
 /**
- * <div id="class.opensslcertificate" class="reference"> <h1 class="title">OpenSSLCertificate 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="opensslcertificate.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">OpenSSL X.509</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="opensslcertificate.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">OpenSSLCertificate</strong></strong>     {</div>   }</div>     </div> </div> </div>
- * 
  * @since 8.0
  */
 final class OpenSSLCertificate
@@ -1699,8 +1697,6 @@ final class OpenSSLCertificate
 }
 
 /**
- * <div id="class.opensslcertificatesigningrequest" class="reference"> <h1 class="title">OpenSSLCertificateSigningRequest 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="opensslcertificatesigningrequest.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">OpenSSL X.509 CSR</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="opensslcertificatesigningrequest.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">OpenSSLCertificateSigningRequest</strong></strong>     {</div>   }</div>     </div> </div> </div>
- * 
  * @since 8.0
  */
 final class OpenSSLCertificateSigningRequest
@@ -1713,8 +1709,6 @@ final class OpenSSLCertificateSigningRequest
 }
 
 /**
- * <div id="class.opensslasymmetrickey" class="reference"> <h1 class="title">OpenSSLAsymmetricKey 类</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="opensslasymmetrickey.intro">   <h2 class="title">简介</h2>   <p class="para">    从 PHP 8.0.0 开始替换 <span class="literal">OpenSSL key</span> 资源的完全不透明类。   </p>  </div>    <div class="section" id="opensslasymmetrickey.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">OpenSSLAsymmetricKey</strong></strong>     {</div>   }</div>     </div> </div> </div>
- * 
  * @since 8.0
  */
 final class OpenSSLAsymmetricKey

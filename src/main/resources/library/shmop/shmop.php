@@ -117,8 +117,6 @@ function shmop_write(#[LanguageLevelTypeAware(["8.0" => "Shmop"], default: "reso
 function shmop_delete(#[LanguageLevelTypeAware(["8.0" => "Shmop"], default: "resource")] $shmop): bool {}
 
 /**
- * <div id="class.shmop" class="reference"> <h1 class="title">The Shmop class</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>  <div class="section" id="shmop.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces <span class="literal">shmop</span> resources as of PHP 8.0.0.   </p>  </div>  <div class="section" id="shmop.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">Shmop</strong></strong>     {</div>   }</div>  </div> </div> </div>
- * 
  * @since 8.0
  */
 final class Shmop {}

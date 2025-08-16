@@ -1,0 +1,183 @@
+name: php-chinese-manual Build and Release Workflow
+
+on:
+  push:
+    tags:
+      - 'v*' # 当推送标签匹配 v* 模式时触发工作流
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.properties.outputs.version }}
+      changelog: ${{ steps.properties.outputs.changelog }}
+
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v4
+
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v2
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          gradle-home-cache-cleanup: true
+
+      - name: Export Properties
+        id: properties
+        shell: bash
+        run: |
+          PROPERTIES="$(./gradlew properties --console=plain -q)"
+          VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
+          CHANGELOG="$(./gradlew getChangelog --unreleased --no-header --console=plain -q)"
+          
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Download phpstorm-stubs-chinese.zip
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          name: phpstorm-stubs-chinese
+          repo: Hyouka0510/phpstorm-stubs-chinese
+          workflow: main.yml
+          workflow_conclusion: success
+          path: downloaded-stubs
+          github_token: ${{ secrets.GH_PAT }}
+
+      - name: Prepare library folder
+        run: |
+          rm -rf src/main/library
+          mkdir -p src/main/library
+          unzip downloaded-stubs/phpstorm-stubs-chinese.zip -d src/main/library
+
+      - name: Build plugin
+        run: ./gradlew buildPlugin
+
+      - name: Verify Plugin
+        run: ./gradlew verifyPlugin
+
+      - name: Prepare Plugin Artifact
+        id: artifact
+        shell: bash
+        run: |
+          cd ${{ github.workspace }}/build/distributions
+          FILENAME=`ls *.zip`
+          unzip "$FILENAME" -d content
+          
+          echo "filename=${FILENAME:0:-4}" >> $GITHUB_OUTPUT
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.artifact.outputs.filename }}
+          path: ./build/distributions/content/*/*
+
+  # 发布到 JetBrains Marketplace
+  release:
+    name: Publish Plugin
+    needs: build
+    runs-on: ubuntu-latest
+    # 只有当 ENABLE_MARKETPLACE_PUBLISH 等于 1 时才执行此任务
+    if: ${{ secrets.ENABLE_MARKETPLACE_PUBLISH == '1' }}
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          gradle-home-cache-cleanup: true
+
+      - name: Download phpstorm-stubs-chinese.zip
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          name: phpstorm-stubs-chinese
+          repo: Hyouka0510/phpstorm-stubs-chinese
+          workflow: main.yml
+          workflow_conclusion: success
+          path: downloaded-stubs
+          github_token: ${{ secrets.GH_PAT }}
+
+      - name: Prepare library folder
+        run: |
+          rm -rf src/main/library
+          mkdir -p src/main/library
+          unzip downloaded-stubs/phpstorm-stubs-chinese.zip -d src/main/library
+
+      - name: Publish Plugin
+        env:
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          CERTIFICATE_CHAIN: ${{ secrets.CERTIFICATE_CHAIN }}
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          PRIVATE_KEY_PASSWORD: ${{ secrets.PRIVATE_KEY_PASSWORD }}
+        run: ./gradlew publishPlugin
+
+  # 创建 GitHub Release
+  github-release:
+    name: Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Download phpstorm-stubs-chinese.zip
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          name: phpstorm-stubs-chinese
+          repo: Hyouka0510/phpstorm-stubs-chinese
+          workflow: main.yml
+          workflow_conclusion: success
+          path: downloaded-stubs
+          github_token: ${{ secrets.GH_PAT }}
+
+      - name: Prepare library folder
+        run: |
+          rm -rf src/main/library
+          mkdir -p src/main/library
+          unzip downloaded-stubs/phpstorm-stubs-chinese.zip -d src/main/library
+
+      - name: Build plugin
+        run: ./gradlew buildPlugin
+
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create ${{ github.ref_name }} \
+            --title "${{ github.ref_name }}" \
+            --notes "${{ needs.build.outputs.changelog }}" \
+            ./build/distributions/*

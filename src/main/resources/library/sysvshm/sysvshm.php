@@ -119,8 +119,6 @@ function shm_get_var(#[LanguageLevelTypeAware(["8.0" => "SysvSharedMemory"], def
 function shm_remove_var(#[LanguageLevelTypeAware(["8.0" => "SysvSharedMemory"], default: "resource")] $shm, int $key): bool {}
 
 /**
- * <div id="class.sysvsharedmemory" class="reference"> <h1 class="title">The SysvSharedMemory class</h1>  <div class="partintro"><p class="verinfo">(PHP 8)</p>    <div class="section" id="sysvsharedmemory.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces a <span class="literal">sysvshm</span> resource as of PHP 8.0.0.   </p>  </div>    <div class="section" id="sysvsharedmemory.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">SysvSharedMemory</strong></strong>     {</div>   }</div>     </div> </div></div>
- * 
  * @since 8.0
  */
 final class SysvSharedMemory
