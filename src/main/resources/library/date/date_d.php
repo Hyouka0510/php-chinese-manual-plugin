@@ -3,7 +3,7 @@
 // Start of date v.5.3.2-0.dotdeb.1
 
 /**
- * <span class="simpara">     Atom（示例：<code class="literal">2005-08-15T15:52:01+00:00</code>）    </span>
+ * <span class="simpara">     Atom（示例：<code class="literal">2005-08-15T15:52:01+00:00</code>）；兼容 ISO-8601、RFC 3339 和 XML Schema    </span>
  */
 define('DATE_ATOM', "Y-m-d\TH:i:sP");
 /**
@@ -12,7 +12,7 @@ define('DATE_ATOM', "Y-m-d\TH:i:sP");
 define('DATE_COOKIE', "l, d-M-Y H:i:s T");
 
 /**
- * <span class="simpara">     ISO-8601（示例：<code class="literal">2005-08-15T15:52:01+0000</code>）    </span>
+ * <span class="simpara">     类似 ISO-8601 格式（示例：<code class="literal">2005-08-15T15:52:01+0000</code>）    </span>
  * 
  * This format is not compatible with ISO-8601, but is left this way for backward compatibility reasons.
  * Use DateTime::ATOM or DATE_ATOM for compatibility with ISO-8601 instead.

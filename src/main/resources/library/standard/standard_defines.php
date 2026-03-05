@@ -90,121 +90,167 @@ define('PHP_URL_QUERY', 6);
 define('PHP_URL_FRAGMENT', 7);
 
 /**
+ * <span class="simpara">     自然常数 <code class="literal">e</code>的近似值（<code class="literal">2.7182818284590452354</code>）。    </span>
+ * 
  * <i>e</i> constant
  */
 define('M_E', 2.718281828459);
 
 /**
+ * <span class="simpara">     <code class="literal">log<sub class="subscript">2</sub>(e)</code>     的近似值（<code class="literal">1.4426950408889634074</code>）。    </span>
+ * 
  * {@link log}<sub>2</sub><i>e</i> constant
  */
 define('M_LOG2E', 1.442695040889);
 
 /**
+ * <span class="simpara">     <code class="literal">log<sub class="subscript">10</sub>(e)</code>     的近似值（<code class="literal">0.43429448190325182765</code>）。    </span>
+ * 
  * {@link log}<sub>10</sub><i>e</i> constant
  */
 define('M_LOG10E', 0.43429448190325);
 
 /**
+ * <span class="simpara">     <code class="literal">ln(2)</code> 的近似值（<code class="literal">0.69314718055994530942</code>）。    </span>
+ * 
  * {@link log}<sub><i>e</i></sub>2 constant
  */
 define('M_LN2', 0.69314718055995);
 
 /**
+ * <span class="simpara">     <code class="literal">ln(10)</code> 的近似值（<code class="literal">2.30258509299404568402</code>）。    </span>
+ * 
  * {@link log}<sub><i>e</i></sub>10 constant
  */
 define('M_LN10', 2.302585092994);
 
 /**
+ * <span class="simpara">     π（圆周率）的近似值（<code class="literal">3.14159265358979323846</code>）。    </span>
+ * 
  * &pi; constant
  */
 define('M_PI', 3.1415926535898);
 
 /**
+ * <span class="simpara">     <code class="literal">π/2</code> 的近似值（<code class="literal">1.57079632679489661923</code>）。    </span>
+ * 
  * &pi;/2 constant
  */
 define('M_PI_2', 1.5707963267949);
 
 /**
+ * <span class="simpara">     <code class="literal">π/4</code> 的近似值（<code class="literal">0.78539816339744830962</code>）。    </span>
+ * 
  * &pi;/4 constant
  */
 define('M_PI_4', 0.78539816339745);
 
 /**
+ * <span class="simpara">     <code class="literal">1/π</code> 的近似值（<code class="literal">0.31830988618379067154</code>）。    </span>
+ * 
  * 1/&pi; constant
  */
 define('M_1_PI', 0.31830988618379);
 
 /**
+ * <span class="simpara">     <code class="literal">2/π</code> 的近似值（<code class="literal">0.63661977236758134308</code>）。    </span>
+ * 
  * 2/&pi; constant
  */
 define('M_2_PI', 0.63661977236758);
 
 /**
+ * <span class="simpara">     <code class="literal">sqrt(π)</code> 的近似值（<code class="literal">1.77245385090551602729</code>）。    </span>
+ * 
  * {@link sqrt}(&pi;) constant
  */
 define('M_SQRTPI', 1.7724538509055);
 
 /**
+ * <span class="simpara">     <code class="literal">2/sqrt(π)</code> 的近似值（<code class="literal">1.12837916709551257390</code>）。    </span>
+ * 
  * 2/{@link sqrt}(&pi;) constant
  */
 define('M_2_SQRTPI', 1.1283791670955);
 
 /**
+ * <span class="simpara">     <code class="literal">ln(π)</code> 的近似值（<code class="literal">1.14472988584940017414</code>）。    </span>
+ * 
  * {@link log}<sub><i>e</i></sub>&pi; constant
  */
 define('M_LNPI', 1.1447298858494);
 
 /**
+ * <span class="simpara">     欧拉常数 γ 的近似值（<code class="literal">0.57721566490153286061</code>）。    </span>
+ * 
  * Euler constant
  */
 define('M_EULER', 0.57721566490153);
 
 /**
+ * <span class="simpara">     <code class="literal">sqrt(2)</code> 的近似值（<code class="literal">1.41421356237309504880</code>).    </span>
+ * 
  * {@link sqrt}(2) constant
  */
 define('M_SQRT2', 1.4142135623731);
 
 /**
+ * <span class="simpara">     <code class="literal">1/sqrt(2)</code> 的近似值（<code class="literal">0.70710678118654752440</code>）。    </span>
+ * 
  * 1/{@link sqrt}(2) constant
  */
 define('M_SQRT1_2', 0.70710678118655);
 
 /**
+ * <span class="simpara">     <code class="literal">sqrt(3)</code> 的近似值（<code class="literal">1.73205080756887729352</code>）。    </span>
+ * 
  * {@link sqrt}(3) constant
  */
 define('M_SQRT3', 1.7320508075689);
 
 /**
+ * <span class="simpara">     无穷    </span>
+ * 
  * The infinite
  */
 define('INF', (float)INF);
 
 /**
+ * <span class="simpara">     不是数字    </span>
+ * 
  * Not A Number
  */
 define('NAN', (float)NAN);
 
 /**
+ * <span class="simpara">     四舍五入（当值为 .5 时，向远离 0 的方向舍入。如 -2.5 舍入为 -3，2.5 舍入为 3）    </span>
+ * 
  * Round halves up
- * @link https://php.net/manual/en/math.constants.php
+ * @link https://php.net/manual/zh/math.constants.php
  */
 define('PHP_ROUND_HALF_UP', 1);
 
 /**
+ * <span class="simpara">     四舍五入（当值为 .5 时，向朝向 0 的方向舍入。如 -2.5 舍入为 -2，2.5 舍入为 2）    </span>
+ * 
  * Round halves down
- * @link https://php.net/manual/en/math.constants.php
+ * @link https://php.net/manual/zh/math.constants.php
  */
 define('PHP_ROUND_HALF_DOWN', 2);
 
 /**
+ * <span class="simpara">     银行家舍入（四舍六入五取偶法）    </span>
+ * 
  * Round halves to even numbers
- * @link https://php.net/manual/en/math.constants.php
+ * @link https://php.net/manual/zh/math.constants.php
  */
 define('PHP_ROUND_HALF_EVEN', 3);
 
 /**
+ * <span class="simpara">     四舍六入五取奇法（跟四舍六入五取偶法相对。但是中文并没有相关示例）    </span>
+ * 
  * Round halves to odd numbers
- * @link https://php.net/manual/en/math.constants.php
+ * @link https://php.net/manual/zh/math.constants.php
  */
 define('PHP_ROUND_HALF_ODD', 4);
 /**
@@ -1684,6 +1730,10 @@ define('IMAGETYPE_COUNT', 20);
  * @since 8.1
  */
 define('IMAGETYPE_AVIF', 19);
+
+define('IMAGETYPE_HEIF', 20);
+
+define('IMAGETYPE_SVG', 21);
 /**
  * <span class="simpara">     IPv4 Address Resource.    </span>
  * 

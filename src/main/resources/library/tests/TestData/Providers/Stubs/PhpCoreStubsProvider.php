@@ -25,7 +25,8 @@ class PhpCoreStubsProvider
             'SPL',
             'standard',
             'superglobals',
-            'tokenizer'
+            'tokenizer',
+            'uri'
         ],
         'BUNDLED' => [
             'apache',

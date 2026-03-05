@@ -179,7 +179,7 @@ define('CURLOPT_HTTPHEADER', 10023);
 define('CURLOPT_NOPROGRESS', 43);
 
 /**
- * <span class="simpara">         The cURL handle.        </span>
+ * <span class="simpara">         cURL 句柄。        </span>
  * 
  * A callback accepting five parameters.
  * The first is the cURL resource,
@@ -296,7 +296,7 @@ define('CURLOPT_MAX_RECV_SPEED_LARGE', 30146);
  */
 define('CURLOPT_MAX_SEND_SPEED_LARGE', 30145);
 /**
- * <span class="simpara">         The cURL handle.        </span>
+ * <span class="simpara">         cURL 句柄。        </span>
  * 
  * A callback accepting three parameters.
  * The first is the cURL resource, the second is a string containing a password prompt, and the third is the maximum password length.
@@ -624,7 +624,7 @@ define('CURLOPT_FILETIME', 69);
  */
 define('CURLOPT_WRITEFUNCTION', 20011);
 /**
- * <span class="simpara">         The cURL handle.        </span>
+ * <span class="simpara">         cURL 句柄。        </span>
  * 
  * A callback accepting three parameters.
  * The first is the cURL resource,
@@ -636,7 +636,7 @@ define('CURLOPT_WRITEFUNCTION', 20011);
  */
 define('CURLOPT_READFUNCTION', 20012);
 /**
- * <span class="simpara">         The cURL handle.        </span>
+ * <span class="simpara">         cURL 句柄。        </span>
  * 
  * A callback accepting two parameters. The first is the cURL resource, the second is a string with the header data to be written.
  * The header data must be written by this callback. Return the number of bytes written.
@@ -714,7 +714,7 @@ define('CURLOPT_CAINFO', 10065);
  */
 define('CURLOPT_CAPATH', 10097);
 /**
- * <p class="simpara">       自 PHP 8.0.0 起，<span class="function">{@link curl_close()}</span> 为空操作（什么都不做），<em>不会</em>销毁句柄。如果需要在句柄自动销毁之前写入       cookie，在句柄上调用 <span class="function">{@link unset()}</span>。      </p>
+ * <p class="simpara">       自 PHP 8.0.0 起，<span class="function">{@link curl_close()}</span> 为空操作（什么都不做），<em>不会</em>销毁句柄。如果需要在句柄自动销毁之前写入       cookie，使用 <code class="code">curl_setopt(\$ch, CURLOPT_COOKIELIST, "FLUSH");</code>。      </p>
  * 
  * The name of a file to save all internal cookies to when the handle is closed, e.g. after a call to curl_close.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
@@ -2502,7 +2502,7 @@ define('CURLOPT_PROXY_SERVICE_NAME', 10235);
 define('CURLOPT_SERVICE_NAME', 10236);
 
 /**
- * <span class="simpara">         The cURL handle.        </span>
+ * <span class="simpara">         cURL 句柄。        </span>
  * 
  * @since 8.3
  */
@@ -5115,3 +5115,23 @@ define('CURLINFO_SSL_DATA_IN', 6);
  * @since 8.4
  */
 define('CURLINFO_POSTTRANSFER_TIME_T', 6291523);
+
+
+define('CURLFOLLOW_ALL', 1);
+
+
+define('CURLFOLLOW_OBEYCODE', 2);
+
+define('CURLFOLLOW_FIRSTONLY', 3);
+
+define('CURLINFO_HTTPAUTH_USED', 2097221);
+
+define('CURLINFO_PROXYAUTH_USED', 2097222);
+
+define('CURLINFO_QUEUE_TIME_T', 6291521);
+
+define('CURLINFO_USED_PROXY', 2097218);
+
+define('CURLINFO_CONN_ID', 6291520);
+
+define('CURLOPT_SSL_SIGNATURE_ALGORITHMS', 10328);

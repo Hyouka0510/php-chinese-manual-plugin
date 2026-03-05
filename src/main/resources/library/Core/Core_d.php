@@ -211,6 +211,10 @@ define('ZEND_THREAD_SAFE', false);
  * <span class="simpara">     表示当前 PHP 版本是否为调试版本。    </span>
  */
 define('ZEND_DEBUG_BUILD', false);
+
+define('ZEND_VM_KIND_HYBRID', 4);
+
+define('ZEND_VM_KIND', ZEND_VM_KIND_HYBRID);
 /**
  * <span class="simpara">     Windows 内部版本号（例如 Windows Vista SP1 是 build 6001）    </span>
  */
@@ -508,3 +512,12 @@ const PHP_SBINDIR = '/usr/local/sbin', PHP_OUTPUT_HANDLER_PROCESSED = 16384;
  * @link https://php.net/manual/zh/reserved.constants.php
  */
 define('PHP_MANDIR', '/usr/local/php/php/man');
+
+/**
+ * <span class="simpara">     PHP 的构建日期和时间，格式为 <code class="literal">"M d Y H:i:s"</code>。自 PHP 8.5.0 起可用。    </span>
+ */
+define('PHP_BUILD_DATE', 'Aug 14 2025 22:21:58');
+/**
+ * <span class="simpara">     构建 PHP 的提供方。自 PHP 8.5.0 起可用。    </span>
+ */
+define('PHP_BUILD_PROVIDER', 'https://github.com/docker-library/php');

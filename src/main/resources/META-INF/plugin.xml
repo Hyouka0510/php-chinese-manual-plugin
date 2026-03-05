@@ -33,6 +33,11 @@
 <ul>
     <li>更新phpstorm-stubs-chinese</li>
 </ul>
+<h3>Version 1.1.0</h3>
+<ul>
+    <li>更新支持到PHP8.5</li>
+    <li>修复部分中文乱码</li>
+</ul>
 ]]>
     </change-notes>
     <idea-version since-build="203"/>
@@ -40,6 +45,10 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="top.netools.phpcm.PluginStartup"/>
+    </extensions>
     <extensions defaultExtensionNs="com.jetbrains.php">
         <libraryRoot id="library" path="/library/" runtime="true" order="first"/>
     </extensions>

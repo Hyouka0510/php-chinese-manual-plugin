@@ -682,6 +682,16 @@ class StubsTypeHintsTest extends AbstractBaseStubsTestCase
             )
         );
 
+        // Treat PhpDoc 'static' as the declaring class short name (e.g., DateTime)
+
+        $classShortName = self::getTypePossibleNamespace(ltrim($classId, '\\'));
+
+        $unifiedPhpDocTypes = array_map(
+            static fn (string $t) => $t === 'static' ? $classShortName : $t,
+
+            $unifiedPhpDocTypes
+        );
+
         $unifiedSignatureTypes = array_map(self::getTypePossibleNamespace(...), $function->returnTypesFromSignature);
         if (count($unifiedSignatureTypes) === 1) {
 
@@ -861,6 +871,9 @@ class StubsTypeHintsTest extends AbstractBaseStubsTestCase
 
     private static function getTypePossibleNamespace(string $type): string
     {
+        // Normalize array-like notations (e.g., T[], list<T>, array{...}, array<...>) to 'array' first
+
+        $type = self::replaceArrayNotations($type);
 
         $typeParts = explode('\\', $type);
         return end($typeParts);
