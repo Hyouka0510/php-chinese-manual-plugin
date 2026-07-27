@@ -3,12 +3,16 @@
 namespace PSpell;
 
 /**
+ * <div id="class.pspell-dictionary" class="reference"> <h1 class="title">The PSpell\Dictionary class</h1>  <div class="partintro"><p class="verinfo">(PHP 8 &gt;= 8.1.0)</p>    <div class="section" id="pspell-dictionary.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces a <span class="literal">pspell</span> resource as of PHP 8.1.0.   </p>  </div>    <div class="section" id="pspell-dictionary.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">PSpell\Dictionary</strong></strong>     {</div>   }</div>     </div> </div></div>
+ * 
  * A fully opaque class which replaces a pspell resource as of PHP 8.1.0.
  * @since 8.1
  */
 final class Dictionary {}
 
 /**
+ * <div id="class.pspell-config" class="reference"> <h1 class="title">The PSpell\Config class</h1>  <div class="partintro"><p class="verinfo">(PHP 8 &gt;= 8.1.0)</p>    <div class="section" id="pspell-config.intro">   <h2 class="title">简介</h2>   <p class="para">    A fully opaque class which replaces a <span class="literal">pspell config</span> resource as of PHP 8.1.0.   </p>  </div>    <div class="section" id="pspell-config.synopsis">   <h2 class="title">类摘要</h2>      <div class="classsynopsis"><div class="classsynopsisinfo">         <span class="modifier">final</span>     <span class="modifier">class</span> <strong class="classname"><strong class="classname">PSpell\Config</strong></strong>     {</div>   }</div>     </div> </div></div>
+ * 
  * A fully opaque class which replaces a pspell config resource as of PHP 8.1.0.
  * @since 8.1
  */

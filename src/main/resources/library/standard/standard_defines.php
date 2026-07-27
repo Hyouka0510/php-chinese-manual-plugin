@@ -43,7 +43,7 @@ define('INI_SCANNER_NORMAL', 0);
  * <span class="simpara">     Typed INI 扫描模式。    </span>
  * 
  * Typed INI scanner mode
- * @since 5.6.1
+ * @since 5.6
  * @link https://php.net/manual/zh/function.parse-ini-file.php
  */
 define('INI_SCANNER_TYPED', 2);
@@ -713,7 +713,7 @@ define('STREAM_CLIENT_CONNECT', 4);
  * 
  * Used with stream_socket_shutdown to disable
  * further receptions.
- * @since 5.2.1
+ * @since 5.2
  * @link https://php.net/manual/zh/stream.constants.php
  */
 define('STREAM_SHUT_RD', 0);
@@ -723,7 +723,7 @@ define('STREAM_SHUT_RD', 0);
  * 
  * Used with stream_socket_shutdown to disable
  * further transmissions.
- * @since 5.2.1
+ * @since 5.2
  * @link https://php.net/manual/zh/stream.constants.php
  */
 define('STREAM_SHUT_WR', 1);
@@ -733,7 +733,7 @@ define('STREAM_SHUT_WR', 1);
  * 
  * Used with stream_socket_shutdown to disable
  * further receptions and transmissions.
- * @since 5.2.1
+ * @since 5.2
  * @link https://php.net/manual/zh/stream.constants.php
  */
 define('STREAM_SHUT_RDWR', 2);
@@ -918,7 +918,7 @@ define('FILE_NO_DEFAULT_CONTEXT', 16);
  * This constant has no effect prior to PHP 6. It is only available for
  * forward compatibility.
  * </p>
- * @since 5.2.7
+ * @since 5.2
  * @link https://php.net/manual/zh/filesystem.constants.php
  * @deprecated 8.1
  */
@@ -931,7 +931,7 @@ define('FILE_TEXT', 0);
  * This constant has no effect prior to PHP 6. It is only available for
  * forward compatibility.
  * </p>
- * @since 5.2.7
+ * @since 5.2
  * @link https://php.net/manual/zh/filesystem.constants.php
  * @deprecated 8.1
  */
@@ -970,7 +970,7 @@ define('FNM_PERIOD', 4);
 define('FNM_CASEFOLD', 16);
 
 /**
- * <span class="simpara">      Return value indicating that the userspace filter      returned buckets in <code class="parameter">\$out</code>.     </span>
+ * <span class="simpara">      Return value indicating that the userspace filter      returned buckets in <code class="parameter">out</code>.     </span>
  * 
  * Return Code indicating that the
  * userspace filter returned buckets in $out.
@@ -979,7 +979,7 @@ define('FNM_CASEFOLD', 16);
 define('PSFS_PASS_ON', 2);
 
 /**
- * <span class="simpara">      Return value indicating that the userspace filter      did not return buckets in <code class="parameter">\$out</code>.      (i.e. No data available.)     </span>
+ * <span class="simpara">      Return value indicating that the userspace filter      did not return buckets in <code class="parameter">out</code>.      (i.e. No data available.)     </span>
  * 
  * Return Code indicating that the
  * userspace filter did not return buckets in $out
@@ -1288,15 +1288,15 @@ define('PATH_SEPARATOR', ":");
 /**
  * <span class="simpara">     扩展 {a,b,c} 为匹配“a”、“b”或“c”    </span>
  */
-define('GLOB_BRACE', 1024);
+define('GLOB_BRACE', 128);
 /**
  * <span class="simpara">     向每个返回的目录添加斜线（在 Windows 上为反斜线）    </span>
  */
-define('GLOB_MARK', 2);
+define('GLOB_MARK', 8);
 /**
  * <span class="simpara">     按照目录中出现的顺序返回文件（不排序）。当不使用此 flag 时，路径名按字母顺序排序    </span>
  */
-define('GLOB_NOSORT', 4);
+define('GLOB_NOSORT', 32);
 /**
  * <span class="simpara">     如果没有找到匹配该模式的文件，则返回搜索模式    </span>
  */
@@ -1304,11 +1304,11 @@ define('GLOB_NOCHECK', 16);
 /**
  * <span class="simpara">     反斜线不引用元字符    </span>
  */
-define('GLOB_NOESCAPE', 64);
+define('GLOB_NOESCAPE', 4096);
 /**
  * <span class="simpara">     读取错误（如目录无法读取）时停止，默认忽略错误。    </span>
  */
-define('GLOB_ERR', 1);
+define('GLOB_ERR', 4);
 /**
  * <span class="simpara">     只返回与模式匹配的目录条目    </span>
  */
@@ -1316,7 +1316,7 @@ define('GLOB_ONLYDIR', 1073741824);
 /**
  * <span class="simpara">     所有 <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-available-flags">GLOB_<span class="replaceable">*</span></a></code></strong> flag 的组合。等同于     <code class="literal">0</code> | <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-brace">GLOB_BRACE</a></code></strong> |     <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-mark">GLOB_MARK</a></code></strong> | <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-nosort">GLOB_NOSORT</a></code></strong> |     <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-nocheck">GLOB_NOCHECK</a></code></strong> | <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-noescape">GLOB_NOESCAPE</a></code></strong> |     <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-err">GLOB_ERR</a></code></strong> | <strong><code><a href="https://php.net/manual/zh/filesystem.constants.php#constant.glob-onlydir">GLOB_ONLYDIR</a></code></strong>    </span>
  */
-define('GLOB_AVAILABLE_FLAGS', 1073741911);
+define('GLOB_AVAILABLE_FLAGS', 1073746108);
 /**
  * <span class="simpara">    </span>
  */
@@ -1397,7 +1397,7 @@ define('SORT_STRING', 2);
  * 
  * SORT_LOCALE_STRING is used to compare items as
  * strings, based on the current locale.
- * @since 5.0.2
+ * @since 5.0
  * @link https://php.net/manual/zh/array.constants.php
  */
 define('SORT_LOCALE_STRING', 5);
@@ -1722,7 +1722,7 @@ define('IMAGETYPE_UNKNOWN', 0);
 /**
  * <span class="simpara">     可用于 <span class="function">{@link image_type_to_mime_type()}</span> 和 <span class="function">{@link image_type_to_extension()}</span>     函数的图像类型常量编号（包括 unknown 类型）。    </span>
  */
-define('IMAGETYPE_COUNT', 20);
+define('IMAGETYPE_COUNT', 22);
 
 /**
  * <span class="simpara">    Image type constant used by the <span class="function">{@link image_type_to_mime_type()}</span>    and <span class="function">{@link image_type_to_extension()}</span> functions.</span>
@@ -2045,28 +2045,70 @@ define('STREAM_CRYPTO_METHOD_SSLv23_SERVER', 120);
  */
 define('STREAM_CRYPTO_METHOD_TLS_SERVER', 120);
 
+/**
+ * <span class="simpara">     Any TLS or SSL version on a client stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_ANY_CLIENT", 127);
+/**
+ * <span class="simpara">     Any TLS or SSL version on a server stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_ANY_SERVER", 126);
+/**
+ * <span class="simpara">     TLS 1.0 on a client stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT", 9);
+/**
+ * <span class="simpara">     TLS 1.0 on a server stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_0_SERVER", 8);
+/**
+ * <span class="simpara">     TLS 1.1 on a client stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT", 17);
+/**
+ * <span class="simpara">     TLS 1.1 on a server stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_1_SERVER", 16);
+/**
+ * <span class="simpara">     TLS 1.2 on a client stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT", 33);
+/**
+ * <span class="simpara">     TLS 1.2 on a server stream.    </span>
+ */
 define("STREAM_CRYPTO_METHOD_TLSv1_2_SERVER", 32);
 /**
+ * <span class="simpara">     TLS 1.3 on a client stream.    </span>
+ * 
  * @since 7.4
  */
 define("STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT", 65);
 /**
+ * <span class="simpara">     TLS 1.3 on a server stream.    </span>
+ * 
  * @since 7.4
  */
 define("STREAM_CRYPTO_METHOD_TLSv1_3_SERVER", 64);
 
+/**
+ * <span class="simpara">     别名 <strong><code><a href="https://php.net/manual/zh/stream.constants.php#constant.stream-crypto-method-sslv3-server">STREAM_CRYPTO_METHOD_SSLv3_SERVER</a></code></strong>.    </span>
+ */
 define("STREAM_CRYPTO_PROTO_SSLv3", 4);
+/**
+ * <span class="simpara">     别名 <strong><code><a href="https://php.net/manual/zh/stream.constants.php#constant.stream-crypto-method-tlsv1-0-server">STREAM_CRYPTO_METHOD_TLSv1_0_SERVER</a></code></strong>.    </span>
+ */
 define("STREAM_CRYPTO_PROTO_TLSv1_0", 8);
+/**
+ * <span class="simpara">     别名 <strong><code><a href="https://php.net/manual/zh/stream.constants.php#constant.stream-crypto-method-tlsv1-1-server">STREAM_CRYPTO_METHOD_TLSv1_1_SERVER</a></code></strong>.    </span>
+ */
 define("STREAM_CRYPTO_PROTO_TLSv1_1", 16);
+/**
+ * <span class="simpara">     别名 <strong><code><a href="https://php.net/manual/zh/stream.constants.php#constant.stream-crypto-method-tlsv1-2-server">STREAM_CRYPTO_METHOD_TLSv1_2_SERVER</a></code></strong>.    </span>
+ */
 define("STREAM_CRYPTO_PROTO_TLSv1_2", 32);
 /**
+ * <span class="simpara">     别名 <strong><code><a href="https://php.net/manual/zh/stream.constants.php#constant.stream-crypto-method-tlsv1-3-server">STREAM_CRYPTO_METHOD_TLSv1_3_SERVER</a></code></strong>.    </span>
+ * 
  * @since 7.4
  */
 define("STREAM_CRYPTO_PROTO_TLSv1_3", 64);
@@ -2078,6 +2120,8 @@ define("STREAM_CRYPTO_PROTO_TLSv1_3", 64);
  */
 define('MT_RAND_MT19937', 0);
 /**
+ * <span class="simpara">      Indicates that an incorrect Mersenne Twister implementation will be used by the algorithm, when      creating a <span class="classname"><a href="https://php.net/manual/zh/class.random-engine-mt19937.php" class="classname">Random\Engine\Mt19937</a></span> instance using <span class="function">{@link Random\Engine\Mt19937::__construct()}</span>      or seeding the global Mersenne Twister with <span class="function">{@link mt_srand()}</span>.     </span>
+ * 
  * @since 7.1
  * @deprecated 8.3
  */

@@ -49,7 +49,7 @@ class SQLiteDatabase
      * {@see sqlite_unbuffered_query()} instead.
      * </p>
      */
-    public function query($query, $result_type, &$error_message) {}
+    public function query($query, $result_type = SQLITE_BOTH, &$error_message) {}
 
     /**
      * (PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)
@@ -107,7 +107,7 @@ class SQLiteDatabase
      * {@link https://php.net/manual/en/sqlite.configuration.php#ini.sqlite.assoc-case sqlite.assoc_case} configuration
      * option.</p>
      */
-    public function arrayQuery($query, $result_type, $decode_binary) {}
+    public function arrayQuery($query, $result_type = SQLITE_BOTH, $decode_binary = true) {}
 
     /**
      * (PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.1)
@@ -118,7 +118,7 @@ class SQLiteDatabase
      * @param bool $decode_binary [optional]
      * @return array
      */
-    public function singleQuery($query, $first_row_only, $decode_binary) {}
+    public function singleQuery($query, $first_row_only = true, $decode_binary = true) {}
 
     /**
      * (PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)
@@ -277,7 +277,7 @@ final class SQLiteResult implements Iterator, Countable
      * @param bool $decode_binary [optional]
      * @return object
      */
-    public function fetchObject($class_name, $ctor_params, $decode_binary = true) {}
+    public function fetchObject($class_name = 'stdClass', $ctor_params = [], $decode_binary = true) {}
 
     /**
      * (PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.1)
@@ -301,7 +301,7 @@ final class SQLiteResult implements Iterator, Countable
      * You should normally leave this value at its default, unless you are interoperating with databases created by other sqlite capable applications.</p>
      * @return object
      */
-    public function fetchAll($result_type, $decode_binary = true) {}
+    public function fetchAll($result_type = SQLITE_BOTH, $decode_binary = true) {}
 
     /**
      * (PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)
@@ -376,7 +376,7 @@ final class SQLiteResult implements Iterator, Countable
      * Return the key of the current element
      * @link https://php.net/manual/en/iterator.key.php
      * @return mixed scalar on success, or null on failure.
-     * @since 5.0.0
+     * @since 5.0
      */
     public function key() {}
 
@@ -384,7 +384,7 @@ final class SQLiteResult implements Iterator, Countable
      * Seek to the next row number
      * @link https://php.net/manual/en/function.sqlite-next.php
      * @return bool Returns <b>TRUE</b> on success, or <b>FALSE</b> if there are no more rows.
-     * @since 5.0.0
+     * @since 5.0
      */
     public function next() {}
 
@@ -395,7 +395,7 @@ final class SQLiteResult implements Iterator, Countable
      * Returns <b>TRUE</b> if there are more rows available from the
      * <i>result</i> handle, or <b>FALSE</b> otherwise.
      * </p>
-     * @since 5.0.0
+     * @since 5.0
      */
     public function valid() {}
 
@@ -403,7 +403,7 @@ final class SQLiteResult implements Iterator, Countable
      * Rewind the Iterator to the first element
      * @link https://php.net/manual/en/iterator.rewind.php
      * @return void Any returned value is ignored.
-     * @since 5.0.0
+     * @since 5.0
      */
     public function rewind() {}
 
@@ -415,7 +415,7 @@ final class SQLiteResult implements Iterator, Countable
      * <p>
      * The return value is cast to an integer.
      * </p>
-     * @since 5.1.0
+     * @since 5.1
      */
     public function count() {}
 
@@ -424,12 +424,12 @@ final class SQLiteResult implements Iterator, Countable
      * @link https://php.net/manual/en/function.sqlite-prev.php
      * @return bool <p> Returns <b>TRUE</b> on success, or <b>FALSE</b> if there are no more previous rows.
      * </p>
-     * @since 5.4.0
+     * @since 5.4
      */
     public function prev() {}
 
     /**
-     *@since 5.4.0
+     *@since 5.4
      * Returns whether or not a previous row is available
      * @link https://php.net/manual/en/function.sqlite-has-prev.php
      * @return bool <p>
@@ -472,7 +472,7 @@ final class SQLiteUnbuffered
      * @param int $result_type [optional]
      * @param bool $decode_binary [optional]
      */
-    public function fetch($result_type, $decode_binary) {}
+    public function fetch($result_type = SQLITE_BOTH, $decode_binary = true) {}
 
     /**
      * @link https://www.php.net/manual/en/function.sqlite-fetch-object.php
@@ -480,24 +480,24 @@ final class SQLiteUnbuffered
      * @param array $ctor_params [optional]
      * @param bool $decode_binary [optional]
      */
-    public function fetchObject($class_name, $ctor_params, $decode_binary) {}
+    public function fetchObject($class_name = 'stdClass', $ctor_params = [], $decode_binary = true) {}
 
     /**
      * @param bool $decode_binary [optional]
      */
-    public function fetchSingle($decode_binary) {}
+    public function fetchSingle($decode_binary = true) {}
 
     /**
      * @param int $result_type [optional]
      * @param bool $decode_binary [optional]
      */
-    public function fetchAll($result_type, $decode_binary) {}
+    public function fetchAll($result_type = SQLITE_BOTH, $decode_binary = true) {}
 
     /**
      * @param $index_or_name
      * @param $decode_binary [optional]
      */
-    public function column($index_or_name, $decode_binary) {}
+    public function column($index_or_name, $decode_binary = true) {}
 
 
     public function numFields() {}
@@ -511,7 +511,7 @@ final class SQLiteUnbuffered
      * @param int $result_type [optional]
      * @param bool $decode_binary [optional]
      */
-    public function current($result_type, $decode_binary) {}
+    public function current($result_type = SQLITE_BOTH, $decode_binary = true) {}
 
 
     public function next() {}
@@ -532,7 +532,7 @@ final class SQLiteException extends RuntimeException
      * Clone the exception
      * @link https://php.net/manual/en/exception.clone.php
      * @return void
-     * @since 5.1.0
+     * @since 5.1
      */
     final private function __clone() {}
 
@@ -542,7 +542,7 @@ final class SQLiteException extends RuntimeException
      * @param $message [optional]
      * @param $code [optional]
      * @param $previous [optional]
-     * @since 5.1.0
+     * @since 5.1
      */
     #[Pure]
     public function __construct($message, $code, $previous) {}
@@ -551,7 +551,7 @@ final class SQLiteException extends RuntimeException
      * String representation of the exception
      * @link https://php.net/manual/en/exception.tostring.php
      * @return string the string representation of the exception.
-     * @since 5.1.0
+     * @since 5.1
      */
     public function __toString() {}
 }

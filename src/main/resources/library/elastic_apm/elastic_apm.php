@@ -229,6 +229,7 @@ interface TransactionBuilderInterface
     public function capture(\Closure $callback);
 }
 
+
 interface TransactionInterface extends ExecutionSegmentInterface
 {
     /**
@@ -342,6 +343,7 @@ interface TransactionInterface extends ExecutionSegmentInterface
     public function ensureParentId(): string;
 }
 
+
 interface SpanInterface extends ExecutionSegmentInterface
 {
     /**
@@ -402,6 +404,7 @@ interface SpanInterface extends ExecutionSegmentInterface
     public function endSpanEx(int $numberOfStackFramesToSkip, ?float $duration = null): void;
 }
 
+
 interface SpanContextInterface extends ExecutionSegmentContextInterface
 {
     /**
@@ -426,6 +429,7 @@ interface SpanContextInterface extends ExecutionSegmentContextInterface
     public function destination(): SpanContextDestinationInterface;
 }
 
+
 interface SpanContextDbInterface
 {
     /**
@@ -439,6 +443,7 @@ interface SpanContextDbInterface
      */
     public function setStatement(?string $statement): void;
 }
+
 
 interface SpanContextHttpInterface
 {
@@ -789,6 +794,7 @@ class CustomErrorData
     public $type = null;
 }
 
+
 interface TransactionContextInterface extends ExecutionSegmentContextInterface
 {
     /**
@@ -823,6 +829,7 @@ interface ExecutionSegmentContextInterface
     public function setLabel(string $key, $value): void;
 }
 
+
 interface TransactionContextRequestInterface
 {
     /**
@@ -845,6 +852,7 @@ interface TransactionContextRequestInterface
      */
     public function url(): TransactionContextRequestUrlInterface;
 }
+
 
 interface TransactionContextRequestUrlInterface
 {

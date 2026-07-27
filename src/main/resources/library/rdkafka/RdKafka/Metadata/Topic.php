@@ -5,6 +5,9 @@ namespace RdKafka\Metadata;
 
 class Topic
 {
+
+    private function __construct() {}
+
     /**
      * @return string
      */

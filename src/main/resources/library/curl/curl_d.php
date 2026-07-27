@@ -28,7 +28,7 @@ define('CURLOPT_CONNECT_ONLY', 141);
  * With the <b>CURLOPT_FOLLOWLOCATION</b> option enabled:
  *   this is empty. The redirect URL in this case is available in <b>CURLINFO_EFFECTIVE_URL</b>
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.3.7
+ * @since 5.3
  */
 define('CURLINFO_REDIRECT_URL', 1048607);
 
@@ -37,7 +37,7 @@ define('CURLINFO_REDIRECT_URL', 1048607);
  * 
  * IP address of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.4.7
+ * @since 5.4
  */
 define('CURLINFO_PRIMARY_IP', 1048608);
 /**
@@ -45,7 +45,7 @@ define('CURLINFO_PRIMARY_IP', 1048608);
  * 
  * Destination port of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.4.7
+ * @since 5.4
  */
 define('CURLINFO_PRIMARY_PORT', 2097192);
 /**
@@ -53,7 +53,7 @@ define('CURLINFO_PRIMARY_PORT', 2097192);
  * 
  * Local (source) IP address of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.4.7
+ * @since 5.4
  */
 define('CURLINFO_LOCAL_IP', 1048617);
 /**
@@ -61,7 +61,7 @@ define('CURLINFO_LOCAL_IP', 1048617);
  * 
  * Local (source) port of the most recent connection
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.4.7
+ * @since 5.4
  */
 define('CURLINFO_LOCAL_PORT', 2097194);
 /**
@@ -234,14 +234,14 @@ define('CURLOPT_NETRC', 51);
  * A bitmask of 1 (301 Moved Permanently), 2 (302 Found) and 4 (303 See Other) if the HTTP POST method should be maintained
  * when <b>CURLOPT_FOLLOWLOCATION</b> is set and a specific type of redirect occurs.
  * @link https://secure.php.net/manual/en/function.curl-setopt.php
- * @since 5.3.2
+ * @since 5.3
  */
 define('CURLOPT_POSTREDIR', 161);
 /**
  * <b>TRUE</b> to output SSL certification information to STDERR on secure transfers.
  * Requires <b>CURLOPT_VERBOSE</b> to be on to have an effect.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 5.3.2
+ * @since 5.3
  */
 define('CURLOPT_CERTINFO', 172);
 /**
@@ -265,7 +265,7 @@ define('CURLOPT_MUTE', -1);
  * <b>CURLPROTO_TELNET</b>, <b>CURLPROTO_LDAP</b>, <b>CURLPROTO_LDAPS</b>, <b>CURLPROTO_DICT</b>, <b>CURLPROTO_FILE</b>, <b>CURLPROTO_TFTP</b>,
  * <b>CURLPROTO_ALL</b>
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 5.2.10
+ * @since 5.2
  */
 define('CURLOPT_PROTOCOLS', 181);
 /**
@@ -276,7 +276,7 @@ define('CURLOPT_PROTOCOLS', 181);
  * This is a difference compared to pre-7.19.4 versions which unconditionally would follow to all protocols supported.
  * See also <b>CURLOPT_PROTOCOLS</b> for protocol constant values.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 5.2.10
+ * @since 5.2
  */
 define('CURLOPT_REDIR_PROTOCOLS', 182);
 /**
@@ -517,8 +517,8 @@ define('CURL_SSLVERSION_SSLv3', 3);
  * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.6.3
- * @since 5.5.19
+ * @since 5.6
+ * @since 5.5
  */
 define('CURL_SSLVERSION_TLSv1_0', 4);
 
@@ -527,8 +527,8 @@ define('CURL_SSLVERSION_TLSv1_0', 4);
  * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.6.3
- * @since 5.5.19
+ * @since 5.6
+ * @since 5.5
  */
 define('CURL_SSLVERSION_TLSv1_1', 5);
 
@@ -537,8 +537,8 @@ define('CURL_SSLVERSION_TLSv1_1', 5);
  * 
  * Value for the <b>CURLOPT_SSLVERSION</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.6.3
- * @since 5.5.19
+ * @since 5.6
+ * @since 5.5
  */
 define('CURL_SSLVERSION_TLSv1_2', 6);
 /**
@@ -692,7 +692,7 @@ define('CURLOPT_CONNECTTIMEOUT', 78);
  * If libcurl is built to use the standard system name resolver, that portion of the connect
  * will still use full-second resolution for timeouts with a minimum timeout allowed of one second.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 5.2.3
+ * @since 5.2
  */
 define('CURLOPT_CONNECTTIMEOUT_MS', 156);
 /**
@@ -728,7 +728,7 @@ define('CURLOPT_SSL_CIPHER_LIST', 10083);
 /**
  * <b>TRUE</b> to return the raw output when CURLOPT_RETURNTRANSFER is used.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @deprecated 5.1.3
+ * @deprecated 5.1
  */
 define('CURLOPT_BINARYTRANSFER', 19914);
 /**
@@ -825,7 +825,7 @@ define('CURLOPT_FTP_USE_EPRT', 106);
 /**
  * <b>TRUE</b> to disable TCP's Nagle algorithm, which tries to minimize the number of small packets on the network.
  * @link https://php.net/manual/en/curl.constants.php
- * @since 5.2.1
+ * @since 5.2
  */
 define('CURLOPT_TCP_NODELAY', 121);
 /**
@@ -908,7 +908,7 @@ define('CURLAUTH_NTLM', 8);
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
  */
-define('CURLAUTH_ANY', -17);
+define('CURLAUTH_ANY', 4294967279);
 /**
  * <span class="simpara">    </span>
  * 
@@ -917,7 +917,7 @@ define('CURLAUTH_ANY', -17);
  * @link https://www.php.net/manual/en/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html
  */
-define('CURLAUTH_ANYSAFE', -18);
+define('CURLAUTH_ANYSAFE', 4294967278);
 /**
  * The HTTP authentication method(s) to use for the proxy connection.
  * Use the same bitmasks as described in <b>CURLOPT_HTTPAUTH</b>.
@@ -936,7 +936,7 @@ define('CURLOPT_FTP_CREATE_MISSING_DIRS', 110);
  * This data can subsequently be retrieved with the <b>CURLINFO_PRIVATE</b> option of {@see curl_getinfo()}. cURL does nothing with this data.
  * When using a cURL multi handle, this private data is typically a unique key to identify a standard cURL handle.
  * @link https://php.net/manual/en/curl.constants.php
- * @since 5.2.4
+ * @since 5.2
  */
 define('CURLOPT_PRIVATE', 10103);
 
@@ -1246,7 +1246,7 @@ define('CURLINFO_REDIRECT_COUNT', 2097172);
  * 
  * <b>TRUE</b> to track the handle's request string
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.1.3
+ * @since 5.1
  */
 define('CURLINFO_HEADER_OUT', 2);
 
@@ -1255,7 +1255,7 @@ define('CURLINFO_HEADER_OUT', 2);
  * 
  * Private data associated with this cURL handle, previously set with the <b>CURLOPT_PRIVATE</b> option of {@see curl_getinfo()}
  * @link https://www.php.net/manual/en/function.curl-getinfo.php
- * @since 5.2.4
+ * @since 5.2
  */
 define('CURLINFO_PRIVATE', 1048597);
 
@@ -2238,7 +2238,7 @@ define('CURLPROTO_TFTP', 2048);
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  */
-define('CURLPROTO_ALL', -1);
+define('CURLPROTO_ALL', 4294967295);
 
 /**
  * <span class="simpara">     传递 1 启用或传递 0 禁用。在多句柄上启用管道将使其尝试对使用此句柄的传输尽可能执行 HTTP     管道操作。这意味着如果添加的第二个请求可以使用已有连接，则第二个请求将在同一连接上使用“管道”。自     cURL 7.43.0 起，该值是位掩码，传递 2 将尝试在现有的 HTTP/2 连接上多路复用新传输。传递     3 指示 cURL 请求彼此独立的管道和多路复用。自 cURL 7.62.0 起，设置管道 bit 没有效果。除了整数文字，还可以使用     CURLPIPE_* 常量。自 cURL 7.16.0 起可用。    </span>
@@ -2320,7 +2320,7 @@ define('CURLOPT_KEYPASSWD', 10026);
  * libcurl will attempt to create any remote directory that it fails to "move" into.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLFTP_CREATE_DIR', 1);
 
@@ -2331,7 +2331,7 @@ define('CURLFTP_CREATE_DIR', 1);
  * libcurl will not attempt to create any remote directory that it fails to "move" into.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLFTP_CREATE_DIR_NONE', 0);
 
@@ -2343,7 +2343,7 @@ define('CURLFTP_CREATE_DIR_NONE', 0);
  * Authentication is performed by a separate binary application that is executed when needed.
  * The name of the application is specified at compile time but is typically <em>/usr/bin/ntlm_auth</em>.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLAUTH_NTLM_WB', 32);
 
@@ -2354,7 +2354,7 @@ define('CURLAUTH_NTLM_WB', 32);
  * Alias of <b>CURL_HTTP_VERSION_2_0</b>
  * Attempts HTTP 2
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_HTTP_VERSION_2', 3);
 
@@ -2364,7 +2364,7 @@ define('CURL_HTTP_VERSION_2', 3);
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Attempts HTTP 2 over TLS (HTTPS) only
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_HTTP_VERSION_2TLS', 4);
 
@@ -2374,42 +2374,42 @@ define('CURL_HTTP_VERSION_2TLS', 4);
  * Value for the <b>CURLOPT_HTTP_VERSION</b> option.
  * Issues non-TLS HTTP requests using HTTP/2 without HTTP/1.1 Upgrade
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_HTTP_VERSION_2_PRIOR_KNOWLEDGE', 5);
 
 /**
  * <b>TRUE</b> to enable sending the initial response in the first packet.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SASL_IR', 218);
 
 /**
  * Set the name of the network interface that the DNS resolver should bind to. This must be an interface name (not an address).
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_DNS_INTERFACE', 10221);
 
 /**
  * Set the local IPv4 address that the resolver should bind to. The argument should contain a single numerical IPv4 address as a string.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_DNS_LOCAL_IP4', 10222);
 
 /**
  * Set the local IPv6 address that the resolver should bind to. The argument should contain a single numerical IPv6 address as a string.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_DNS_LOCAL_IP6', 10223);
 
 /**
  * Specifies the OAuth 2.0 access token.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_XOAUTH2_BEARER', 10220);
 
@@ -2417,14 +2417,14 @@ define('CURLOPT_XOAUTH2_BEARER', 10220);
  * Can be used to set protocol specific login options, such as the preferred authentication mechanism via "<em>AUTH=NTLM</em>" or "<em>AUTH=*</em>",
  * and should be used in conjunction with the <b>CURLOPT_USERNAME</b> option.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_LOGIN_OPTIONS', 10224);
 
 /**
  * The timeout for Expect: 100-continue responses in milliseconds. Defaults to 1000 milliseconds.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_EXPECT_100_TIMEOUT_MS', 227);
 
@@ -2432,7 +2432,7 @@ define('CURLOPT_EXPECT_100_TIMEOUT_MS', 227);
  * <b>FALSE</b> to disable ALPN in the SSL handshake (if the SSL backend libcurl is built to use supports it),
  * which can be used to negotiate http2.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SSL_ENABLE_ALPN', 226);
 
@@ -2440,7 +2440,7 @@ define('CURLOPT_SSL_ENABLE_ALPN', 226);
  * <b>FALSE</b> to disable NPN in the SSL handshake (if the SSL backend libcurl is built to use supports it),
  * which can be used to negotiate http2.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SSL_ENABLE_NPN', 225);
 
@@ -2448,56 +2448,56 @@ define('CURLOPT_SSL_ENABLE_NPN', 225);
  * Set the pinned public key. The string can be the file name of your pinned public key. The file format expected is "<em>PEM</em>" or "<em>DER</em>".
  * The string can also be any number of base64 encoded sha256 hashes preceded by "sha256//" and separated by ";".
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_PINNEDPUBLICKEY', 10230);
 
 /**
  * Enables the use of Unix domain sockets as connection endpoint and sets the path to the given string.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_UNIX_SOCKET_PATH', 10231);
 
 /**
  * <b>TRUE</b> to verify the certificate's status.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SSL_VERIFYSTATUS', 232);
 
 /**
  * <b>TRUE</b> to not handle dot dot sequences.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_PATH_AS_IS', 234);
 
 /**
  * <b>TRUE</b> to enable TLS false start.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SSL_FALSESTART', 233);
 
 /**
  * <b>TRUE</b> to wait for pipelining/multiplexing.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_PIPEWAIT', 237);
 
 /**
  * The proxy authentication service name.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_PROXY_SERVICE_NAME', 10235);
 
 /**
  * The authentication service name.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_SERVICE_NAME', 10236);
 
@@ -2546,7 +2546,7 @@ define('CURLOPT_QUICK_EXIT', 322);
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * libcurl attempts to connect to ssh-agent or pageant and let the agent attempt the authentication.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLSSH_AUTH_AGENT', 16);
 
@@ -2557,7 +2557,7 @@ define('CURLSSH_AUTH_AGENT', 16);
  * Default, which means doing no attempts at pipelining or multiplexing.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPIPE_NOTHING', 0);
 
@@ -2569,7 +2569,7 @@ define('CURLPIPE_NOTHING', 0);
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
  * @deprecated 7.4
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPIPE_HTTP1', 1);
 
@@ -2580,7 +2580,7 @@ define('CURLPIPE_HTTP1', 1);
  * If this bit is set, libcurl will try to multiplex the new transfer over an existing connection if possible. This requires HTTP/2.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLMOPT_PIPELINING.html
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPIPE_MULTIPLEX', 2);
 
@@ -2591,7 +2591,7 @@ define('CURLPIPE_MULTIPLEX', 2);
  * Makes <b>CURLOPT_HTTPHEADER</b> headers only get sent to a server and not to a proxy.
  * Proxy headers must be set with <b>CURLOPT_PROXYHEADER</b> to get used.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLHEADER_SEPARATE', 1);
 
@@ -2602,7 +2602,7 @@ define('CURLHEADER_SEPARATE', 1);
  * The headers specified in <b>CURLOPT_HTTPHEADER</b> will be used in requests both to servers and proxies.
  * With this option enabled, <b>CURLOPT_PROXYHEADER</b> will not have any effect.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLHEADER_UNIFIED', 0);
 
@@ -2611,7 +2611,7 @@ define('CURLHEADER_UNIFIED', 0);
  * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPROTO_SMB', 67108864);
 
@@ -2620,7 +2620,7 @@ define('CURLPROTO_SMB', 67108864);
  * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPROTO_SMBS', 134217728);
 
@@ -2635,14 +2635,14 @@ define('CURLPROTO_SMBS', 134217728);
  *   When doing CONNECT, libcurl will send <b>CURLOPT_PROXYHEADER</b> headers only to the proxy and then <b>CURLOPT_HTTPHEADER</b> headers only to the server.
  *  Defaults to <b>CURLHEADER_SEPARATE</b> as of cURL 7.42.1, and <b>CURLHEADER_UNIFIED</b> before.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_HEADEROPT', 229);
 
 /**
  * An array of custom HTTP headers to pass to proxies.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLOPT_PROXYHEADER', 10228);
 
@@ -2651,7 +2651,7 @@ define('CURLOPT_PROXYHEADER', 10228);
  * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_REDIR_POST_301', 1);
 
@@ -2660,7 +2660,7 @@ define('CURL_REDIR_POST_301', 1);
  * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_REDIR_POST_302', 2);
 
@@ -2669,7 +2669,7 @@ define('CURL_REDIR_POST_302', 2);
  * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_REDIR_POST_303', 4);
 
@@ -2678,7 +2678,7 @@ define('CURL_REDIR_POST_303', 4);
  * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLPROXY_HTTP_1_0', 1);
 /**
@@ -2686,7 +2686,7 @@ define('CURLPROXY_HTTP_1_0', 1);
  * 
  * Value for the <b>CURLOPT_POSTREDIR</b> option.
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_REDIR_POST_ALL', 7);
 
@@ -2695,7 +2695,7 @@ define('CURL_REDIR_POST_ALL', 7);
  * 
  * Pass a number that specifies the chunk length threshold for pipelining in bytes.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE', 30010);
 
@@ -2704,7 +2704,7 @@ define('CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE', 30010);
  * 
  * Pass a number that specifies the size threshold for pipelining penalty in bytes.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE', 30009);
 
@@ -2713,7 +2713,7 @@ define('CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE', 30009);
  * 
  * Pass a number that specifies the maximum number of connections to a single host.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLMOPT_MAX_HOST_CONNECTIONS', 7);
 
@@ -2722,7 +2722,7 @@ define('CURLMOPT_MAX_HOST_CONNECTIONS', 7);
  * 
  * Pass a number that specifies the maximum number of requests in a pipeline.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLMOPT_MAX_PIPELINE_LENGTH', 8);
 
@@ -2731,7 +2731,7 @@ define('CURLMOPT_MAX_PIPELINE_LENGTH', 8);
  * 
  * Pass a number that specifies the maximum number of simultaneously open connections.
  * @link https://www.php.net/manual/en/function.curl-multi-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLMOPT_MAX_TOTAL_CONNECTIONS', 13);
 
@@ -2743,7 +2743,7 @@ define('CURLMOPT_MAX_TOTAL_CONNECTIONS', 13);
  * Tells libcurl to retry the CWD command again if the subsequent MKD command fails.
  * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_CREATE_MISSING_DIRS.html
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLFTP_CREATE_DIR_RETRY', 2);
 
@@ -2753,7 +2753,7 @@ define('CURLFTP_CREATE_DIR_RETRY', 2);
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * HTTP Negotiate (SPNEGO) authentication
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURLAUTH_NEGOTIATE', 4);
 
@@ -2797,7 +2797,7 @@ define('CURL_PUSH_DENY', 1);
  * 
  * The default buffer size for <b>CURLOPT_BUFFERSIZE</b>
  * @link https://php.net/manual/zh/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_MAX_READ_SIZE', 10485760);
 
@@ -3520,211 +3520,285 @@ define('CURLOPT_USE_SSL', 119);
  */
 define("CURLOPT_TELNETOPTIONS", 10070);
 /**
+ * <span class="simpara">    由于指定的偏移量超出了文件边界，因此无法恢复下载。   </span>
+ * 
  * The download could not be resumed because the specified offset was out of the file boundary.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_BAD_DOWNLOAD_RESUME", 36);
 /**
+ * <span class="simpara">   </span>
+ * 
  * A file transfer was shorter or larger than expected.
  * This happens when the server first reports an expected transfer size, and then delivers data
  * that doesn't match the previously given size.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_FTP_PARTIAL_FILE", 18);
 /**
+ * <span class="simpara">    如果 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-failonerror">CURLOPT_FAILONERROR</a></code></strong> 设置为 <strong><code><a href="https://php.net/manual/zh/reserved.constants.php#constant.true">true</a></code></strong> 并且 HTTP 服务器返回大于或等于 400 的错误代码，则返回此值。   </span>
+ * 
  * This is returned if <b>CURLOPT_FAILONERROR</b> is set <b>TRUE</b> and the HTTP server returns an error code that is >= 400.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_HTTP_RETURNED_ERROR", 22);
 /**
+ * <span class="simpara">    操作超时。根据条件已达到指定的超时时限。   </span>
+ * 
  * Operation timeout. The specified time-out period was reached according to the conditions.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_OPERATION_TIMEDOUT", 28);
 /**
+ * <span class="simpara">    无法匹配使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-pinnedpublickey">CURLOPT_PINNEDPUBLICKEY</a></code></strong> 指定的固定密钥。   </span>
+ * 
  * Failed to match the pinned key specified with <b>CURLOPT_PINNEDPUBLICKEY</b>.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_SSL_PINNEDPUBKEYNOTMATCH", 90);
 /**
- * @link https://php.net/manual/en/curl.constants.php
+ * <span class="simpara">    <code class="literal">libcurl</code> 中底层 <code class="literal">CURLINFO</code> 枚举中的最后一个枚举值。   </span>
+ * 
+ * @link https://php.net/manual/zh/curl.constants.php
  */
 define("CURLINFO_LASTONE", 64);
 /**
+ * <span class="simpara">    重复添加句柄到多句柄。自 cURL 7.32.1 起可用。   </span>
+ * 
  * An easy handle already added to a multi handle was attempted to get added a second time.
  * @link https://www.php.net/manual/en/function.curl-multi-exec.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLM_ADDED_ALREADY", 7);
 /**
+ * <span class="simpara">    自 cURL 7.10.3 起可用。   </span>
+ * 
  * @link https://curl.haxx.se/libcurl/c/symbols-in-versions.html
  */
 define("CURLSHOPT_NONE", 0);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Default value for the <b>CURLOPT_TIMECONDITION</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_TIMECONDITION.html
  */
 define("CURL_TIMECOND_NONE", 0);
 /**
+ * <span class="simpara">     自 cURL 7.10.6 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * Allows no authentication.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
  */
 define("CURLAUTH_NONE", 0);
 /**
+ * <span class="simpara">    读取 SSL CA 证书时出现问题。   </span>
+ * 
  * Problem with reading the SSL CA cert (path? access rights?)
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_SSL_CACERT_BADFILE", 77);
 /**
+ * <span class="simpara">    SSH 会话期间发生未指定的错误。自 cURL 7.16.1 起可用。   </span>
+ * 
  * An unspecified error occurred during the SSH session.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @link https://curl.haxx.se/libcurl/c/libcurl-errors.html
  */
 define("CURLE_SSH", 79);
 /**
+ * <span class="simpara">     发起关闭操作并等待回复。自 cURL 7.16.2 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Initiate the shutdown and wait for a reply.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
 define("CURLFTPSSL_CCC_ACTIVE", 2);
 /**
+ * <span class="simpara">     不要尝试使用 CCC（清除命令通道）。自 cURL 7.16.2 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Don't attempt to use CCC.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
 define("CURLFTPSSL_CCC_NONE", 0);
 /**
+ * <span class="simpara">     不要发起关闭操作，而是等待服务器进行关闭。不要发送回复。自 cURL 7.16.1 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_FTP_SSL_CCC</b> option.
  * Do not initiate the shutdown, but wait for the server to do it. Do not send a reply.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FTP_SSL_CCC.html
  */
 define("CURLFTPSSL_CCC_PASSIVE", 1);
 /**
+ * <span class="simpara">     所有通信都需要 SSL，否则会失败并出现 <strong><code>CURLE_USE_SSL_FAILED</code></strong>。自 cURL 7.17.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Require SSL for all communication or fail.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
 define("CURLUSESSL_ALL", 3);
 /**
+ * <span class="simpara">     控制连接需要 SSL，否则会失败并出现 <strong><code>CURLE_USE_SSL_FAILED</code></strong>。自 cURL 7.17.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Require SSL for the control connection or fail.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
 define("CURLUSESSL_CONTROL", 2);
 /**
+ * <span class="simpara">     不要尝试使用 SSL。自 cURL 7.17.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Don't attempt to use SSL.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
 define("CURLUSESSL_NONE", 0);
 /**
+ * <span class="simpara">     尝试使用 SSL，如果失败则按正常方式继续。注意，如果协商不成功，服务器可能会关闭连接。自 cURL 7.17.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_USE_SSL</b> option.
  * Try using SSL, proceed as normal otherwise.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_USE_SSL.html
  */
 define("CURLUSESSL_TRY", 1);
 /**
+ * <span class="simpara">    暂停发送和接收数据。自 cURL 7.18.0 起可用。   </span>
+ * 
  * Convenience define that pauses both directions.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_ALL", 5);
 /**
+ * <span class="simpara">    取消暂停发送和接收数据。自 cURL 7.18.0 起可用。   </span>
+ * 
  * Convenience define that unpauses both directions.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_CONT", 0);
 /**
+ * <span class="simpara">    暂停接收数据。自 cURL 7.18.0 起可用。   </span>
+ * 
  * Pause receiving data. There will be no data received on this connection until this function is called again without this bit set.
  * Thus, the write callback (<b>CURLOPT_WRITEFUNCTION</b>) won't be called.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_RECV", 1);
 /**
- * @link https://php.net/manual/en/curl.constants.php
+ * <span class="simpara">    取消暂停接收数据。自 cURL 7.18.0 起可用。   </span>
+ * 
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_RECV_CONT", 0);
 /**
+ * <span class="simpara">    暂停发送数据。自 cURL 7.18.0 起可用。   </span>
+ * 
  * Pause sending data. There will be no data sent on this connection until this function is called again without this bit set.
  * Thus, the read callback (CURLOPT_READFUNCTION) won't be called.
- * @link https://php.net/manual/en/curl.constants.php
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_SEND", 4);
 /**
- * @link https://php.net/manual/en/curl.constants.php
+ * <span class="simpara">    取消暂停发送数据。自 cURL 7.18.0 起可用。   </span>
+ * 
+ * @link https://php.net/manual/zh/curl.constants.php
  * @since 5.5
  */
 define("CURLPAUSE_SEND_CONT", 0);
 /**
+ * <span class="simpara">     自 cURL 7.18.0 起可用。    </span>
+ * 
  * Read callback for data uploads.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_READFUNCTION.html
  */
 define("CURL_READFUNC_PAUSE", 268435457);
 /**
+ * <span class="simpara">     自 cURL 7.18.0 起可用。    </span>
+ * 
  * Set callback for writing received data.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_WRITEFUNCTION.html
  */
 define("CURL_WRITEFUNC_PAUSE", 268435457);
 /**
+ * <span class="simpara">     自 cURL 7.18.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.5.23
+ * @since 5.5
  */
 define("CURLPROXY_SOCKS4A", 6);
 /**
+ * <span class="simpara">     自 cURL 7.18.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_PROXYTYPE</b> option.
  * Proxy resolves URL hostname.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.5.23
+ * @since 5.5
  */
 define("CURLPROXY_SOCKS5_HOSTNAME", 7);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_ANY", -1);
+define("CURLSSH_AUTH_ANY", 4294967295);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
-define("CURLSSH_AUTH_DEFAULT", -1);
+define("CURLSSH_AUTH_DEFAULT", 4294967295);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
 define("CURLSSH_AUTH_HOST", 4);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
 define("CURLSSH_AUTH_KEYBOARD", 8);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
 define("CURLSSH_AUTH_NONE", 0);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
 define("CURLSSH_AUTH_PASSWORD", 2);
 /**
+ * <span class="simpara">    </span>
+ * 
  * Value for the <b>CURLOPT_SSH_AUTH_TYPES</b> option.
  * @link https://www.php.net/manual/en/curl.constants.php
  */
 define("CURLSSH_AUTH_PUBLICKEY", 1);
 /**
+ * <span class="simpara">     使用带有 IE 风格的 HTTP 摘要认证。自 cURL 7.19.3 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * HTTP Digest authentication with an IE flavor.
  * Digest authentication is defined in <em>RFC 2617</em> and is a more secure way to do authentication over public networks than
@@ -3735,41 +3809,57 @@ define("CURLSSH_AUTH_PUBLICKEY", 1);
  */
 define("CURLAUTH_DIGEST_IE", 16);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_IMAP", 4096);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_IMAPS", 8192);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_POP3", 16384);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_POP3S", 32768);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTSP", 262144);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_SMTP", 65536);
 /**
+ * <span class="simpara">    自 cURL 7.20.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_SMTPS", 131072);
 /**
+ * <span class="simpara">     当客户端发送时，该方法会更改会话的描述。<code class="literal">ANNOUNCE</code>     的作用类似于 HTTP PUT 或 POST，就像 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curl-rtspreq-set-parameter">CURL_RTSPREQ_SET_PARAMETER</a></code></strong>     一样。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * When sent by a client, this method changes the description of the session.
  * For example, if a client is using the server to record a meeting,
@@ -3779,6 +3869,8 @@ define("CURLPROTO_SMTPS", 131072);
  */
 define("CURL_RTSPREQ_ANNOUNCE", 3);
 /**
+ * <span class="simpara">     用于获取流的低级描述。应用程序应在 <code class="literal">Accept:</code>     header 中注明其支持的格式。除非手动设置，否则 libcurl 会自动添加 <code class="literal">Accept:     application/sdp</code>。如果使用了 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-timecondition">CURLOPT_TIMECONDITION</a></code></strong>     选项，时间条件（Time-condition）header 将添加到 DESCRIBE 请求中。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to get the low level description of a stream.
  * The application should note what formats it understands in the '<em>Accept:</em>' header.
@@ -3788,6 +3880,8 @@ define("CURL_RTSPREQ_ANNOUNCE", 3);
  */
 define("CURL_RTSPREQ_DESCRIBE", 2);
 /**
+ * <span class="simpara">     从服务器检索参数。默认情况下，libcurl 会在所有非空请求中添加 <code class="literal">Content-Type:     text/parameters</code> header，除非设置了自定义标头。<code class="literal">GET_PARAMETER</code>     的作用与 HTTP 的 PUT 或 POST 相同。希望发送心跳消息的应用程序应使用空的     <code class="literal">GET_PARAMETER</code> 请求。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Retrieve a parameter from the server.
  * By default, libcurl will automatically include a <em>Content-Type: text/parameters</em> header on all non-empty requests
@@ -3796,6 +3890,8 @@ define("CURL_RTSPREQ_DESCRIBE", 2);
  */
 define("CURL_RTSPREQ_GET_PARAMETER", 8);
 /**
+ * <span class="simpara">     用于检索服务器的可用方法。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to retrieve the available methods of the server.
  * The application is responsible for parsing and obeying the response.
@@ -3804,6 +3900,8 @@ define("CURL_RTSPREQ_GET_PARAMETER", 8);
  */
 define("CURL_RTSPREQ_OPTIONS", 1);
 /**
+ * <span class="simpara">     向服务器发送 <code class="literal">PAUSE</code> 命令。使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-range">CURLOPT_RANGE</a></code></strong> 选项以及单个值来指示何时应停止流（例如     npt=25）。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Send a Pause command to the server.
  * Use the <b>CURLOPT_RANGE</b> option with a single value to indicate when the stream should be halted. (e.g. npt='25')
@@ -3811,6 +3909,8 @@ define("CURL_RTSPREQ_OPTIONS", 1);
  */
 define("CURL_RTSPREQ_PAUSE", 6);
 /**
+ * <span class="simpara">     向服务器发送 <code class="literal">PLAY</code> 命令。使用     <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-range">CURLOPT_RANGE</a></code></strong> 选项来修改播放时间（例如     npt=10-15）。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Send a Play command to the server.
  * Use the <b>CURLOPT_RANGE</b> option to modify the playback time (e.g. 'npt=10-15').
@@ -3818,6 +3918,8 @@ define("CURL_RTSPREQ_PAUSE", 6);
  */
 define("CURL_RTSPREQ_PLAY", 5);
 /**
+ * <span class="simpara">     将 RTSP 请求类型设置为此值以接收交替 RTP 数据。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * This is a special request because it does not send any data to the server.
  * The application may call this function in order to receive interleaved RTP data.
@@ -3826,12 +3928,16 @@ define("CURL_RTSPREQ_PLAY", 5);
  */
 define("CURL_RTSPREQ_RECEIVE", 11);
 /**
+ * <span class="simpara">     用于告诉服务器记录会话。使用 <strong><code><a href="https://php.net/manual/zh/curl.constants.php#constant.curlopt-range">CURLOPT_RANGE</a></code></strong> 选项修改记录时间。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Used to tell the server to record a session. Use the <b>CURLOPT_RANGE</b> option to modify the record time.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_RTSP_REQUEST.html
  */
 define("CURL_RTSPREQ_RECORD", 10);
 /**
+ * <span class="simpara">     在服务器上设置参数。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Set a parameter on the server.
  * By default, libcurl will automatically include a <em>Content-Type: text/parameters</em> header unless a custom one is set.
@@ -3840,6 +3946,8 @@ define("CURL_RTSPREQ_RECORD", 10);
  */
 define("CURL_RTSPREQ_SET_PARAMETER", 9);
 /**
+ * <span class="simpara">     用于初始化会话的传输层。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * Setup is used to initialize the transport layer for the session.
  * The application must set the desired Transport options for a session
@@ -3848,6 +3956,8 @@ define("CURL_RTSPREQ_SET_PARAMETER", 9);
  */
 define("CURL_RTSPREQ_SETUP", 4);
 /**
+ * <span class="simpara">     终止 RTSP 会话。简单地关闭连接不会终止 RTSP 会话，因为通过不同的连接控制 RTSP 会话是有效的。自 cURL 7.20.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_RTSP_REQUEST</b> option.
  * This command terminates an RTSP session.
  * Simply closing a connection does not terminate the RTSP session since it is valid to control an RTSP session over different connections.
@@ -3855,6 +3965,8 @@ define("CURL_RTSPREQ_SETUP", 4);
  */
 define("CURL_RTSPREQ_TEARDOWN", 7);
 /**
+ * <span class="simpara">         cURL 句柄。        </span>
+ * 
  * Wildcard matching function callback.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
@@ -3865,56 +3977,78 @@ define("CURLOPT_FNMATCH_FUNCTION", 20200);
  */
 define("CURLOPT_WILDCARDMATCH", 197);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMP", 524288);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMPE", 2097152);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMPS", 8388608);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMPT", 1048576);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMPTE", 4194304);
 /**
+ * <span class="simpara">    自 cURL 7.21.0 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_RTMPTS", 16777216);
 /**
+ * <span class="simpara">     如果发生错误，则由通配符匹配回调函数返回。自 cURL 7.21.0 起可用。    </span>
+ * 
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if an error was occurred.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
 define("CURL_FNMATCHFUNC_FAIL", 2);
 /**
+ * <span class="simpara">     如果模式与字符串匹配，则由通配符匹配回调函数返回。自 cURL 7.21.0 起可用。    </span>
+ * 
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if pattern matches the string.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
 define("CURL_FNMATCHFUNC_MATCH", 0);
 /**
+ * <span class="simpara">     如果模式与字符串不匹配，则由通配符匹配回调函数返回。自 cURL 7.21.0 起可用。    </span>
+ * 
  * Return value for the <b>CURLOPT_FNMATCH_FUNCTION</b> if pattern not matches the string.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_FNMATCH_FUNCTION.html
  */
 define("CURL_FNMATCHFUNC_NOMATCH", 1);
 /**
+ * <span class="simpara">    自 cURL 7.21.2 起可用。   </span>
+ * 
  * Value for the <b>CURLOPT_PROTOCOLS</b> option.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_PROTOCOLS.html
  */
 define("CURLPROTO_GOPHER", 33554432);
 /**
+ * <span class="simpara">     这是元符号。将此值与单个特定认证值进行 OR 运算，以强制 libcurl     探测不受限制的认证方法；如果不可用，则仅接受该单个认证算法。自 cURL 7.21.3 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_HTTPAUTH</b> option.
  * This is a meta symbol.
  * OR this value together with a single specific auth value to force libcurl to probe for un-restricted auth and if not,
@@ -3938,6 +4072,8 @@ define("CURLOPT_TLSAUTH_TYPE", 10206);
  */
 define("CURLOPT_TLSAUTH_USERNAME", 10204);
 /**
+ * <span class="simpara">     自 cURL 7.21.4 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_TLSAUTH_TYPE</b> option.
  * TLS-SRP authentication.
  * Secure Remote Password authentication for TLS is defined in RFC 5054 and provides mutual authentication if both sides have a shared secret.
@@ -3945,12 +4081,16 @@ define("CURLOPT_TLSAUTH_USERNAME", 10204);
  */
 define("CURL_TLSAUTH_SRP", 1);
 /**
+ * <span class="simpara">     允许无条件的 GSSAPI 凭证委派。自 cURL 7.22.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_GSSAPI_DELEGATION</b> option.
  * Allow unconditional GSSAPI credential delegation.
  * @link https://curl.haxx.se/libcurl/c/CURLOPT_GSSAPI_DELEGATION.html
  */
 define("CURLGSSAPI_DELEGATION_FLAG", 2);
 /**
+ * <span class="simpara">     仅当服务票据（service ticket）中设置了 <code class="literal">OK-AS-DELEGATE</code>     flag 的情况下进行委托，前提是由 GSS-API 实现支持此功能，并且在编译时定义了 <code class="literal">GSS_C_DELEG_POLICY_FLAG</code> 时可用。自 cURL 7.22.0 起可用。    </span>
+ * 
  * Value for the <b>CURLOPT_GSSAPI_DELEGATION</b> option.
  * Delegate only if the OK-AS-DELEGATE flag is set in the service ticket
  * in case this feature is supported by the GSS-API implementation.
@@ -4004,6 +4144,8 @@ define("CURLOPT_TCP_KEEPIDLE", 214);
  */
 define("CURLOPT_TCP_KEEPINTVL", 215);
 /**
+ * <span class="simpara">     自 cURL 7.25.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSL_OPTIONS</b> option.
  * Do not attempt to use any workarounds for a security flaw in the SSL3 and TLS1.0 protocols.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
@@ -4011,47 +4153,51 @@ define("CURLOPT_TCP_KEEPINTVL", 215);
  */
 define("CURLSSLOPT_ALLOW_BEAST", 1);
 /**
+ * <span class="simpara">     内置 HTTP2 支持。自 cURL 7.33.0 起可用    </span>
+ * 
  * Supports HTTP2.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 5.5.24
+ * @since 5.5
  */
 define("CURL_VERSION_HTTP2", 65536);
 /**
+ * <span class="simpara">     自 PHP 7.0.7 和 cURL 7.44.0 起可用    </span>
+ * 
  * Value for the <b>CURLOPT_SSL_OPTIONS</b> option.
  * Disable certificate revocation checks for those SSL backends where such behavior is present.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLSSLOPT_NO_REVOKE", 2);
 /**
  * The default protocol to use if the URL is missing a scheme name.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLOPT_DEFAULT_PROTOCOL", 10238);
 /**
  * Set the numerical stream weight (a number between 1 and 256).
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLOPT_STREAM_WEIGHT", 239);
 /**
  * <b>TRUE</b> to not send TFTP options requests.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLOPT_TFTP_NO_OPTIONS", 242);
 /**
  * Connect to a specific host and port instead of the URL's host and port.
  * Accepts an array of strings with the format HOST:PORT:CONNECT-TO-HOST:CONNECT-TO-PORT.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLOPT_CONNECT_TO", 10243);
 /**
  * <b>TRUE</b> to enable TCP Fast Open.
  * @link https://www.php.net/manual/en/function.curl-setopt.php
- * @since 7.0.7
+ * @since 7.0
  */
 define("CURLOPT_TCP_FASTOPEN", 244);
 
@@ -4112,7 +4258,7 @@ define('CURL_VERSION_ASYNCHDNS', 128);
  * 
  * Supports memory tracking debug capabilities.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 7.3.6
+ * @since 7.3
  */
 define('CURL_VERSION_CURLDEBUG', 8192);
 
@@ -4175,7 +4321,7 @@ define('CURL_VERSION_NTLM', 16);
  * 
  * Supports the Mozilla's Public Suffix List.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_VERSION_PSL', 1048576);
 
@@ -4411,7 +4557,7 @@ define('CURLINFO_SCHEME', 1048625);
  * 
  * Supports UNIX sockets.
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 7.0.7
+ * @since 7.0
  */
 define('CURL_VERSION_UNIX_SOCKETS', 524288);
 
@@ -4456,7 +4602,7 @@ define('CURLOPT_HTTP09_ALLOWED', 285);
  * <span class="simpara">     自 PHP 7.3.6 和 cURL 7.64.1 起可用    </span>
  * 
  * @link https://www.php.net/manual/en/curl.constants.php
- * @since 7.3.6
+ * @since 7.3
  */
 define('CURL_VERSION_ALTSVC', 16777216);
 
@@ -5135,3 +5281,20 @@ define('CURLINFO_USED_PROXY', 2097218);
 define('CURLINFO_CONN_ID', 6291520);
 
 define('CURLOPT_SSL_SIGNATURE_ALGORITHMS', 10328);
+
+/**
+ * @since 8.6
+ */
+define('CURLOPT_SEEKFUNCTION', 20167);
+/**
+ * @since 8.6
+ */
+define('CURL_SEEKFUNC_OK', 0);
+/**
+ * @since 8.6
+ */
+define('CURL_SEEKFUNC_FAIL', 1);
+/**
+ * @since 8.6
+ */
+define('CURL_SEEKFUNC_CANTSEEK', 2);

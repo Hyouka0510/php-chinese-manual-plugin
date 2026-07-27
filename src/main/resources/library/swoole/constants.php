@@ -359,7 +359,7 @@ define('SWOOLE_ERROR_OUTPUT_SEND_YIELD', 1010);
  */
 define('SWOOLE_ERROR_SSL_NOT_READY', 1011);
 /**
- * <span class="simpara">      SSL cannot use senfile     </span>
+ * <span class="simpara">      SSL cannot use sendfile     </span>
  */
 define('SWOOLE_ERROR_SSL_CANNOT_USE_SENFILE', 1012);
 /**
@@ -455,11 +455,11 @@ define('SWOOLE_ERROR_SOCKET_CLOSED', 6001);
  */
 define('SWOOLE_ERROR_SOCKET_POLL_TIMEOUT', 6002);
 /**
- * <span class="simpara">      Socks5 unsupport version.     </span>
+ * <span class="simpara">      Socks5 unsupported version.     </span>
  */
 define('SWOOLE_ERROR_SOCKS5_UNSUPPORT_VERSION', 7001);
 /**
- * <span class="simpara">      Socks5 unsupport method.     </span>
+ * <span class="simpara">      Socks5 unsupported method.     </span>
  */
 define('SWOOLE_ERROR_SOCKS5_UNSUPPORT_METHOD', 7002);
 /**

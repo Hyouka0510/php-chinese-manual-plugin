@@ -441,9 +441,9 @@ define('ZEND_MULTIBYTE', 0);
 
 define('PHP_OUTPUT_HANDLER_START', 1);
 
-define('PHP_OUTPUT_HANDLER_CONT', 2);
+define('PHP_OUTPUT_HANDLER_CONT', 0);
 
-define('PHP_OUTPUT_HANDLER_END', 4);
+define('PHP_OUTPUT_HANDLER_END', 8);
 
 define('UPLOAD_ERR_OK', 0);
 
@@ -508,7 +508,7 @@ const PHP_SBINDIR = '/usr/local/sbin', PHP_OUTPUT_HANDLER_PROCESSED = 16384;
  * <span class="simpara">     安装手册页的位置。    </span>
  * 
  * Specifies where the manpages were installed into.
- * @since 5.3.7
+ * @since 5.3
  * @link https://php.net/manual/zh/reserved.constants.php
  */
 define('PHP_MANDIR', '/usr/local/php/php/man');
@@ -516,7 +516,7 @@ define('PHP_MANDIR', '/usr/local/php/php/man');
 /**
  * <span class="simpara">     PHP 的构建日期和时间，格式为 <code class="literal">"M d Y H:i:s"</code>。自 PHP 8.5.0 起可用。    </span>
  */
-define('PHP_BUILD_DATE', 'Aug 14 2025 22:21:58');
+define('PHP_BUILD_DATE', 'Jun 10 2026 20:55:34');
 /**
  * <span class="simpara">     构建 PHP 的提供方。自 PHP 8.5.0 起可用。    </span>
  */

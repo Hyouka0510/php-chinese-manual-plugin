@@ -2,6 +2,8 @@
 
 namespace RdKafka;
 
+use JetBrains\PhpStorm\Internal\TentativeType;
+
 
 class TopicPartition
 {
@@ -47,4 +49,7 @@ class TopicPartition
      * @return void
      */
     public function setTopic($topic_name) {}
+
+    #[TentativeType]
+    public function getErr(): ?int {}
 }

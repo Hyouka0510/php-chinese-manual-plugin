@@ -5,6 +5,11 @@ namespace RdKafka;
 
 class KafkaErrorException extends Exception
 {
+    private string $error_string;
+    private bool $isFatal;
+    private bool $isRetriable;
+    private bool $transactionRequiresAbort;
+
     /**
      * @param string $message
      * @param int $code

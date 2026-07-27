@@ -523,7 +523,7 @@ class AMQPChannel
      *
      * @return void
      */
-    public function setConfirmCallback(callable $ack_callback = null, callable $nack_callback = null) {}
+    public function setConfirmCallback(?callable $ack_callback = null, ?callable $nack_callback = null) {}
 
     /**
      * Wait until all messages published since the last call have been either ack'd or nack'd by the broker.
@@ -556,7 +556,7 @@ class AMQPChannel
      *
      * @return void
      */
-    public function setReturnCallback(callable $return_callback = null) {}
+    public function setReturnCallback(?callable $return_callback = null) {}
 
     /**
      * Start wait loop for basic.return AMQP server methods
@@ -806,7 +806,6 @@ class AMQPConnection
     /**
      * Sets the interval of time to wait for income activity from AMQP broker
      *
-     * @deprecated use AMQPConnection::setReadTimeout($timeout) instead
      *
      * @param float $timeout
      *
@@ -821,7 +820,6 @@ class AMQPConnection
      * Get the configured interval of time to wait for income activity
      * from AMQP broker
      *
-     * @deprecated use AMQPConnection::getReadTimeout() instead
      *
      * @return float
      */
@@ -1307,7 +1305,6 @@ class AMQPExchange
      * @return void
      */
     public function publish(
-
         $message,
 
         $routingKey = null,
@@ -1503,7 +1500,7 @@ class AMQPQueue
      * @return void
      */
     public function consume(
-        callable $callback = null,
+        ?callable $callback = null,
 
         $flags = null,
 

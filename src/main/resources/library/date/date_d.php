@@ -53,6 +53,8 @@ define('DATE_RFC3339', "Y-m-d\TH:i:sP");
 define('DATE_RFC3339_EXTENDED', "Y-m-d\TH:i:s.vP");
 /**
  * <span class="simpara">     RFC 7231（自 PHP 7.0.19 和 7.1.5 起）（示例：<code class="literal">Sat, 30 Apr 2016 17:52:13 GMT</code>）    </span>
+ * 
+ * @deprecated 8.5
  */
 define('DATE_RFC7231', "D, d M Y H:i:s \G\M\T");
 /**

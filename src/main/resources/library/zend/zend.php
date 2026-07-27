@@ -277,7 +277,6 @@ class ZendAPI_Job
      * i.e. In order to save the current GET and COOKIE global variables,
         this property should be JOB_QUEUE_SAVE_GET|JOB_QUEUE_SAVE_COOKIE (or the integer 6)
         In that case (of GET and COOKIE), when the job is added, the current $_GET and
-
         $_COOKIE variables  should be saved, and when the job's script is called,
         those global variables should be populated
      *

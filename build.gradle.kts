@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "top.netools"
-version = "1.1.0"
+version = "1.2.0"
 
 repositories {
     mavenCentral()
@@ -30,6 +30,7 @@ tasks {
     }
 
     patchPluginXml {
+        version.set(project.version.toString())
         sinceBuild.set("203")
         untilBuild.set("")
     }

@@ -3,6 +3,8 @@
 namespace MongoDB\BSON;
 
 /**
+ * <div id="class.mongodb-bson-minkeyinterface" class="reference"> <h1 class="title">The MongoDB\BSON\MinKeyInterface interface</h1>  <div class="partintro"><p class="verinfo">(mongodb &gt;=1.3.0)</p>  <div class="section" id="mongodb-bson-minkeyinterface.intro">   <h2 class="title">简介</h2>   <p class="simpara">    This interface is implemented by <span class="classname"><a href="https://php.net/manual/zh/class.mongodb-bson-minkey.php" class="classname">MongoDB\BSON\MinKey</a></span>    to be used as a parameter, return, or property type in userland classes.   </p>  </div>  <div class="section" id="mongodb-bson-minkeyinterface.synopsis">   <h2 class="title">类摘要</h2>   <div class="classsynopsis">    <span class="ooclass"><strong class="classname"></strong></span>    <div class="classsynopsisinfo">     <span class="ooclass">      <span class="modifier">class</span> <strong class="classname">MongoDB\BSON\MinKeyInterface</strong>     </span>     {</div>   }</div>   <p class="simpara">    This interface has no methods.   </p>  </div> </div></div>
+ * 
  * This interface is implemented by MongoDB\BSON\MinKey but may also be used for type-hinting and userland classes.
  * @link https://www.php.net/manual/en/class.mongodb-bson-minkeyinterface.php
  */
